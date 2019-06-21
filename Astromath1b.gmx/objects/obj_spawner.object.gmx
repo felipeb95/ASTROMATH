@@ -28,10 +28,12 @@
             <string>randomize();
 //NO TOCAR
 muted=0;
-/*
+global.malasSeguidas=0;
+
+
 global.minA = 2;
 global.maxB = 9;
-*/
+
 global.wave = 1;
 global.waveFake = 1;
 global.waveUltraFake = 1;
@@ -47,7 +49,7 @@ global.feedback = 0 ;
 global.revision = 0;
 
 //SETS
-/*
+
 global.sets = 5;
 //PORCENTAJES
 global.eFacil[0]=5;
@@ -69,17 +71,17 @@ global.eDificil[3]=4;
 global.eFacil[4]=1;
 global.eMedio[4]=2;
 global.eDificil[4]=5;
-*/
+
 //PARA LAS SIGUIENTES SE MANTIENE LA ULTIMA
 
 var dist = 1;
-for(i=global.sets;i&lt;30;i++){
+for(i=global.sets;i&lt;50;i++){
     global.eFacil[i]=global.eFacil[i-dist];
     global.eMedio[i]=global.eMedio[i-dist];
     global.eDificil[i]=global.eDificil[i-dist];
     dist++;
 }
-global.sets = 30;
+global.sets = 50;
 
 global.sp1 = -0.9;
 global.sp2 = -1.0;
@@ -577,14 +579,7 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
         }
         global.cont = 0;
         global.ccont=0;
-        //creo q se puede sacar global.ws
-        global.ws=1;
-        if(global.wave mod 2==0 &amp;&amp; global.wave&lt;35 &amp;&amp; global.ws==1){
-            global.sp1 -= 0.1;
-            global.sp2 -= 0.1;
-            global.sp3 -= 0.1;
-            global.ws=0;
-        }
+        
         
         alarm[0] = room_speed*1;
         global.intentos = 0; /*CUANDO YA PASARON TODOS LOS ASTEROIDES (RONDA TERMINADA

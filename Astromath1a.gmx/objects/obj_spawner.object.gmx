@@ -27,14 +27,16 @@
             <kind>1</kind>
             <string>randomize();
 muted = 0;
+global.malasSeguidas=0;
+
 global.wave = 1;
 global.waveFake = 1;
 global.waveUltraFake = 1;
 //ESTO PQ NO FUNCIONA LA PARAMETRIZACION
-/*
+
 global.minA=2;
 global.maxB=9;
-*/
+
 //NO TOCAR
 
 global.nEjercicios=global.maxB-global.minA+1;
@@ -43,7 +45,7 @@ for(i=0;i&lt;(global.maxB-global.minA+1);i++){
     global.numero[i]=global.minA+i;
 }
 //SETS
-/*
+
 global.sets = 5;
 //PORCENTAJES
 global.eFacil[0]=5;
@@ -65,21 +67,21 @@ global.eDificil[3]=4;
 global.eFacil[4]=1;
 global.eMedio[4]=2;
 global.eDificil[4]=5;
-*/
+
 //PARA LAS SIGUIENTES SE MANTIENE LA ULTIMA
 
 var dist = 1;
-for(i=global.sets;i&lt;30;i++){
+for(i=global.sets;i&lt;50;i++){
     global.eFacil[i]=global.eFacil[i-dist];
     global.eMedio[i]=global.eMedio[i-dist];
     global.eDificil[i]=global.eDificil[i-dist];
     dist++;
 }
 
-global.sets = 30;
-global.sp1 = -1.5;
-global.sp2 = -1.7;
-global.sp3 = -1.9;
+global.sets = 50;
+global.sp1 = -0.9;
+global.sp2 = -1.0;
+global.sp3 = -1.1;
 global.ws = 0; //creo q se puede quitar
 global.alternativa=choose(floor(random_range(1,5)));
 global.correctas=0;
@@ -566,14 +568,7 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
         }
         global.cont = 0;
         global.ccont=0;
-        //creo q se puede sacar global.ws
-        global.ws=1;
-        if(global.wave mod 2==0 &amp;&amp; global.wave&lt;35 &amp;&amp; global.ws==1){
-            global.sp1 -= 0.3;
-            global.sp2 -= 0.3;
-            global.sp3 -= 0.3;
-            global.ws=0;
-        }
+        
         
         alarm[0] = room_speed*1;
         global.intentos = 0; /*CUANDO YA PASARON TODOS LOS ASTEROIDES (RONDA TERMINADA

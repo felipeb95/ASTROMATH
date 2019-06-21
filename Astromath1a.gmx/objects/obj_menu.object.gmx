@@ -25,8 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var url = "http://localhost/curl/curl.php";
-http_get(url);
+            <string>/*var url = "http://localhost/curl/curl.php";
+http_get(url);*/
 global.loaded = 0;
 menu[0]="Presiona ENTER para comenzar a jugar";
 line_spacing=15; //Line Spacing
@@ -147,7 +147,7 @@ draw_sprite(spr_white_enter, 0 , menu_x, menu_y+100);
           <argument>
             <kind>1</kind>
             <string>global.modo = 2; //Antiguamente 2 era para multiplicaciones.
-if(global.loaded==1) room_goto(rm_instructions);
+/*if(global.loaded==1) */room_goto(rm_instructions);
 </string>
           </argument>
         </arguments>

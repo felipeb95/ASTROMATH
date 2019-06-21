@@ -85,6 +85,14 @@ with (other){
 }
 
 if(global.r == global.numM){
+    global.malasSeguidas=0;
+    global.nrondasc++;
+    if(global.nrondasc&gt;=2 &amp;&amp; global.sp1&gt;-4.9 &amp;&amp; global.sp2&gt;-5.0 &amp;&amp; global.sp3&gt;-5.1 ){
+        global.sp1 -= 0.1;
+        global.sp2 -= 0.1;
+        global.sp3 -= 0.1;
+        show_debug_message("SUBE VEL");
+    }
     if(global.wave&lt;9){
         global.oBuenas[global.a]++;
         global.oBuenas[global.b]++;
@@ -92,7 +100,6 @@ if(global.r == global.numM){
     global.respondida = true;
     global.puntaje += 10;
     global.correctas++;
-    global.nrondasc++;
     if(global.nrondasc&gt;global.nrondas) global.nrondas=global.nrondasc;
     
     global.tiempoUltimaRespuesta = global.segundos - global.aparicionCorrecta;
@@ -102,10 +109,18 @@ if(global.r == global.numM){
     if(obj_ship.hp&gt;3) obj_ship.hp=3;
     global.estado = "correcta";
 }else{ 
+    global.malasSeguidas++;
+    global.nrondasc=0;
+    if(global.malasSeguidas&gt;=2 &amp;&amp; global.sp1&lt;-0.9 &amp;&amp; global.sp2&lt;-1.0 &amp;&amp; global.sp3&lt;-1.1 ){
+        global.sp1 += 0.1;
+        global.sp2 += 0.1;
+        global.sp3 += 0.1;
+        show_debug_message("BAJA VEL");
+    }
+    
     if(global.puntaje&gt;=10)    global.puntaje -=10;
     
     global.incorrectas++;
-    global.nrondasc=0;
     audio_play_sound(incorrect,10,false);
     obj_ship.hp-=1;
     if(obj_ship.hp == 0){
