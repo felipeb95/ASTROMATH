@@ -25,9 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*var url = "http://astromathapp.000webhostapp.com/curl.php";
-http_get(url);
-*/
+            <string>/*var url = "http://localhost/curl/curl.php";
+http_get(url);*/
 menu[0]="REINTENTAR";
 menu[1]="VOLVER"
 

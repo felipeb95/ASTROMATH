@@ -25,8 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//get = http_get("http://localhost:8888/testing/curl.php");
-//global.loaded = 0;
+            <string>var url = "http://localhost/curl/curl.php";
+http_get(url);
+global.loaded = 0;
 menu[0]="Presiona ENTER para comenzar a jugar";
 line_spacing=15; //Line Spacing
 </string>
@@ -51,61 +52,48 @@ line_spacing=15; //Line Spacing
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if ds_map_find_value(async_load, "id") == get
-{
-   if ds_map_find_value(async_load, "status") == 0
-   {
-      json = ds_map_find_value(async_load, "result");
-   }
-   else
-   {
-      json = "null";
-   }                              
+            <string>var json = async_load[? "result"]
+show_debug_message(json);
+var map = json_decode(json);
 
-
-    if(r_str!="null"){
-        show_debug_message("JSON RECIBIDO");
-        show_debug_message(json);
-        var json_data = json_decode(json);
-        var inner_list = json_data[? 'default'];
-        show_debug_message(json_data);
-        var siz = ds_list_size(inner_list);
-        
-        if(ds_map_exists(map, "menorMultiplo")){
-            var menorMultiplo = map[? "menorMultiplo"];
-             show_debug_message("menorMultiplo CARGADO");
-             show_debug_message(menorMultiplo);
-             global.minA = menorMultiplo;
-        }
-        
-        if(ds_map_exists(map, "mayorMultiplo")){
-            var mayorMultiplo = map[? "mayorMultiplo"];
-             show_debug_message("mayorMultiplo CARGADO");
-             show_debug_message(mayorMultiplo);
-             global.maxB = mayorMultiplo;
-        }
-        
-        if(ds_map_exists(map, "rondas")){
-            var rondas = map[? "rondas"];
-            show_debug_message("rondas CARGADO");
-            show_debug_message(ds_list_size(rondas));
-            for(i = 0; i &lt; ds_list_size(rondas); i++){
-                show_debug_message(rondas[| i]);
-                array = explode(",", rondas[| i]);
-                
-                global.eFacil[i] = real(array[0]);
-                global.eMedio[i] = real(array[1]);
-                global.eDificil[i] = real(array[2]);
-                /*
-                for(j = 0; j&lt;array_length_1d(array);j++)
-                    show_debug_message(array[j]);   
-                */
-            }
-            global.sets = ds_list_size(rondas);
-        }
-        global.loaded=1;
-    }
+if(map = -1){
+    show_debug_message("Invalid result");
 }
+
+if(ds_map_exists(map, "menorMultiplo")){
+    var menorMultiplo = map[? "menorMultiplo"];
+     show_debug_message("menorMultiplo funciona");
+     show_debug_message(menorMultiplo);
+     global.minA = real(menorMultiplo);
+}
+
+if(ds_map_exists(map, "mayorMultiplo")){
+    var mayorMultiplo = map[? "mayorMultiplo"];
+     show_debug_message("mayorMultiplo funciona");
+     show_debug_message(mayorMultiplo);
+     global.maxB = real(mayorMultiplo);
+}
+
+if(ds_map_exists(map, "rondas")){
+    var rondas = map[? "rondas"];
+    show_debug_message("rondas funciona");
+    show_debug_message(ds_list_size(rondas));
+    for(i = 0; i &lt; ds_list_size(rondas); i++){
+        show_debug_message(rondas[| i]);
+        array = explode(",", rondas[| i]);
+        
+        global.eFacil[i] = real(array[0]);
+        global.eMedio[i] = real(array[1]);
+        global.eDificil[i] = real(array[2]);
+        /*
+        for(j = 0; j&lt;array_length_1d(array);j++)
+            show_debug_message(array[j]);   
+        */
+    }
+    global.sets = ds_list_size(rondas);
+}
+
+global.loaded = 1;
 </string>
           </argument>
         </arguments>
@@ -159,7 +147,7 @@ draw_sprite(spr_white_enter, 0 , menu_x, menu_y+100);
           <argument>
             <kind>1</kind>
             <string>global.modo = 2; //Antiguamente 2 era para multiplicaciones.
-/*if(global.loaded==1)*/ room_goto(rm_instructions);
+if(global.loaded==1) room_goto(rm_instructions);
 </string>
           </argument>
         </arguments>

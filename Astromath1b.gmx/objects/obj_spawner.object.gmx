@@ -28,8 +28,10 @@
             <string>randomize();
 //NO TOCAR
 muted=0;
+/*
 global.minA = 2;
 global.maxB = 9;
+*/
 global.wave = 1;
 global.waveFake = 1;
 global.waveUltraFake = 1;
@@ -45,7 +47,7 @@ global.feedback = 0 ;
 global.revision = 0;
 
 //SETS
-
+/*
 global.sets = 5;
 //PORCENTAJES
 global.eFacil[0]=5;
@@ -67,7 +69,7 @@ global.eDificil[3]=4;
 global.eFacil[4]=1;
 global.eMedio[4]=2;
 global.eDificil[4]=5;
-
+*/
 //PARA LAS SIGUIENTES SE MANTIENE LA ULTIMA
 
 var dist = 1;

@@ -25,11 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*var url = "http://astromathapp.000webhostapp.com/curl.php";
+            <string>var url = "http://localhost/curl/curl.php";
 http_get(url);
-*/
 menu[0]="Apreta ENTER para comenzar a jugar";
 line_spacing=15; //Line Spacing
+global.loaded = 0;
 </string>
           </argument>
         </arguments>
@@ -92,6 +92,8 @@ if(ds_map_exists(map, "rondas")){
     }
     global.sets = ds_list_size(rondas);
 }
+
+global.loaded = 1;
 </string>
           </argument>
         </arguments>
@@ -146,7 +148,7 @@ draw_sprite(spr_white_enter, 0 , menu_x, menu_y+100);
           <argument>
             <kind>1</kind>
             <string>global.modo = 2; //Antiguamente 2 era para multiplicaciones.
-room_goto(rm_instructions);
+if(global.loaded==1) room_goto(rm_instructions);
 </string>
           </argument>
         </arguments>
