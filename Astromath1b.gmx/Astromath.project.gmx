@@ -56,6 +56,8 @@
     <sprite>sprites\spr_index_asteroid</sprite>
     <sprite>sprites\spr_moon</sprite>
     <sprite>sprites\spr_tecla_m</sprite>
+    <sprite>sprites\sprite41</sprite>
+    <sprite>sprites\spr_loading</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_space</background>
@@ -95,6 +97,7 @@
     <font>fonts\fnt_roboto</font>
     <font>fonts\font_correccion</font>
     <font>fonts\fontseleccion</font>
+    <font>fonts\font_loading</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_ship</object>
@@ -120,6 +123,8 @@
     <object>objects\obj_instructions</object>
     <object>objects\obj_index_asteroid</object>
     <object>objects\obj_scale</object>
+    <object>objects\obj_loading</object>
+    <object>objects\obj_loading_gif</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_aux</room>
@@ -132,6 +137,7 @@
     <room>rooms\rm_select</room>
     <room>rooms\rm_score2</room>
     <room>rooms\rm_start</room>
+    <room>rooms\rm_loading</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

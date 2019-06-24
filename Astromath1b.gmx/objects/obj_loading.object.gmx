@@ -25,11 +25,83 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>menu[0]="Apreta ENTER para comenzar a jugar";
-line_spacing=15; //Line Spacing
-global.loaded = 0;
+            <string>var url = "http://localhost/curl/curl.php";
+http_get(url);
+menu_x=room_width/2; 
+menu_y=room_height/2;
+instance_create(menu_x,menu_y-100,obj_loading_gif);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="62">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>var json = async_load[? "result"]
+show_debug_message(json);
+var map = json_decode(json);
 
-show_debug_message(room_first);
+if(map = -1){
+    show_debug_message("Invalid result");
+}
+
+if(ds_exists(map,ds_type_map)){
+    show_debug_message("Es mapa");
+    instance_destroy(obj_loading_gif);
+    room_goto(rm_space);
+    global.snd=audio_play_sound(music,10,true);
+    audio_sound_gain(global.snd,0.4,0);
+}
+
+if(ds_map_exists(map, "menorMultiplo")){
+    var menorMultiplo = map[? "menorMultiplo"];
+     show_debug_message("menorMultiplo funciona");
+     show_debug_message(menorMultiplo);
+     global.minA = real(menorMultiplo);
+}
+
+if(ds_map_exists(map, "mayorMultiplo")){
+    var mayorMultiplo = map[? "mayorMultiplo"];
+     show_debug_message("mayorMultiplo funciona");
+     show_debug_message(mayorMultiplo);
+     global.maxB = real(mayorMultiplo);
+}
+
+if(ds_map_exists(map, "rondas")){
+    var rondas = map[? "rondas"];
+    show_debug_message("rondas funciona");
+    show_debug_message(ds_list_size(rondas));
+    for(i = 0; i &lt; ds_list_size(rondas); i++){
+        show_debug_message(rondas[| i]);
+        array = explode(",", rondas[| i]);
+        
+        global.eFacil[i] = real(array[0]);
+        global.eMedio[i] = real(array[1]);
+        global.eDificil[i] = real(array[2]);
+        /*
+        for(j = 0; j&lt;array_length_1d(array);j++)
+            show_debug_message(array[j]);   
+        */
+    }
+    global.sets = ds_list_size(rondas);
+}
+
+global.loaded = 1;
 </string>
           </argument>
         </arguments>
@@ -52,39 +124,11 @@ show_debug_message(room_first);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_halign(fa_center); //Horizontal alignment
-draw_set_valign(fa_middle);  //Vertical alignment
-draw_set_font(fntMainMed);
-menu_x=room_width/2; 
-menu_y=room_height/2;
+            <string>draw_set_halign(fa_center);
+draw_set_font(font_loading);
 draw_set_colour(c_white);
-draw_text(menu_x, menu_y, "Presiona ENTER para comenzar");
-draw_sprite(spr_white_enter, 0 , menu_x, menu_y+100);
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="13">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>global.modo = 2; //Antiguamente 2 era para multiplicaciones.
-room_goto(rm_instructions);
+texto_menu = "CARGANDO";
+draw_text(menu_x, menu_y, texto_menu);
 </string>
           </argument>
         </arguments>

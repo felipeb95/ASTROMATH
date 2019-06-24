@@ -168,32 +168,31 @@ draw_text(340, 76, "y comienza a jugar");
             <kind>1</kind>
             <string>switch(item){
     case 0: global.col = 0
-            room_goto(rm_space)
+            room_goto(rm_loading)
       break;
     case 1: global.col = 1
-            room_goto(rm_space)
+            room_goto(rm_loading)
         break;
     case 2: global.col = 2
-            room_goto(rm_space)
+            room_goto(rm_loading)
       break;
     case 3: global.col = 3
-            room_goto(rm_space)
+            room_goto(rm_loading)
       break;
     case 4: global.col = 4
-            room_goto(rm_space)
+            room_goto(rm_loading)
       break;
     case 5: global.col = 5
-            room_goto(rm_space)
+            room_goto(rm_loading)
         break;
     case 6: global.col = 6
-            room_goto(rm_space)
+            room_goto(rm_loading)
          break;
     case 7: global.col = 7
-            room_goto(rm_space) 
+            room_goto(rm_loading) 
         break;
 }
-global.snd=audio_play_sound(music,10,true);
-audio_sound_gain(global.snd,0.4,0);
+
 </string>
           </argument>
         </arguments>
