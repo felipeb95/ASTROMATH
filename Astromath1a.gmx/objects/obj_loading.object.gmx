@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var url = "http://localhost/curl/curl.php";
+            <string>var url = "http://astromathapp.000webhostapp.com/curl.php";
 http_get(url);
 menu_x=room_width/2; 
 menu_y=room_height/2;
