@@ -34,9 +34,10 @@ global.waveFake = 1;
 global.waveUltraFake = 1;
 //ESTO PQ NO FUNCIONA LA PARAMETRIZACION
 
+/*
 global.minA=2;
 global.maxB=9;
-
+*/
 //NO TOCAR
 
 global.nEjercicios=global.maxB-global.minA+1;
@@ -45,7 +46,7 @@ for(i=0;i&lt;(global.maxB-global.minA+1);i++){
     global.numero[i]=global.minA+i;
 }
 //SETS
-
+/*
 global.sets = 5;
 //PORCENTAJES
 global.eFacil[0]=5;
@@ -67,7 +68,7 @@ global.eDificil[3]=4;
 global.eFacil[4]=1;
 global.eMedio[4]=2;
 global.eDificil[4]=5;
-
+*/
 //PARA LAS SIGUIENTES SE MANTIENE LA ULTIMA
 
 var dist = 1;

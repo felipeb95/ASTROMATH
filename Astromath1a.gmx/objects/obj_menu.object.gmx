@@ -25,75 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*var url = "http://localhost/curl/curl.php";
-http_get(url);*/
-global.loaded = 0;
+            <string>global.loaded = 0;
 menu[0]="Presiona ENTER para comenzar a jugar";
 line_spacing=15; //Line Spacing
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="62">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>var json = async_load[? "result"]
-show_debug_message(json);
-var map = json_decode(json);
-
-if(map = -1){
-    show_debug_message("Invalid result");
-}
-
-if(ds_map_exists(map, "menorMultiplo")){
-    var menorMultiplo = map[? "menorMultiplo"];
-     show_debug_message("menorMultiplo funciona");
-     show_debug_message(menorMultiplo);
-     global.minA = real(menorMultiplo);
-}
-
-if(ds_map_exists(map, "mayorMultiplo")){
-    var mayorMultiplo = map[? "mayorMultiplo"];
-     show_debug_message("mayorMultiplo funciona");
-     show_debug_message(mayorMultiplo);
-     global.maxB = real(mayorMultiplo);
-}
-
-if(ds_map_exists(map, "rondas")){
-    var rondas = map[? "rondas"];
-    show_debug_message("rondas funciona");
-    show_debug_message(ds_list_size(rondas));
-    for(i = 0; i &lt; ds_list_size(rondas); i++){
-        show_debug_message(rondas[| i]);
-        array = explode(",", rondas[| i]);
-        
-        global.eFacil[i] = real(array[0]);
-        global.eMedio[i] = real(array[1]);
-        global.eDificil[i] = real(array[2]);
-        /*
-        for(j = 0; j&lt;array_length_1d(array);j++)
-            show_debug_message(array[j]);   
-        */
-    }
-    global.sets = ds_list_size(rondas);
-}
-
-global.loaded = 1;
 </string>
           </argument>
         </arguments>
@@ -147,7 +81,7 @@ draw_sprite(spr_white_enter, 0 , menu_x, menu_y+100);
           <argument>
             <kind>1</kind>
             <string>global.modo = 2; //Antiguamente 2 era para multiplicaciones.
-/*if(global.loaded==1) */room_goto(rm_instructions);
+room_goto(rm_instructions);
 </string>
           </argument>
         </arguments>

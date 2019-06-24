@@ -31,6 +31,7 @@ menu_x=room_width/2;
 menu_y=room_height/2;
 instance_create(menu_x,menu_y-100,obj_loading_gif);
 go_to_next = false;
+
 </string>
           </argument>
         </arguments>

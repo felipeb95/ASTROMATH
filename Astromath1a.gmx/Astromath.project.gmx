@@ -52,6 +52,7 @@
     <sprite>sprites\spr_index_asteroid</sprite>
     <sprite>sprites\spr_moon</sprite>
     <sprite>sprites\spr_tecla_m</sprite>
+    <sprite>sprites\spr_loading</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_space</background>
@@ -88,6 +89,7 @@
     <font>fonts\fntMainMed</font>
     <font>fonts\fontGameOver</font>
     <font>fonts\fontOpcionesGO</font>
+    <font>fonts\font_loading</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_ship</object>
@@ -111,6 +113,8 @@
     <object>objects\obj_tierra</object>
     <object>objects\obj_instructions</object>
     <object>objects\obj_scale</object>
+    <object>objects\obj_loading</object>
+    <object>objects\obj_loading_gif</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_aux</room>
@@ -123,6 +127,7 @@
     <room>rooms\rm_score2</room>
     <room>rooms\rm_start</room>
     <room>rooms\rm_instructions</room>
+    <room>rooms\rm_loading</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
