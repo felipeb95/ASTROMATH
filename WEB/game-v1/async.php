@@ -58,8 +58,9 @@ if ($conexion->query($sql) === TRUE) {
         $intentosCount = count($intentos);
         $estado = $objEjercicios[$x]["estado_respuesta"];
         $etapa = $objEjercicios[$x]["etapa"];
+        $origen = $objEjercicios[$x]["origen"];
         
-        $sqlEjercicios = "INSERT INTO testc (a, b, r, idPartida, segundos, intentos, estado, etapa) VALUES ('$a','$b','$r','$ultimaIdExperimental','$segundos','$cantidad_intentos','$estado','$etapa')";
+        $sqlEjercicios = "INSERT INTO testc (a, b, r, idPartida, segundos, intentos, estado, etapa, origen) VALUES ('$a','$b','$r','$ultimaIdExperimental','$segundos','$cantidad_intentos','$estado','$etapa','$origen')";
         if ($conexion->query($sqlEjercicios) === TRUE) {
             //QUERY EXITOSA
             $ultimaIdEjercicios = $conexion->insert_id;
