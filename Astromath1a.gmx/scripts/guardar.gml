@@ -10,6 +10,7 @@ if(argument0){
     ds_map_add(roundMap, "tiempo_respuesta", global.tiempoUltimaRespuesta);
     ds_map_add(roundMap, "estado_respuesta", global.estado);
     ds_map_add(roundMap, "etapa", (global.dificultad+1));
+    ds_map_add(roundMap, "origen", global.origen);
     //OONDICIÓN SI ES QUE NO SE LE DISPARÓ A NINGÚN METEROTIO (NO HUBO INTENTO)
     var copiaIntentosRonda = ds_map_create();
     ds_map_copy(copiaIntentosRonda, global.intentosRonda);

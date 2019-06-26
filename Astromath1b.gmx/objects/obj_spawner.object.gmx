@@ -37,6 +37,7 @@ global.maxB = 9;
 global.wave = 1;
 global.waveFake = 1;
 global.waveUltraFake = 1;
+global.origen = "testing";
 //REVISAR POR QUÉ A VECES MAX B FALLA
 
 global.nEjercicios=global.maxB-global.minA+1;
@@ -242,6 +243,7 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
         ds_map_add(roundMap, "tiempo_respuesta", global.tiempoUltimaRespuesta);
         ds_map_add(roundMap, "estado_respuesta",global.estado);
         ds_map_add(roundMap, "etapa",(global.dificultad+1));
+        ds_map_add(roundMap, "origen", global.origen);
         //OONDICIÓN SI ES QUE NO SE LE DISPARÓ A NINGÚN METEROTIO (NO HUBO INTENTO)
         
         var copiaIntentosRonda = ds_map_create();
@@ -537,6 +539,7 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
                     
                 }
                 if(global.eFacil[global.dificultad]&gt;0){
+                    global.origen = "facil";
                     global.a=global.faciles[0];
                     var numa=global.faciles[0];
                     for(x= 0; x&lt;array_length_1d(global.faciles)-1; x++){
@@ -547,6 +550,7 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
                 }
                 else{
                     if(global.eMedio[global.dificultad]&gt;0){
+                        global.origen = "medio";
                         global.a=global.medios[0];
                         var numa=global.medios[0];
                         for(x= 0; x&lt;array_length_1d(global.medios)-1; x++){
@@ -557,6 +561,7 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
                     }
                     else{
                         if(global.eDificil[global.dificultad]&gt;0){
+                            global.origen = "dificil";
                             global.a=global.dificiles[0];
                             var numa=global.dificiles[0];
                             for(x= 0; x&lt;array_length_1d(global.dificiles)-1; x++){

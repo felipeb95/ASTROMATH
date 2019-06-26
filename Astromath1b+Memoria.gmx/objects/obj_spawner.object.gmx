@@ -27,24 +27,27 @@
             <kind>1</kind>
             <string>randomize();
 //VARIABLES PARA MEMORIA
+/*
 global.setMemoria = 2;
 global.nBuenas=0.5;
 global.nMalas=0.5;
+*/
 global.memBuenasA = undefined;
 global.memBuenasB = undefined;
 global.memMalasA = undefined;
 global.memMalasB = undefined;
 global.contMemBuenas = 0;
 global.contMemMalas = 0;
+global.origen = "testing";
 
 //NO TOCAR
 muted=0;
 global.malasSeguidas=0;
 
-
+/*
 global.minA = 2;
 global.maxB = 9;
-
+*/
 global.wave = 1;
 global.waveFake = 1;
 global.waveUltraFake = 1;
@@ -60,7 +63,7 @@ global.feedback = 0 ;
 global.revision = 0;
 
 //SETS
-
+/*
 global.sets = 5;
 //PORCENTAJES
 global.eFacil[0]=5;
@@ -82,7 +85,7 @@ global.eDificil[3]=4;
 global.eFacil[4]=1;
 global.eMedio[4]=2;
 global.eDificil[4]=5;
-
+*/
 //PARA LAS SIGUIENTES SE MANTIENE LA ULTIMA
 
 var dist = 1;
@@ -314,6 +317,7 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
         ds_map_add(roundMap, "tiempo_respuesta", global.tiempoUltimaRespuesta);
         ds_map_add(roundMap, "estado_respuesta",global.estado);
         ds_map_add(roundMap, "etapa",(global.dificultad+1));
+        ds_map_add(roundMap, "origen", global.origen);
         //OONDICIÓN SI ES QUE NO SE LE DISPARÓ A NINGÚN METEROTIO (NO HUBO INTENTO)
         
         var copiaIntentosRonda = ds_map_create();
@@ -641,6 +645,7 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
             
                 //SELECCION DE A o A Y B
                 if(global.eBuenas[global.dificultad]&gt;0){
+                    global.origen = "memoria_buenas";
                     global.a=global.memBuenasA[0];
                     global.b=global.memBuenasB[0];
                     var numa=global.memBuenasA[0];
@@ -655,6 +660,7 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
                 }
                 else {
                     if(global.eFacil[global.dificultad]&gt;0){
+                        global.origen = "facil";
                         global.a=global.faciles[0];
                         var numa=global.faciles[0];
                         for(x= 0; x&lt;array_length_1d(global.faciles)-1; x++){
@@ -665,6 +671,7 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
                     }
                     else{
                         if(global.eMedio[global.dificultad]&gt;0){
+                            global.origen = "medio";
                             global.a=global.medios[0];
                             var numa=global.medios[0];
                             for(x= 0; x&lt;array_length_1d(global.medios)-1; x++){
@@ -675,6 +682,7 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
                         }
                         else{
                             if(global.eDificil[global.dificultad]&gt;0){
+                                global.origen = "dificil";
                                 global.a=global.dificiles[0];
                                 var numa=global.dificiles[0];
                                 for(x= 0; x&lt;array_length_1d(global.dificiles)-1; x++){
@@ -685,6 +693,7 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
                             }
                             else {
                                 if(global.eMalas[global.dificultad]&gt;0){
+                                    global.origen = "memoria_malas";
                                     global.a=global.memMalasA[0];
                                     global.b=global.memMalasB[0];
                                     var numa=global.memMalasA[0];

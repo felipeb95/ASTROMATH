@@ -32,6 +32,7 @@ global.malasSeguidas=0;
 global.wave = 1;
 global.waveFake = 1;
 global.waveUltraFake = 1;
+global.origen = "testing";
 //ESTO PQ NO FUNCIONA LA PARAMETRIZACION
 
 /*
@@ -232,6 +233,7 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
         ds_map_add(roundMap, "tiempo_respuesta", global.tiempoUltimaRespuesta);
         ds_map_add(roundMap, "estado_respuesta",global.estado);
         ds_map_add(roundMap, "etapa",(global.dificultad+1));
+        ds_map_add(roundMap, "origen",global.origen);
         //OONDICIÓN SI ES QUE NO SE LE DISPARÓ A NINGÚN METEROTIO (NO HUBO INTENTO)
         
         var copiaIntentosRonda = ds_map_create();
@@ -527,6 +529,7 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
                     
                 }
                 if(global.eFacil[global.dificultad]&gt;0){
+                    global.origen = "facil";
                     global.a=global.faciles[0];
                     var numa=global.faciles[0];
                     for(x= 0; x&lt;array_length_1d(global.faciles)-1; x++){
@@ -537,6 +540,7 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
                 }
                 else{
                     if(global.eMedio[global.dificultad]&gt;0){
+                        global.origen = "medio";
                         global.a=global.medios[0];
                         var numa=global.medios[0];
                         for(x= 0; x&lt;array_length_1d(global.medios)-1; x++){
@@ -547,6 +551,7 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
                     }
                     else{
                         if(global.eDificil[global.dificultad]&gt;0){
+                            global.origen = "dificil";
                             global.a=global.dificiles[0];
                             var numa=global.dificiles[0];
                             for(x= 0; x&lt;array_length_1d(global.dificiles)-1; x++){
