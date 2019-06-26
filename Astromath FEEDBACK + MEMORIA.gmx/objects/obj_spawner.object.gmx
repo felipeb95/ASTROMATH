@@ -644,21 +644,80 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
                 }
             
                 //SELECCION DE A o A Y B
-                if(global.eBuenas[global.dificultad]&gt;0){
-                    global.origen = "memoria_buenas";
-                    global.a=global.memBuenasA[0];
-                    global.b=global.memBuenasB[0];
-                    var numa=global.memBuenasA[0];
-                    var numb=global.memBuenasB[0];
-                    for(x= 0; x&lt;array_length_1d(global.memBuenasA)-1; x++){
-                        global.memBuenasA[x] = global.memBuenasA[x+1];
-                        global.memBuenasB[x] = global.memBuenasB[x+1];
+                //ORDEN EN QUE SALEN
+                randomize()
+                var ordenRandom = choose(floor(random_range(1,5)));
+                if(ordenRandom==1){
+                    if(global.eBuenas[global.dificultad]&gt;0){
+                        global.origen = "memoria_buenas";
+                        global.a=global.memBuenasA[0];
+                        global.b=global.memBuenasB[0];
+                        var numa=global.memBuenasA[0];
+                        var numb=global.memBuenasB[0];
+                        for(x= 0; x&lt;array_length_1d(global.memBuenasA)-1; x++){
+                            global.memBuenasA[x] = global.memBuenasA[x+1];
+                            global.memBuenasB[x] = global.memBuenasB[x+1];
+                        }
+                        global.memBuenasA[array_length_1d(global.memBuenasA)-1]= numa;
+                        global.memBuenasB[array_length_1d(global.memBuenasB)-1]= numb;
+                        global.eBuenas[global.dificultad]--;
                     }
-                    global.memBuenasA[array_length_1d(global.memBuenasA)-1]= numa;
-                    global.memBuenasB[array_length_1d(global.memBuenasB)-1]= numb;
-                    global.eBuenas[global.dificultad]--;
+                    else {
+                        if(global.eFacil[global.dificultad]&gt;0){
+                            global.origen = "facil";
+                            global.a=global.faciles[0];
+                            var numa=global.faciles[0];
+                            for(x= 0; x&lt;array_length_1d(global.faciles)-1; x++){
+                                global.faciles[x] = global.faciles[x+1];
+                            }
+                            global.faciles[array_length_1d(global.faciles)-1]= numa; 
+                            global.eFacil[global.dificultad]--;
+                        }
+                        else{
+                            if(global.eMedio[global.dificultad]&gt;0){
+                                global.origen = "medio";
+                                global.a=global.medios[0];
+                                var numa=global.medios[0];
+                                for(x= 0; x&lt;array_length_1d(global.medios)-1; x++){
+                                    global.medios[x] = global.medios[x+1];
+                                }
+                                global.medios[array_length_1d(global.medios)-1]= numa; 
+                                global.eMedio[global.dificultad]--;
+                            }
+                            else{
+                                if(global.eDificil[global.dificultad]&gt;0){
+                                    global.origen = "dificil";
+                                    global.a=global.dificiles[0];
+                                    var numa=global.dificiles[0];
+                                    for(x= 0; x&lt;array_length_1d(global.dificiles)-1; x++){
+                                        global.dificiles[x] = global.dificiles[x+1];
+                                    }
+                                    global.dificiles[array_length_1d(global.dificiles)-1]= numa; 
+                                    global.eDificil[global.dificultad]--;
+                                }
+                                else {
+                                    if(global.eMalas[global.dificultad]&gt;0){
+                                        global.origen = "memoria_malas";
+                                        global.a=global.memMalasA[0];
+                                        global.b=global.memMalasB[0];
+                                        var numa=global.memMalasA[0];
+                                        var numb=global.memMalasB[0];
+                                        for(x= 0; x&lt;array_length_1d(global.memMalasA)-1; x++){
+                                            global.memMalasA[x] = global.memMalasA[x+1];
+                                            global.memMalasB[x] = global.memMalasB[x+1];
+                                        }
+                                        global.memMalasA[array_length_1d(global.memMalasA)-1]= numa;
+                                        global.memMalasB[array_length_1d(global.memMalasB)-1]= numb;
+                                        global.eMalas[global.dificultad]--;
+                                    }
+                                }
+                            }
+                        }
+                    
+                    }
                 }
-                else {
+
+                if(ordenRandom==2){
                     if(global.eFacil[global.dificultad]&gt;0){
                         global.origen = "facil";
                         global.a=global.faciles[0];
@@ -669,7 +728,7 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
                         global.faciles[array_length_1d(global.faciles)-1]= numa; 
                         global.eFacil[global.dificultad]--;
                     }
-                    else{
+                    else {
                         if(global.eMedio[global.dificultad]&gt;0){
                             global.origen = "medio";
                             global.a=global.medios[0];
@@ -691,7 +750,81 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
                                 global.dificiles[array_length_1d(global.dificiles)-1]= numa; 
                                 global.eDificil[global.dificultad]--;
                             }
-                            else {
+                            else{
+                                if(global.eBuenas[global.dificultad]&gt;0){
+                                    global.origen = "memoria_buenas";
+                                    global.a=global.memBuenasA[0];
+                                    global.b=global.memBuenasB[0];
+                                    var numa=global.memBuenasA[0];
+                                    var numb=global.memBuenasB[0];
+                                    for(x= 0; x&lt;array_length_1d(global.memBuenasA)-1; x++){
+                                        global.memBuenasA[x] = global.memBuenasA[x+1];
+                                        global.memBuenasB[x] = global.memBuenasB[x+1];
+                                    }
+                                    global.memBuenasA[array_length_1d(global.memBuenasA)-1]= numa;
+                                    global.memBuenasB[array_length_1d(global.memBuenasB)-1]= numb;
+                                    global.eBuenas[global.dificultad]--;
+                                }
+                                else {
+                                    if(global.eMalas[global.dificultad]&gt;0){
+                                        global.origen = "memoria_malas";
+                                        global.a=global.memMalasA[0];
+                                        global.b=global.memMalasB[0];
+                                        var numa=global.memMalasA[0];
+                                        var numb=global.memMalasB[0];
+                                        for(x= 0; x&lt;array_length_1d(global.memMalasA)-1; x++){
+                                            global.memMalasA[x] = global.memMalasA[x+1];
+                                            global.memMalasB[x] = global.memMalasB[x+1];
+                                        }
+                                        global.memMalasA[array_length_1d(global.memMalasA)-1]= numa;
+                                        global.memMalasB[array_length_1d(global.memMalasB)-1]= numb;
+                                        global.eMalas[global.dificultad]--;
+                                    }
+                                }
+                            }
+                        }
+                    
+                    }
+                }
+
+                if(ordenRandom==3){
+                    if(global.eMedio[global.dificultad]&gt;0){
+                        global.origen = "medio";
+                        global.a=global.medios[0];
+                        var numa=global.medios[0];
+                        for(x= 0; x&lt;array_length_1d(global.medios)-1; x++){
+                            global.medios[x] = global.medios[x+1];
+                        }
+                        global.medios[array_length_1d(global.medios)-1]= numa; 
+                        global.eMedio[global.dificultad]--;
+                    }
+                    else {
+                        if(global.eDificil[global.dificultad]&gt;0){
+                            global.origen = "dificil";
+                            global.a=global.dificiles[0];
+                            var numa=global.dificiles[0];
+                            for(x= 0; x&lt;array_length_1d(global.dificiles)-1; x++){
+                                global.dificiles[x] = global.dificiles[x+1];
+                            }
+                            global.dificiles[array_length_1d(global.dificiles)-1]= numa; 
+                            global.eDificil[global.dificultad]--;
+                        }
+                        else{
+                            if(global.eBuenas[global.dificultad]&gt;0){
+                                global.origen = "memoria_buenas";
+                                global.a=global.memBuenasA[0];
+                                global.b=global.memBuenasB[0];
+                                var numa=global.memBuenasA[0];
+                                var numb=global.memBuenasB[0];
+                                for(x= 0; x&lt;array_length_1d(global.memBuenasA)-1; x++){
+                                    global.memBuenasA[x] = global.memBuenasA[x+1];
+                                    global.memBuenasB[x] = global.memBuenasB[x+1];
+                                }
+                                global.memBuenasA[array_length_1d(global.memBuenasA)-1]= numa;
+                                global.memBuenasB[array_length_1d(global.memBuenasB)-1]= numb;
+                                global.eBuenas[global.dificultad]--;
+                            }
+                            else{
                                 if(global.eMalas[global.dificultad]&gt;0){
                                     global.origen = "memoria_malas";
                                     global.a=global.memMalasA[0];
@@ -706,12 +839,164 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
                                     global.memMalasB[array_length_1d(global.memMalasB)-1]= numb;
                                     global.eMalas[global.dificultad]--;
                                 }
+                                else {
+                                    if(global.eFacil[global.dificultad]&gt;0){
+                                        global.origen = "facil";
+                                        global.a=global.faciles[0];
+                                        var numa=global.faciles[0];
+                                        for(x= 0; x&lt;array_length_1d(global.faciles)-1; x++){
+                                            global.faciles[x] = global.faciles[x+1];
+                                        }
+                                        global.faciles[array_length_1d(global.faciles)-1]= numa; 
+                                        global.eFacil[global.dificultad]--;
+                                    }
+                                }
                             }
                         }
+                    
                     }
-                
                 }
-                
+
+                if(ordenRandom==4){
+                    if(global.eDificil[global.dificultad]&gt;0){
+                        global.origen = "dificil";
+                        global.a=global.dificiles[0];
+                        var numa=global.dificiles[0];
+                        for(x= 0; x&lt;array_length_1d(global.dificiles)-1; x++){
+                            global.dificiles[x] = global.dificiles[x+1];
+                        }
+                        global.dificiles[array_length_1d(global.dificiles)-1]= numa; 
+                        global.eDificil[global.dificultad]--;
+                    }
+                    else {
+                        if(global.eMalas[global.dificultad]&gt;0){
+                            global.origen = "memoria_malas";
+                            global.a=global.memMalasA[0];
+                            global.b=global.memMalasB[0];
+                            var numa=global.memMalasA[0];
+                            var numb=global.memMalasB[0];
+                            for(x= 0; x&lt;array_length_1d(global.memMalasA)-1; x++){
+                                global.memMalasA[x] = global.memMalasA[x+1];
+                                global.memMalasB[x] = global.memMalasB[x+1];
+                            }
+                            global.memMalasA[array_length_1d(global.memMalasA)-1]= numa;
+                            global.memMalasB[array_length_1d(global.memMalasB)-1]= numb;
+                            global.eMalas[global.dificultad]--;
+                        }
+                        else{
+                            if(global.eBuenas[global.dificultad]&gt;0){
+                                global.origen = "memoria_buenas";
+                                global.a=global.memBuenasA[0];
+                                global.b=global.memBuenasB[0];
+                                var numa=global.memBuenasA[0];
+                                var numb=global.memBuenasB[0];
+                                for(x= 0; x&lt;array_length_1d(global.memBuenasA)-1; x++){
+                                    global.memBuenasA[x] = global.memBuenasA[x+1];
+                                    global.memBuenasB[x] = global.memBuenasB[x+1];
+                                }
+                                global.memBuenasA[array_length_1d(global.memBuenasA)-1]= numa;
+                                global.memBuenasB[array_length_1d(global.memBuenasB)-1]= numb;
+                                global.eBuenas[global.dificultad]--;
+                            }
+                            else{
+                                if(global.eFacil[global.dificultad]&gt;0){
+                                    global.origen = "facil";
+                                    global.a=global.faciles[0];
+                                    var numa=global.faciles[0];
+                                    for(x= 0; x&lt;array_length_1d(global.faciles)-1; x++){
+                                        global.faciles[x] = global.faciles[x+1];
+                                    }
+                                    global.faciles[array_length_1d(global.faciles)-1]= numa; 
+                                    global.eFacil[global.dificultad]--;
+                                }
+                                else {
+                                    if(global.eMedio[global.dificultad]&gt;0){
+                                        global.origen = "medio";
+                                        global.a=global.medios[0];
+                                        var numa=global.medios[0];
+                                        for(x= 0; x&lt;array_length_1d(global.medios)-1; x++){
+                                            global.medios[x] = global.medios[x+1];
+                                        }
+                                        global.medios[array_length_1d(global.medios)-1]= numa; 
+                                        global.eMedio[global.dificultad]--;
+                                    }
+                                }
+                            }
+                        }
+                    
+                    }
+                }
+
+                if(ordenRandom==5){
+                    if(global.eMalas[global.dificultad]&gt;0){
+                        global.origen = "memoria_malas";
+                        global.a=global.memMalasA[0];
+                        global.b=global.memMalasB[0];
+                        var numa=global.memMalasA[0];
+                        var numb=global.memMalasB[0];
+                        for(x= 0; x&lt;array_length_1d(global.memMalasA)-1; x++){
+                            global.memMalasA[x] = global.memMalasA[x+1];
+                            global.memMalasB[x] = global.memMalasB[x+1];
+                        }
+                        global.memMalasA[array_length_1d(global.memMalasA)-1]= numa;
+                        global.memMalasB[array_length_1d(global.memMalasB)-1]= numb;
+                        global.eMalas[global.dificultad]--;
+                    }
+                    else {
+                        if(global.eFacil[global.dificultad]&gt;0){
+                            global.origen = "facil";
+                            global.a=global.faciles[0];
+                            var numa=global.faciles[0];
+                            for(x= 0; x&lt;array_length_1d(global.faciles)-1; x++){
+                                global.faciles[x] = global.faciles[x+1];
+                            }
+                            global.faciles[array_length_1d(global.faciles)-1]= numa; 
+                            global.eFacil[global.dificultad]--;
+                        }
+                        else{
+                            if(global.eMedio[global.dificultad]&gt;0){
+                                global.origen = "medio";
+                                global.a=global.medios[0];
+                                var numa=global.medios[0];
+                                for(x= 0; x&lt;array_length_1d(global.medios)-1; x++){
+                                    global.medios[x] = global.medios[x+1];
+                                }
+                                global.medios[array_length_1d(global.medios)-1]= numa; 
+                                global.eMedio[global.dificultad]--;
+                            }
+                            else{
+                                if(global.eDificil[global.dificultad]&gt;0){
+                                    global.origen = "dificil";
+                                    global.a=global.dificiles[0];
+                                    var numa=global.dificiles[0];
+                                    for(x= 0; x&lt;array_length_1d(global.dificiles)-1; x++){
+                                        global.dificiles[x] = global.dificiles[x+1];
+                                    }
+                                    global.dificiles[array_length_1d(global.dificiles)-1]= numa; 
+                                    global.eDificil[global.dificultad]--;
+                                }
+                                else {
+                                    if(global.eBuenas[global.dificultad]&gt;0){
+                                        global.origen = "memoria_buenas";
+                                        global.a=global.memBuenasA[0];
+                                        global.b=global.memBuenasB[0];
+                                        var numa=global.memBuenasA[0];
+                                        var numb=global.memBuenasB[0];
+                                        for(x= 0; x&lt;array_length_1d(global.memBuenasA)-1; x++){
+                                            global.memBuenasA[x] = global.memBuenasA[x+1];
+                                            global.memBuenasB[x] = global.memBuenasB[x+1];
+                                        }
+                                        global.memBuenasA[array_length_1d(global.memBuenasA)-1]= numa;
+                                        global.memBuenasB[array_length_1d(global.memBuenasB)-1]= numb;
+                                        global.eBuenas[global.dificultad]--;
+                                    }
+                                }
+                            }
+                        }
+                    
+                    }
+                }
+                //FIN ORDEN
                 
                 global.r=global.a*global.b;
                 
