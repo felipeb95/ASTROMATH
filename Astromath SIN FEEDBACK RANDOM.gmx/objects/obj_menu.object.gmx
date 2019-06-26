@@ -80,7 +80,7 @@ draw_sprite(spr_white_enter, 0 , menu_x, menu_y+100);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.modo = 2; //Antiguamente 2 era para multiplicaciones.
+            <string>global.modo = 0; //Antiguamente 2 era para multiplicaciones.
 room_goto(rm_instructions);
 </string>
           </argument>

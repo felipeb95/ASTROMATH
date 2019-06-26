@@ -32,7 +32,7 @@ global.malasSeguidas=0;
 global.wave = 1;
 global.waveFake = 1;
 global.waveUltraFake = 1;
-global.origen = "testing";
+global.origen = "random";
 //ESTO PQ NO FUNCIONA LA PARAMETRIZACION
 
 /*
@@ -407,9 +407,9 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
         show_debug_message(global.waveUltraFake);
         
         if(global.modo==0) {
-            global.a = choose(floor(random_range(1,20)));
-            global.b = choose(floor(random_range(1,20)));
-            global.r = global.a+global.b;
+            global.a = choose(floor(random_range(global.minA,global.maxB)));
+            global.b = choose(floor(random_range(global.minA,global.maxB)));
+            global.r = global.a*global.b;
         }
         if(global.modo==1) {
             global.a = choose(floor(random_range(1,20)));
