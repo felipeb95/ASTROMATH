@@ -32,7 +32,6 @@ global.memMalasB[0] = 0;
 global.contMemBuenas = 0;
 global.contMemMalas = 0;
 global.origen = "testing";
-
 global.malasSeguidas=0;
 
 global.wave = 1;
@@ -116,7 +115,7 @@ global.dificiles = undefined;
 
 
 var locura=0;
-for(z=1; z&lt;=1000; z++){
+for(z=1; z&lt;=32; z++){
 
     randomize();
     show_debug_message("Z = ");
@@ -947,6 +946,38 @@ for(z=1; z&lt;=1000; z++){
     global.estado = "omitida";
     
 }
+
+ if(!is_undefined(global.faciles))
+        ds_map_add(global.dificultadesMap, "faciles", global.faciles);
+    else 
+        ds_map_add(global.dificultadesMap, "faciles", "null");
+
+    if(!is_undefined(global.medios)) 
+        ds_map_add(global.dificultadesMap, "medios", global.medios);
+    else 
+        ds_map_add(global.dificultadesMap, "medios", "null");
+
+    if(!is_undefined(global.dificiles))
+        ds_map_add(global.dificultadesMap, "dificiles", global.dificiles)
+    else
+        ds_map_add(global.dificultadesMap, "dificiles", "null");
+
+
+var jsonEjercicios = json_encode(global.bigMap);
+var jsonExtras = json_encode(global.dificultadesMap);
+
+show_debug_message(jsonEjercicios);
+show_debug_message(jsonExtras);
+
+var data_send = "puntaje="+string(global.puntaje)+
+    "&amp;correctas="+string(global.correctas)+
+    "&amp;incorrectas="+string(global.incorrectas)+
+    "&amp;ejercicios="+string(global.wave)+
+    "&amp;nRondas="+string(global.nrondas)+
+    "&amp;jsonEjercicios="+string(jsonEjercicios)+
+    "&amp;jsonExtras="+string(jsonExtras);
+    
+post = http_post_string("async.php", data_send);
 </string>
           </argument>
         </arguments>
