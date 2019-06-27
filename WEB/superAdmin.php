@@ -64,7 +64,11 @@ if (!isset($_SESSION['user']) || $_SESSION['grupo']!=2) {
         <div style="text-align:center; margin-top: 50px;">
         <a href="generarexcel.php"><button class="btn"><i class="fa fa-download"></i> Descargar Excel</button></a>
         <br><br>
-        <a href="config.php"><button class="btn"><i class="fa fa-gear"></i> Configurar parámetros</button></a>
+        <a href="config.php"><button class="btn"><i class="fa fa-gear"></i> Configurar parámetros AstroMath</button></a>
+        <br><br>
+        <a href="agregarPregunta.php"><button class="btn"><i class="fa fa-plus"></i> Agregar pregunta AstroMatch</button></a>
+        <br><br>
+        <a href="verPreguntas.php"><button class="btn"><i class="fa fa-eye"></i> Ver preguntas AstroMatch</button></a>
         </div>
     </div>
 
