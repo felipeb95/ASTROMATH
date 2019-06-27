@@ -124,6 +124,7 @@
     <object>objects\obj_scale</object>
     <object>objects\obj_loading</object>
     <object>objects\obj_loading_gif</object>
+    <object>objects\obj_simulacion</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_aux</room>
@@ -137,6 +138,7 @@
     <room>rooms\rm_score2</room>
     <room>rooms\rm_start</room>
     <room>rooms\rm_loading</room>
+    <room>rooms\rm_simulacion</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
