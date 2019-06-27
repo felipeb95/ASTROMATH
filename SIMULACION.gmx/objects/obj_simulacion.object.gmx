@@ -60,8 +60,8 @@ for(i=0;i&lt;global.setMemoria;i++){
     global.eMalas[i]=0;
 }
 for(i=global.setMemoria;i&lt;global.sets;i++){
-    global.eBuenas[i]=floor(global.eFacil[i]*global.nBuenas);
-    global.eMalas[i]=floor(global.eDificil[i]*global.nMalas);
+    global.eBuenas[i]=round(global.eFacil[i]*global.nBuenas);
+    global.eMalas[i]=round(global.eDificil[i]*global.nMalas);
 }
 
 
@@ -115,7 +115,7 @@ global.dificiles = undefined;
 
 
 var locura=0;
-for(z=1; z&lt;=32; z++){
+for(z=1; z&lt;=1000; z++){
 
     randomize();
     show_debug_message("Z = ");
@@ -185,38 +185,52 @@ for(z=1; z&lt;=32; z++){
         global.waveUltraFake=1;
         global.dificultad++;
         //AJUSTAR CANTIDAD TOTAL
-        if(global.setMemoria &lt;= global.dificultad) {
-            if(global.memMalasA==undefined || global.memMalasA[0]==0){
-                global.eMalas[global.dificultad]=0;
+        if(global.memMalasA==undefined || global.memMalasA[0]==0){
+            global.eMalas[global.dificultad]=0;
+        }
+        else{
+            if(global.existeF==1 &amp;&amp; global.existeM==1 &amp;&amp; global.existeD==1){
+                global.eDificil[global.dificultad]=global.eDificil[global.dificultad]-global.eMalas[global.dificultad];
             }
-            else{
-                if(global.existeF==1 &amp;&amp; global.existeM==1 &amp;&amp; global.existeD==1){
-                    global.eFacil[global.dificultad]=global.eFacil[global.dificultad]-global.eBuenas[global.dificultad];
-                    global.eDificil[global.dificultad]=global.eDificil[global.dificultad]-global.eMalas[global.dificultad];
-                }
-                if(global.existeF==1 &amp;&amp; global.existeM==0 &amp;&amp; global.existeD==0){
-                    global.eFacil[global.dificultad]=global.eFacil[global.dificultad]-global.eBuenas[global.dificultad];
-                    global.eFacil[global.dificultad]=global.eFacil[global.dificultad]-global.eMalas[global.dificultad];
-                }
-                if(global.existeF==0 &amp;&amp; global.existeM==1 &amp;&amp; global.existeD==0){
-                    global.eMedio[global.dificultad]=global.eMedio[global.dificultad]-global.eBuenas[global.dificultad];
-                    global.eMedio[global.dificultad]=global.eMedio[global.dificultad]-global.eMalas[global.dificultad];
-                }
-                if(global.existeF==1 &amp;&amp; global.existeM==1 &amp;&amp; global.existeD==0){
-                    global.eFacil[global.dificultad]=global.eFacil[global.dificultad]-global.eBuenas[global.dificultad];
-                    global.eMedio[global.dificultad]=global.eMedio[global.dificultad]-global.eMalas[global.dificultad];
-                }
-                if(global.existeF==0 &amp;&amp; global.existeM==1 &amp;&amp; global.existeD==1){
-                    global.eMedio[global.dificultad]=global.eMedio[global.dificultad]-global.eBuenas[global.dificultad];
-                    global.eDificil[global.dificultad]=global.Dificil[global.dificultad]-global.eMalas[global.dificultad];
-                }
-                if(global.existeF==1 &amp;&amp; global.existeM==0 &amp;&amp; global.existeD==1){
-                    global.eFacil[global.dificultad]=global.eFacil[global.dificultad]-global.eBuenas[global.dificultad];
-                    global.eDificil[global.dificultad]=global.Dificil[global.dificultad]-global.eMalas[global.dificultad];
-                }
+            if(global.existeF==1 &amp;&amp; global.existeM==0 &amp;&amp; global.existeD==0){
+                global.eFacil[global.dificultad]=global.eFacil[global.dificultad]-global.eMalas[global.dificultad];
+            }
+            if(global.existeF==0 &amp;&amp; global.existeM==1 &amp;&amp; global.existeD==0){
+                global.eMedio[global.dificultad]=global.eMedio[global.dificultad]-global.eMalas[global.dificultad];
+            }
+            if(global.existeF==1 &amp;&amp; global.existeM==1 &amp;&amp; global.existeD==0){
+                global.eMedio[global.dificultad]=global.eMedio[global.dificultad]-global.eMalas[global.dificultad];
+            }
+            if(global.existeF==0 &amp;&amp; global.existeM==1 &amp;&amp; global.existeD==1){
+                global.eDificil[global.dificultad]=global.Dificil[global.dificultad]-global.eMalas[global.dificultad];
+            }
+            if(global.existeF==1 &amp;&amp; global.existeM==0 &amp;&amp; global.existeD==1){
+                global.eDificil[global.dificultad]=global.Dificil[global.dificultad]-global.eMalas[global.dificultad];
             }
         }
-
+        if(global.memBuenasA==undefined || global.memBuenasA[0]==0){
+            global.eBuenas[global.dificultad]=0;
+        }
+        else{
+            if(global.existeF==1 &amp;&amp; global.existeM==1 &amp;&amp; global.existeD==1){
+                global.eFacil[global.dificultad]=global.eFacil[global.dificultad]-global.eBuenas[global.dificultad];
+            }
+            if(global.existeF==1 &amp;&amp; global.existeM==0 &amp;&amp; global.existeD==0){
+                global.eFacil[global.dificultad]=global.eFacil[global.dificultad]-global.eBuenas[global.dificultad];
+            }
+            if(global.existeF==0 &amp;&amp; global.existeM==1 &amp;&amp; global.existeD==0){
+                global.eMedio[global.dificultad]=global.eMedio[global.dificultad]-global.eBuenas[global.dificultad];
+            }
+            if(global.existeF==1 &amp;&amp; global.existeM==1 &amp;&amp; global.existeD==0){
+                global.eFacil[global.dificultad]=global.eFacil[global.dificultad]-global.eBuenas[global.dificultad];
+            }
+            if(global.existeF==0 &amp;&amp; global.existeM==1 &amp;&amp; global.existeD==1){
+                global.eMedio[global.dificultad]=global.eMedio[global.dificultad]-global.eBuenas[global.dificultad];
+            }
+            if(global.existeF==1 &amp;&amp; global.existeM==0 &amp;&amp; global.existeD==1){
+                global.eFacil[global.dificultad]=global.eFacil[global.dificultad]-global.eBuenas[global.dificultad];
+            }
+        }
         //FIN AJUSTE
         
         if(global.existeF==1){
@@ -393,34 +407,47 @@ for(z=1; z&lt;=32; z++){
                 }
             
                 
-        if(global.memMalasA==undefined){
+        if(global.memMalasA==undefined || global.memMalasA[0]==0){
             if(global.existeF==1 &amp;&amp; global.existeM==1 &amp;&amp; global.existeD==1){
-                global.eFacil[global.dificultad]=global.eFacil[global.dificultad]+global.eBuenas[global.dificultad];
                 global.eDificil[global.dificultad]=global.eDificil[global.dificultad]+global.eMalas[global.dificultad];
             }
             if(global.existeF==1 &amp;&amp; global.existeM==0 &amp;&amp; global.existeD==0){
-                global.eFacil[global.dificultad]=global.eFacil[global.dificultad]+global.eBuenas[global.dificultad];
                 global.eFacil[global.dificultad]=global.eFacil[global.dificultad]+global.eMalas[global.dificultad];
             }
             if(global.existeF==0 &amp;&amp; global.existeM==1 &amp;&amp; global.existeD==0){
-                global.eMedio[global.dificultad]=global.eMedio[global.dificultad]+global.eBuenas[global.dificultad];
                 global.eMedio[global.dificultad]=global.eMedio[global.dificultad]+global.eMalas[global.dificultad];
             }
             if(global.existeF==1 &amp;&amp; global.existeM==1 &amp;&amp; global.existeD==0){
-                global.eFacil[global.dificultad]=global.eFacil[global.dificultad]+global.eBuenas[global.dificultad];
                 global.eMedio[global.dificultad]=global.eMedio[global.dificultad]+global.eMalas[global.dificultad];
             }
             if(global.existeF==0 &amp;&amp; global.existeM==1 &amp;&amp; global.existeD==1){
-                global.eMedio[global.dificultad]=global.eMedio[global.dificultad]+global.eBuenas[global.dificultad];
                 global.eDificil[global.dificultad]=global.Dificil[global.dificultad]+global.eMalas[global.dificultad];
             }
             if(global.existeF==1 &amp;&amp; global.existeM==0 &amp;&amp; global.existeD==1){
-                global.eFacil[global.dificultad]=global.eFacil[global.dificultad]+global.eBuenas[global.dificultad];
                 global.eDificil[global.dificultad]=global.Dificil[global.dificultad]+global.eMalas[global.dificultad];
             }
-            global.eBuenas[global.dificultad]=0;
             global.eMalas[global.dificultad]=0;
-            
+        }
+        if(global.memBuenasA==undefined || global.memBuenasA[0]==0){
+            if(global.existeF==1 &amp;&amp; global.existeM==1 &amp;&amp; global.existeD==1){
+                global.eFacil[global.dificultad]=global.eFacil[global.dificultad]+global.eBuenas[global.dificultad];
+            }
+            if(global.existeF==1 &amp;&amp; global.existeM==0 &amp;&amp; global.existeD==0){
+                global.eFacil[global.dificultad]=global.eFacil[global.dificultad]+global.eBuenas[global.dificultad];
+            }
+            if(global.existeF==0 &amp;&amp; global.existeM==1 &amp;&amp; global.existeD==0){
+                global.eMedio[global.dificultad]=global.eMedio[global.dificultad]+global.eBuenas[global.dificultad];
+            }
+            if(global.existeF==1 &amp;&amp; global.existeM==1 &amp;&amp; global.existeD==0){
+                global.eFacil[global.dificultad]=global.eFacil[global.dificultad]+global.eBuenas[global.dificultad];
+            }
+            if(global.existeF==0 &amp;&amp; global.existeM==1 &amp;&amp; global.existeD==1){
+                global.eMedio[global.dificultad]=global.eMedio[global.dificultad]+global.eBuenas[global.dificultad];
+            }
+            if(global.existeF==1 &amp;&amp; global.existeM==0 &amp;&amp; global.existeD==1){
+                global.eFacil[global.dificultad]=global.eFacil[global.dificultad]+global.eBuenas[global.dificultad];
+            }
+            global.eBuenas[global.dificultad]=0;
         }
                 
                 //SELECCION DE A o A Y B
