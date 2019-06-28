@@ -71,6 +71,8 @@
     <script>scripts\explode.gml</script>
     <script>scripts\guardar.gml</script>
     <script>scripts\scr_menu.gml</script>
+    <script>scripts\rellenar_sort_alternativas.gml</script>
+    <script>scripts\random_pick.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fntMain</font>
@@ -114,6 +116,7 @@
     <object>objects\obj_instructions</object>
     <object>objects\obj_scale</object>
     <object>objects\obj_loading</object>
+    <object>objects\obj_loading_p</object>
     <object>objects\obj_loading_gif</object>
     <object>objects\obj_actual_sprite</object>
   </objects>

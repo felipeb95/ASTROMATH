@@ -30,6 +30,7 @@ muted = 0;
 global.malasSeguidas=0;
 global.origen = "random";
 global.actual_sprite = undefined;
+global.waves = 1;
 //ESTO PQ NO FUNCIONA LA PARAMETRIZACION
 
 global.sets = 50;
@@ -101,10 +102,7 @@ global.bigMap = ds_map_create();
 global.intentosRonda = ds_map_create();
 global.lista_alternativas = ds_list_create();
 
-for(i = 0; i &lt; 4; i++){
-    ds_list_add(global.lista_alternativas, i);
-}
-
+rellenar_sort_alternativas(true);
 
 meteoros = 5;
 spawn_rate = 50;
@@ -154,6 +152,7 @@ draw_set_font(fntMain);
 //AQUÍ SE CUMPLE UNA OLEADA
 if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de pantalla
         
+        /*
         roundMap = ds_map_create();
         ds_map_add(roundMap, "multiplo_a", global.a);
         ds_map_add(roundMap, "respuesta_correcta", global.r);
@@ -175,9 +174,7 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
         
         ds_map_clear(global.intentosRonda);
         //ds_map_clear(roundMap);
-        
-        
-        
+        */
         show_debug_message("***************************************");
         
         if(global.bot2==0){
@@ -193,6 +190,12 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
         global.alturas=choose(floor(random_range(0,4)));
         //meteoros ++;
         
+        instance_destroy(obj_actual_sprite);
+        rellenar_sort_alternativas(true); //Se rellena para sortear sin repetir.
+        global.waves++;
+        random_pick(true);
+        global.cont= 0;
+        global.ccont = 0;
         //ACÁ SE ELIGE EL SIGUIENTE EJERCICIO.
         
         alarm[0] = room_speed*1;
@@ -204,6 +207,7 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
         global.aparicionCorrecta = 0;
         global.segundos = 0;
         global.estado = "omitida";
+        
 }else{
 
 //nueva llamada 
