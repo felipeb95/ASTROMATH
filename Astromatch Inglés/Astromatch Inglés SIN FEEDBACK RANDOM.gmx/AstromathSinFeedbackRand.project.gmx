@@ -115,6 +115,7 @@
     <object>objects\obj_scale</object>
     <object>objects\obj_loading</object>
     <object>objects\obj_loading_gif</object>
+    <object>objects\obj_actual_sprite</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_aux</room>

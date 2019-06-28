@@ -28,8 +28,8 @@
             <string>randomize();
 muted = 0;
 global.malasSeguidas=0;
-
 global.origen = "random";
+global.actual_sprite = undefined;
 //ESTO PQ NO FUNCIONA LA PARAMETRIZACION
 
 global.sets = 50;
@@ -99,6 +99,11 @@ global.arrAltura[4,4] = 35;
 
 global.bigMap = ds_map_create();
 global.intentosRonda = ds_map_create();
+global.lista_alternativas = ds_list_create();
+
+for(i = 0; i &lt; 4; i++){
+    ds_list_add(global.lista_alternativas, i);
+}
 
 
 meteoros = 5;

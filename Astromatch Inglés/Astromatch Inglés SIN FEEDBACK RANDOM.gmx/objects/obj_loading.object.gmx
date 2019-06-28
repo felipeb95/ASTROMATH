@@ -73,7 +73,6 @@ go_to_next = false;
         show_debug_message(alternativas[1]);
         show_debug_message(alternativas[2]);
         show_debug_message(alternativas[3]);
-        show_debug_message(alternativas[4]);
         show_debug_message("--- CORRECTA ---");
         show_debug_message(palabra_sorteada);
     }

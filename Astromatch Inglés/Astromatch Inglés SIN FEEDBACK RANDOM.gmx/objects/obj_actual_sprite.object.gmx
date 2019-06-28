@@ -25,10 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.loaded = 0;
-menu[0]="Presiona ENTER para comenzar a jugar";
-line_spacing=15; //Line Spacing
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>
@@ -50,37 +47,7 @@ line_spacing=15; //Line Spacing
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_halign(fa_center); //Horizontal alignment
-draw_set_valign(fa_middle);  //Vertical alignment
-draw_set_font(fntMainMed);
-menu_x=room_width/2; 
-menu_y=room_height/2;
-draw_set_colour(c_white);
-draw_text(menu_x, menu_y, "Presiona ENTER para comenzar");
-draw_sprite(spr_white_enter, 0 , menu_x, menu_y+100);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="13">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>room_goto(rm_instructions);
+            <string>draw_sprite(global.imagen_actual,0,room_width/2, 20);
 </string>
           </argument>
         </arguments>

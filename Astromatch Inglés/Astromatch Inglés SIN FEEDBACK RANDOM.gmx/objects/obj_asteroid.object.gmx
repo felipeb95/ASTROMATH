@@ -25,9 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>u7=0;
+            <string>u7="";
 randomize();
-correctValue = global.r;
 /*
 if(global.bot==0){
     randValue = floor(random_range(global.r-10,global.r+10));
@@ -38,11 +37,19 @@ if(global.bot==0){
     }
 }*/
 if(global.bot == 0){
+    _index_alternativa = random_range(0, ds_list_size(global.lista_alternativas));
+    index_alternativa = ds_list_find_value(global.lista_alternativas, _index_alternativa);
+    randValue = global.alternativas_actual[index_alternativa];
+    ds_list_delete(global.lista_alternativas, _index_alternativa);
+    show_debug_message("--- ALTERNATIVA EN ASTEROIRDE ---");
+    show_debug_message(global.alternativas_actual[index_alternativa]);
     /*acá se distribuyen las alternativas*/
 }
 
 if(global.bot==1){
-    randValue = global.r;
+    randValue = global.correcta_actual;
+    show_debug_message("--- ALTERNATIVA EN ASTEROIRDE ---");
+    show_debug_message(global.correcta_actual);
     global.aparicionCorrecta = global.segundos;
 }
 //speed
@@ -195,11 +202,7 @@ if(place_meeting(x,y,obj_ship)){
           <argument>
             <kind>1</kind>
             <string>draw_self();
-//if(global.cont==global.alternativa){
-//u7=correctValue;
-//}else {
 u7 = randValue;
-//}
 draw_set_font(fnt_meteo);
 draw_text(x,y,u7);
 
