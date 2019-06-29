@@ -72,6 +72,9 @@
     <script>scripts\guardar.gml</script>
     <script>scripts\scr_menu.gml</script>
     <script>scripts\rellenar_sort_alternativas.gml</script>
+    <script>scripts\random_picker.gml</script>
+    <script>scripts\show_lists.gml</script>
+    <script>scripts\show_list.gml</script>
     <script>scripts\random_pick.gml</script>
   </scripts>
   <fonts name="fonts">

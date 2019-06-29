@@ -38,6 +38,7 @@ go_to_next = false;
 global.pNuevas = undefined;
 global.pBuenas = undefined;
 global.pMalas = undefined;
+
 </string>
           </argument>
         </arguments>
@@ -70,6 +71,9 @@ global.pMalas = undefined;
         palabra_sorteada = ds_map_find_value(global.list[| index],"correcta");
         imagen_url_palabra = ds_map_find_value(global.list[| index],"url");
         alternativas = ds_map_find_value(global.list[| index],"alternativas");
+        sprite = ds_map_find_value(global.list[| index],"sprite");
+        /*show_debug_message("--- SPRITE ASIGNADO EN LISTA ---");
+        show_debug_message(sprite);
         show_debug_message("--- URL IMAGEN ---");
         show_debug_message(imagen_url_palabra);
         show_debug_message("--- ALTERNATIVAS ---");
@@ -78,15 +82,15 @@ global.pMalas = undefined;
         show_debug_message(alternativas[2]);
         show_debug_message(alternativas[3]);
         show_debug_message("--- CORRECTA ---");
-        show_debug_message(palabra_sorteada);
+        show_debug_message(palabra_sorteada);*/
     }
     show_debug_message("* * * * * * * * * * * * * * * * ");
     for(index = 0;index &lt; ds_list_size(global.sprites_list);index++){
-        show_debug_message("--- POSICIÓN ---");
+        /*show_debug_message("--- POSICIÓN ---");
         show_debug_message(index);
-        show_debug_message("--- SPRITE ASIGNADO ---");
+        show_debug_message("--- SPRITE ASIGNADO ---");*/
         sprite_asignado = ds_list_find_value(global.sprites_list,index);
-        show_debug_message(sprite_asignado);
+        //show_debug_message(sprite_asignado);
     }
     
     show_debug_message("##########################");
@@ -94,9 +98,11 @@ global.pMalas = undefined;
     //instance_create(0,0,obj_loading_p);
     
     instance_destroy(obj_loading_gif);
-    room_goto(rm_space);
     go_to_next = false;
-
+    
+    room_goto(rm_space);
+    global.snd=audio_play_sound(music,10,true);
+    audio_sound_gain(global.snd,0.4,0);
 }
 </string>
           </argument>
@@ -159,6 +165,7 @@ for(i = 1; i &lt;= largo_mapaLectura; i++){
     ds_map_add(tempMap,"url",url_imagen);
     ds_map_add(tempMap,"alternativas",array);
     ds_map_add(tempMap,"correcta",correcta);
+    ds_map_add(tempMap,"sprite",downloaded);
     var copy = ds_map_create();
     ds_map_copy(copy,tempMap);
     

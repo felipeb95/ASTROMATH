@@ -30,7 +30,7 @@ randomize();
 global.intentos = 0;
 
 /* elegir ejercicio */
-random_pick(true);
+random_picker(true);
 
 //15s por oleada
 //alarm[0] = room_speed*15

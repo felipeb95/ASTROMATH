@@ -27,29 +27,20 @@
             <kind>1</kind>
             <string>u7="";
 randomize();
-/*
-if(global.bot==0){
-    randValue = floor(random_range(global.r-10,global.r+10));
-    if(randValue&lt;2) randValue=2;
-    while(randValue==global.r){
-        randValue=floor(random_range(global.r-10,global.r+10)); 
-        if(randValue&lt;2) randValue=2; 
-    }
-}*/
+/*acá se distribuyen las alternativas*/
 if(global.bot == 0){
     _index_alternativa = random_range(0, ds_list_size(global.lista_alternativas));
     index_alternativa = ds_list_find_value(global.lista_alternativas, _index_alternativa);
     randValue = global.alternativas_actual[index_alternativa];
     ds_list_delete(global.lista_alternativas, _index_alternativa);
-    show_debug_message("--- ALTERNATIVA EN ASTEROIRDE ---");
-    show_debug_message(global.alternativas_actual[index_alternativa]);
-    /*acá se distribuyen las alternativas*/
+    /*show_debug_message("--- ALTERNATIVA EN ASTEROIRDE ---");
+    show_debug_message(global.alternativas_actual[index_alternativa]);*/
 }
 
 if(global.bot==1){
     randValue = global.correcta_actual;
-    show_debug_message("--- ALTERNATIVA EN ASTEROIRDE ---");
-    show_debug_message(global.correcta_actual);
+    /*show_debug_message("--- ALTERNATIVA EN ASTEROIRDE ---");
+    show_debug_message(global.correcta_actual);*/
     global.aparicionCorrecta = global.segundos;
 }
 //speed

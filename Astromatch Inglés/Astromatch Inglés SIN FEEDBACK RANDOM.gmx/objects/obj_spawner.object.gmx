@@ -63,7 +63,7 @@ global.numeros = undefined;
 global.estado = "omitida";
 global.intentos = 0;
 global.numEjercicio = 1;
-global.respondida = 0;
+global.respondida = false;
 global.segundos = 0;
 global.aparicionCorrecta = 0;
 global.tiempoUltimaRespuesta = 0;
@@ -101,6 +101,14 @@ global.arrAltura[4,4] = 35;
 global.bigMap = ds_map_create();
 global.intentosRonda = ds_map_create();
 global.lista_alternativas = ds_list_create();
+
+global.list_buenas = ds_list_create();
+global.list_malas = ds_list_create();
+global.pick = undefined;
+
+global.pBuenas = 0.4;
+global.pMalas = 0.2;
+global.pNuevas = 0.4;
 
 rellenar_sort_alternativas(true);
 
@@ -151,7 +159,36 @@ draw_set_font(fntMain);
 }
 //AQUÍ SE CUMPLE UNA OLEADA
 if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de pantalla
-        
+        if(global.respondida) /*TERMINÓ EL EJERCICIO Y RESPONDIÓ CORRECTAMENTE*/
+        {
+            /*agregar condición que chequee el origen para saber dónde moverla*/
+            if(global.origen = "nuevas"){
+                ds_list_add(global.list_buenas,global.list[| global.pick]);
+                ds_list_delete(global.list,global.pick);
+            }
+            if(global.origen = "malas"){
+                ds_list_add(global.list_buenas,global.list_malas[| global.pick]);
+                ds_list_delete(global.list_malas,global.pick);
+            }
+            
+
+        }
+        else /*TERMINÓ EL EJERCICIO Y NO PUDO RESPONDER CORRECTAMENTE */
+        {
+            /*agregar condición que chequee el origen para saber dónde eliminar moverla*/
+            if(global.origen = "nuevas"){
+                ds_list_add(global.list_malas,global.list[| global.pick]);
+                ds_list_delete(global.list,global.pick);
+            }
+            
+            if(global.origen = "buenas"){
+                ds_list_add(global.list_malas,global.list_buenas[| global.pick]);
+                ds_list_delete(global.list_buenas,global.pick);
+            }
+        }
+         
+        //show_lists(true);
+          
         /*
         roundMap = ds_map_create();
         ds_map_add(roundMap, "multiplo_a", global.a);
@@ -193,7 +230,7 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
         instance_destroy(obj_actual_sprite);
         rellenar_sort_alternativas(true); //Se rellena para sortear sin repetir.
         global.waves++;
-        random_pick(true);
+        random_picker(true);
         global.cont= 0;
         global.ccont = 0;
         //ACÁ SE ELIGE EL SIGUIENTE EJERCICIO.
