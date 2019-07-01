@@ -97,7 +97,7 @@ if( push == 1)
     draw_text(room_width/2, room_height-30, "Incorrectas: " + string(global.incorrectas))
     draw_text(room_width/2, room_height-50, "Correctas: " + string(global.correctas));
     draw_text(room_width/2, room_height-70, "Puntaje: " + string(global.puntaje));
-    draw_text(room_width/2, room_height-90, "Ejercicios: " + string(global.wave));
+    draw_text(room_width/2, room_height-90, "Ejercicios: " + string(global.waves));
 }
 
 draw_set_font(fontGameOver)

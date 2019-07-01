@@ -189,12 +189,10 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
          
         //show_lists(true);
           
-        /*
+        
         roundMap = ds_map_create();
-        ds_map_add(roundMap, "multiplo_a", global.a);
-        ds_map_add(roundMap, "respuesta_correcta", global.r);
+        ds_map_add(roundMap, "palabra", global.correcta_actual);
         ds_map_add(roundMap, "total_intentos", global.intentos);
-        ds_map_add(roundMap, "ultima_respuesta", global.numM);
         ds_map_add(roundMap, "tiempo_respuesta", global.tiempoUltimaRespuesta);
         ds_map_add(roundMap, "estado_respuesta",global.estado);
         ds_map_add(roundMap, "origen",global.origen);
@@ -210,8 +208,7 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
         ds_map_add_map(global.bigMap, global.numEjercicio, copiaRonda);
         
         ds_map_clear(global.intentosRonda);
-        //ds_map_clear(roundMap);
-        */
+        
         show_debug_message("***************************************");
         
         if(global.bot2==0){

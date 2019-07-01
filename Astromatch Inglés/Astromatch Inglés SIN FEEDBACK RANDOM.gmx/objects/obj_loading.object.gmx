@@ -86,9 +86,9 @@ global.pMalas = undefined;
     }
     show_debug_message("* * * * * * * * * * * * * * * * ");
     for(index = 0;index &lt; ds_list_size(global.sprites_list);index++){
-        /*show_debug_message("--- POSICIÓN ---");
+        show_debug_message("--- POSICIÓN ---");
         show_debug_message(index);
-        show_debug_message("--- SPRITE ASIGNADO ---");*/
+        show_debug_message("--- SPRITE ASIGNADO ---");
         sprite_asignado = ds_list_find_value(global.sprites_list,index);
         //show_debug_message(sprite_asignado);
     }

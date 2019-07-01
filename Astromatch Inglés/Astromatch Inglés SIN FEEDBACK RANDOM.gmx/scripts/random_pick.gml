@@ -15,6 +15,6 @@ global.pick = randompick;
 global.imagen_actual = ds_map_find_value(list[| randompick],"sprite");
 show_debug_message("-------------- SPRITE A DIBUJAR --------------");
 show_debug_message(global.imagen_actual);
-instance_create(room_width/2, 50,obj_actual_sprite);
+instance_create(room_width/2, 80,obj_actual_sprite);
 global.alternativas_actual = ds_map_find_value(list[| randompick],"alternativas");
 global.correcta_actual = ds_map_find_value(list[| randompick],"correcta");
