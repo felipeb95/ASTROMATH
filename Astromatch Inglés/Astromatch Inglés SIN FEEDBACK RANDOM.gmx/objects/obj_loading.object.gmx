@@ -29,6 +29,7 @@
 http_get(url);
 
 global.list = ds_list_create();
+global.backup_list = ds_list_create();
 global.sprites_list = ds_list_create();
 menu_x=room_width/2; 
 menu_y=room_height/2;
@@ -65,40 +66,18 @@ global.pMalas = undefined;
 
     show_debug_message("##########################");
     show_debug_message("##########################");
-    show_debug_message("##########################");
-    
-    for(index = 0; index &lt; ds_list_size(global.list); index++){
-        palabra_sorteada = ds_map_find_value(global.list[| index],"correcta");
-        imagen_url_palabra = ds_map_find_value(global.list[| index],"url");
-        alternativas = ds_map_find_value(global.list[| index],"alternativas");
-        sprite = ds_map_find_value(global.list[| index],"sprite");
-        /*show_debug_message("--- SPRITE ASIGNADO EN LISTA ---");
-        show_debug_message(sprite);
-        show_debug_message("--- URL IMAGEN ---");
-        show_debug_message(imagen_url_palabra);
-        show_debug_message("--- ALTERNATIVAS ---");
-        show_debug_message(alternativas[0]);
-        show_debug_message(alternativas[1]);
-        show_debug_message(alternativas[2]);
-        show_debug_message(alternativas[3]);
-        show_debug_message("--- CORRECTA ---");
-        show_debug_message(palabra_sorteada);*/
-    }
-    show_debug_message("* * * * * * * * * * * * * * * * ");
-    for(index = 0;index &lt; ds_list_size(global.sprites_list);index++){
-        show_debug_message("--- POSICIÓN ---");
-        show_debug_message(index);
-        show_debug_message("--- SPRITE ASIGNADO ---");
-        sprite_asignado = ds_list_find_value(global.sprites_list,index);
-        //show_debug_message(sprite_asignado);
-    }
-    
-    show_debug_message("##########################");
+    show_debug_message("----- LISTA DE LECTURA -----");
+    show_list(global.list);
 
     //instance_create(0,0,obj_loading_p);
-    
     instance_destroy(obj_loading_gif);
     go_to_next = false;
+    
+    show_debug_message("##########################");
+    show_debug_message("##########################");
+    show_debug_message("----- LISTA DE RESPALDO-----");
+    ds_list_copy(global.backup_list,global.list);
+    show_list(global.backup_list);
     
     room_goto(rm_space);
     global.snd=audio_play_sound(music,10,true);
@@ -135,11 +114,7 @@ largo_mapaLectura = ds_map_size(mapaLectura);
 for(i = 1; i &lt;= largo_mapaLectura; i++){
     if(ds_map_exists(mapaLectura, string(i))){
         var miniMap = mapaLectura[? string(i)];
-        show_debug_message(json_encode(miniMap));
-        show_debug_message("--- URL ---");
         var url_imagen = ds_map_find_value(miniMap, "url");
-        show_debug_message(url_imagen);
-        show_debug_message("--- ALTERNATIVAS ---");
         
         if(ds_map_exists(miniMap,"alternativas")){
             var alternativas = miniMap[? "alternativas"];
@@ -148,32 +123,26 @@ for(i = 1; i &lt;= largo_mapaLectura; i++){
             for(j = 0; j &lt; ds_list_size(alternativas);j++){
                 array[index] = alternativas[| j];
                 index++;
-            }
-            for(k = 0; k &lt; array_length_1d(array);k++)
-                show_debug_message(array[k]);     
+            }    
                
         }  
-        show_debug_message("--- CORRECTA ---");
         var correcta = ds_map_find_value(miniMap, "correcta");
-        show_debug_message(correcta);
+        downloaded = sprite_add(url_imagen,0,false,false,64,64);
+        ds_list_add(global.sprites_list,downloaded);
+        tempMap = ds_map_create();
+        ds_map_add(tempMap,"url",url_imagen);
+        ds_map_add(tempMap,"alternativas",array);
+        ds_map_add(tempMap,"correcta",correcta);
+        ds_map_add(tempMap,"sprite",downloaded);
+        
+        var copy = ds_map_create();
+        ds_map_copy(copy,tempMap);
+        
+        var json_mapa = json_encode(copy);
+        show_debug_message(json_mapa);
+        ds_list_add(global.list,copy);
     }
-    downloaded = sprite_add(url_imagen,0,false,false,64,64);
-    ds_list_add(global.sprites_list,downloaded);
-    show_debug_message("--- SPRITE ASIGNADO ---");
-    show_debug_message(downloaded);
-    tempMap = ds_map_create();
-    ds_map_add(tempMap,"url",url_imagen);
-    ds_map_add(tempMap,"alternativas",array);
-    ds_map_add(tempMap,"correcta",correcta);
-    ds_map_add(tempMap,"sprite",downloaded);
-    var copy = ds_map_create();
-    ds_map_copy(copy,tempMap);
     
-    show_debug_message("--- JSON MINI MAP ---");
-    var json_mapa = json_encode(copy);
-    show_debug_message(json_mapa);
-    show_debug_message("######################################");
-    ds_list_add(global.list,copy);
 }
 go_to_next = true;
 global.loaded = 1;

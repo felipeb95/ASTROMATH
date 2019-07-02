@@ -12,15 +12,16 @@ if(argument0){
             global.origen = "buenas";
             random_pick(global.list_buenas);
         }
-        else if(ds_list_size(global.list_malas) != 0){
-            show_debug_message("tocaron buenas, no habían buenas, pero hay malas");
-            global.origen = "malas";
-            random_pick(global.list_malas);
-        }
-        else{
-            show_debug_message("tocaron buenas, y no hay ni buenas ni malas");
+        else if(ds_list_size(global.list) != 0){
+            show_debug_message("tocaron buenas, no habían buenas, pero hay nuevas");
             global.origen = "nuevas";
             random_pick(global.list);
+            
+        }
+        else{
+            show_debug_message("tocaron buenas, y no hay ni buenas ni nuevas");
+            global.origen = "malas";
+            random_pick(global.list_malas);
         }
     }
     
@@ -31,15 +32,15 @@ if(argument0){
             global.origen = "malas";
             random_pick(global.list_malas);
         }
-        else if(ds_list_size(global.list_buenas) != 0){
-            show_debug_message("tocaron malas, no habían malas, pero hay buenas");
-            global.origen = "buenas";
-            random_pick(global.list_buenas);  
-        }
-        else{
-            show_debug_message("tocaron malas, y no hay ni buenas ni malas");
+        else if(ds_list_size(global.list) != 0){
+            show_debug_message("tocaron malas, no habían malas, pero hay nuevas");
             global.origen = "nuevas";
             random_pick(global.list);
+        }
+        else{
+            show_debug_message("tocaron malas, y no hay ni malas ni nuevas");
+            global.origen = "buenas";
+            random_pick(global.list_buenas); 
         }
     }
     
@@ -50,15 +51,15 @@ if(argument0){
             global.origen = "nuevas";
             random_pick(global.list);
         }
-        else if(ds_list_size(global.list_buenas) != 0){
-            show_debug_message("tocaron nuevas, no habían nuevas, pero hay buenas");
-            global.origen = "buenas";
-            random_pick(global.list_buenas);
+        else if(ds_list_size(global.list_malas) != 0){
+            show_debug_message("tocaron nuevas, no habían nuevas, pero hay malas");
+            global.origen = "malas";
+            random_pick(global.list_malas);
         }
         else{
             show_debug_message("tocaron nuevas, y no hay ni nuevas ni malas");
-            global.origen = "malas";
-            random_pick(global.list_malas);
+            global.origen = "buenas";
+            random_pick(global.list_buenas);
         }
     }
     

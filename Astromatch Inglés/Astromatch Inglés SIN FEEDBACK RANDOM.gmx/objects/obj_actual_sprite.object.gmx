@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>depth = 1000;
+</string>
           </argument>
         </arguments>
       </action>
@@ -47,7 +48,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite(global.imagen_actual,0,room_width/2, 20);
+            <string>//draw_sprite(global.imagen_actual,0,room_width/2, 20);
+draw_sprite_ext(global.imagen_actual,0,room_width/2, 40,0.7,0.7,0,-1,1);
 </string>
           </argument>
         </arguments>

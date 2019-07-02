@@ -106,9 +106,9 @@ global.list_buenas = ds_list_create();
 global.list_malas = ds_list_create();
 global.pick = undefined;
 
-global.pBuenas = 0.4;
+global.pBuenas = 0.2;
 global.pMalas = 0.2;
-global.pNuevas = 0.4;
+global.pNuevas = 0.6;
 
 rellenar_sort_alternativas(true);
 
@@ -187,9 +187,7 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
             }
         }
          
-        //show_lists(true);
-          
-        
+  
         roundMap = ds_map_create();
         ds_map_add(roundMap, "palabra", global.correcta_actual);
         ds_map_add(roundMap, "total_intentos", global.intentos);
