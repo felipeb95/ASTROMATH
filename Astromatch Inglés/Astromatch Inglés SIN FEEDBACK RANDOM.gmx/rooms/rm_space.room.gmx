@@ -56,7 +56,6 @@
     <instance objName="obj_waves" x="576" y="0" name="inst_3A04C76C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_hud" x="544" y="0" name="inst_44799922" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_mute" x="544" y="320" name="inst_118ED7B8" locked="0" code="" scaleX="0.680000007152557" scaleY="0.680000007152557" colour="4294967295" rotation="0"/>
-    <instance objName="obj_tierra" x="40" y="30" name="inst_92A58DBD" locked="0" code="" scaleX="1" scaleY="0.819999992847443" colour="4294967295" rotation="0"/>
     <instance objName="obj_scale" x="120" y="330" name="inst_4B826CBA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>

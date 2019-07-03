@@ -76,6 +76,7 @@ image_speed = 0.1
           <argument>
             <kind>1</kind>
             <string>draw_self()
+
 </string>
           </argument>
         </arguments>

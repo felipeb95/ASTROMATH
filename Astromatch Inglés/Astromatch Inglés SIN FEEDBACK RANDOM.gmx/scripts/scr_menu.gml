@@ -8,6 +8,8 @@ switch(mpos){
         ds_map_destroy(global.bigMap);
         ds_map_destroy(global.intentosRonda);
         room_goto(rm_space);
+        global.snd=audio_play_sound(music,10,true);
+        audio_sound_gain(global.snd,0.4,0);
         break;
     }
     case 1:

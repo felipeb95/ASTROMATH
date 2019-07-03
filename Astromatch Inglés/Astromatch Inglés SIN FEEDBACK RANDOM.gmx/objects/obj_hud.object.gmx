@@ -53,16 +53,14 @@ currentY = y;
 marginTop = 10;
 
 if(global.dead == false){
-  draw_sprite(spr_vidas, obj_ship.hp ,5,0);
+  draw_sprite(spr_vidas_update, obj_ship.hp ,1,0);
 
 
 //dibujar texto oleadas
 
 draw_set_color(c_white);
-draw_set_font(fnt_roboto);
-
-draw_set_font(fnt_zeknum2);
-draw_text(room_width - 100, 20, "Puntaje: " + string(global.puntaje));
+draw_set_font(font_puntaje);
+draw_text(55, 30, "PUNTAJE: " + string(global.puntaje));
 //draw_text(room_width - 100, 60, "Ultimo Puntaje: " + string(global.dsmap[? global.name]));
 
 //draw_text(room_width - 100, 50, "Algo: " + string(global.puntaje));
