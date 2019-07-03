@@ -73,17 +73,17 @@ global.eDificil[4]=5;
 //PARA LAS SIGUIENTES SE MANTIENE LA ULTIMA
 
 var dist = 1;
-for(i=global.sets;i&lt;50;i++){
+for(i=global.sets;i&lt;100;i++){
     global.eFacil[i]=global.eFacil[i-dist];
     global.eMedio[i]=global.eMedio[i-dist];
     global.eDificil[i]=global.eDificil[i-dist];
     dist++;
 }
 
-global.sets = 50;
-global.sp1 = -0.9;
-global.sp2 = -1.0;
-global.sp3 = -1.1;
+global.sets = 100;
+global.sp1 = -1.2;
+global.sp2 = -1.3;
+global.sp3 = -1.4;
 global.ws = 0; //creo q se puede quitar
 global.alternativa=choose(floor(random_range(1,5)));
 global.correctas=0;
