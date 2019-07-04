@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var url = "http://astromathapp.000webhostapp.com/curl2.php";
+            <string>var url = "http://astromathapp.000webhostapp.com/curl2_exp.php";
 http_get(url);
 menu_x=room_width/2; 
 menu_y=room_height/2;
@@ -149,6 +149,25 @@ if(ds_map_exists(map, "rondas")){
         */
     }
     global.sets = ds_list_size(rondas);
+}
+
+if(ds_map_exists(map, "min_vel")){
+    var min_vel = map[? "min_vel"];
+     show_debug_message("min_vel funciona");
+     show_debug_message(min_vel);
+     global.min_vel = real(min_vel);
+}
+if(ds_map_exists(map, "max_vel")){
+    var max_vel = map[? "max_vel"];
+     show_debug_message("max_vel funciona");
+     show_debug_message(max_vel);
+     global.max_vel = real(max_vel);
+}
+if(ds_map_exists(map, "acel")){
+    var acel = map[? "acel"];
+     show_debug_message("acel funciona");
+     show_debug_message(acel);
+     global.acel = real(acel);
 }
 go_to_next = true;
 global.loaded = 1;

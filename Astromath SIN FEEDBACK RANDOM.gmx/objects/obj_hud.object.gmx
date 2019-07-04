@@ -67,6 +67,7 @@ if(global.modo==3)draw_text(room_width/2, 20, string(global.a) + "/" + string(gl
 draw_set_font(fnt_zeknum2);
 draw_text(room_width - 100, 20, "Puntaje: " + string(global.puntaje));
 draw_text(room_width - 100, 50, "Etapa: " + string(global.dificultad+2));
+draw_text(room_width - 100, 80, "Vel: " + string(global.sp2*-1));
 //draw_text(room_width - 100, 60, "Ultimo Puntaje: " + string(global.dsmap[? global.name]));
 
 //draw_text(room_width - 100, 50, "Algo: " + string(global.puntaje));

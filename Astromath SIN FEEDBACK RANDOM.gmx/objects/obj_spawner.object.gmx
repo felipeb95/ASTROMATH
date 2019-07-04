@@ -81,9 +81,9 @@ for(i=global.sets;i&lt;100;i++){
 }
 
 global.sets = 100;
-global.sp1 = -1.2;
-global.sp2 = -1.3;
-global.sp3 = -1.4;
+global.sp1 = global.min_vel+0.1;
+global.sp2 = global.min_vel;
+global.sp3 = global.min_vel-0.1;
 global.ws = 0; //creo q se puede quitar
 global.alternativa=choose(floor(random_range(1,5)));
 global.correctas=0;
