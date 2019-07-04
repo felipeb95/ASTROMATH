@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>url = "http://localhost/ca.php";
+            <string>url = "http://astromatchapp.000webhostapp.com/ca.php";
 http_get(url);
 
 global.list = ds_list_create();

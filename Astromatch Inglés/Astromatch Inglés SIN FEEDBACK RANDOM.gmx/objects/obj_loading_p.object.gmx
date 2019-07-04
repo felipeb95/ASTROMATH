@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>url = "http://localhost/ca2.php";
+            <string>url = "http://astromatchapp.000webhostapp.com/ca2.php";
 http_get(url);
 go_to_next = false;
 
