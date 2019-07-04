@@ -25,8 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>menu[0]="REINTENTAR";
-menu[1]="VOLVER"
+            <string>menu[0]="JUGAR OTRA VEZ";
+menu[1]="IR AL INICIO"
 
 space = 70;
 mpos = 0;
@@ -100,10 +100,10 @@ if( push == 1)
 }
 
 draw_set_font(fontGameOver)
-draw_text(room_width/2, room_height-(room_height-80), "PARTIDA TERMINADA");
+draw_text(room_width/2, room_height-(room_height-80), "FELICITACIONES");
 
 draw_set_font(fontGameOver_puntaje)
-str_puntaje = "¡Lograste sumar "+string(global.puntaje)+" puntos";
+str_puntaje = "Completaste el juego con "+string(global.puntaje)+" puntos";
 draw_text(room_width/2, room_height-(room_height-150), str_puntaje);
 
 draw_set_halign(fa_center); //Horizontal alignment
@@ -121,8 +121,8 @@ for (i=0;i&lt;array_length_1d(menu);i++)
     menu_y+=string_height(menu[i])+line_spacing;
 }
 
-draw_sprite(spr_moon,0,x-255,y + mpos*space);
-draw_sprite(spr_moon,0,x+65,y + mpos*space);
+draw_sprite(spr_moon,0,x-270,y-30 + mpos*space);
+draw_sprite(spr_moon,0,x+145,y-30 + mpos*space);
 
 
 </string>

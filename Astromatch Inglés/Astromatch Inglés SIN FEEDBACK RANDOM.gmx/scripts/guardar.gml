@@ -8,6 +8,7 @@ if(argument0){
     ds_map_add(roundMap, "estado_respuesta",global.estado);
     ds_map_add(roundMap, "origen",global.origen);
     //OONDICIÓN SI ES QUE NO SE LE DISPARÓ A NINGÚN METEROTIO (NO HUBO INTENTO)
+    
     var copiaIntentosRonda = ds_map_create();
     ds_map_copy(copiaIntentosRonda, global.intentosRonda);
     ds_map_add_map(roundMap, "intentos", copiaIntentosRonda);
@@ -18,18 +19,18 @@ if(argument0){
     
     ds_map_clear(global.intentosRonda); // Se agrega la última ronda (en la que se muere)
     
+    
     var jsonEjercicios = json_encode(global.bigMap);
-
+    
     show_debug_message("//////////// GAME OVER ////////////");
     show_debug_message(jsonEjercicios);
-
+    
     var data_send = "puntaje="+string(global.puntaje)+
     "&correctas="+string(global.correctas)+
     "&incorrectas="+string(global.incorrectas)+
     "&ejercicios="+string(global.waves)+
     "&nRondas="+string(global.nrondas)+
     "&jsonEjercicios="+string(jsonEjercicios);
-    
+        
     post = http_post_string("async.php", data_send);
-    
 }

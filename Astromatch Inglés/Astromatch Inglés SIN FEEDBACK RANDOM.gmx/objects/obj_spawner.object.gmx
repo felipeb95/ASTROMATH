@@ -102,6 +102,7 @@ global.bigMap = ds_map_create();
 global.intentosRonda = ds_map_create();
 global.lista_alternativas = ds_list_create();
 
+global.last_sorted = undefined;
 global.list_buenas = ds_list_create();
 global.list_malas = ds_list_create();
 global.pick = undefined;
@@ -162,7 +163,7 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
         if(global.respondida) /*TERMINÓ EL EJERCICIO Y RESPONDIÓ CORRECTAMENTE*/
         {
             /*agregar condición que chequee el origen para saber dónde moverla*/
-            if(global.origen = "nuevas"){
+            /*if(global.origen = "nuevas"){
                 ds_list_add(global.list_buenas,global.list[| global.pick]);
                 ds_list_delete(global.list,global.pick);
             }
@@ -170,21 +171,13 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
                 ds_list_add(global.list_buenas,global.list_malas[| global.pick]);
                 ds_list_delete(global.list_malas,global.pick);
             }
-            
+        */            
 
         }
         else /*TERMINÓ EL EJERCICIO Y NO PUDO RESPONDER CORRECTAMENTE */
         {
             /*agregar condición que chequee el origen para saber dónde eliminar moverla*/
-            if(global.origen = "nuevas"){
-                ds_list_add(global.list_malas,global.list[| global.pick]);
-                ds_list_delete(global.list,global.pick);
-            }
-            
-            if(global.origen = "buenas"){
-                ds_list_add(global.list_malas,global.list_buenas[| global.pick]);
-                ds_list_delete(global.list_buenas,global.pick);
-            }
+            move_to_wrong();
         }
          
   
@@ -199,8 +192,7 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
         var copiaIntentosRonda = ds_map_create();
         ds_map_copy(copiaIntentosRonda, global.intentosRonda);
         ds_map_add_map(roundMap, "intentos", copiaIntentosRonda);
-        
-        
+          
         var copiaRonda = ds_map_create();
         ds_map_copy(copiaRonda, roundMap);
         ds_map_add_map(global.bigMap, global.numEjercicio, copiaRonda);
