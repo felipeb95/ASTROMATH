@@ -12,7 +12,27 @@ if ($conexion->connect_error) {
 $sql = "SELECT url, correcta, alternativas FROM question WHERE activa = 1";
 $result = $conexion->query($sql);
 $rowcount = mysqli_num_rows($result);
+
+$sql = "SELECT * FROM astromatch_parametros_exp";
+$_result_q2 = $conexion->query($sql);
+$result_q2 = $_result_q2->fetch_assoc();
+
+$pBuenas = $result_q2["pBuenas"];
+$pMalas = $result_q2["pMalas"];
+$pNuevas = $result_q2["pNuevas"];
+$min_vel = $result_q2["min_vel"];
+$max_vel = $result_q2["max_vel"];
+$acel = $result_q2["acel"];
+
+
 $data = '{';
+$data.= '"items":'.$rowcount.',';
+$data.= '"pBuenas":'.$pBuenas.',';
+$data.= '"pMalas":'.$pMalas.',';
+$data.= '"pNuevas":'.$pNuevas.',';
+$data.= '"min_vel":'.$min_vel.',';
+$data.= '"max_vel":'.$max_vel.',';
+$data.= '"acel":'.$acel.',';
 $map_index = 1;
 while($row = $result->fetch_assoc())
 {
