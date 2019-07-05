@@ -7,7 +7,7 @@ if(argument0){
     
     if(prob <= global.pBuenas){
         show_debug_message("entre 0 y 0.4");
-        if(global.ready_to_pick_buenas && ds_list_size(global.list_buenas)!=0){
+        if(global.ready_to_pick_buenas && ds_list_size(global.list_buenas)>=2){
             show_debug_message("tocaron buenas y hay al menos 2 buenas")
             global.origen = "buenas";
             random_pick_v2(global.list_buenas,"buenas");
