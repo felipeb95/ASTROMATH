@@ -6,21 +6,22 @@ if(argument0){
     str_origen = "Origen";
     
     if(prob <= global.pBuenas){
-        show_debug_message("entre 0 y 0.4");
+        str_prob = "Prob entre 0 y "+string(global.pBuenas);
+        show_debug_message(str_prob);
         if(global.ready_to_pick_buenas && ds_list_size(global.list_buenas)>=2){
-            show_debug_message("tocaron buenas y hay al menos 2 buenas")
+            show_debug_message("Tocaron buenas y hay al menos 2 buenas")
             global.origen = "buenas";
             random_pick_v2(global.list_buenas,"buenas");
         }
         else if(ds_list_size(global.list) != 0){
-            show_debug_message("tocaron buenas, no habían 2 o + buenas, pero hay nuevas");
+            show_debug_message("Tocaron buenas, no habían 2 o más buenas, pero hay nuevas");
             global.origen = "nuevas";
             random_pick_v2(global.list,"nuevas");
             str_origen = str_origen + " (modificado)";
             
         }
         else{
-            show_debug_message("tocaron buenas, y no hay ni buenas ni nuevas");
+            show_debug_message("Tocaron buenas, y no hay ni buenas ni nuevas");
             global.origen = "malas";
             random_pick_v2(global.list_malas,"malas");
             str_origen = str_origen + " (modificado)";
@@ -28,20 +29,21 @@ if(argument0){
     }
     
     if(global.pBuenas < prob && prob <= global.pMalas+global.pBuenas){
-        show_debug_message("entre 0.4 y 0.6");
+        str_prob = "Prob entre "+string(global.pBuenas)+" y "+string(global.pBuenas+global.pMalas);
+        show_debug_message(str_prob);
         if(global.ready_to_pick_malas && ds_list_size(global.list_malas)!=0){
-            show_debug_message("tocaron malas y sí hay malas");
+            show_debug_message("Tocaron malas y sí hay malas");
             global.origen = "malas";
             random_pick_v2(global.list_malas,"malas");
         }
         else if(ds_list_size(global.list) != 0){
-            show_debug_message("tocaron malas, no habían 2 o + malas, pero hay nuevas");
+            show_debug_message("Tocaron malas, no habían 2 o más malas, pero hay nuevas");
             global.origen = "nuevas";
             random_pick_v2(global.list,"nuevas");
             str_origen = str_origen + " (modificado)";
         }
         else{
-            show_debug_message("tocaron malas, y no hay ni malas ni nuevas");
+            show_debug_message("Tocaron malas, y no hay ni malas ni nuevas");
             global.origen = "buenas";
             random_pick_v2(global.list_buenas,"buenas"); 
             str_origen = str_origen + " (modificado)";
@@ -49,20 +51,22 @@ if(argument0){
     }
     
     if(global.pMalas+global.pBuenas < prob && prob <= global.pMalas+global.pBuenas+global.pNuevas){
-        show_debug_message("entre 0.6 y 1");
+        str_prob = "Prob entre "+string(global.pBuenas+global.pMalas)+" y "
+        +string(global.pBuenas+global.pMalas+global.pNuevas);
+        show_debug_message(str_prob);
         if(ds_list_size(global.list) != 0){
-            show_debug_message("tocaron nuevas y sí hay nuevas");
+            show_debug_message("Tocaron nuevas y sí hay nuevas");
             global.origen = "nuevas";
             random_pick_v2(global.list,"nuevas");
         }
         else if(ds_list_size(global.list_malas) != 0){
-            show_debug_message("tocaron nuevas, no habían nuevas, pero hay malas");
+            show_debug_message("Tocaron nuevas, no habían nuevas, pero hay malas");
             global.origen = "malas";
             random_pick_v2(global.list_malas,"malas");
             str_origen = str_origen + " (modificado)";
         }
         else{
-            show_debug_message("tocaron nuevas, y no hay ni nuevas ni malas");
+            show_debug_message("Tocaron nuevas, y no hay ni nuevas ni malas");
             global.origen = "buenas";
             random_pick_v2(global.list_buenas,"buenas");
             str_origen = str_origen + " (modificado)";

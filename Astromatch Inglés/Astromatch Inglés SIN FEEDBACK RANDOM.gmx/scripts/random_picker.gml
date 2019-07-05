@@ -6,7 +6,8 @@ if(argument0){
     str_origen = "Origen";
     
     if(prob <= global.pBuenas){
-        show_debug_message("entre 0 y 0.4");
+        str_prob = "Prob entre 0 y "+string(global.pBuenas);
+        show_debug_message(str_prob);
         if(ds_list_size(global.list_buenas) != 0){
             show_debug_message("tocaron buenas y sí hay buenas")
             global.origen = "buenas";
@@ -28,7 +29,8 @@ if(argument0){
     }
     
     if(global.pBuenas < prob && prob <= global.pMalas+global.pBuenas){
-        show_debug_message("entre 0.4 y 0.6");
+        str_prob = "Prob entre "+string(global.pBuenas)+" y "+string(global.pBuenas+global.pMalas);
+        show_debug_message(str_prob);
         if(ds_list_size(global.list_malas) != 0){
             show_debug_message("tocaron malas y sí hay malas");
             global.origen = "malas";
@@ -49,7 +51,8 @@ if(argument0){
     }
     
     if(global.pMalas+global.pBuenas < prob && prob <= global.pMalas+global.pBuenas+global.pNuevas){
-        show_debug_message("entre 0.6 y 1");
+        str_prob = "Prob entre "+string(global.pBuenas+global.pMalas)+" y "
+        +string(global.pBuenas+global.pMalas+global.pNuevas);
         if(ds_list_size(global.list) != 0){
             show_debug_message("tocaron nuevas y sí hay nuevas");
             global.origen = "nuevas";

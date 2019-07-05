@@ -2,12 +2,7 @@
 randomize();
 var list = argument0;
 
-show_debug_message("LISTA EN RANDOM_PICK");
-//show_list(list);
-
 randompick = irandom_range(0, (ds_list_size(list))-1);
-show_debug_message("NUMERO PICKEADO ALEATORIAMENTE");
-show_debug_message(randompick);
 global.pick = randompick;
 /*Si quiero elegir con otra lista aparte: */
 //global.imagen_actual = ds_list_find_value(global.sprites_list,randompick);

@@ -41,6 +41,7 @@ global.pNuevas = undefined;
 global.pBuenas = undefined;
 global.pMalas = undefined;
 
+
 </string>
           </argument>
         </arguments>
@@ -65,20 +66,21 @@ global.pMalas = undefined;
             <kind>1</kind>
             <string>if(go_to_next){
 
-    show_debug_message("##########################");
-    show_debug_message("##########################");
     show_debug_message("----- LISTA DE LECTURA -----");
     show_list(global.list);
+    show_debug_message("----- FIN LISTA DE LECTURA-----");
+    show_debug_message(" ");
+    
 
     //instance_create(0,0,obj_loading_p);
     instance_destroy(obj_loading_gif);
     go_to_next = false;
-    
-    show_debug_message("##########################");
-    show_debug_message("##########################");
+
     show_debug_message("----- LISTA DE RESPALDO-----");
     ds_list_copy(global.backup_list,global.list);
     show_list(global.backup_list);
+    show_debug_message("----- FIN LISTA DE RESPALDO-----");
+    show_debug_message(" ");
     
     room_goto(rm_space);
     global.snd=audio_play_sound(music,10,true);
@@ -108,43 +110,69 @@ global.pMalas = undefined;
             <kind>1</kind>
             <string>var json = async_load[? "result"]
 //show_debug_message(json);
-show_debug_message("INICIO LECTURA");
 var mapaLectura = json_decode(json);
+var items = undefined;
 largo_mapaLectura = ds_map_size(mapaLectura);
-
-for(i = 1; i &lt;= largo_mapaLectura; i++){
-    if(ds_map_exists(mapaLectura, string(i))){
-        var miniMap = mapaLectura[? string(i)];
-        var url_imagen = ds_map_find_value(miniMap, "url");
-        
-        if(ds_map_exists(miniMap,"alternativas")){
-            var alternativas = miniMap[? "alternativas"];
-            var index = 0;
-            var array = undefined;
-            for(j = 0; j &lt; ds_list_size(alternativas);j++){
-                array[index] = alternativas[| j];
-                index++;
-            }    
-               
-        }  
-        var correcta = ds_map_find_value(miniMap, "correcta");
-        downloaded = sprite_add(url_imagen,0,false,false,64,64);
-        ds_list_add(global.sprites_list,downloaded);
-        tempMap = ds_map_create();
-        ds_map_add(tempMap,"url",url_imagen);
-        ds_map_add(tempMap,"alternativas",array);
-        ds_map_add(tempMap,"correcta",correcta);
-        ds_map_add(tempMap,"sprite",downloaded);
-        
-        var copy = ds_map_create();
-        ds_map_copy(copy,tempMap);
-        
-        var json_mapa = json_encode(copy);
-        show_debug_message(json_mapa);
-        ds_list_add(global.list,copy);
+if(ds_map_exists(mapaLectura,"items")){
+    items = ds_map_find_value(mapaLectura,"items");
+    for(i = 1; i &lt;= items; i++){
+        if(ds_map_exists(mapaLectura, string(i))){
+            var miniMap = mapaLectura[? string(i)];
+            var url_imagen = ds_map_find_value(miniMap, "url");
+            if(ds_map_exists(miniMap,"alternativas")){
+                var alternativas = miniMap[? "alternativas"];
+                var index = 0;
+                var array = undefined;
+                for(j = 0; j &lt; ds_list_size(alternativas);j++){
+                    array[index] = alternativas[| j];
+                    index++;
+                }              
+            }  
+            var correcta = ds_map_find_value(miniMap, "correcta");
+            downloaded = sprite_add(url_imagen,0,false,false,64,64);
+            ds_list_add(global.sprites_list,downloaded);
+            tempMap = ds_map_create();
+            ds_map_add(tempMap,"url",url_imagen);
+            ds_map_add(tempMap,"alternativas",array);
+            ds_map_add(tempMap,"correcta",correcta);
+            ds_map_add(tempMap,"sprite",downloaded);
+            
+            var copy = ds_map_create();
+            ds_map_copy(copy,tempMap);
+            
+            var json_mapa = json_encode(copy);
+            show_debug_message(json_mapa);
+            ds_list_add(global.list,copy);
+        }
     }
-    
 }
+if(ds_map_exists(mapaLectura,"pBuenas"))
+    global.pBuenas = mapaLectura[? "pBuenas"];
+if(ds_map_exists(mapaLectura,"pMalas"))
+    global.pMalas = mapaLectura[? "pMalas"];
+if(ds_map_exists(mapaLectura,"pNuevas"))
+    global.pNuevas = mapaLectura[? "pNuevas"];
+
+str_prob = "Prob buenas: "+string(global.pBuenas)+
+    " | Prob malas: "+string(global.pMalas)+
+    " | Prob nuevas: "+string(global.pNuevas);
+
+if(ds_map_exists(mapaLectura,"min_vel"))
+    global.min_vel = real(mapaLectura[? "min_vel"]);
+if(ds_map_exists(mapaLectura,"max_vel"))
+    global.max_vel = real(mapaLectura[? "max_vel"]);
+if(ds_map_exists(mapaLectura,"acel"))
+    global.acel = real(mapaLectura[? "acel"]);
+
+str_vel = "Velocidad mínima: "+string(global.min_vel)+
+    " | Velocidad máxima: "+string(global.max_vel)+
+    " | Aceleración: "+string(global.acel);
+
+show_debug_message(" ");    
+show_debug_message(str_prob);
+show_debug_message(str_vel);
+show_debug_message(" "); 
+    
 go_to_next = true;
 global.loaded = 1;
 </string>

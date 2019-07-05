@@ -102,6 +102,7 @@ global.bigMap = ds_map_create();
 global.intentosRonda = ds_map_create();
 global.lista_alternativas = ds_list_create();
 
+
 global.last_correct = undefined;
 global.last_wrong = undefined;
 global.last_word = undefined;
@@ -111,10 +112,11 @@ global.list_buenas = ds_list_create();
 global.list_malas = ds_list_create();
 global.pick = undefined;
 
+/*
 global.pBuenas = 0.2;
 global.pMalas = 0.2;
 global.pNuevas = 0.6;
-
+*/
 rellenar_sort_alternativas(true);
 
 meteoros = 5;
