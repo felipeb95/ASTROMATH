@@ -106,6 +106,7 @@ if(global.correcta_actual == global.numM){
     if(obj_ship.hp&gt;3) obj_ship.hp=3;
     global.estado = "correcta";
     move_to_good();
+    global.last_correct = global.correcta_actual;
     ending_condition();
 }else{ 
     global.malasSeguidas++;

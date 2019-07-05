@@ -1,11 +1,24 @@
-/// random_pick(list)
+/// random_pick(list,list_cat)
 randomize();
 var list = argument0;
+var list_category = argument1;
 
 show_debug_message("LISTA EN RANDOM_PICK");
 //show_list(list);
 
 randompick = irandom_range(0, (ds_list_size(list))-1);
+if(list_category == "buenas"){
+    while(ds_map_find_value(list[| randompick],"correcta") == global.last_correct && ds_list_size(list)>1){
+        show_debug_message("Se repitió el último bueno");
+        randompick = irandom_range(0, (ds_list_size(list))-1);
+    }
+}
+if(list_category == "malas"){
+    while(ds_map_find_value(list[| randompick],"correcta") == global.last_wrong && ds_list_size(list)>1){
+        show_debug_message("Se repitió el último malo");
+        randompick = irandom_range(0, (ds_list_size(list))-1);
+    }
+}
 show_debug_message("NUMERO PICKEADO ALEATORIAMENTE");
 show_debug_message(randompick);
 global.pick = randompick;

@@ -7,43 +7,43 @@ if(argument0){
     
     if(prob <= global.pBuenas){
         show_debug_message("entre 0 y 0.4");
-        if(ds_list_size(global.list_buenas) != 0){
-            show_debug_message("tocaron buenas y sí hay buenas")
+        if(global.ready_to_pick_buenas && ds_list_size(global.list_buenas)!=0){
+            show_debug_message("tocaron buenas y hay al menos 2 buenas")
             global.origen = "buenas";
-            random_pick(global.list_buenas);
+            random_pick_v2(global.list_buenas,"buenas");
         }
         else if(ds_list_size(global.list) != 0){
-            show_debug_message("tocaron buenas, no habían buenas, pero hay nuevas");
+            show_debug_message("tocaron buenas, no habían 2 o + buenas, pero hay nuevas");
             global.origen = "nuevas";
-            random_pick(global.list);
+            random_pick_v2(global.list,"nuevas");
             str_origen = str_origen + " (modificado)";
             
         }
         else{
             show_debug_message("tocaron buenas, y no hay ni buenas ni nuevas");
             global.origen = "malas";
-            random_pick(global.list_malas);
+            random_pick_v2(global.list_malas,"malas");
             str_origen = str_origen + " (modificado)";
         }
     }
     
     if(global.pBuenas < prob && prob <= global.pMalas+global.pBuenas){
         show_debug_message("entre 0.4 y 0.6");
-        if(ds_list_size(global.list_malas) != 0){
+        if(global.ready_to_pick_malas && ds_list_size(global.list_malas)!=0){
             show_debug_message("tocaron malas y sí hay malas");
             global.origen = "malas";
-            random_pick(global.list_malas);
+            random_pick_v2(global.list_malas,"malas");
         }
         else if(ds_list_size(global.list) != 0){
-            show_debug_message("tocaron malas, no habían malas, pero hay nuevas");
+            show_debug_message("tocaron malas, no habían 2 o + malas, pero hay nuevas");
             global.origen = "nuevas";
-            random_pick(global.list);
+            random_pick_v2(global.list,"nuevas");
             str_origen = str_origen + " (modificado)";
         }
         else{
             show_debug_message("tocaron malas, y no hay ni malas ni nuevas");
             global.origen = "buenas";
-            random_pick(global.list_buenas);
+            random_pick_v2(global.list_buenas,"buenas"); 
             str_origen = str_origen + " (modificado)";
         }
     }
@@ -53,19 +53,18 @@ if(argument0){
         if(ds_list_size(global.list) != 0){
             show_debug_message("tocaron nuevas y sí hay nuevas");
             global.origen = "nuevas";
-            random_pick(global.list);
-            
+            random_pick_v2(global.list,"nuevas");
         }
         else if(ds_list_size(global.list_malas) != 0){
             show_debug_message("tocaron nuevas, no habían nuevas, pero hay malas");
             global.origen = "malas";
-            random_pick(global.list_malas);
+            random_pick_v2(global.list_malas,"malas");
             str_origen = str_origen + " (modificado)";
         }
         else{
             show_debug_message("tocaron nuevas, y no hay ni nuevas ni malas");
             global.origen = "buenas";
-            random_pick(global.list_buenas);
+            random_pick_v2(global.list_buenas,"buenas");
             str_origen = str_origen + " (modificado)";
         }
     }

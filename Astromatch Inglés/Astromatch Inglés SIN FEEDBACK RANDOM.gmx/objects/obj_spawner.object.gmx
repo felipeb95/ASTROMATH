@@ -102,7 +102,11 @@ global.bigMap = ds_map_create();
 global.intentosRonda = ds_map_create();
 global.lista_alternativas = ds_list_create();
 
-global.last_sorted = undefined;
+global.last_correct = undefined;
+global.last_wrong = undefined;
+global.last_word = undefined;
+global.ready_to_pick_malas = false;
+global.ready_to_pick_buenas = false;
 global.list_buenas = ds_list_create();
 global.list_malas = ds_list_create();
 global.pick = undefined;
@@ -160,27 +164,11 @@ draw_set_font(fntMain);
 }
 //AQUÍ SE CUMPLE UNA OLEADA
 if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de pantalla
-        if(global.respondida) /*TERMINÓ EL EJERCICIO Y RESPONDIÓ CORRECTAMENTE*/
-        {
-            /*agregar condición que chequee el origen para saber dónde moverla*/
-            /*if(global.origen = "nuevas"){
-                ds_list_add(global.list_buenas,global.list[| global.pick]);
-                ds_list_delete(global.list,global.pick);
-            }
-            if(global.origen = "malas"){
-                ds_list_add(global.list_buenas,global.list_malas[| global.pick]);
-                ds_list_delete(global.list_malas,global.pick);
-            }
-        */            
-
+        if(!global.respondida){ /*TERMINÓ EL EJERCICIO Y RESPONDIÓ CORRECTAMENTE*/
+            move_to_wrong();   
+            global.last_wrong = global.correcta_actual;  
         }
-        else /*TERMINÓ EL EJERCICIO Y NO PUDO RESPONDER CORRECTAMENTE */
-        {
-            /*agregar condición que chequee el origen para saber dónde eliminar moverla*/
-            move_to_wrong();
-        }
-         
-  
+        game_state();    
         roundMap = ds_map_create();
         ds_map_add(roundMap, "palabra", global.correcta_actual);
         ds_map_add(roundMap, "total_intentos", global.intentos);
@@ -198,9 +186,7 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
         ds_map_add_map(global.bigMap, global.numEjercicio, copiaRonda);
         
         ds_map_clear(global.intentosRonda);
-        
-        show_debug_message("***************************************");
-        
+         
         if(global.bot2==0){
             obj_ship.hp-=1;
             show_debug_message("no hizo nada");
@@ -217,7 +203,7 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
         instance_destroy(obj_actual_sprite);
         rellenar_sort_alternativas(true); //Se rellena para sortear sin repetir.
         global.waves++;
-        random_picker(true);
+        random_picker_v2(true);
         global.cont= 0;
         global.ccont = 0;
         //ACÁ SE ELIGE EL SIGUIENTE EJERCICIO.

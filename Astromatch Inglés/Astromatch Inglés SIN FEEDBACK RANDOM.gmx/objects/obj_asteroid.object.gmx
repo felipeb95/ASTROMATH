@@ -33,14 +33,12 @@ if(global.bot == 0){
     index_alternativa = ds_list_find_value(global.lista_alternativas, _index_alternativa);
     randValue = global.alternativas_actual[index_alternativa];
     ds_list_delete(global.lista_alternativas, _index_alternativa);
-    show_debug_message("--- ALTERNATIVA EN ASTEROIRDE ---");
-    show_debug_message(global.alternativas_actual[index_alternativa]);
+
 }
 
 if(global.bot==1){
     randValue = global.correcta_actual;
-    show_debug_message("--- ALTERNATIVA CORRECTA EN ASTEROIRDE ---");
-    show_debug_message(global.correcta_actual)
+
     global.aparicionCorrecta = global.segundos;
 }
 //speed
