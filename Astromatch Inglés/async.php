@@ -16,7 +16,7 @@ if ($conexion->connect_error) {
     die("La conexion falló: " . $conexion->connect_error);
 }
 
-$sql="INSERT INTO astromatch_control (idUser, correctas, incorrectas, puntaje, ejercicios) VALUES ('$user','$correctas','$incorrectas','$puntaje','$ejercicios')";
+$sql="INSERT INTO astromatch_partida (idUser, correctas, incorrectas, puntaje, ejercicios) VALUES ('$user','$correctas','$incorrectas','$puntaje','$ejercicios')";
 if ($conexion->query($sql) === TRUE) {
     //QUERY EXITOSA
     $ultimaIdExperimental = $conexion->insert_id;
@@ -34,13 +34,13 @@ if ($conexion->query($sql) === TRUE) {
         $origen = $objEjercicios[$x]["origen"];
         $intentosCount = count($intentos);
 
-        $sqlEjercicios = "INSERT INTO astromatch_testc (palabra, segundos, idPartida, intentos, estado, origen) VALUES ('$palabra','$segundos','$ultimaIdExperimental','$cantidad_intentos','$estado','$origen')";
+        $sqlEjercicios = "INSERT INTO astromatch_ejercicio (correcta, segundos, idPartida, intentos, estado, origen) VALUES ('$palabra','$segundos','$ultimaIdExperimental','$cantidad_intentos','$estado','$origen')";
         if ($conexion->query($sqlEjercicios) === TRUE) {
             //QUERY EXITOSA
             $ultimaIdEjercicios = $conexion->insert_id;
             if($intentosCount>0){
                 for($i = 1; $i <= $intentosCount;$i++){
-                    $sqlIntentos = "INSERT INTO astromatch_intentosc (idEjercicio, intento) VALUES ('$ultimaIdEjercicios', '$intentos[$i]')";
+                    $sqlIntentos = "INSERT INTO astromatch_intento (idEjercicio, intento) VALUES ('$ultimaIdEjercicios', '$intentos[$i]')";
                     if($conexion->query($sqlIntentos) == TRUE){
                         //QUERY EXITOSA
                         echo "Datos guardados";
