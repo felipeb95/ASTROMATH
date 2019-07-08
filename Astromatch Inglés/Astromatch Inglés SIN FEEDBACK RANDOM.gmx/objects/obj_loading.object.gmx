@@ -71,8 +71,6 @@ global.pMalas = undefined;
     show_debug_message("----- FIN LISTA DE LECTURA-----");
     show_debug_message(" ");
     
-
-    //instance_create(0,0,obj_loading_p);
     instance_destroy(obj_loading_gif);
     go_to_next = false;
 
@@ -85,6 +83,14 @@ global.pMalas = undefined;
     room_goto(rm_space);
     global.snd=audio_play_sound(music,10,true);
     audio_sound_gain(global.snd,0.4,0);
+    
+    /* La siguiente línea envía a otra pantalla de carga en la que se crean
+    canales de audio para las url que se han guardado en la lista con la key 'audio'.
+    De momento no está porque la función con la que descarga los audios no es soportada
+    por HTML y en versión nativa se reproduce el mismo sonido siempre independientemente
+    de la palabra que salió*/
+    //room_goto(rm_loading_next);
+    
 }
 </string>
           </argument>
@@ -119,6 +125,7 @@ if(ds_map_exists(mapaLectura,"items")){
         if(ds_map_exists(mapaLectura, string(i))){
             var miniMap = mapaLectura[? string(i)];
             var url_imagen = ds_map_find_value(miniMap, "url");
+            var url_audio = ds_map_find_value(miniMap, "audio");
             if(ds_map_exists(miniMap,"alternativas")){
                 var alternativas = miniMap[? "alternativas"];
                 var index = 0;
@@ -129,6 +136,7 @@ if(ds_map_exists(mapaLectura,"items")){
                 }              
             }  
             var correcta = ds_map_find_value(miniMap, "correcta");
+            //stream_audio = audio_create_stream(url_audio)
             downloaded = sprite_add(url_imagen,0,false,false,64,64);
             ds_list_add(global.sprites_list,downloaded);
             tempMap = ds_map_create();
@@ -136,6 +144,8 @@ if(ds_map_exists(mapaLectura,"items")){
             ds_map_add(tempMap,"alternativas",array);
             ds_map_add(tempMap,"correcta",correcta);
             ds_map_add(tempMap,"sprite",downloaded);
+            ds_map_add(tempMap,"audio",url_audio);
+            //ds_map_add(tempMap,"audio",stream_audio);
             
             var copy = ds_map_create();
             ds_map_copy(copy,tempMap);
@@ -229,7 +239,7 @@ global.loaded = 1;
             <string>draw_set_halign(fa_center);
 draw_set_font(font_loading);
 draw_set_colour(c_white);
-texto_menu = "CARGANDO";
+texto_menu = "Cargando visuales";
 draw_text(menu_x, menu_y, texto_menu);
 </string>
           </argument>

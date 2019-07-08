@@ -77,7 +77,3 @@ if(argument0){
     show_debug_message(str_prob);
 }
 
-/*Falta agregar condición según parámetros para saber de qué lista pickear y hacer los ifs 
-correspondientes. Además, guardar en variable global.origen el nombre de la lista de la que 
-vienen los ejercicios para saber desde cuál mover y en cuál elininar en spawner Alarm[0] 
-justo abajo de la línea 22 */

@@ -5,7 +5,7 @@ $conexion = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 if ($conexion->connect_error) {
     die("La conexion falló: " . $conexion->connect_error);
 }
-$sql = "SELECT url, correcta, alternativas FROM question WHERE activa = 1";
+$sql = "SELECT url, correcta, alternativas, audio FROM question WHERE activa = 1";
 $result = $conexion->query($sql);
 $rowcount = mysqli_num_rows($result);
 
@@ -34,6 +34,7 @@ while($row = $result->fetch_assoc())
 {
     $data .= '"'.$map_index.'":{';
     $data .= '"url":"'.$row['url'].'",';
+    $data .= '"audio":"'.$row['audio'].'",';
     $data .= '"correcta":"'.$row['correcta'].'",';
     $data .= '"alternativas":'.$row['alternativas'].'}';
     if($map_index != $rowcount){

@@ -8,13 +8,15 @@ for(index = 0; index < ds_list_size(list); index++){
         imagen_url_palabra = ds_map_find_value(list[| index],"url");
         alternativas = ds_map_find_value(list[| index],"alternativas");
         sprite = ds_map_find_value(list[| index],"sprite");
+        audio_url_palabra = ds_map_find_value(list[| index],"audio");
         str_palabra = "Palabra sorteada: "+palabra_sorteada;
         show_debug_message(str_palabra)
         str_sprite = "Sprite asignado en lista de sprites: "+string(sprite);
         show_debug_message(str_sprite);
         str_imagen = "URL de imagen: "+imagen_url_palabra;
         show_debug_message(str_imagen);
-        show_debug_message("--- ALTERNATIVAS ---");
+        str_audio = "URL de audio: "+string(audio_url_palabra);
+        show_debug_message(str_audio);
         str_alternativas = "Alternativas de palabra: "+
             alternativas[0]+" | "+
             alternativas[1]+" | "+

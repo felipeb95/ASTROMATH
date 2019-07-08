@@ -129,7 +129,7 @@
     <object>objects\obj_instructions</object>
     <object>objects\obj_scale</object>
     <object>objects\obj_loading</object>
-    <object>objects\obj_loading_p</object>
+    <object>objects\obj_loading_next</object>
     <object>objects\obj_loading_gif</object>
     <object>objects\obj_actual_sprite</object>
   </objects>
@@ -146,6 +146,7 @@
     <room>rooms\rm_start</room>
     <room>rooms\rm_instructions</room>
     <room>rooms\rm_loading</room>
+    <room>rooms\rm_loading_next</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

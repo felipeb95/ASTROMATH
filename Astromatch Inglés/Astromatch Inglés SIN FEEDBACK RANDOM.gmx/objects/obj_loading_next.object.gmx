@@ -25,21 +25,25 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>depth = 1000;
-//alarm[0] = room_speed*1;
-/*
-str_imagen = "Aparece: "+string(global.imagen_actual);
-str_sonido = "Suena: "+string(global.sonido_actual);
-show_debug_message(str_imagen);
-show_debug_message(str_sonido);
-*/
-audio_play_sound(global.sonido_actual, 10, false);
+            <string>menu_x=room_width/2; 
+menu_y=room_height/2;
+instance_create(menu_x,menu_y-100,obj_loading_gif);
+go_to_next = false;
+audio_index = 0;
+palabra = "";
+sound_list = ds_list_create();
+for(index = 0; index &lt; ds_list_size(global.backup_list); index++){
+    audio_url_palabra = ds_map_find_value(global.backup_list[| index],"audio");
+    palabra = ds_map_find_value(global.backup_list[| index],"correcta");
+    file = http_get_file(audio_url_palabra,"Temp/"+palabra);
+}
+
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="0">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -56,7 +60,52 @@ audio_play_sound(global.sonido_actual, 10, false);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//audio_play_sound(global.sonido_actual, 10, false);
+            <string>if(go_to_next){
+    for(i = 0; i &lt; ds_list_size(sound_list);i++)
+    {
+        show_debug_message(string(sound_list[| i]));
+        ds_map_replace(global.backup_list[| i],"audio",sound_list[| i]);
+        ds_map_replace(global.list[| i],"audio",sound_list[| i]);
+    }
+    show_list(global.list);
+    room_goto(rm_space);
+    global.snd=audio_play_sound(music,10,true);
+    audio_sound_gain(global.snd,0.4,0);
+    go_to_next = false;
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="62">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(palabra != ""){
+    if file_exists("Temp/"+palabra)
+    {
+        streamindex=audio_create_stream("Temp/"+palabra)
+        ds_list_add(sound_list,streamindex);
+    }
+    audio_index++;
+    if(audio_index == ds_list_size(global.list)-1)
+    go_to_next = true;
+}
 </string>
           </argument>
         </arguments>
@@ -79,8 +128,11 @@ audio_play_sound(global.sonido_actual, 10, false);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//draw_sprite(global.imagen_actual,0,room_width/2, 20);
-draw_sprite_ext(global.imagen_actual,0,room_width/2, 40,0.5,0.5,0,-1,1);
+            <string>draw_set_halign(fa_center);
+draw_set_font(font_loading);
+draw_set_colour(c_white);
+texto_menu = "Cargando sonidos";
+draw_text(menu_x, menu_y, texto_menu);
 </string>
           </argument>
         </arguments>
