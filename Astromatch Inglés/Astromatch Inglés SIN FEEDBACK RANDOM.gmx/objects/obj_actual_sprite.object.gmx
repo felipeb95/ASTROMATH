@@ -26,14 +26,17 @@
           <argument>
             <kind>1</kind>
             <string>depth = 1000;
+
+/* Lo siguiente corresponde a la versión más nueva con Text To Speech
 //alarm[0] = room_speed*1;
 /*
 str_imagen = "Aparece: "+string(global.imagen_actual);
 str_sonido = "Suena: "+string(global.sonido_actual);
 show_debug_message(str_imagen);
 show_debug_message(str_sonido);
-*/
 audio_play_sound(global.sonido_actual, 10, false);
+*/
+
 </string>
           </argument>
         </arguments>
