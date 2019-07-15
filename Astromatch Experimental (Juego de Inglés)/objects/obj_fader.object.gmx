@@ -78,13 +78,14 @@ instance_destroy(self);
           <argument>
             <kind>1</kind>
             <string>fade_in = true;
+audio_play_sound(level_up, 10, false);
 if(global.etapa = 2)
     background_index[0] = bg_space2;
 if(global.etapa = 3)
     background_index[0] = bg_space3;
 if(global.etapa = 4)
     background_index[0] = bg_space2;
-if(global.etapa = 2)
+if(global.etapa = 5)
     background_index[0] = bg_space3;
 ;
 </string>
