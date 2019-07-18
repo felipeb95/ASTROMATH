@@ -178,10 +178,12 @@
     <script>scripts\rellenar_sort_alternativas.gml</script>
     <script>scripts\random_picker.gml</script>
     <script>scripts\random_picker_v2.gml</script>
+    <script>scripts\random_picker_v3.gml</script>
     <script>scripts\show_lists.gml</script>
     <script>scripts\show_list.gml</script>
     <script>scripts\random_pick.gml</script>
     <script>scripts\random_pick_v2.gml</script>
+    <script>scripts\random_pick_v3.gml</script>
     <script>scripts\next_level_condition.gml</script>
     <script>scripts\move_to_good.gml</script>
     <script>scripts\move_to_wrong.gml</script>
