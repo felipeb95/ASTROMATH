@@ -164,6 +164,8 @@
     <background>background\astromatch_logo</background>
     <background>background\bg_space2</background>
     <background>background\bg_space3</background>
+    <background>background\bg_space4</background>
+    <background>background\bg_space5</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
