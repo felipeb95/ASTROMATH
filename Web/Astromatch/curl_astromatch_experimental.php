@@ -19,6 +19,7 @@ $pNuevas = $result_q2["pNuevas"];
 $min_vel = $result_q2["min_vel"];
 $max_vel = $result_q2["max_vel"];
 $acel = $result_q2["acel"];
+$epe = $result_q2["epe"];
 
 
 $data = '{';
@@ -29,6 +30,7 @@ $data.= '"pNuevas":'.$pNuevas.',';
 $data.= '"min_vel":'.$min_vel.',';
 $data.= '"max_vel":'.$max_vel.',';
 $data.= '"acel":'.$acel.',';
+$data.= '"wpl":'.$epe.',';
 $map_index = 1;
 while($row = $result->fetch_assoc())
 {

@@ -28,7 +28,7 @@
             <string>fade_in = false;
 
 alarm[0] = room_speed*1;
-alarm[1] = room_speed*3;
+alarm[1] = room_speed*2;
 </string>
           </argument>
         </arguments>
@@ -78,7 +78,11 @@ instance_destroy(self);
           <argument>
             <kind>1</kind>
             <string>fade_in = true;
+str_bg = "bg_space"+string(global.etapa);
+bg_index =  asset_get_index(str_bg);
 audio_play_sound(level_up, 10, false);
+background_index[0] = bg_index;
+/*
 if(global.etapa = 2){
     background_index[0] = bg_space2;
     }
@@ -91,8 +95,14 @@ if(global.etapa = 4){
 if(global.etapa = 5){
     background_index[0] = bg_space3;
     }
+*/
 
 global.last_bg = background_index[0];
+/*
+background_alpha[0] = 1;
+show_debug_message("FADER DESTROY");
+instance_destroy(self);
+*/
 </string>
           </argument>
         </arguments>

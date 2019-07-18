@@ -25,8 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>url = "http://astromatchapp.000webhostapp.com/curl_astromatch_experimental.php";
-//url = "http://localhost/curl_astromatch_experimental.php";
+            <string>//url = "http://astromatchapp.000webhostapp.com/curl_astromatch_experimental.php";
+url = "http://localhost/curl_astromatch_experimental.php";
 http_get(url);
 
 global.list = ds_list_create();
@@ -193,8 +193,11 @@ if(ds_map_exists(mapaLectura,"wpl")) // Max Waves Per Level
 str_vel = "Velocidad mínima: "+string(global.min_vel)+
     " | Velocidad máxima: "+string(global.max_vel)+
     " | Aceleración: "+string(global.acel);
+    
+str_mwpl = "Máximo número de ejercicios por etapa: "+string(global.mwpl);
 
 show_debug_message(" ");    
+show_debug_message(str_mwpl);
 show_debug_message(str_prob);
 show_debug_message(str_vel);
 show_debug_message(" "); 
