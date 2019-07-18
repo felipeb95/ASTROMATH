@@ -107,11 +107,13 @@ global.lista_alternativas = ds_list_create();
 global.last_correct = undefined;
 global.last_wrong = undefined;
 global.last_word = undefined;
+global.malas_seguidas = 0;
 global.ready_to_pick_malas = false;
 global.ready_to_pick_buenas = false;
 global.list_buenas = ds_list_create();
 global.list_malas = ds_list_create();
 global.pick = undefined;
+global.wpl = 0;
 
 pick_items_by_level(global.etapa);
 
@@ -172,8 +174,11 @@ draw_set_font(fntMain);
 if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de pantalla
         if(!global.respondida){ /*TERMINÓ EL EJERCICIO Y RESPONDIÓ CORRECTAMENTE*/
             move_to_wrong();   
-            global.last_wrong = global.correcta_actual;  
+            global.last_wrong = global.correcta_actual;
+            if(ds_list_size(global.list) == 0)
+                global.malas_seguidas++;
         }
+        global.wpl++; //WAVES PER LEVEL
         game_state();    
         roundMap = ds_map_create();
         ds_map_add(roundMap, "palabra", global.correcta_actual);
@@ -209,7 +214,7 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
         instance_destroy(obj_actual_sprite);
         rellenar_sort_alternativas(true); //Se rellena para sortear sin repetir.
         global.waves++;
-        random_picker_v2(true);
+        random_picker_v3(true);
         global.cont= 0;
         global.ccont = 0;
         //ACÁ SE ELIGE EL SIGUIENTE EJERCICIO.

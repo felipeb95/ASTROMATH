@@ -43,6 +43,7 @@ global.pMalas = undefined;
 
 global.tl = undefined; // Total Levels (tl)
 global.ipl = undefined; // Items Per Level (ipl)
+global.mwpl = undefined; // Max Waves Per Level (mwpl)
 
 </string>
           </argument>
@@ -187,7 +188,8 @@ if(ds_map_exists(mapaLectura,"max_vel"))
     global.max_vel = real(mapaLectura[? "max_vel"]);
 if(ds_map_exists(mapaLectura,"acel"))
     global.acel = real(mapaLectura[? "acel"]);
-
+if(ds_map_exists(mapaLectura,"wpl")) // Max Waves Per Level
+    global.mwpl = real(mapaLectura[? "wpl"]);
 str_vel = "Velocidad mínima: "+string(global.min_vel)+
     " | Velocidad máxima: "+string(global.max_vel)+
     " | Aceleración: "+string(global.acel);
