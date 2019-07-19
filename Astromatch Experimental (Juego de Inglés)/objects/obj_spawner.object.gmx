@@ -114,6 +114,7 @@ global.list_buenas = ds_list_create();
 global.list_malas = ds_list_create();
 global.pick = undefined;
 global.wpl = 0; //Waves Per Level
+global.wtl = 0 //Waves This Level
 
 pick_items_by_level(global.etapa);
 
@@ -179,6 +180,7 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
                 global.malas_seguidas++;
         }
         global.wpl++; //WAVES PER LEVEL
+        global.wtl++; //WAVES THIS LEVEL
         next_level_condition();
         game_state();    
         roundMap = ds_map_create();
