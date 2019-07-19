@@ -25,11 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>menu[0]="Apreta ENTER para comenzar a jugar";
-line_spacing=15; //Line Spacing
+            <string>line_spacing=15; //Line Spacing
 global.loaded = 0;
 
-show_debug_message(room_first);
 </string>
           </argument>
         </arguments>
@@ -58,8 +56,11 @@ draw_set_font(fntMainMed);
 menu_x=room_width/2; 
 menu_y=room_height/2;
 draw_set_colour(c_white);
+
 draw_text(menu_x, menu_y, "Presiona ENTER para comenzar");
 draw_sprite(spr_white_enter, 0 , menu_x, menu_y+100);
+
+
 
 </string>
           </argument>
