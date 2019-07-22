@@ -100,31 +100,31 @@ if(spd == 8){
     image_index = global.col;
 }
 
-if(uKey || wKey/*|| ((obj_palanca.act == true) &amp;&amp;(global.dir &gt;= 22.5 &amp;&amp; global.dir &lt;= 157.5))*/){
-    //instance_deactivate_object(obj_shoter);
+if(uKey || wKey/*|| ((obj_palanca.act == true) &amp;&amp;(global.dir &gt;= 22.5 &amp;&amp; global.dir &lt;= 157.5))){
+    instance_deactivate_object(obj_shoter);*/){
     y -= spd;
     sprite_index = spr_ship;
     image_index = global.col + 16;
 
 }
 
-if(dKey || sKey/*|| ((obj_palanca.act == true) &amp;&amp;(global.dir &gt;= 202.5 &amp;&amp; global.dir &lt;= 337.5))*/){
-    //instance_deactivate_object(obj_shoter);
+if(dKey || sKey/*|| ((obj_palanca.act == true) &amp;&amp;(global.dir &gt;= 22.5 &amp;&amp; global.dir &lt;= 157.5))){
+    instance_deactivate_object(obj_shoter);*/){
     y += spd;
     sprite_index = spr_ship;
      image_index = global.col + 24;
 }
 
-if(lKey || aKey/*|| ((obj_palanca.act == true) &amp;&amp;(global.dir &gt;= 112.5 &amp;&amp; global.dir &lt;= 247.5))*/){
-   //instance_deactivate_object(obj_shoter);
+if(lKey || aKey/*|| ((obj_palanca.act == true) &amp;&amp;(global.dir &gt;= 22.5 &amp;&amp; global.dir &lt;= 157.5))){
+    instance_deactivate_object(obj_shoter);*/){
      x -= spd;
     sprite_index =  spr_ship;
     image_index = global.col + 8;
    
 }
 
-if(rKey || deKey/*|| ((obj_palanca.act == true) &amp;&amp;(global.dir &gt;= 292.5 &amp;&amp; global.dir &lt;= 427.5))*/){
-    //instance_deactivate_object(obj_shoter);
+if(rKey || deKey/*|| ((obj_palanca.act == true) &amp;&amp;(global.dir &gt;= 22.5 &amp;&amp; global.dir &lt;= 157.5))){
+    instance_deactivate_object(obj_shoter);*/){
     x += spd;
     sprite_index = spr_ship;
     image_index = global.col + 8;
