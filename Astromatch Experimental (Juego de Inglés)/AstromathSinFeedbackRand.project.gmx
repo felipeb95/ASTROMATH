@@ -154,6 +154,7 @@
     <sprite>sprites\spr_tecla_m</sprite>
     <sprite>sprites\spr_loading</sprite>
     <sprite>sprites\spr_vidas_update</sprite>
+    <sprite>sprites\spr_info</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_space</background>
@@ -193,6 +194,7 @@
     <script>scripts\items_per_level_counter.gml</script>
     <script>scripts\pick_items_by_level.gml</script>
     <script>scripts\word_to_sw.gml</script>
+    <script>scripts\scr_shaky_text.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fntMain</font>
@@ -208,12 +210,14 @@
     <font>fonts\fontseleccion</font>
     <font>fonts\fontInstrucciones</font>
     <font>fonts\font_teclas</font>
+    <font>fonts\font_info</font>
     <font>fonts\fntMainMed</font>
     <font>fonts\fontGameOver</font>
     <font>fonts\fontGameOver_puntaje</font>
     <font>fonts\fontOpcionesGO</font>
     <font>fonts\font_loading</font>
     <font>fonts\font_puntaje</font>
+    <font>fonts\font_bonus</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_ship</object>
@@ -242,6 +246,8 @@
     <object>objects\obj_loading_gif</object>
     <object>objects\obj_actual_sprite</object>
     <object>objects\obj_fader</object>
+    <object>objects\obj_info</object>
+    <object>objects\obj_shaky_text</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_aux</room>
@@ -255,6 +261,7 @@
     <room>rooms\rm_score2</room>
     <room>rooms\rm_start</room>
     <room>rooms\rm_instructions</room>
+    <room>rooms\rm_info</room>
     <room>rooms\rm_loading</room>
     <room>rooms\rm_loading_next</room>
   </rooms>

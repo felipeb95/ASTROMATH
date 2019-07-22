@@ -192,7 +192,9 @@ if(place_meeting(x,y,obj_ship)){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
+            <string>//draw_self();
+spr_index = asset_get_index("sprite2");
+draw_sprite_ext(spr_index, image_index, x, y, 0.81, 0.81, image_angle, image_blend, image_alpha);
 u7 = randValue;
 draw_set_font(fnt_meteo);
 draw_text(x,y,u7);
