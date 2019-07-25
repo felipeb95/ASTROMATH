@@ -62,7 +62,7 @@ draw_set_color(c_white);
 draw_set_font(font_puntaje);
 draw_set_halign(fa_left);
 draw_text(5, 30, "P: " + string(global.puntaje)+
-" | V: " + string(global.puntaje)+
+" | V: " + string(global.sp2)+
 " | E: " + string(global.etapa));
 draw_set_halign(fa_center);
 //draw_text(room_width - 100, 60, "Ultimo Puntaje: " + string(global.dsmap[? global.name]));
