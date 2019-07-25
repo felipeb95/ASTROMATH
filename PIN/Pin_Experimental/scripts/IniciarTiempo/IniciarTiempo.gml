@@ -1,0 +1,1 @@
+global.tiempo_inicio =string(current_hour) + ":" + string(current_minute) + ":" + string(current_second)
