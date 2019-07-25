@@ -33,16 +33,17 @@ menu_y=room_height/2;
 draw_set_font(fontInstrucciones);
 draw_text(menu_x, menu_y-170, "INSTRUCCIONES DE JUEGO");
 
-draw_set_font(font_teclas);
+draw_set_font(font_info);
 draw_text(menu_x-140,menu_y+40,"Dispara con la barra de espacio");
 draw_sprite(spr_spacekey,0,menu_x-140,menu_y-10);
-draw_text(menu_x+170,menu_y+40,"Muevete con las flechas");
+draw_text(menu_x+170,menu_y+40,"Muévete con las flechas");
 draw_sprite(spr_arrowkeysFilled,0,menu_x+170,menu_y-50  );
 draw_sprite(spr_tecla_m,0,menu_x-100,menu_y+110);
 draw_set_halign(fa_left);
-draw_text(menu_x-45,menu_y+110, "Si presionas M puedes activar #o desactivar la musica en la partida");
+draw_text(menu_x-45,menu_y+110, "Si presionas M puedes activar #o desactivar la música en la partida");
 
 draw_set_halign(fa_center);
+draw_set_font(font_teclas);
 draw_text(menu_x,menu_y+190,"Presiona ENTER para continuar");
 </string>
           </argument>
@@ -66,8 +67,7 @@ draw_text(menu_x,menu_y+190,"Presiona ENTER para continuar");
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.modo = 0; //Antiguamente 2 era para multiplicaciones.
-room_goto(rm_select);
+            <string>room_goto(rm_info);
 </string>
           </argument>
         </arguments>

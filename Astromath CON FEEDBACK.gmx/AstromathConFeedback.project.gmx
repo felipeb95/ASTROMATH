@@ -78,6 +78,8 @@
     <script>scripts\muerte.gml</script>
     <script>scripts\guardar.gml</script>
     <script>scripts\scr_menu.gml</script>
+    <script>scripts\scr_get_analog_stick_axis.gml</script>
+    <script>scripts\scr_get_tilt_speed.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fntMain</font>
