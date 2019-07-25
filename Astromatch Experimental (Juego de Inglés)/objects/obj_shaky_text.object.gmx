@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>2</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,7 +25,58 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>shakiness = 10;
+alarm[0] = room_speed*3;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>instance_destroy(self);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/*if(shakiness != 0)
+    shakiness -= 0.1;
+*/
+</string>
           </argument>
         </arguments>
       </action>
@@ -47,32 +98,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>wy = 0;
-x = room_width/2;
-currentY = y;
-marginTop = 10;
+            <string>draw_set_font(font_bonus);
 
-if(global.dead == false){
-  draw_sprite(spr_vidas_update, obj_ship.hp ,1,0);
-
-
-//dibujar texto oleadas
+draw_set_color(c_black); 
+//scr_shaky_text("BONUS! +"+string(global.bonus_points),75,50,shakiness-1);
+draw_text(75,50,"BONUS! +"+string(global.bonus_points));
 
 draw_set_color(c_white);
-draw_set_font(font_puntaje);
-draw_set_halign(fa_left);
-draw_text(5, 30, "P: " + string(global.puntaje)+
-" | V: " + string(-1*(global.sp2))+
-" | E: " + string(global.etapa));
-draw_set_halign(fa_center);
-//draw_text(room_width - 100, 60, "Ultimo Puntaje: " + string(global.dsmap[? global.name]));
-
-//draw_text(room_width - 100, 50, "Algo: " + string(global.puntaje));
-  
-}else{
-    audio_stop_sound(global.snd);
-    room_goto(rm_gameover);
-}
+//scr_shaky_text("BONUS! +"+string(global.bonus_points),75,50,shakiness);
+draw_text(73,48,"BONUS! +"+string(global.bonus_points));
 </string>
           </argument>
         </arguments>

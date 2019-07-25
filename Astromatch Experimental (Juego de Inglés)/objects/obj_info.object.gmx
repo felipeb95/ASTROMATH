@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>2</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>spr = asset_get_index("spr_info");
+
+</string>
           </argument>
         </arguments>
       </action>
@@ -47,32 +49,50 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>wy = 0;
-x = room_width/2;
-currentY = y;
-marginTop = 10;
+            <string>menu_x=room_width/2; 
+menu_y=room_height/2;
 
-if(global.dead == false){
-  draw_sprite(spr_vidas_update, obj_ship.hp ,1,0);
+draw_set_font(fontInstrucciones);
+draw_text(menu_x, menu_y-170, "INSTRUCCIONES DE JUEGO");
 
 
-//dibujar texto oleadas
-
-draw_set_color(c_white);
-draw_set_font(font_puntaje);
-draw_set_halign(fa_left);
-draw_text(5, 30, "P: " + string(global.puntaje)+
-" | V: " + string(-1*(global.sp2))+
-" | E: " + string(global.etapa));
+draw_sprite(spr,0,menu_x,menu_y-30);
 draw_set_halign(fa_center);
-//draw_text(room_width - 100, 60, "Ultimo Puntaje: " + string(global.dsmap[? global.name]));
 
-//draw_text(room_width - 100, 50, "Algo: " + string(global.puntaje));
-  
-}else{
-    audio_stop_sound(global.snd);
-    room_goto(rm_gameover);
-}
+draw_set_font(font_info);
+draw_text(menu_x,menu_y+30,"Si aciertas ganarás puntos y una vida.");
+draw_text(menu_x,menu_y+55,"Si te equivocas, perderás puntos y una vida.");
+draw_text(menu_x,menu_y+80,"Chocar y no intentar responder te quitarán una vida.");
+draw_text(menu_x,menu_y+105,"Si aciertas de forma seguida, los asteroides aumentarán su velocidad.");
+draw_text(menu_x,menu_y+140,"Mientras menos te equivoques en la etapa, más grande será #tu bonificación de puntos.");
+draw_set_font(font_teclas);
+draw_text(menu_x,menu_y+190,"Presiona ENTER para continuar");
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="13">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.modo = 0; //Antiguamente 2 era para multiplicaciones.
+room_goto(rm_select);
 </string>
           </argument>
         </arguments>
