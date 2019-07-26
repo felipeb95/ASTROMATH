@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>randomize();
+global.feedback=0;
 muted = 0;
 global.malasSeguidas=0;
 global.origen = "random";
@@ -178,6 +179,7 @@ draw_set_font(fntMain);
 }
 //AQUÍ SE CUMPLE UNA OLEADA
 if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de pantalla
+        global.feedback=0;
         if(!global.respondida){ /*TERMINÓ EL EJERCICIO Y RESPONDIÓ CORRECTAMENTE*/
             move_to_wrong();   
             global.last_wrong = global.correcta_actual;
