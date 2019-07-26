@@ -195,6 +195,7 @@
     <script>scripts\pick_items_by_level.gml</script>
     <script>scripts\word_to_sw.gml</script>
     <script>scripts\scr_shaky_text.gml</script>
+    <script>scripts\full_random_pick.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fntMain</font>

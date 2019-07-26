@@ -3,7 +3,6 @@ randomize();
 var list = argument0;
 var list_category = argument1;
 
-show_debug_message("LISTA EN RANDOM_PICK");
 //show_list(list);
 
 randompick = irandom_range(0, (ds_list_size(list))-1);

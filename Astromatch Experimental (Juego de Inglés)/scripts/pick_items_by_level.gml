@@ -16,6 +16,8 @@ for(index = global.lower_bound; index <= global.upper_bound; index++){
     ds_list_add(global.list,global.backup_list[| index]);
 }
 
+//ds_list_copy(global.random_list,global.list);
+
 show_debug_message(" ");
 show_list(global.list);
 
