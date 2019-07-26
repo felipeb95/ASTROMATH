@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>//url = "http://astromatchapp.000webhostapp.com/curl_astromatch_experimental.php";
-url = "http://localhost/curl_astromatch_experimental.php";
+url = "http://localhost/Astromatch/curl_astromatch_experimental.php";
 http_get(url);
 
 global.list = ds_list_create();
