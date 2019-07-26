@@ -123,6 +123,7 @@ global.bonus_points = 0;
 global.lower_bound = 0;
 global.upper_bound = undefined;
 pick_items_by_level(global.etapa);
+//global.random_list = ds_list_create(); // Para la versión con distribución alteatoria de ejercicios por etapa
 
 
 /*
