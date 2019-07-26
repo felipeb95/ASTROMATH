@@ -3,6 +3,7 @@
 var level = argument0;
 var ipl = global.ipl[level-1];
 
+
 if(level != 1)
     global.lower_bound = global.upper_bound + 1; //ipl anterior * nivel anterior
     

@@ -87,10 +87,10 @@ with (other){
 if(global.correcta_actual == global.numM){
     global.malasSeguidas=0;
     global.nrondasc++;
-    if(global.nrondasc&gt;=2 &amp;&amp; global.sp1&gt;-4.9 &amp;&amp; global.sp2&gt;-5.0 &amp;&amp; global.sp3&gt;-5.1 ){
-        global.sp1 -= 0.1;
-        global.sp2 -= 0.1;
-        global.sp3 -= 0.1;
+    if(global.nrondasc&gt;=2 &amp;&amp; global.sp2&gt;global.max_vel){
+        global.sp1 -= global.acel;
+        global.sp2 -= global.acel;
+        global.sp3 -= global.acel;
         show_debug_message("SUBE VEL");
     }
     
@@ -111,10 +111,10 @@ if(global.correcta_actual == global.numM){
 }else{ 
     global.malasSeguidas++;
     global.nrondasc=0;
-    if(global.malasSeguidas&gt;=2 &amp;&amp; global.sp1&lt;-0.9 &amp;&amp; global.sp2&lt;-1.0 &amp;&amp; global.sp3&lt;-1.1 ){
-        global.sp1 += 0.1;
-        global.sp2 += 0.1;
-        global.sp3 += 0.1;
+    if(global.malasSeguidas&gt;=2 &amp;&amp; global.sp2&lt;global.min_vel){
+        global.sp1 += global.acel;
+        global.sp2 += global.acel;
+        global.sp3 += global.acel;
         show_debug_message("BAJA VEL");
     }
     

@@ -36,10 +36,9 @@ global.etapa = 1;
 global.bg_final = bg_space;
 global.sets = 50;
 
-global.sp1 = -0.9;
-global.sp2 = -1.0;
-global.sp3 = -1.1;
-
+global.sp1 = global.min_vel+0.1;
+global.sp2 = global.min_vel;
+global.sp3 = global.min_vel-0.1;
 
 global.ws = 0; //creo q se puede quitar
 global.alternativa=choose(floor(random_range(1,5)));
@@ -120,6 +119,8 @@ global.wpl = 0; //Waves Per Level
 global.wtl = 0 //Waves This Level
 global.bonus_points = 0;
 
+global.lower_bound = 0;
+global.upper_bound = undefined;
 pick_items_by_level(global.etapa);
 
 
