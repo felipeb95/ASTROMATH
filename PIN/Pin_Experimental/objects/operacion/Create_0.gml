@@ -34,6 +34,48 @@ contador_G = 0;
 
 contador_M = 0;
 
+if(global.sizeF>0 or global.sizeM>0 or global.sizeD>0){
+	var i;
+	for(i=0;i<global.sizeF;i++){
+		if(global.faciles[i]==0){facil[largo]=0; largo++;}
+		if(global.faciles[i]==1){facil[largo]=1; largo++;}
+		if(global.faciles[i]==2){facil[largo]=2; largo++;}
+		if(global.faciles[i]==3){facil[largo]=3; largo++;}
+		if(global.faciles[i]==4){facil[largo]=4; largo++;}
+		if(global.faciles[i]==5){facil[largo]=5; largo++;}
+		if(global.faciles[i]==6){facil[largo]=6; largo++;}
+		if(global.faciles[i]==7){facil[largo]=7; largo++;}
+		if(global.faciles[i]==8){facil[largo]=8; largo++;}
+		if(global.faciles[i]==9){facil[largo]=9; largo++;}
+	}
+
+	for(i=0;i<global.sizeM;i++){
+		if(global.medios[i]==0){medio[largo_m]=0; largo_m++;}
+		if(global.medios[i]==1){medio[largo_m]=1; largo_m++;}
+		if(global.medios[i]==2){medio[largo_m]=2; largo_m++;}
+		if(global.medios[i]==3){medio[largo_m]=3; largo_m++;}
+		if(global.medios[i]==4){medio[largo_m]=4; largo_m++;}
+		if(global.medios[i]==5){medio[largo_m]=5; largo_m++;}
+		if(global.medios[i]==6){medio[largo_m]=6; largo_m++;}
+		if(global.medios[i]==7){medio[largo_m]=7; largo_m++;}
+		if(global.medios[i]==8){medio[largo_m]=8; largo_m++;}
+		if(global.medios[i]==9){medio[largo_m]=9; largo_m++;}
+	}
+
+	for(i=0;i<global.sizeD;i++){
+		if(global.dificiles[i]==0){dificil[largo_d]=0; largo_d++;}
+		if(global.dificiles[i]==1){dificil[largo_d]=1; largo_d++;}
+		if(global.dificiles[i]==2){dificil[largo_d]=2; largo_d++;}
+		if(global.dificiles[i]==3){dificil[largo_d]=3; largo_d++;}
+		if(global.dificiles[i]==4){dificil[largo_d]=4; largo_d++;}
+		if(global.dificiles[i]==5){dificil[largo_d]=5; largo_d++;}
+		if(global.dificiles[i]==6){dificil[largo_d]=6; largo_d++;}
+		if(global.dificiles[i]==7){dificil[largo_d]=7; largo_d++;}
+		if(global.dificiles[i]==8){dificil[largo_d]=8; largo_d++;}
+		if(global.dificiles[i]==9){dificil[largo_d]=9; largo_d++;}
+	}
+}
+/*
 ini_open("datos.ini")
 
 	cero = ini_read_real("facil","cero",0)
@@ -193,7 +235,7 @@ ini_open("datos.ini")
 			largo_d++;
 		}
 	
-
+*/
 
 
 	a_facil = 0;
@@ -214,7 +256,7 @@ ini_open("datos.ini")
 	
 	
 
-ini_close();
+//ini_close();
 
 if(largo == 0 and largo_m == 0 and largo_d == 0){
 
