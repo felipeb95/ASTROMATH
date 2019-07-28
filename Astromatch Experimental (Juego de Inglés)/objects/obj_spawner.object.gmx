@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>randomize();
+global.feedback=0;
 muted = 0;
 global.malasSeguidas=0;
 global.origen = "random";
@@ -36,10 +37,9 @@ global.etapa = 1;
 global.bg_final = bg_space;
 global.sets = 50;
 
-global.sp1 = -0.9;
-global.sp2 = -1.0;
-global.sp3 = -1.1;
-
+global.sp1 = global.min_vel+0.1;
+global.sp2 = global.min_vel;
+global.sp3 = global.min_vel-0.1;
 
 global.ws = 0; //creo q se puede quitar
 global.alternativa=choose(floor(random_range(1,5)));
@@ -120,7 +120,10 @@ global.wpl = 0; //Waves Per Level
 global.wtl = 0 //Waves This Level
 global.bonus_points = 0;
 
+global.lower_bound = 0;
+global.upper_bound = undefined;
 pick_items_by_level(global.etapa);
+//global.random_list = ds_list_create(); // Para la versión con distribución alteatoria de ejercicios por etapa
 
 
 /*
@@ -177,6 +180,7 @@ draw_set_font(fntMain);
 }
 //AQUÍ SE CUMPLE UNA OLEADA
 if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de pantalla
+        global.feedback=0;
         if(!global.respondida){ /*TERMINÓ EL EJERCICIO Y RESPONDIÓ CORRECTAMENTE*/
             move_to_wrong();   
             global.last_wrong = global.correcta_actual;

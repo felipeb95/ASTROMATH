@@ -4,6 +4,7 @@ segundos += (delta_time/1000000)*room_speed
 if(enemigo.disparado){
 	show_debug_message(global.numEjercicio);
 	show_debug_message(operacion.numOperacion);
+	show_debug_message(operacion.sor);
 	show_debug_message(operacion.num1);
 	show_debug_message(operacion.den1);
 	show_debug_message(operacion.num2);
@@ -24,6 +25,7 @@ if(enemigo.disparado){
 if(enemigo2.disparado){
 	show_debug_message(global.numEjercicio);
 	show_debug_message(operacion.numOperacion);
+	show_debug_message(operacion.sor);
 	show_debug_message(operacion.num1);
 	show_debug_message(operacion.den1);
 	show_debug_message(operacion.num2);
@@ -44,6 +46,7 @@ if(enemigo2.disparado){
 if(enemigo3.disparado){
 	show_debug_message(global.numEjercicio);
 	show_debug_message(operacion.numOperacion);
+	show_debug_message(operacion.sor);
 	show_debug_message(operacion.num1);
 	show_debug_message(operacion.den1);
 	show_debug_message(operacion.num2);

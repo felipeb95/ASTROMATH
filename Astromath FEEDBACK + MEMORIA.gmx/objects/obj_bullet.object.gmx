@@ -95,7 +95,7 @@ if(global.r == global.numM){
     }
     x = view_xview + view_wview/2;
     y = view_yview + view_hview/2;
-    instance_create(x,y,obj_textbox_celebracion);
+    //instance_create(x,y,obj_textbox_celebracion);
     
     if(global.wave&lt;9){
         global.oBuenas[global.a]++;

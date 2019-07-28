@@ -67,7 +67,13 @@ hspeed = choose(global.sp1,global.sp2,global.sp3);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//asteroide choca con nave
+            <string>if(global.feedback == 1){
+    global.ccont++;
+    instance_destroy();
+}
+
+
+//asteroide choca con nave
 image_angle += rotation;
 
 if(place_meeting(x,y,obj_ship)){
