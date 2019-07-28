@@ -5,7 +5,7 @@ enviado = 1;
 
 if os_is_network_connected(){
 		
-	ini_open("datos.ini")
+	/*ini_open("datos.ini")
 		VecesJugadas = ini_read_real("juegos","vecesJugadas",0)
 		PrimeraVez = ini_read_real("primera","primera_vez",0)
 		if(global.name == 0 ){
@@ -22,4 +22,5 @@ if os_is_network_connected(){
 			http_get(str);
 		}
 	ini_close();
+	*/
    }
