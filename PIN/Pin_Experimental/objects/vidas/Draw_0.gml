@@ -1,19 +1,12 @@
 /// @description Insert description here
 // You can write your code in this editor
-if(global.name != "0" && PrimeraVez == 0 ){
-	PrimeraVez = 1;
-}
-if(PrimeraVez == 0 ){
-		room_goto(room_login);
-}
+
 //------------------------------- Obtiene la fecha actual----------------------------//
 	
-var fecha = string(current_day) + "/" + string (current_month) + "/" + string(current_year) 
-
 
 
 // -------------------- Abre el archivo donde se guardan los datos -------------------//
-
+/*
  ini_open("datos.ini")
  
 if(vidas_index == 0)
@@ -60,13 +53,13 @@ if(vidas_index == 0)
 		room_goto(room_over);
 }
 	
-ini_close();
+ini_close();*/
 
 // Lee el puntaje maximo alcanzado historicamente
 	
-	ini_open("datos.ini")
+	/*ini_open("datos.ini")
 	smax = ini_read_real("puntaje","scoremax",0)
-	ini_close();
+	ini_close();*/
 //-----------------------------------------------
 
 draw_sprite_ext(vida, vidas_index, x+200, y+20, 1, 1, 0, c_white, 1);

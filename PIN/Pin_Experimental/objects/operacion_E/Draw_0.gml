@@ -384,7 +384,49 @@ if(estadoOperacion = false and numOperacion < 20)
 
 if(numOperacion == 20 and final == 1){
 	
-	ini_open("datos.ini")
+	if(contador_cero == 0 ){global.dificiles[global.sizeD] = 0; global.sizeD++;}
+	if(contador_cero == 1 ){global.medios[global.sizeM] = 0; global.sizeM++;}
+	if(contador_cero == 2 ){global.faciles[global.sizeF] = 0; global.sizeF++;}
+	
+	if(contador_uno == 0 ){global.dificiles[global.sizeD] = 1; global.sizeD++;}
+	if(contador_uno == 1 ){global.medios[global.sizeM] = 1; global.sizeM++;}
+	if(contador_uno == 2 ){global.faciles[global.sizeF] = 1; global.sizeF++;}
+	
+	if(contador_dos == 0 ){global.dificiles[global.sizeD] = 2; global.sizeD++;}
+	if(contador_dos == 1 ){global.medios[global.sizeM] = 2; global.sizeM++;}
+	if(contador_dos == 2 ){global.faciles[global.sizeF] = 2; global.sizeF++;}
+	
+	if(contador_tres == 0 ){global.dificiles[global.sizeD] = 3; global.sizeD++;}
+	if(contador_tres == 1 ){global.medios[global.sizeM] = 3; global.sizeM++;}
+	if(contador_tres == 2 ){global.faciles[global.sizeF] = 3; global.sizeF++;}
+	
+	if(contador_cuatro == 0 ){global.dificiles[global.sizeD] = 4; global.sizeD++;}
+	if(contador_cuatro == 1 ){global.medios[global.sizeM] = 4; global.sizeM++;}
+	if(contador_cuatro == 2 ){global.faciles[global.sizeF] = 4; global.sizeF++;}
+	
+	if(contador_cinco == 0 ){global.dificiles[global.sizeD] = 5; global.sizeD++;}
+	if(contador_cinco == 1 ){global.medios[global.sizeM] = 5; global.sizeM++;}
+	if(contador_cinco == 2 ){global.faciles[global.sizeF] = 5; global.sizeF++;}
+	
+	if(contador_seis == 0 ){global.dificiles[global.sizeD] = 6; global.sizeD++;}
+	if(contador_seis == 1 ){global.medios[global.sizeM] = 6; global.sizeM++;}
+	if(contador_seis == 2 ){global.faciles[global.sizeF] = 6; global.sizeD++;}
+	
+	
+	if(contador_siete == 0 ){global.dificiles[global.sizeD] = 7; global.sizeD++;}
+	if(contador_siete == 1 ){global.medios[global.sizeM] = 7; global.sizeM++;}
+	if(contador_siete == 2 ){global.faciles[global.sizeF] = 7; global.sizeF++;}
+	
+	if(contador_ocho == 0 ){global.dificiles[global.sizeD] = 8; global.sizeD++;}
+	if(contador_ocho == 1 ){global.medios[global.sizeM] = 8; global.sizeM++;}
+	if(contador_ocho == 2 ){global.faciles[global.sizeF] = 8; global.sizeF++;}
+	
+	if(contador_nueve == 0 ){global.dificiles[global.sizeD] = 9; global.sizeD++;}
+	if(contador_nueve == 1 ){global.medios[global.sizeM] = 9; global.sizeM++;}
+	if(contador_nueve == 2 ){global.faciles[global.sizeF] = 9; global.sizeF++;}
+	
+	
+	/*ini_open("datos.ini")
 	
 	if(contador_cero == 0 )ini_write_real("dificil","cero",1)
 	if(contador_cero == 1 )ini_write_real("medio","cero",1)
@@ -417,7 +459,7 @@ if(numOperacion == 20 and final == 1){
 	if(contador_nueve == 1 )ini_write_real("medio","nueve",1)
 	if(contador_nueve == 2 )ini_write_real("facil","nueve",1)
 	
-	ini_close();
+	ini_close();*/
 	
 	
 	room_goto(room_zombie);
