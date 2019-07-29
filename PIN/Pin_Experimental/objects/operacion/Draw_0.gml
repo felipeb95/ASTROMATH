@@ -264,7 +264,7 @@ else draw_sprite_ext(sumaoresta, 1, 190, 125, 1, 1, 0, c_white, 1);*/
 draw_text(1065, 67, string(varscore));
 draw_text(1185, 67, string(Puntaje));
 //draw_text(1065, 87, string(varscoremax));
-draw_text(1185, 87, string(vidas.smax));
+//draw_text(1185, 87, string(vidas.smax));
 //draw_text(1065, 110, string("Juegos"));
 //draw_text(1185, 110, string(vidas.VecesJugadas));
 
