@@ -98,7 +98,7 @@ alarm[0] = room_speed*3;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_font(font_bonus);
+            <string>draw_set_font(font_bonuspoints);
 
 draw_set_color(c_black); 
 //scr_shaky_text("BONUS! +"+string(global.bonus_points),75,50,shakiness-1);

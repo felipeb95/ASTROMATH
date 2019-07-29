@@ -218,7 +218,7 @@
     <font>fonts\fontOpcionesGO</font>
     <font>fonts\font_loading</font>
     <font>fonts\font_puntaje</font>
-    <font>fonts\font_bonus</font>
+    <font>fonts\font_bonuspoints</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_ship</object>
