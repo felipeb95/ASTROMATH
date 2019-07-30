@@ -410,8 +410,7 @@ if(numOperacion == 20 and final == 1){
 	
 	if(contador_seis == 0 ){global.dificiles[global.sizeD] = 6; global.sizeD++;}
 	if(contador_seis == 1 ){global.medios[global.sizeM] = 6; global.sizeM++;}
-	if(contador_seis == 2 ){global.faciles[global.sizeF] = 6; global.sizeD++;}
-	
+	if(contador_seis == 2 ){global.faciles[global.sizeF] = 6; global.sizeF++;}
 	
 	if(contador_siete == 0 ){global.dificiles[global.sizeD] = 7; global.sizeD++;}
 	if(contador_siete == 1 ){global.medios[global.sizeM] = 7; global.sizeM++;}
