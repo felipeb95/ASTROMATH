@@ -33,9 +33,8 @@ dificil[0] = 0;
 contador_G = 0;
 
 contador_M = 0;
-
-if(global.sizeF>0 or global.sizeM>0 or global.sizeD>0){
-	var i;
+var i;
+if(global.sizeF>0){
 	for(i=0;i<global.sizeF;i++){
 		if(global.faciles[i]==0){facil[largo]=0; largo++;}
 		if(global.faciles[i]==1){facil[largo]=1; largo++;}
@@ -48,7 +47,8 @@ if(global.sizeF>0 or global.sizeM>0 or global.sizeD>0){
 		if(global.faciles[i]==8){facil[largo]=8; largo++;}
 		if(global.faciles[i]==9){facil[largo]=9; largo++;}
 	}
-
+}
+if(global.sizeM>0){
 	for(i=0;i<global.sizeM;i++){
 		if(global.medios[i]==0){medio[largo_m]=0; largo_m++;}
 		if(global.medios[i]==1){medio[largo_m]=1; largo_m++;}
@@ -61,7 +61,8 @@ if(global.sizeF>0 or global.sizeM>0 or global.sizeD>0){
 		if(global.medios[i]==8){medio[largo_m]=8; largo_m++;}
 		if(global.medios[i]==9){medio[largo_m]=9; largo_m++;}
 	}
-
+}
+if(global.sizeD>0){
 	for(i=0;i<global.sizeD;i++){
 		if(global.dificiles[i]==0){dificil[largo_d]=0; largo_d++;}
 		if(global.dificiles[i]==1){dificil[largo_d]=1; largo_d++;}

@@ -6,6 +6,11 @@ if(enemigo.disparado){
 	show_debug_message("Num Operacion: "+string(operacion.numOperacion)); //Nro. Sub-Ejercicio
 	if(operacion.sor == 1) show_debug_message("Operacion Ejercicio: Suma"); //Suma o Resta de Fracciones
 	else show_debug_message("Operacion Ejercicio: Resta"); //Suma o Resta de Fracciones
+	if(operacion.numOperacion!=4) show_debug_message("Operacion SubEjercicio: Multiplicacion"); //Multiplicacion de A y B
+	else{
+		if(operacion.sor == 1) show_debug_message("Operacion SubEjercicio: Suma"); //Suma o Resta de Fracciones
+		else show_debug_message("Operacion SubEjercicio: Resta"); //Suma o Resta de Fracciones
+	}
 	show_debug_message("Numerador 1: "+string(operacion.num1)); //Numerador 1
 	show_debug_message("Denominador 1: "+string(operacion.den1)); //Denominador 1
 	show_debug_message("Numerador 2: "+string(operacion.num2)); //Numerador 2
@@ -30,6 +35,11 @@ if(enemigo2.disparado){
 	show_debug_message("Num Operacion: "+string(operacion.numOperacion)); //Nro. Sub-Ejercicio
 	if(operacion.sor == 1) show_debug_message("Operacion Ejercicio: Suma"); //Suma o Resta de Fracciones
 	else show_debug_message("Operacion Ejercicio: Resta"); //Suma o Resta de Fracciones
+	if(operacion.numOperacion!=4) show_debug_message("Operacion SubEjercicio: Multiplicacion"); //Multiplicacion de A y B
+	else{
+		if(operacion.sor == 1) show_debug_message("Operacion SubEjercicio: Suma"); //Suma o Resta de Fracciones
+		else show_debug_message("Operacion SubEjercicio: Resta"); //Suma o Resta de Fracciones
+	}
 	show_debug_message("Numerador 1: "+string(operacion.num1)); //Numerador 1
 	show_debug_message("Denominador 1: "+string(operacion.den1)); //Denominador 1
 	show_debug_message("Numerador 2: "+string(operacion.num2)); //Numerador 2
@@ -54,6 +64,11 @@ if(enemigo3.disparado){
 	show_debug_message("Num Operacion: "+string(operacion.numOperacion)); //Nro. Sub-Ejercicio
 	if(operacion.sor == 1) show_debug_message("Operacion Ejercicio: Suma"); //Suma o Resta de Fracciones
 	else show_debug_message("Operacion Ejercicio: Resta"); //Suma o Resta de Fracciones
+	if(operacion.numOperacion!=4) show_debug_message("Operacion SubEjercicio: Multiplicacion"); //Multiplicacion de A y B
+	else{
+		if(operacion.sor == 1) show_debug_message("Operacion SubEjercicio: Suma"); //Suma o Resta de Fracciones
+		else show_debug_message("Operacion SubEjercicio: Resta"); //Suma o Resta de Fracciones
+	}
 	show_debug_message("Numerador 1: "+string(operacion.num1)); //Numerador 1
 	show_debug_message("Denominador 1: "+string(operacion.den1)); //Denominador 1
 	show_debug_message("Numerador 2: "+string(operacion.num2)); //Numerador 2
