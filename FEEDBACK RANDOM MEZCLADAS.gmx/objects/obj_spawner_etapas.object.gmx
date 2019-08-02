@@ -29,11 +29,9 @@
 //NO TOCAR
 muted=0;
 global.malasSeguidas=0;
-global.operaciones = "MDSR";
 indexO = choose(floor(random_range(1,string_length(global.operaciones))));
 global.operacion = string_char_at(global.operaciones, indexO);
 global.operacionAnterior = global.operacion;
-global.N = 5;
 /*
 global.minA = 2;
 global.maxB = 9;
@@ -248,6 +246,7 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
         ds_map_add(roundMap, "estado_respuesta",global.estado);
         ds_map_add(roundMap, "etapa",(global.dificultad+1));
         ds_map_add(roundMap, "origen", global.origen);
+        ds_map_add(roundMap, "operacion",global.operacion);
         //OONDICIÓN SI ES QUE NO SE LE DISPARÓ A NINGÚN METEROTIO (NO HUBO INTENTO)
         
         var copiaIntentosRonda = ds_map_create();

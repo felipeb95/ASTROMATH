@@ -10,7 +10,15 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code></code>
+  <code>if(global.modo_juego == 1){
+    instance_create(0,0,obj_spawner);
+    instance_create(0,0,obj_waves);
+}
+
+if(global.modo_juego == 2){
+    instance_create(0,0,obj_spawner_etapas);   
+    instance_create(0,0,obj_waves_etapas);
+}</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>0</clearDisplayBuffer>
