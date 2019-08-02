@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>//inicio oleadas
 randomize();
+global.waveUltraFake = 1;
 global.intentos = 0;
 show_debug_message("Ejercicio");
 show_debug_message(global.waveUltraFake);
