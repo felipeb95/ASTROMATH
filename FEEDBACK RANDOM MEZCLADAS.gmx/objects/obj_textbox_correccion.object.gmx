@@ -90,7 +90,10 @@ y = view_yview + view_hview/2;
 
 draw_sprite(spr_correccion,0,x,y);
 str = "RECUERDA";
-str2 = a+"x"+b+" es "+r;
+if(global.operacion=="M") str2 = a+"x"+b+" es "+r;
+if(global.operacion=="D") str2 = a+"/"+b+" es "+r;
+if(global.operacion=="S") str2 = a+"+"+b+" es "+r;
+if(global.operacion=="R") str2 = a+"-"+b+" es "+r;
 
 draw_set_font(font_correccion);
 draw_set_colour(c_red);
