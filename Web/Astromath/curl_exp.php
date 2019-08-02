@@ -12,6 +12,9 @@ $data = $result->fetch_assoc();
 $min_vel = $data["min_vel"];
 $max_vel = $data["max_vel"];
 $acel = $data["acel"];
+$epe = $data["epe"];
+$modo = $data["modo"];
+$operaciones = $data["operaciones"];
 $menorMultiplo = $data["menorMultiplo"];
 $mayorMultiplo = $data["mayorMultiplo"];
 $rondas = $data["rondas"];
@@ -36,8 +39,18 @@ $url = $direccion.'parametros.php';
 //Initiate cURL.
 $ch = curl_init($url);
  
-//The JSON data.
-$jsonData = '{"menorMultiplo": '.$menorMultiplo.',"mayorMultiplo": '.$mayorMultiplo.',"rondas": '.$rondasToJsonArray.',"min_vel": '.$min_vel.',"max_vel": '.$max_vel.',"acel": '.$acel.'}';
+$data = '{';
+$data.= '"menorMultiplo":'.$menorMultiplo.',';
+$data.= '"mayorMultiplo":'.$mayorMultiplo.',';
+$data.= '"rondas":'.$rondasToJsonArray.',';
+$data.= '"min_vel":'.$min_vel.',';
+$data.= '"max_vel":'.$max_vel.',';
+$data.= '"acel":'.$acel.',';
+$data.= '"epe":'.$epe.',';
+$data.= '"modo":'.$modo.',';
+$data .= '"operaciones":"'.$operaciones.'"}';
+    //The JSON data.
+$jsonData = $data;
  
 //Encode the array into JSON.
 $jsonDataEncoded = json_encode($jsonData);
