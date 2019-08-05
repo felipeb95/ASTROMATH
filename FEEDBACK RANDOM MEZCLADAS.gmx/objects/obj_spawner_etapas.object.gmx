@@ -29,9 +29,6 @@
 //NO TOCAR
 muted=0;
 global.malasSeguidas=0;
-indexO = choose(floor(random_range(1,string_length(global.operaciones))));
-global.operacion = string_char_at(global.operaciones, indexO);
-global.operacionAnterior = global.operacion;
 /*
 global.minA = 2;
 global.maxB = 9;
@@ -41,6 +38,12 @@ global.waveFake = 1;
 global.waveUltraFake = 1;
 global.origen = "random";
 //REVISAR POR QUÉ A VECES MAX B FALLA
+global.avanza=1;
+indexO = global.avanza;
+global.avanza++;
+if(global.avanza==string_length(global.operaciones)+1)global.avanza=1;
+global.operacion = string_char_at(global.operaciones, indexO);
+global.Nn = global.N;
 
 global.nEjercicios=global.maxB-global.minA+1;
 global.nTests=global.nEjercicios/2;
@@ -288,13 +291,12 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
         //meteoros ++;
         
         global.wave ++;
-        if(global.wave == global.N){
-            global.N+=global.N;
-            while(global.operacion == global.operacionAnterior){
-                indexO = choose(floor(random_range(1,string_length(global.operaciones))));
-                global.operacion = string_char_at(global.operaciones, indexO);               
-            }
-            global.operacionAnterior = global.operacion;
+        if(global.numEjercicio == global.N){
+            global.N+=global.Nn;
+            indexO = global.avanza;
+            global.avanza++;
+            if(global.avanza==string_length(global.operaciones)+1)global.avanza=1;
+            global.operacion = string_char_at(global.operaciones, indexO);
         }
         global.waveFake++;
         global.waveUltraFake++;
