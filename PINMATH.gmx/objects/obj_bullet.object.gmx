@@ -93,10 +93,10 @@ if(global.r == global.numM){
         global.sp3 -= global.acel;
         show_debug_message("SUBE VEL");
     }
-    if(global.wave&lt;9){
+    /*if(global.wave&lt;9){
         global.oBuenas[global.a]++;
         global.oBuenas[global.b]++;
-    }
+    }*/
     global.respondida = true;
     global.puntaje += 10;
     global.correctas++;
