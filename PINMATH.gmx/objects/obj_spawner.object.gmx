@@ -410,17 +410,31 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
         show_debug_message(global.waveUltraFake);
         
         if(global.modo==0) {
-            if(global.subEjercicio&lt;4) global.operacion="M";
-            else global.operacion="S";
-            if(global.operacion=="M"){
-                global.a = choose(floor(random_range(global.minA,global.maxB)));
-                global.b = choose(floor(random_range(global.minA,global.maxB)));
+            if(global.subEjercicio==1){
+                global.num1=choose(floor(random_range(global.minA,global.maxB)));
+                global.num2=choose(floor(random_range(global.minA,global.maxB)));
+                global.den1=choose(floor(random_range(global.minA,global.maxB)));
+                global.den2=choose(floor(random_range(global.minA,global.maxB)));
+                global.a = global.num1;
+                global.b = global.den2;
+                global.r = global.a*global.b;
+                global.ar = global.a*global.b;
+            }
+            if(global.subEjercicio==2){
+                global.a = global.num2;
+                global.b = global.den1;
+                global.r = global.a*global.b;
+                global.br = global.a*global.b;
+            }
+            if(global.subEjercicio==3){
+                global.a = global.den1;
+                global.b = global.den2;
                 global.r = global.a*global.b;
             }
-            if(global.operacion=="S"){
-                global.a = choose(floor(random_range(global.minA,global.maxB)));
-                global.b = choose(floor(random_range(global.minA,global.a)));
-                global.r = floor(global.a+global.b);
+            if(global.subEjercicio==4){
+                global.a = global.ar;
+                global.b = global.br;
+                global.r = global.a+global.b;
             }
         }
         if(global.modo==1) {
