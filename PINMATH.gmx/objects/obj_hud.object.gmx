@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>suma_resta = "+";
+</string>
           </argument>
         </arguments>
       </action>
@@ -60,19 +61,63 @@ if(global.dead == false){
 
 draw_set_color(c_white);
 draw_set_font(fnt_roboto);
-if(global.modo==0 and global.subEjercicio&lt;4)draw_text(room_width/2, 20, string(global.a) + "x" + string(global.b));
-if(global.modo==0 and global.subEjercicio==4)draw_text(room_width/2, 20, string(global.a) + "+" + string(global.b));
-if(global.modo==1)draw_text(room_width/2, 20, string(global.a) + "-" + string(global.b));
-if(global.modo==2)draw_text(room_width/2, 20, string(global.a) + "x" + string(global.b));
-if(global.modo==3)draw_text(room_width/2, 20, string(global.a) + "/" + string(global.b));
+
+
+draw_text(room_width/2 - 45, 25, global.num1);
+draw_text(room_width/2 - 45, 55, global.den1);
+
+draw_text(room_width/2 + 45, 25, global.num2);
+draw_text(room_width/2 + 45, 55, global.den2);
+
+draw_line_width(250, 40, 290, 40, 3);
+draw_line_width(350, 40, 390, 40, 3);
+
+draw_text(room_width/2, 40, suma_resta);
+draw_text(room_width - 100, 20, "RESUELVE");
+
+if(global.modo==0 and global.subEjercicio&lt;4){
+    draw_set_font(fnt_roboto_big);
+    draw_text(room_width-100, 50, string(global.a) + "x" + string(global.b));
+    draw_set_font(fnt_roboto);
+}
+if(global.modo==0 and global.subEjercicio==4){
+    draw_set_font(fnt_roboto_big);
+    draw_text(room_width-100, 50, string(global.a) + "+" + string(global.b));
+    draw_set_font(fnt_roboto);
+}
+if(global.modo==1){
+    draw_text(room_width/2, 20, string(global.a) + "-" + string(global.b));
+}
+if(global.modo==2){
+    draw_text(room_width/2, 20, string(global.a) + "x" + string(global.b));
+}
+if(global.modo==3){
+    draw_text(room_width/2, 20, string(global.a) + "/" + string(global.b));
+}
+
 draw_set_font(fnt_zeknum2);
-draw_text(room_width - 100, 20, "Puntaje: " + string(global.puntaje));
-draw_text(room_width - 100, 50, "Etapa: " + string(global.dificultad+2));
-draw_text(room_width - 100, 80, "Vel: " + string(global.sp2*-1));
+//draw_text(room_width - 100, 20, "Puntaje: " + string(global.puntaje));
+//draw_text(room_width - 100, 50, "Etapa: " + string(global.dificultad+2));
+//draw_text(room_width - 100, 80, "Vel: " + string(global.sp2*-1));
 //draw_text(room_width - 100, 60, "Ultimo Puntaje: " + string(global.dsmap[? global.name]));
 
 //draw_text(room_width - 100, 50, "Algo: " + string(global.puntaje));
-  
+
+draw_set_font(fnt_roboto);
+draw_set_color(c_red);
+if(global.subEjercicio&gt;1){
+    draw_text(room_width/2 - 75, 15, global.ar);
+}
+
+if(global.subEjercicio&gt;2){
+    draw_text(room_width/2 + 75, 15, global.br);
+}
+
+if(global.subEjercicio&gt;3){
+    draw_text(room_width/2, 80, string(global.den1*global.den2));
+}
+draw_set_color(c_white);
+
 }else{
     audio_stop_sound(global.snd);
     room_goto(rm_gameover);
