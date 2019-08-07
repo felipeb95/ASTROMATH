@@ -27,8 +27,9 @@
             <kind>1</kind>
             <string>randomize();
 muted = 0;
+global.subEjercicio = 1;
 global.malasSeguidas=0;
-global.operacion = "";
+global.operacion = "M";
 global.wave = 1;
 global.waveFake = 1;
 global.waveUltraFake = 1;
@@ -275,11 +276,13 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
         //meteoros ++;
         
         global.wave ++;
+        global.subEjercicio++;
         global.waveFake++;
         global.waveUltraFake++;
         if(global.waveFake==global.nTests+1){
             global.waveFake=1;
         }
+        if(global.subEjercicio==5) global.subEjercicio=1;
         
         if(global.wave==global.nEjercicios+1){
             global.existeF=0;
@@ -407,27 +410,17 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
         show_debug_message(global.waveUltraFake);
         
         if(global.modo==0) {
-            indexO = choose(floor(random_range(1,string_length(global.operaciones))));
-            global.operacion = string_char_at(global.operaciones, indexO);
+            if(global.subEjercicio&lt;4) global.operacion="M";
+            else global.operacion="S";
             if(global.operacion=="M"){
                 global.a = choose(floor(random_range(global.minA,global.maxB)));
                 global.b = choose(floor(random_range(global.minA,global.maxB)));
                 global.r = global.a*global.b;
             }
-            if(global.operacion=="D"){
-                global.a = choose(floor(random_range(global.minA,global.maxB)));
-                global.b = choose(floor(random_range(global.minA,global.a)));
-                global.r = floor(global.a/global.b);
-            }
             if(global.operacion=="S"){
                 global.a = choose(floor(random_range(global.minA,global.maxB)));
-                global.b = choose(floor(random_range(global.minA,global.maxB)));
-                global.r = global.a+global.b;
-            }
-            if(global.operacion=="R"){
-                global.a = choose(floor(random_range(global.minA,global.maxB)));
                 global.b = choose(floor(random_range(global.minA,global.a)));
-                global.r = global.a*global.b;
+                global.r = floor(global.a+global.b);
             }
         }
         if(global.modo==1) {

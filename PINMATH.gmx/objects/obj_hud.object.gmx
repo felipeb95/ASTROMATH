@@ -61,9 +61,7 @@ if(global.dead == false){
 draw_set_color(c_white);
 draw_set_font(fnt_roboto);
 if(global.modo==0 and global.operacion="M")draw_text(room_width/2, 20, string(global.a) + "x" + string(global.b));
-if(global.modo==0 and global.operacion="D")draw_text(room_width/2, 20, string(global.a) + "/" + string(global.b));
 if(global.modo==0 and global.operacion="S")draw_text(room_width/2, 20, string(global.a) + "+" + string(global.b));
-if(global.modo==0 and global.operacion="R")draw_text(room_width/2, 20, string(global.a) + "-" + string(global.b));
 if(global.modo==1)draw_text(room_width/2, 20, string(global.a) + "-" + string(global.b));
 if(global.modo==2)draw_text(room_width/2, 20, string(global.a) + "x" + string(global.b));
 if(global.modo==3)draw_text(room_width/2, 20, string(global.a) + "/" + string(global.b));

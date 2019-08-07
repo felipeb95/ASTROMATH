@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var url = "http://localhost/Astromath/curl_con.php";
+            <string>var url = "http://astromath.informaticapucv.cl/curl_con.php";
 http_get(url);
 menu_x=room_width/2; 
 menu_y=room_height/2;
@@ -159,12 +159,6 @@ if(ds_map_exists(map, "epe")){
     show_debug_message("N ejercicios de juego funciona");
     show_debug_message(n_ejercicios);
     global.N = real(n_ejercicios);
-}
-if(ds_map_exists(map, "operaciones")){
-    var str_operaciones = map[? "operaciones"];
-    show_debug_message("Operaciones en juego funciona");
-    show_debug_message(str_operaciones);
-    global.operaciones = str_operaciones;
 }
 
 

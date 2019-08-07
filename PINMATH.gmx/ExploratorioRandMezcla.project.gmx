@@ -96,9 +96,7 @@
     <object>objects\obj_bullet</object>
     <object>objects\obj_asteroid</object>
     <object>objects\obj_spawner</object>
-    <object>objects\obj_spawner_etapas</object>
     <object>objects\obj_waves</object>
-    <object>objects\obj_waves_etapas</object>
     <object>objects\obj_hud</object>
     <object>objects\obj_shake</object>
     <object>objects\obj_explode</object>
