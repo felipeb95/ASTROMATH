@@ -26,17 +26,21 @@
           <argument>
             <kind>1</kind>
             <string>randomize();
+
+global.destruir=false;
 muted = 0;
 global.malasSeguidas=0;
-indexO = choose(floor(random_range(1,string_length(global.operaciones))));
-global.operacion = string_char_at(global.operaciones, indexO);
-global.operacionAnterior = global.operacion;
 global.wave = 1;
 global.waveFake = 1;
 global.waveUltraFake = 1;
 global.origen = "random";
 //ESTO PQ NO FUNCIONA LA PARAMETRIZACION
-
+global.avanza=1;
+indexO = global.avanza;
+global.avanza++;
+if(global.avanza==string_length(global.operaciones)+1)global.avanza=1;
+global.operacion = string_char_at(global.operaciones, indexO);
+global.Nn = global.N;
 /*
 global.minA=2;
 global.maxB=9;
@@ -211,6 +215,7 @@ draw_set_font(fntMain);
 }
 //AQUÍ SE CUMPLE UNA OLEADA
 if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de pantalla
+        global.destruir=false;
         show_debug_message("Número ejercicio:")
         show_debug_message(global.numEjercicio);
         show_debug_message("multiplo A:")
@@ -278,13 +283,12 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
         //meteoros ++;
         
         global.wave ++;
-        if(global.wave == global.N){
-            global.N+=global.N;
-            while(global.operacion == global.operacionAnterior){
-                indexO = choose(floor(random_range(1,string_length(global.operaciones))));
-                global.operacion = string_char_at(global.operaciones, indexO);               
-            }
-            global.operacionAnterior = global.operacion;
+        if(global.numEjercicio == global.N){
+            global.N+=global.Nn;
+            indexO = global.avanza;
+            global.avanza++;
+            if(global.avanza==string_length(global.operaciones)+1)global.avanza=1;
+            global.operacion = string_char_at(global.operaciones, indexO);
         }
         global.waveFake++;
         global.waveUltraFake++;
@@ -436,7 +440,7 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
             if(global.operacion=="R"){
                 global.a = choose(floor(random_range(global.minA,global.maxB)));
                 global.b = choose(floor(random_range(global.minA,global.a)));
-                global.r = global.a*global.b;
+                global.r = global.a-global.b;
             }
         }
         if(global.modo==1) {

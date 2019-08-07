@@ -33,28 +33,14 @@ show_debug_message("Ejercicio");
 show_debug_message(global.waveUltraFake);
 
 if(global.modo==0) {
-    indexO = choose(floor(random_range(1,string_length(global.operaciones))));
-    global.operacion = string_char_at(global.operaciones, indexO);
-    if(global.operacion=="M"){
-        global.a = choose(floor(random_range(global.minA,global.maxB)));
-        global.b = choose(floor(random_range(global.minA,global.maxB)));
-        global.r = global.a*global.b;
-    }
-    if(global.operacion=="D"){
-        global.a = choose(floor(random_range(global.minA,global.maxB)));
-        global.b = choose(floor(random_range(global.minA,global.a)));
-        global.r = floor(global.a/global.b);
-    }
-    if(global.operacion=="S"){
-        global.a = choose(floor(random_range(global.minA,global.maxB)));
-        global.b = choose(floor(random_range(global.minA,global.maxB)));
-        global.r = global.a+global.b;
-    }
-    if(global.operacion=="R"){
-        global.a = choose(floor(random_range(global.minA,global.maxB)));
-        global.b = choose(floor(random_range(global.minA,global.a)));
-        global.r = global.a*global.b;
-    }
+    global.num1=choose(floor(random_range(global.minA,global.maxB)));
+    global.num2=choose(floor(random_range(global.minA,global.maxB)));
+    global.den1=choose(floor(random_range(global.minA,global.maxB)));
+    global.den2=choose(floor(random_range(global.minA,global.maxB)));
+    global.a = global.num1;
+    global.b = global.den2;
+    global.r = global.a*global.b;
+    global.ar = global.a*global.b;
         
 }
 if(global.modo==1) {

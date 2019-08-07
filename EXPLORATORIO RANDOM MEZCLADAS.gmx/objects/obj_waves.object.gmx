@@ -53,7 +53,7 @@ if(global.modo==0) {
     if(global.operacion=="R"){
         global.a = choose(floor(random_range(global.minA,global.maxB)));
         global.b = choose(floor(random_range(global.minA,global.a)));
-        global.r = global.a*global.b;
+        global.r = global.a-global.b;
     }
         
 }

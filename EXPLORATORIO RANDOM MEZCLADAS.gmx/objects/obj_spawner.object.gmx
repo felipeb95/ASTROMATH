@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>randomize();
+global.destruir=false;
 muted = 0;
 global.malasSeguidas=0;
 global.operacion = "";
@@ -34,7 +35,6 @@ global.waveFake = 1;
 global.waveUltraFake = 1;
 global.origen = "random";
 //ESTO PQ NO FUNCIONA LA PARAMETRIZACION
-
 /*
 global.minA=2;
 global.maxB=9;
@@ -209,6 +209,7 @@ draw_set_font(fntMain);
 }
 //AQUÍ SE CUMPLE UNA OLEADA
 if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de pantalla
+        global.destruir=false;
         show_debug_message("Número ejercicio:")
         show_debug_message(global.numEjercicio);
         show_debug_message("multiplo A:")
@@ -428,7 +429,7 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
             if(global.operacion=="R"){
                 global.a = choose(floor(random_range(global.minA,global.maxB)));
                 global.b = choose(floor(random_range(global.minA,global.a)));
-                global.r = global.a*global.b;
+                global.r = global.a-global.b;
             }
         }
         if(global.modo==1) {

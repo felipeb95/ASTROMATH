@@ -87,6 +87,7 @@ with (other){
 if(global.r == global.numM){
     global.malasSeguidas=0;
     global.nrondasc++;
+    global.destruir = true;
     if(global.nrondasc&gt;=2 &amp;&amp; global.sp2&gt;global.max_vel){
         global.sp1 -= global.acel;
         global.sp2 -= global.acel;
