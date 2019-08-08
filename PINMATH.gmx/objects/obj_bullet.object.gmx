@@ -85,6 +85,7 @@ with (other){
 }
 
 if(global.r == global.numM){
+    global.destruir=true;
     global.malasSeguidas=0;
     global.nrondasc++;
     if(global.nrondasc&gt;=2 &amp;&amp; global.sp2&gt;global.max_vel){

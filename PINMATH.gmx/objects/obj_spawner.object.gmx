@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>randomize();
 muted = 0;
+global.destruir=false;
 global.subEjercicio = 1;
 global.malasSeguidas=0;
 global.operacion = "M";
@@ -629,7 +630,8 @@ alarm[0] = spawn_rate;
             <kind>1</kind>
             <string>global.segundos += 1/room_speed;
 
-if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de pantalla
+if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen de pantalla
+        global.destruir=false;
         show_debug_message("Número ejercicio:")
         show_debug_message(global.numEjercicio);
         show_debug_message("multiplo A:")
@@ -644,7 +646,6 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
         show_debug_message(global.tiempoUltimaRespuesta);
         show_debug_message("Estado de la respuesta:")
         show_debug_message(global.estado);
-        
         roundMap = ds_map_create();
         ds_map_add(roundMap, "multiplo_a", global.a);
         ds_map_add(roundMap, "multiplo_b", global.b);
