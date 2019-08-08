@@ -51,8 +51,8 @@
             <string>draw_line_width(250, y, 290, y, 3);
 draw_text(room_width/2, y, suma_resta);
 draw_line_width(350, y, 390, y, 3);
-//draw_line_width(0, 170 , 700, 170, 3); //LINEA TOPE
-//draw_line_width(room_width/2, 0, room_width/2, room_height, 3) // LINEA VERTICAL CENTRO
+draw_line_width(0, 170 , 700, 170, 3); //LINEA TOPE
+draw_line_width(room_width/2, 0, room_width/2, room_height, 3) // LINEA VERTICAL CENTRO
 
 if(global.subEjercicio&gt;3){
     draw_set_color(c_red);
