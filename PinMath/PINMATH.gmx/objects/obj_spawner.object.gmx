@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>randomize();
 muted = 0;
+global.destruir=false;
 global.subEjercicio = 1;
 global.malasSeguidas=0;
 global.operacion = "M";
@@ -630,6 +631,7 @@ alarm[0] = spawn_rate;
             <string>global.segundos += 1/room_speed;
 
 if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de pantalla
+        global.destruir=false;
         show_debug_message("Número ejercicio:")
         show_debug_message(global.numEjercicio);
         show_debug_message("multiplo A:")
