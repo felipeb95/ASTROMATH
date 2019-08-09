@@ -28,7 +28,7 @@
             <string>///Init
 //definir variables
 x= 70
-y= 236;
+y= 318;
 spd = 20; //SALTO DE PIXELES
 rate = 8; 
 hp = 3;
