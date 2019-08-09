@@ -55,7 +55,8 @@
     <sprite>sprites\spr_loading</sprite>
     <sprite>sprites\spr_vidas_update</sprite>
     <sprite>sprites\bicho</sprite>
-    <sprite>sprites\frog</sprite>
+    <sprite>sprites\spr_frog</sprite>
+    <sprite>sprites\spr_swamp</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_space</background>
@@ -127,6 +128,7 @@
     <object>objects\obj_denom1</object>
     <object>objects\obj_denom2</object>
     <object>objects\obj_fraccion</object>
+    <object>objects\obj_swamp</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_aux</room>
