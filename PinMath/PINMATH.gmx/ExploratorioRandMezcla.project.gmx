@@ -54,6 +54,8 @@
     <sprite>sprites\spr_tecla_m</sprite>
     <sprite>sprites\spr_loading</sprite>
     <sprite>sprites\spr_vidas_update</sprite>
+    <sprite>sprites\bicho</sprite>
+    <sprite>sprites\frog</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_space</background>
@@ -61,6 +63,8 @@
     <background>background\bg_stars</background>
     <background>background\logo</background>
     <background>background\logo2</background>
+    <background>background\swamp</background>
+    <background>background\background6</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">

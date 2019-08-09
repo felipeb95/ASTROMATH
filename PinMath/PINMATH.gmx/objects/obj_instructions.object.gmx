@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_halign(fa_center); //Horizontal alignment
+            <string>global.col=1;
+draw_set_halign(fa_center); //Horizontal alignment
 draw_set_valign(fa_middle);  //Vertical alignment
 draw_set_font(fntMainMed);
 menu_x=room_width/2; 
@@ -67,7 +68,7 @@ draw_text(menu_x,menu_y+190,"Presiona ENTER para continuar");
           <argument>
             <kind>1</kind>
             <string>global.modo = 0; //Antiguamente 2 era para multiplicaciones.
-room_goto(rm_select);
+room_goto(rm_loading);
 </string>
           </argument>
         </arguments>
