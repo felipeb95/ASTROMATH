@@ -68,7 +68,7 @@ if( move != 0)
 
 var push;
 
-push = max(keyboard_check_released(vk_enter),keyboard_check_released(vk_shift),keyboard_check_released(vk_space),0);
+push = max(keyboard_check_released(vk_enter),keyboard_check_released(vk_shift),0);
 if( push == 1)
     scr_menu();
 </string>

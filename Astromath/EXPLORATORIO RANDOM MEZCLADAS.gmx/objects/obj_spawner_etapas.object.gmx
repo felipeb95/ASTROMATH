@@ -26,7 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>randomize();
-
+global.memA=0;
+global.memB=0;
 global.destruir=false;
 muted = 0;
 global.malasSeguidas=0;
@@ -37,8 +38,6 @@ global.origen = "random";
 //ESTO PQ NO FUNCIONA LA PARAMETRIZACION
 global.avanza=1;
 indexO = global.avanza;
-global.avanza++;
-if(global.avanza==string_length(global.operaciones)+1)global.avanza=1;
 global.operacion = string_char_at(global.operaciones, indexO);
 global.Nn = global.N;
 /*
@@ -284,12 +283,13 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
         
         global.wave ++;
         if(global.numEjercicio == global.N){
-            global.N+=global.Nn;
-            indexO = global.avanza;
+            show_debug_message("CAMBIO");
+            global.N=global.N+global.Nn;
             global.avanza++;
             if(global.avanza==string_length(global.operaciones)+1)global.avanza=1;
+            indexO = global.avanza;
             global.operacion = string_char_at(global.operaciones, indexO);
-        }
+        } 
         global.waveFake++;
         global.waveUltraFake++;
         if(global.waveFake==global.nTests+1){
@@ -423,25 +423,35 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
         
         if(global.modo==0) {
             if(global.operacion=="M"){
-                global.a = choose(floor(random_range(global.minA,global.maxB)));
-                global.b = choose(floor(random_range(global.minA,global.maxB)));
+                while(global.a==global.memA and global.b==global.memB){
+                    global.a = choose(floor(random_range(global.minA,global.maxB)));
+                    global.b = choose(floor(random_range(global.minA,global.maxB)));
+                }
                 global.r = global.a*global.b;
             }
             if(global.operacion=="D"){
-                global.a = choose(floor(random_range(global.minA,global.maxB)));
-                global.b = choose(floor(random_range(global.minA,global.a)));
+                while(global.a==global.memA and global.b==global.memB){
+                    global.a = choose(floor(random_range(global.minA,global.maxB)));
+                    global.b = choose(floor(random_range(global.minA,global.a)));
+                }
                 global.r = floor(global.a/global.b);
             }
             if(global.operacion=="S"){
-                global.a = choose(floor(random_range(global.minA,global.maxB)));
-                global.b = choose(floor(random_range(global.minA,global.maxB)));
+                while(global.a==global.memA and global.b==global.memB){
+                    global.a = choose(floor(random_range(global.minA,global.maxB)));
+                    global.b = choose(floor(random_range(global.minA,global.maxB)));
+                }
                 global.r = global.a+global.b;
             }
             if(global.operacion=="R"){
-                global.a = choose(floor(random_range(global.minA,global.maxB)));
-                global.b = choose(floor(random_range(global.minA,global.a)));
+                while(global.a==global.memA and global.b==global.memB){
+                    global.a = choose(floor(random_range(global.minA,global.maxB)));
+                    global.b = choose(floor(random_range(global.minA,global.a)));
+                }
                 global.r = global.a-global.b;
             }
+            global.memA=global.a;
+            global.memB=global.b;
         }
         if(global.modo==1) {
             global.a = choose(floor(random_range(1,20)));

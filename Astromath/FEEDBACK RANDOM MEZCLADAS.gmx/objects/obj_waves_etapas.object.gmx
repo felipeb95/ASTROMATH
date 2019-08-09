@@ -26,6 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>global.waveUltraFake = 1;
+global.memA=0;
+global.memB=0;
 //inicio oleadas
 randomize();
 global.intentos = 0;
@@ -51,8 +53,10 @@ if(global.modo==0) {
     if(global.operacion=="R"){
         global.a = choose(floor(random_range(global.minA,global.maxB)));
         global.b = choose(floor(random_range(global.minA,global.a)));
-        global.r = global.a*global.b;
+        global.r = global.a-global.b;
     }
+    global.memA=global.a;
+    global.memB=global.b;
 }
 if(global.modo==1) {
     global.a = choose(floor(random_range(1,20)));
