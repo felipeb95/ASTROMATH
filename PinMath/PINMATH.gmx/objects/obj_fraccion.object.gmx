@@ -56,7 +56,7 @@ draw_line_width(350, y, 390, y, 3);
 color1 = $ff266e;
 color2 = $ffffff;
 
-//draw_line_width(0, 170 , 700, 170, 3); //LINEA TOPE
+//draw_line_width(0, 210 , 700, 210, 3); //LINEA TOPE
 //draw_line_width(room_width/2, 0, room_width/2, room_height, 3) // LINEA VERTICAL CENTRO
 
 if(global.subEjercicio&gt;3){

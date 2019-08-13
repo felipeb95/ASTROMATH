@@ -130,6 +130,7 @@
     <object>objects\obj_denom2</object>
     <object>objects\obj_fraccion</object>
     <object>objects\obj_swamp</object>
+    <object>objects\obj_resultado_parcial</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_aux</room>

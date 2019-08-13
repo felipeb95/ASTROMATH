@@ -40,9 +40,9 @@ act = false;
 lowest_pos = false;
 highest_pos = false;
 
-moves[0] = 236;
+moves[0] = 246;
 moves[1] = 318;
-moves[2] = 400;
+moves[2] = 390;
 
 move_pos = 1;
 

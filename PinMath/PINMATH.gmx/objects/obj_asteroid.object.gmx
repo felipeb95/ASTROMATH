@@ -193,7 +193,8 @@ if(global.destruir) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
+            <string>//draw_self();
+draw_sprite_ext(bicho, 0, x, y, 0.9, 0.9, image_angle, image_blend, image_alpha);
 //if(global.cont==global.alternativa){
 //u7=correctValue;
 //}else {

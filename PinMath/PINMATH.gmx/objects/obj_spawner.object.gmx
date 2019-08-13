@@ -126,9 +126,9 @@ global.segundos = 0;
 global.aparicionCorrecta = 0;
 global.tiempoUltimaRespuesta = 0;
 
-global.arrAltura[0] = 216;
-global.arrAltura[1] = 298;
-global.arrAltura[2] = 380;
+global.arrAltura[0] = 246;
+global.arrAltura[1] = 318;
+global.arrAltura[2] = 390;
 
 global.bigMap = ds_map_create();
 global.intentosRonda = ds_map_create();

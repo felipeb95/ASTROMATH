@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>2</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,8 +25,45 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>suma_resta = "suma";
-str = "";
+            <string>suma_resta = "+"
+numerador = "? "+suma_resta+" ?";
+denominador = "?";
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(global.subEjercicio&gt;=2)
+    numerador = string(global.ar) + " + ?";
+
+if(global.subEjercicio&gt;=3)
+    numerador = string(global.ar) + " + " +string(global.br);
+
+if(global.subEjercicio&gt;=4)
+    denominador = string(global.den1*global.den2);
+    
+if(global.subEjercicio == 1){
+    numerador = "? + ?";
+    denominador = "?";
+}
 </string>
           </argument>
         </arguments>
@@ -49,62 +86,11 @@ str = "";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>wy = 0;
-x = room_width/2;
-currentY = y;
-marginTop = 10;
-
-if(global.dead == false){
-  draw_sprite(spr_vidas_update, obj_ship.hp ,1,0);
-
-
-//dibujar texto oleadas
-
-draw_set_color(c_white);
-draw_set_font(font_puntaje);
-draw_set_halign(fa_left);
-draw_text(5, 30, "P: " + string(global.puntaje)+
-" | V: " + string(-1*(global.sp2))+
-" | E: " + string(global.wave));
-draw_set_halign(fa_center);
+            <string>draw_set_font(fnt_roboto_big)
+draw_line_width(x-50, y, x+50, y, 3);
+draw_text(x,y-20,numerador);
+draw_text(x,y+20,denominador);
 draw_set_font(fnt_roboto);
-
-
-//draw_text(room_width/2 - 45, 25, global.num1);
-//draw_text(room_width/2 - 45, 55, global.den1);
-
-//draw_text(room_width/2 + 45, 25, global.num2);
-//draw_text(room_width/2 + 45, 55, global.den2);
-
-if(global.modo==0 and global.subEjercicio&lt;4){
-    str = "Multiplica " + string(global.a) + "x" + string(global.b);
-}
-if(global.modo==0 and global.subEjercicio==4){
-    /*if(global.tipo_operacion)=="suma")
-        suma_resta = "suma" 
-    else
-        suma_resta = "resta"
-    */
-    str = "Resuelve la "+suma_resta +" "+ string(global.a) + "+" + string(global.b);
-}
-if(global.modo==1){
-    draw_text(room_width/2, 20, string(global.a) + "-" + string(global.b));
-}
-if(global.modo==2){
-    draw_text(room_width/2, 20, string(global.a) + "x" + string(global.b));
-}
-if(global.modo==3){
-    draw_text(room_width/2, 20, string(global.a) + "/" + string(global.b));
-}
-
-
-draw_set_font(fnt_roboto);
-draw_text(room_width/2, 190, str);
-
-}else{
-    audio_stop_sound(global.snd);
-    room_goto(rm_gameover);
-}
 </string>
           </argument>
         </arguments>
