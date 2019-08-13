@@ -50,9 +50,9 @@ reverse = false;
           <argument>
             <kind>1</kind>
             <string>if(global.subEjercicio == 1 || global.subEjercicio == 3){
-    if(scale_factor &lt; 1.8 &amp;&amp; !reverse){
+    if(scale_factor &lt; 1.5 &amp;&amp; !reverse){
         scale_factor += 0.03;
-        if(scale_factor &gt;= 1.8)
+        if(scale_factor &gt;= 1.5)
             reverse = true;
     }
     else if(reverse){

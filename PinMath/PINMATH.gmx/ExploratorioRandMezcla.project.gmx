@@ -57,6 +57,7 @@
     <sprite>sprites\bicho</sprite>
     <sprite>sprites\spr_frog</sprite>
     <sprite>sprites\spr_swamp</sprite>
+    <sprite>sprites\spr_mariposa</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_space</background>

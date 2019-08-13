@@ -50,9 +50,9 @@ reverse = false;
           <argument>
             <kind>1</kind>
             <string>if(global.subEjercicio == 2 || global.subEjercicio == 4){
-    if(scale_factor &lt; 1.8 &amp;&amp; !reverse){
+    if(scale_factor &lt; 1.5 &amp;&amp; !reverse){
         scale_factor += 0.03;
-        if(scale_factor &gt;= 1.8)
+        if(scale_factor &gt;= 1.5)
             reverse = true;
     }
     else if(reverse){
@@ -83,17 +83,20 @@ reverse = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(global.subEjercicio == 2  || global.subEjercicio == 4){
-      color = $76de91;
-    draw_text_transformed_colour(x, y-5, string(global.num2), scale_factor, scale_factor, 0, color, color, color, color, 1);
+            <string>color1 = $76de91;
+color2 = $ff266e;
+
+if(global.subEjercicio == 2){
+    draw_text_transformed_colour(x, y-5, string(global.num2), scale_factor, scale_factor, 0, color1, color1, color1, color1, 1);
 }
 else
     draw_text(x,y-5,string(global.num2));
-
-if(global.subEjercicio&gt;2){
-    draw_set_color(c_red);
-    draw_text(x, y-35, global.br);
-    draw_set_color(c_white)
+  
+if(global.subEjercicio&gt;2 &amp;&amp; global.subEjercicio!=4){
+    draw_text(x,y-42,string(global.br));
+}
+else if(global.subEjercicio == 4){
+    draw_text_transformed_colour(x, y-45, string(global.br), scale_factor, scale_factor, 0, color1, color1, color1, color1, 1);
 }
 </string>
           </argument>
