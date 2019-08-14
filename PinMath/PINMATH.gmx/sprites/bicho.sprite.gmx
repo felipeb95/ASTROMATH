@@ -10,7 +10,7 @@
   <bbox_left>8</bbox_left>
   <bbox_right>88</bbox_right>
   <bbox_top>5</bbox_top>
-  <bbox_bottom>53</bbox_bottom>
+  <bbox_bottom>58</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
@@ -22,5 +22,6 @@
   <frames>
     <frame index="0">images\bicho_0.png</frame>
     <frame index="1">images\bicho_1.png</frame>
+    <frame index="2">images\bicho_2.png</frame>
   </frames>
 </sprite>
