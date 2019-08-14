@@ -28,6 +28,40 @@
             <string>global.loaded = 0;
 menu[0]="Presiona ENTER para comenzar a jugar";
 line_spacing=15; //Line Spacing
+reverse = false;
+alpha_change = 1.0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(alpha_change &lt;= 1.0 &amp;&amp; !reverse){
+        alpha_change += 0.03;
+        if(alpha_change &gt;= 1.0)
+            reverse = true;
+    }
+    else if(reverse){
+        alpha_change -= 0.03;
+        if(alpha_change &lt;= 0.2)
+            reverse = false;
+}
 </string>
           </argument>
         </arguments>
@@ -56,8 +90,10 @@ draw_set_font(fntMainMed);
 menu_x=room_width/2; 
 menu_y=room_height/2;
 draw_set_colour(c_white);
-draw_text(menu_x, menu_y, "Presiona ENTER para comenzar");
-draw_sprite(spr_white_enter, 0 , menu_x, menu_y+100);
+c1 = c_white;
+draw_text_transformed_colour(menu_x+150, menu_y+180, "Presiona ENTER para comenzar", 1, 1, 0, c1, c1, c1, c1, alpha_change);
+//draw_text(menu_x+150, menu_y+180, "Presiona ENTER para comenzar");
+//draw_sprite(spr_white_enter, 0 , menu_x, menu_y+200);
 </string>
           </argument>
         </arguments>

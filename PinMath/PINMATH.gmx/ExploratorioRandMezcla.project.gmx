@@ -58,6 +58,7 @@
     <sprite>sprites\spr_frog</sprite>
     <sprite>sprites\spr_swamp</sprite>
     <sprite>sprites\spr_mariposa</sprite>
+    <sprite>sprites\spr_rocks</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_space</background>
@@ -67,6 +68,8 @@
     <background>background\logo2</background>
     <background>background\swamp</background>
     <background>background\background6</background>
+    <background>background\bg_pinmath</background>
+    <background>background\bg_swamp</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">

@@ -188,6 +188,7 @@ instance_deactivate_object(obj_shoter);
           <argument>
             <kind>1</kind>
             <string>draw_sprite(spr_frog,subimg,x,y);
+
 </string>
           </argument>
         </arguments>

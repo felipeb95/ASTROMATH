@@ -78,6 +78,7 @@ alarm[0] = room_speed*0.2;
           <argument>
             <kind>1</kind>
             <string>draw_sprite_ext(spr_swamp, subimg, x, y, 1, 1.15, 0, c_white,1);
+draw_sprite_ext(spr_rocks, 0, 0, room_height, 0.4, 0.35, image_angle, image_blend, image_alpha);
 </string>
           </argument>
         </arguments>
