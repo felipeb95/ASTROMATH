@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>randomize();
 depth = 1;
-alarm[0] = room_speed*2;
+alarm[0] = room_speed*1.5; // Igual que en el Step del obj_spawner (wave_generator_timer);
 a = string(global.a);
 b = string(global.b);
 r = string(global.r);

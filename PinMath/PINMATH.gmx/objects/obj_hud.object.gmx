@@ -76,11 +76,13 @@ draw_set_font(fnt_roboto);
 
 //draw_text(room_width/2 + 45, 25, global.num2);
 //draw_text(room_width/2 + 45, 55, global.den2);
+if(global.ejercicioTerminado)
+    str = "";
 
-if(global.modo==0 and global.subEjercicio&lt;4){
+if(global.modo==0 and global.subEjercicio&lt;4 and !global.ejercicioTerminado){
     str = "Multiplica " + string(global.a) + "x" + string(global.b);
 }
-if(global.modo==0 and global.subEjercicio==4){
+if(global.modo==0 and global.subEjercicio==4 and !global.ejercicioTerminado){
     /*if(global.tipo_operacion)=="suma")
         suma_resta = "suma" 
     else
