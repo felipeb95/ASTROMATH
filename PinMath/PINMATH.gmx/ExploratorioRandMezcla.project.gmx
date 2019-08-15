@@ -59,6 +59,9 @@
     <sprite>sprites\spr_swamp</sprite>
     <sprite>sprites\spr_mariposa</sprite>
     <sprite>sprites\spr_rocks</sprite>
+    <sprite>sprites\spr_woodenboard</sprite>
+    <sprite>sprites\spr_congrats</sprite>
+    <sprite>sprites\spr_feedback</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_space</background>
@@ -103,6 +106,7 @@
     <font>fonts\fontOpcionesGO</font>
     <font>fonts\font_loading</font>
     <font>fonts\font_puntaje</font>
+    <font>fonts\font_correccion</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_ship</object>
@@ -134,6 +138,8 @@
     <object>objects\obj_fraccion</object>
     <object>objects\obj_swamp</object>
     <object>objects\obj_resultado_parcial</object>
+    <object>objects\obj_textbox_celebracion</object>
+    <object>objects\obj_textbox_correccion</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_aux</room>

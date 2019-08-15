@@ -25,11 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[0] = room_speed*2;
+            <string>depth = 1;
+alarm[0] = room_speed*2;
 a = string(global.a);
 b = string(global.b);
 r = string(global.r);
 
+show_debug_message("MENSAJE DE FEEDBACK");
 </string>
           </argument>
         </arguments>
@@ -57,7 +59,7 @@ show_debug_message("Se eliminó");
 show_debug_message(obj_ship.hp);
 
 
-if(obj_ship.hp == 0){
+if(obj_ship.hp &lt;= 0){
     audio_stop_sound(global.snd);
     room_goto(rm_gameover);
 }
@@ -87,15 +89,15 @@ if(obj_ship.hp == 0){
             <string>x = view_xview + view_wview/2;
 y = view_yview + view_hview/2;
 
-draw_sprite(spr_correccion,0,x,y);
+draw_sprite(spr_feedback,0,x,y+30);
 str = "RECUERDA";
 str2 = a+"x"+b+" es "+r;
 
 draw_set_font(font_correccion);
 draw_set_colour(c_red);
-draw_text(x,y-25,str);
+draw_text(x,y+10,str);
 draw_set_colour(c_white);
-draw_text(x,y+10,str2);
+draw_text(x,y+45,str2);
 
 
 </string>

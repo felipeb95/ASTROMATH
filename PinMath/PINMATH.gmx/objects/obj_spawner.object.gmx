@@ -631,6 +631,8 @@ alarm[0] = spawn_rate;
             <string>global.segundos += 1/room_speed;
 
 if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de pantalla
+        if(global.estado != "correcta") 
+            instance_create(0,0,obj_textbox_correccion);
         global.destruir=false;
         show_debug_message("Número ejercicio:")
         show_debug_message(global.numEjercicio);

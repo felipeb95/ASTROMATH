@@ -86,11 +86,14 @@ if(global.subEjercicio == 1){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_font(fnt_roboto_big)
+            <string>draw_sprite_ext(spr_woodenboard,0,x,y,0.95,0.95,image_angle,image_blend,image_alpha);
+draw_set_font(fnt_roboto_big)
 draw_line_width(x-50, y, x+50, y, 3);
 draw_text(x,y-20,numerador);
 draw_text(x,y+20,denominador);
 draw_set_font(fnt_roboto);
+
+
 </string>
           </argument>
         </arguments>
