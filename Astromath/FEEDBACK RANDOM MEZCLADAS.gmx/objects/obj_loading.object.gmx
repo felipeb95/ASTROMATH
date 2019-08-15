@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var url = "http://astromath.informaticapucv.cl/curl_exp.php";
+            <string>var url = "http://astromath.informaticapucv.cl/curl_con.php";
 http_get(url);
 menu_x=room_width/2; 
 menu_y=room_height/2;
