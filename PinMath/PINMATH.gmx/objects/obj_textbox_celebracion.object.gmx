@@ -25,11 +25,21 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>depth = 1;
+            <string>randomize();
+depth = 1;
 alarm[0] = room_speed*2;
 a = string(global.a);
 b = string(global.b);
 r = string(global.r);
+
+str = "";
+array_mensajes[0] = "¡BUEN TRABAJO!";
+array_mensajes[1] = "¡EXCELENTE!";
+array_mensajes[2] = "¡MUY BIEN!";
+array_mensajes[3] = "¡CORRECTO!";
+
+msge_picker = irandom_range(0,array_length_1d(array_mensajes)-1);
+str += array_mensajes[msge_picker];
 
 show_debug_message("MENSAJE DE FELICITACIONES");
 </string>
@@ -84,12 +94,11 @@ show_debug_message(obj_ship.hp);
 y = view_yview + view_hview/2;
 
 draw_sprite(spr_congrats,0,x,y+30);
-str = "EXCELENTE";
 //str2 = a+"x"+b+" es "+r;
 
 draw_set_font(font_correccion);
 draw_set_colour(c_yellow);
-draw_text(x,y+30,str);
+draw_text(x+20,y+30,str);
 draw_set_colour(c_white);
 //draw_text(x,y+10,str2);
 

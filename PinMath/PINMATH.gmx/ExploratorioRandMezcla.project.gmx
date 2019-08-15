@@ -11,6 +11,7 @@
     <sound>sound\correct</sound>
     <sound>sound\incorrect</sound>
     <sound>sound\explosion</sound>
+    <sound>sound\snd_glitter</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_ship</sprite>
@@ -62,6 +63,7 @@
     <sprite>sprites\spr_woodenboard</sprite>
     <sprite>sprites\spr_congrats</sprite>
     <sprite>sprites\spr_feedback</sprite>
+    <sprite>sprites\spr_sparkles</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_space</background>

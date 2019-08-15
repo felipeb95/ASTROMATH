@@ -139,9 +139,13 @@ global.medios = undefined;
 global.dificiles = undefined;
 
 global.spawner_enabled = true;
+global.ejercicioTerminado = false;
 
 meteoros = 3;
-spawn_rate = 50;
+spawn_rate = 50; // original es 50;
+wave_generator_timer = 2;
+ultimoEjercicio = undefined;
+global.suma_correcta = undefined;
 alarm[0] = spawn_rate;
 </string>
           </argument>
@@ -187,6 +191,7 @@ draw_set_font(fntMain);
 //AQUÍ SE CUMPLE UNA OLEADA
 
 if(global.spawner_enabled){
+    global.ejercicioTerminado = false;
     global.alternativa=choose(floor(random_range(1,3)));
     for(i = 0; i&lt;3; i++){
         if(i == global.alternativa)
@@ -604,7 +609,9 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
 }else{
 */
 //nueva llamada 
-alarm[0] = spawn_rate;
+
+alarm[0] = spawn_rate; // original es spawn_rate 
+
 
 </string>
           </argument>
@@ -703,10 +710,12 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
         global.wave ++;
         global.waveFake++;
         global.waveUltraFake++;
+        ultimoEjercicio = global.subEjercicio;
         global.subEjercicio++;
         reverse_scale_setter();
         if(global.subEjercicio==5){
             global.subEjercicio=1;
+            global.ejercicioTerminado = true;
         }
         if(global.waveFake==global.nTests+1){
             global.waveFake=1;
@@ -1030,7 +1039,29 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
         global.ccont=0;
         
         
-        alarm[0] = room_speed*1;
+        if(global.estado == "correcta")
+            wave_generator_timer = 1.5; 
+            /* Se esperan 1,5 segundos para visualizar feedback de felicitaciones
+             y generar nuevas libélulas */
+        else
+            wave_generator_timer = 2; 
+            /* Se esperan 2 segundos para visualizar feedback de correción
+             y generar nuevas libélulas */
+
+        if(ultimoEjercicio == 4)
+            wave_generator_timer = 3;
+            /* Se esperan 4 segundos para visualizar la fracción completa
+             y generar un nuevo ejercicio (mariposa) más nuevas libélulas */
+             
+               
+        if(!global.ejercicioTerminado)
+            global.suma_correcta = global.ar + global.br;
+            /* Guardo el valor de la suma que corresponde al resultado correcto
+            en el numerador, para que si cambia por la alarma y generación de nuevo ejercicio,
+            se siga mostrando hasta que termine el timer tras finalizar una mariposa */
+            
+            
+        alarm[0] = room_speed*wave_generator_timer;
         global.intentos = 0; /*CUANDO YA PASARON TODOS LOS ASTEROIDES (RONDA TERMINADA
                                 EL CONTADOR DE INTENTOS SE RESETEA*/
         global.numEjercicio++;

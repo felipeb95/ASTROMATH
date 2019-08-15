@@ -86,7 +86,7 @@ reverse = false;
             <string>color1 = $76de91;
 color2 = $ff266e;
 
-if(global.subEjercicio == 2){
+if(global.subEjercicio == 2 &amp;&amp; !global.ejercicioTerminado){
     draw_text_transformed_colour(x, y-5, string(global.num2), scale_factor, scale_factor, 0, color1, color1, color1, color1, 1);
 }
 else
@@ -95,7 +95,7 @@ else
 if(global.subEjercicio&gt;2 &amp;&amp; global.subEjercicio!=4){
     draw_text(x,y-42,string(global.br));
 }
-else if(global.subEjercicio == 4){
+else if(global.subEjercicio == 4 &amp;&amp; !global.ejercicioTerminado){
     draw_text_transformed_colour(x, y-45, string(global.br), scale_factor, scale_factor, 0, color1, color1, color1, color1, 1);
 }
 </string>

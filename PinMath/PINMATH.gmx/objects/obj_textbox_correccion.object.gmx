@@ -95,9 +95,9 @@ str2 = a+"x"+b+" es "+r;
 
 draw_set_font(font_correccion);
 draw_set_colour(c_red);
-draw_text(x,y+10,str);
+draw_text(x+20,y+10,str);
 draw_set_colour(c_white);
-draw_text(x,y+45,str2);
+draw_text(x+20,y+45,str2);
 
 
 </string>
