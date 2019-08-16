@@ -224,15 +224,27 @@ if(global.destruir) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//draw_self();
-draw_sprite_ext(bicho, subimg, x, y, 0.9, 0.9, image_angle, image_blend, image_alpha);
-//if(global.cont==global.alternativa){
-//u7=correctValue;
-//}else {
-u7 = randValue;
-//}
-draw_set_font(fnt_meteo);
-draw_text(x+60,y,u7);
+            <string>u7=0;
+randomize();
+correctValue = global.r;
+if(global.bot==0){
+    randValue = irandom_range(global.r-10,global.r+10);
+    if(randValue&lt;2) randValue=2;
+    while(randValue==global.r){
+        randValue=irandom_range(global.r-10,global.r+10); 
+        if(randValue&lt;2) randValue=2; 
+    }
+}
+if(global.bot==1){
+    randValue = global.r;
+    global.aparicionCorrecta = global.segundos;
+}
+//speed
+hspeed = global.sp2;
+
+alarm[0] = room_speed*0.2;
+subimg_total = sprite_get_number(bicho);
+subimg = 0;
 
 </string>
           </argument>
