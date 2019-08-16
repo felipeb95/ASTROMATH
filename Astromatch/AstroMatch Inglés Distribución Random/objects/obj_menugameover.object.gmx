@@ -110,7 +110,7 @@ draw_set_halign(fa_center); //Horizontal alignment
 draw_set_valign(fa_middle);  //Vertical alignment
 menu_x=room_width/2; 
 menu_y=room_height/2-50;
-draw_set_font(fontOpcionesGO);
+//draw_set_font(fontOpcionesGO);
 for (i=0;i&lt;array_length_1d(menu);i++)
 {
     //draw_set_color(c_black);//Shadow color
