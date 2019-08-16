@@ -643,6 +643,7 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
         if(global.estado != "correcta") 
             instance_create(0,0,obj_textbox_correccion);
         global.destruir=false;
+        global.nMalo=0;
         show_debug_message("Número ejercicio:")
         show_debug_message(global.numEjercicio);
         show_debug_message("multiplo A:")
