@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>randomize();
 muted = 0;
-global.contadorMala=0;
+global.nMalo=0;
 global.destruir=false;
 global.subEjercicio = 1;
 global.malasSeguidas=0;
