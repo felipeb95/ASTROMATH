@@ -29,10 +29,10 @@
 randomize();
 correctValue = global.r;
 if(global.bot==0){
-    randValue = floor(random_range(global.r-10,global.r+10));
+    randValue = irandom_range(global.r-10,global.r+10);
     if(randValue&lt;2) randValue=2;
     while(randValue==global.r){
-        randValue=floor(random_range(global.r-10,global.r+10)); 
+        randValue = irandom_range(global.r-10,global.r+10); 
         if(randValue&lt;2) randValue=2; 
     }
 }

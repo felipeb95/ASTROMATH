@@ -192,10 +192,11 @@ draw_set_font(fntMain);
 
 if(global.spawner_enabled){
     global.ejercicioTerminado = false;
-    global.alternativa=choose(floor(random_range(1,3)));
+    global.alternativa=irandom_range(0,2);
     for(i = 0; i&lt;3; i++){
-        if(i == global.alternativa)
+        if(i == global.alternativa){
             global.bot = 1;
+        }
         instance_create(room_width + 40, global.arrAltura[i], obj_asteroid);
         global.bot = 0;
     }
