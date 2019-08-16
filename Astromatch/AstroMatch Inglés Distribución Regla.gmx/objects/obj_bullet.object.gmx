@@ -107,7 +107,7 @@ if(global.correcta_actual == global.numM){
     global.estado = "correcta";
     move_to_good();
     global.last_correct = global.correcta_actual;
-    next_level_condition();
+    next_level_condition(); // 1 es source desde bullet.
     global.feedback=1;
     
 }else{ 

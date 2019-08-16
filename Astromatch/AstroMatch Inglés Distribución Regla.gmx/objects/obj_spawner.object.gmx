@@ -124,6 +124,7 @@ global.recent_change = false;
 global.lower_bound = 0;
 global.upper_bound = undefined;
 pick_items_by_level(global.etapa);
+global.recent_level_up = false;
 //global.random_list = ds_list_create(); // Para la versión con distribución alteatoria de ejercicios por etapa
 
 
@@ -196,7 +197,7 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
             global.recent_change = false;
         }
         
-        next_level_condition();
+        //next_level_condition(); // 2 es source desde spawner
         str = "WTL : "+string(global.wtl);
         show_debug_message(str);
         game_state();    
@@ -206,7 +207,15 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
         ds_map_add(roundMap, "tiempo_respuesta", global.tiempoUltimaRespuesta);
         ds_map_add(roundMap, "estado_respuesta",global.estado);
         ds_map_add(roundMap, "origen",global.origen);
-        ds_map_add(roundMap, "etapa",global.etapa);
+        if(global.recent_level_up){
+            ds_map_add(roundMap, "etapa",global.etapa-1);
+            global.recent_level_up = false;
+            }
+        else{
+            ds_map_add(roundMap, "etapa",global.etapa);
+        }
+
+        next_level_condition(); // 2 es source desde spawner
         //OONDICIÓN SI ES QUE NO SE LE DISPARÓ A NINGÚN METEROTIO (NO HUBO INTENTO)
         
         var copiaIntentosRonda = ds_map_create();
