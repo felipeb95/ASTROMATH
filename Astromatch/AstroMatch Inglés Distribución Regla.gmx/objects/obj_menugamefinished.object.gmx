@@ -93,11 +93,10 @@ if( push == 1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>    draw_set_font(fnt_zekpuntajes){
-    draw_text(room_width/2, room_height-30, "Incorrectas: " + string(global.incorrectas))
-    draw_text(room_width/2, room_height-50, "Correctas: " + string(global.correctas));
-    draw_text(room_width/2, room_height-70, "Ejercicios: " + string(global.waves));
-}
+            <string>draw_set_font(fnt_zekpuntajes)
+draw_text(room_width/2, room_height-30, "Incorrectas: " + string(global.incorrectas))
+draw_text(room_width/2, room_height-50, "Correctas: " + string(global.correctas));
+draw_text(room_width/2, room_height-70, "Ejercicios: " + string(global.waves));
 
 draw_set_font(fontGameOver)
 draw_text(room_width/2, room_height-(room_height-80), "FELICITACIONES");
@@ -108,12 +107,11 @@ draw_text(room_width/2, room_height-(room_height-150), str_puntaje);
 
 draw_set_halign(fa_center); //Horizontal alignment
 draw_set_valign(fa_middle);  //Vertical alignment
-draw_set_font(fntMainMed);
 menu_x=room_width/2; 
 menu_y=room_height/2-50;
+draw_set_font(fontOpcionesGO);
 for (i=0;i&lt;array_length_1d(menu);i++)
 {
-    draw_set_font(fontOpcionesGO);
     draw_set_color(c_black);//Shadow color
     draw_text(menu_x+2,menu_y+68,menu[i]);//Shadow
     draw_set_color(c_white); //Text color    
