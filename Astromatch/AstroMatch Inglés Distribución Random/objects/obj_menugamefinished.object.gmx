@@ -93,16 +93,16 @@ if( push == 1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_font(fnt_zekpuntajes)
+            <string>draw_set_font(fnt_zekpuntajes);
 draw_text(room_width/2, room_height-30, "Incorrectas: " + string(global.incorrectas))
 draw_text(room_width/2, room_height-50, "Correctas: " + string(global.correctas));
 draw_text(room_width/2, room_height-70, "Ejercicios: " + string(global.waves));
 
 
-draw_set_font(fontGameOver)
+draw_set_font(fontGameOver);
 draw_text(room_width/2, room_height-(room_height-80), "FELICITACIONES");
 
-draw_set_font(fontGameOver_puntaje)
+draw_set_font(fontGameOver_puntaje);
 str_puntaje = "Completaste el juego con "+string(global.puntaje)+" puntos";
 draw_text(room_width/2, room_height-(room_height-150), str_puntaje);
 
