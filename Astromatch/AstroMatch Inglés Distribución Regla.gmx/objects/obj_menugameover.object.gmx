@@ -103,17 +103,16 @@ draw_set_font(fontGameOver)
 draw_text(room_width/2, room_height-(room_height-80), "PARTIDA TERMINADA");
 
 draw_set_font(fontGameOver_puntaje)
-str_puntaje = "¡Lograste sumar "+string(global.puntaje)+" puntos";
+str_puntaje = "Lograste sumar "+string(global.puntaje)+" puntos";
 draw_text(room_width/2, room_height-(room_height-150), str_puntaje);
 
 draw_set_halign(fa_center); //Horizontal alignment
 draw_set_valign(fa_middle);  //Vertical alignment
-draw_set_font(fntMainMed);
 menu_x=room_width/2; 
 menu_y=room_height/2-50;
+draw_set_font(fontOpcionesGO);
 for (i=0;i&lt;array_length_1d(menu);i++)
 {
-    draw_set_font(fontOpcionesGO);
     draw_set_color(c_black);//Shadow color
     draw_text(menu_x+2,menu_y+68,menu[i]);//Shadow
     draw_set_color(c_white); //Text color    
