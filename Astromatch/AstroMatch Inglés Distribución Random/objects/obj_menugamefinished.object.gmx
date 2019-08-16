@@ -110,12 +110,12 @@ draw_set_halign(fa_center); //Horizontal alignment
 draw_set_valign(fa_middle);  //Vertical alignment
 menu_x=room_width/2; 
 menu_y=room_height/2-50;
-draw_set_font(fontOpcionesGO);
+//draw_set_font(fontOpcionesGO);
 for (i=0;i&lt;array_length_1d(menu);i++)
 {
-    draw_set_color(c_black);//Shadow color
-    draw_text(menu_x+2,menu_y+68,menu[i]);//Shadow
-    draw_set_color(c_white); //Text color    
+    //draw_set_color(c_black);//Shadow color
+    //draw_text(menu_x+2,menu_y+68,menu[i]);//Shadow
+    //draw_set_color(c_white); //Text color    
     draw_text(menu_x,menu_y+66,menu[i]);//Text3
     menu_y+=string_height(menu[i])+line_spacing;
 }
