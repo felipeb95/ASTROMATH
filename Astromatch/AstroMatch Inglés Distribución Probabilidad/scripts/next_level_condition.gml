@@ -10,6 +10,7 @@ if(ds_list_size(global.list_buenas) == global.ipl[global.etapa-1] && global.etap
 {
     //cambiar fondo y avanzar etapa
     global.etapa++;
+    global.recent_level_up = true;
     pick_items_by_level(global.etapa);
     instance_create(0,0,obj_fader);
 }

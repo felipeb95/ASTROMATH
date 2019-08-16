@@ -30,6 +30,7 @@ if((ds_list_size(global.list_buenas) == global.ipl[global.etapa-1] || global.wtl
         instance_create(0,0,obj_shaky_text);
     }
     global.etapa++;
+    global.recent_level_up = true;
     pick_items_by_level(global.etapa);
     instance_create(0,0,obj_fader);
     global.wpl = 0;
