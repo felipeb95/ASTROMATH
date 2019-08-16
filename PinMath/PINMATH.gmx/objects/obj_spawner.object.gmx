@@ -192,7 +192,7 @@ draw_set_font(fntMain);
 
 if(global.spawner_enabled){
     global.ejercicioTerminado = false;
-    global.alternativa=choose(floor(random_range(1,3)));
+    global.alternativa=irandom_range(0,2);
     for(i = 0; i&lt;3; i++){
         if(i == global.alternativa)
             global.bot = 1;
@@ -703,8 +703,8 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
              exit; 
             }
         }else global.bot2=0;
-        global.alternativa=choose(floor(random_range(1,5)));
-        global.alturas=choose(floor(random_range(0,4)));
+        global.alternativa=choose(floor(irandom_range(1,3)));
+        global.alturas=choose(floor(irandom_range(0,2)));
         //meteoros ++;
         
         global.wave ++;
