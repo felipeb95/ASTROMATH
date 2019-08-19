@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>randomize();
 muted = 0;
+global.nMalo=0;
 global.destruir=false;
 global.subEjercicio = 1;
 global.malasSeguidas=0;
@@ -647,6 +648,7 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
         if(global.estado != "correcta" &amp;&amp; !global.dead) 
             instance_create(0,0,obj_textbox_correccion);
         global.destruir=false;
+        global.nMalo=0;
         show_debug_message("Número ejercicio:")
         show_debug_message(global.numEjercicio);
         show_debug_message("multiplo A:")

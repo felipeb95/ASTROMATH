@@ -35,6 +35,12 @@ if(global.bot==0){
         randValue = irandom_range(global.r-10,global.r+10); 
         if(randValue&lt;2) randValue=2; 
     }
+    if(global.nMalo!=0){
+        do{
+            randValue=randValue+1;
+        }until(randValue!=global.r and randValue!=global.nMalo);
+    }
+    else global.nMalo=randValue;
 }
 if(global.bot==1){
     randValue = global.r;
