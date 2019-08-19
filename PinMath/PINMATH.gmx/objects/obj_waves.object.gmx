@@ -34,9 +34,13 @@ show_debug_message(global.waveUltraFake);
 
 if(global.modo==0) {
     global.num1=choose(floor(random_range(global.minA,global.maxB)));
+    global.num1_displayed = global.num1;
     global.num2=choose(floor(random_range(global.minA,global.maxB)));
+    global.num2_displayed = global.num2;
     global.den1=choose(floor(random_range(global.minA,global.maxB)));
+    global.den1_displayed = global.den1;
     global.den2=choose(floor(random_range(global.minA,global.maxB)));
+    global.den2_displayed = global.den2;
     global.a = global.num1;
     global.b = global.den2;
     global.r = global.a*global.b;

@@ -101,6 +101,7 @@ if(place_meeting(x,y,obj_ship)){
     global.bot2=1;
     obj_ship.hp -= 1;
      if(obj_ship.hp == 0){
+        instance_create(0,0,obj_textbox_correccion);
         show_debug_message("MUERE CON CHOQUE, CORRER SCRIPT");
         guardar(true); //SCRIPT QUE EXPORTA JSON A PHP PARA STORE
         global.dead = true; 

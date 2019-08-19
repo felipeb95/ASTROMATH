@@ -126,6 +126,7 @@ if(global.r == global.numM){
     audio_play_sound(incorrect,10,false);
     obj_ship.hp-=1;
     if(obj_ship.hp == 0){
+        instance_create(0,0,obj_textbox_correccion);
         show_debug_message("MURIÓ POR MAL DISPARO, CORRER SCRIPT");
         guardar(true); // SE EXPORTA A JSON Y SE ENVIA A PHP PARA STORE
     }

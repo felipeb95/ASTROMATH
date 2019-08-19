@@ -104,9 +104,6 @@ if(global.modo==3){
 draw_set_font(fnt_roboto);
 draw_text(room_width/2, 190, str);
 
-}else{
-    audio_stop_sound(global.snd);
-    room_goto(rm_gameover);
 }
 </string>
           </argument>

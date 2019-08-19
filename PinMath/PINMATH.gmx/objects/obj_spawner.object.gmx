@@ -201,6 +201,11 @@ if(global.spawner_enabled){
         global.bot = 0;
     }
     global.spawner_enabled = false;
+    
+    global.num1_displayed = global.num1;
+    global.num2_displayed = global.num2;
+    global.den1_displayed = global.den1;
+    global.den2_displayed = global.den2;
 }
 
 /*
@@ -639,7 +644,7 @@ alarm[0] = spawn_rate; // original es spawn_rate
             <string>global.segundos += 1/room_speed;
 
 if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de pantalla
-        if(global.estado != "correcta") 
+        if(global.estado != "correcta" &amp;&amp; !global.dead) 
             instance_create(0,0,obj_textbox_correccion);
         global.destruir=false;
         show_debug_message("Número ejercicio:")

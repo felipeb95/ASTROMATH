@@ -59,7 +59,7 @@ show_debug_message("Se eliminó");
 show_debug_message(obj_ship.hp);
 
 
-if(obj_ship.hp &lt;= 0){
+if(global.dead){
     audio_stop_sound(global.snd);
     room_goto(rm_gameover);
 }

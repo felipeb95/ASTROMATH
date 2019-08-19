@@ -70,4 +70,6 @@ if(argument0){
     
     post = http_post_string("async.php", data_send);
     
+    show_debug_message(data_send);
+    
 }

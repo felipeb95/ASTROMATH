@@ -85,10 +85,10 @@ reverse = false;
             <kind>1</kind>
             <string>if((global.subEjercicio == 1 || global.subEjercicio == 3) &amp;&amp; !global.ejercicioTerminado){
      color = $76de91;
-    draw_text_transformed_colour(x, y-5, string(global.den2), scale_factor, scale_factor, 0, color, color, color, color, 1);
+    draw_text_transformed_colour(x, y-5, string(global.den2_displayed), scale_factor, scale_factor, 0, color, color, color, color, 1);
 }
 else
-    draw_text(x,y-5,string(global.den2));
+    draw_text(x,y-5,string(global.den2_displayed));
 
 </string>
           </argument>
