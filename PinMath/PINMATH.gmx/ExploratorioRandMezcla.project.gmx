@@ -145,6 +145,7 @@
     <object>objects\boton_arriba</object>
     <object>objects\boton_abajo</object>
     <object>objects\boton_disparo</object>
+    <object>objects\obj_click_manager</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_aux</room>
