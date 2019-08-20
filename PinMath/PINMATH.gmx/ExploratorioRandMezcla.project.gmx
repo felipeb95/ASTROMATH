@@ -142,6 +142,9 @@
     <object>objects\obj_resultado_parcial</object>
     <object>objects\obj_textbox_celebracion</object>
     <object>objects\obj_textbox_correccion</object>
+    <object>objects\boton_arriba</object>
+    <object>objects\boton_abajo</object>
+    <object>objects\boton_disparo</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_aux</room>
@@ -149,7 +152,6 @@
     <room>rooms\rm_modo</room>
     <room>rooms\rm_gameover</room>
     <room>rooms\rm_space</room>
-    <room>rooms\rm_space_etapas</room>
     <room>rooms\rm_score</room>
     <room>rooms\rm_select</room>
     <room>rooms\rm_score2</room>
