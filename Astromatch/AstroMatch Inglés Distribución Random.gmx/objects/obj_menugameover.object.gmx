@@ -25,8 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>menu[0]="JUGAR OTRA VEZ";
-menu[1]="IR AL INICIO"
+            <string>menu[0]="REINTENTAR";
+menu[1]="VOLVER"
 
 space = 70;
 mpos = 0;
@@ -94,34 +94,34 @@ if( push == 1)
           <argument>
             <kind>1</kind>
             <string>draw_set_font(fnt_zekpuntajes);
-draw_text(room_width/2, room_height-30, "Incorrectas: " + string(global.incorrectas))
+draw_text(room_width/2, room_height-30, "Incorrectas: " + string(global.incorrectas));
 draw_text(room_width/2, room_height-50, "Correctas: " + string(global.correctas));
 draw_text(room_width/2, room_height-70, "Ejercicios: " + string(global.waves));
 
 
 draw_set_font(fontGameOver);
-draw_text(room_width/2, room_height-(room_height-80), "FELICITACIONES");
+draw_text(room_width/2, room_height-(room_height-80), "PARTIDA TERMINADA");
 
 draw_set_font(fontGameOver_puntaje);
-str_puntaje = "Completaste el juego con "+string(global.puntaje)+" puntos";
+str_puntaje = "¡Lograste sumar "+string(global.puntaje)+" puntos";
 draw_text(room_width/2, room_height-(room_height-150), str_puntaje);
 
 draw_set_halign(fa_center); //Horizontal alignment
 draw_set_valign(fa_middle);  //Vertical alignment
 menu_x=room_width/2; 
 menu_y=room_height/2-50;
-//draw_set_font(fontOpcionesGO);
+draw_set_font(fontOpcionesGO);
 for (i=0;i&lt;array_length_1d(menu);i++)
 {
-    //draw_set_color(c_black);//Shadow color
-    //draw_text(menu_x+2,menu_y+68,menu[i]);//Shadow
-    //draw_set_color(c_white); //Text color    
+    draw_set_color(c_black);//Shadow color
+    draw_text(menu_x+2,menu_y+68,menu[i]);//Shadow
+    draw_set_color(c_white); //Text color    
     draw_text(menu_x,menu_y+66,menu[i]);//Text3
     menu_y+=string_height(menu[i])+line_spacing;
 }
 
-draw_sprite(spr_moon,0,x-270,y-30 + mpos*space);
-draw_sprite(spr_moon,0,x+145,y-30 + mpos*space);
+draw_sprite(spr_moon,0,x-255,y + mpos*space);
+draw_sprite(spr_moon,0,x+65,y + mpos*space);
 
 
 </string>

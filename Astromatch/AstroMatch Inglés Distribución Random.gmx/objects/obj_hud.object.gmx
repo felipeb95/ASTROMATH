@@ -71,7 +71,7 @@ draw_set_halign(fa_center);
   
 }else{
     audio_stop_sound(global.snd);
-    room_goto(rm_gameover);
+    room_goto(rm_gamefinished);
 }
 </string>
           </argument>
