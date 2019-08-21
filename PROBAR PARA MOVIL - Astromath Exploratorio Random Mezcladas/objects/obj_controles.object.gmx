@@ -28,8 +28,8 @@
             <string>str = "";
 xPrev = -1;
 yPrev = -1;
-drag_x = obj_ship.x;
-drag_y = obj_ship.y;
+drag_x = mouse_x = obj_ship.x;
+drag_y = mouse_y = obj_ship.y;
 </string>
           </argument>
         </arguments>
@@ -52,7 +52,11 @@ drag_y = obj_ship.y;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>str = "(x,y) = ("+string(drag_x)+","+string(drag_y)+")";
+            <string>if device_mouse_check_button_pressed(0, mb_left){
+    instance_create(obj_ship.x,obj_ship.y,obj_bullet);
+}
+
+str = "(x,y) = ("+string(drag_x)+","+string(drag_y)+")";
 show_debug_message(str);
 /*
 if(!mouse_x == xPrev || !mouse_y == yPrev){
@@ -86,6 +90,33 @@ if(mouse_x &lt; obj_ship.x)
     obj_ship.x -= obj_ship.spd;
 }
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="56">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/*
+if(point_in_rectangle(mouse_x,mouse_y,228,205,640,420)){
+    instance_create(obj_ship.x,obj_ship.y,obj_bullet);
+}
+*/
 </string>
           </argument>
         </arguments>
