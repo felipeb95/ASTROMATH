@@ -118,6 +118,7 @@
     <object>objects\obj_loading</object>
     <object>objects\obj_loading_gif</object>
     <object>objects\obj_controles</object>
+    <object>objects\obj_multitouch</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_aux</room>

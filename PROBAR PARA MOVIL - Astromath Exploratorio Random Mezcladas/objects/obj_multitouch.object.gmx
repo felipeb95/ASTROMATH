@@ -25,11 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>str = "";
-xPrev = -1;
-yPrev = -1;
-drag_x = mouse_x = obj_ship.x;
-drag_y = mouse_y = obj_ship.y;
+            <string>shooting = false;
+moving = false;
 </string>
           </argument>
         </arguments>
@@ -52,42 +49,32 @@ drag_y = mouse_y = obj_ship.y;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if device_mouse_check_button_pressed(0, mb_any){
-    instance_create(obj_ship.x,obj_ship.y,obj_bullet);
-}
-
-str = "(x,y) = ("+string(drag_x)+","+string(drag_y)+")";
-show_debug_message(str);
-/*
-if(!mouse_x == xPrev || !mouse_y == yPrev){
-    if(pressedPrev == true){
-        //Mouse was clicked and dragging, do code
+            <string>for(var i = 0; i &lt; 4; i++){
+    if(device_mouse_check_button(i,mb_any))
+    {
+        if(point_in_rectangle(device_mouse_x(i),device_mouse_y(i),0,0,room_width/2,room_height))
+        {
+            if(device_mouse_y(i) &gt; obj_ship.y)
+                obj_ship.y += obj_ship.spd;
+    
+            if(device_mouse_y(i) &lt; obj_ship.y)
+                obj_ship.y -= obj_ship.spd;
+        
+            if(device_mouse_x(i) &gt; obj_ship.x)
+                obj_ship.x += obj_ship.spd;
+            
+            if(device_mouse_x(i) &lt; obj_ship.x)
+                obj_ship.x -= obj_ship.spd;
+        }
+        
     }
-}
-
-xPrev = mouse_x;
-yPrev = mouse_y;
-pressedPrev = //check for mouse button down
-*/
-
-if(mouse_y &gt; obj_ship.y)
-{
-    obj_ship.y += obj_ship.spd;
-}
-
-if(mouse_y &lt; obj_ship.y)
-{
-    obj_ship.y -= obj_ship.spd;
-}
-
-if(mouse_x &gt; obj_ship.x)
-{
-    obj_ship.x += obj_ship.spd;
-}
-
-if(mouse_x &lt; obj_ship.x)
-{
-    obj_ship.x -= obj_ship.spd;
+    
+    if(device_mouse_check_button_released(i,mb_any))
+    {
+         if(point_in_rectangle(device_mouse_x(i),device_mouse_y(i),room_width/2,0,room_width,room_height)){
+            instance_create(obj_ship.x,obj_ship.y,obj_bullet);
+        }
+    }
 }
 
 </string>
@@ -95,7 +82,7 @@ if(mouse_x &lt; obj_ship.x)
         </arguments>
       </action>
     </event>
-    <event eventtype="6" enumb="56">
+    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -112,11 +99,14 @@ if(mouse_x &lt; obj_ship.x)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*
-if(point_in_rectangle(mouse_x,mouse_y,228,205,640,420)){
-    instance_create(obj_ship.x,obj_ship.y,obj_bullet);
+            <string>if(shooting){
+    draw_set_colour(c_green);
+    draw_circle(room_width/2-50, room_height/2, 50, false);
 }
-*/
+if(moving){
+    draw_set_colour(c_yellow);
+    draw_circle(room_width/2+50, room_height/2, 50, false);
+}
 </string>
           </argument>
         </arguments>
