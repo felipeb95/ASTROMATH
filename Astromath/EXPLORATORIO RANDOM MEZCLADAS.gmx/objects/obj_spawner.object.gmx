@@ -26,6 +26,13 @@
           <argument>
             <kind>1</kind>
             <string>randomize();
+global.maxSuma = 10;
+global.minResta = 0;
+global.minAS = 1;
+global.maxBS = 9;
+global.minAR = 1;
+global.maxBR = 10;
+
 global.memA=0;
 global.memB=0;
 global.destruir=false;
@@ -422,22 +429,22 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
             }
             if(global.operacion=="D"){
                 while(global.a==global.memA and global.b==global.memB){
-                    global.a = choose(floor(random_range(global.minA,global.maxB)));
-                    global.b = choose(floor(random_range(global.minA,global.a)));
+                    global.r = choose(floor(random_range(global.minA,global.maxB)));
+                    global.b = choose(floor(random_range(global.minA,global.maxB)));
+                    global.a = global.r*global.b;
                 }
-                global.r = floor(global.a/global.b);
             }
             if(global.operacion=="S"){
                 while(global.a==global.memA and global.b==global.memB){
-                    global.a = choose(floor(random_range(global.minA,global.maxB)));
-                    global.b = choose(floor(random_range(global.minA,global.maxB)));
+                    global.a = choose(floor(random_range(global.minAS,global.maxBS)));
+                    global.b = choose(floor(random_range(global.minAS,global.maxSuma-global.a)));
                 }
                 global.r = global.a+global.b;
             }
             if(global.operacion=="R"){
                 while(global.a==global.memA and global.b==global.memB){
-                    global.a = choose(floor(random_range(global.minA,global.maxB)));
-                    global.b = choose(floor(random_range(global.minA,global.a)));
+                    global.a = choose(floor(random_range(global.minAR,global.maxBR)));
+                    global.b = choose(floor(random_range(global.minAS,global.minResta+global.a)));
                 }
                 global.r = global.a-global.b;
             }
