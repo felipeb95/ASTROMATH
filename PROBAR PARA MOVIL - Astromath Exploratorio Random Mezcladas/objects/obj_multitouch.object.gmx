@@ -25,8 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>shooting = false;
-moving = false;
+            <string>xx = room_width/2;
+yy = room_height;
+
+finger_direction = "none";
 </string>
           </argument>
         </arguments>
@@ -52,6 +54,7 @@ moving = false;
             <string>for(var i = 0; i &lt; 4; i++){
     if(device_mouse_check_button(i,mb_any))
     {
+        
         if(point_in_rectangle(device_mouse_x(i),device_mouse_y(i),0,0,room_width/2,room_height))
         {
             if(device_mouse_y(i) &gt; obj_ship.y)
@@ -67,6 +70,40 @@ moving = false;
                 obj_ship.x -= obj_ship.spd;
         }
         
+        
+        /*
+        // UP
+        
+        if(point_in_triangle(device_mouse_x(i),device_mouse_y(i),xx/2,yy/2,0,0,xx,0))
+        {
+            obj_ship.y -= obj_ship.spd;
+            finger_direction = "up";
+        }    
+        
+        // DOWN
+        
+        if(point_in_triangle(device_mouse_x(i),device_mouse_y(i),xx/2,yy/2,0,yy,xx,yy))
+        {
+            obj_ship.y += obj_ship.spd;
+            finger_direction = "down";
+        }    
+        
+        // LEFT
+        
+        if(point_in_triangle(device_mouse_x(i),device_mouse_y(i),xx/2,yy/2,0,yy,0,0))
+        {
+            obj_ship.x -= obj_ship.spd;
+            finger_direction = "left";
+        }    
+        
+        // RIGHT
+        
+        if(point_in_triangle(device_mouse_x(i),device_mouse_y(i),xx/2,yy/2,xx,0,xx,yy))
+        {
+            obj_ship.x += obj_ship.spd;
+            finger_direction = "right";
+        }    
+        */
     }
     
     if(device_mouse_check_button_released(i,mb_any))
@@ -77,36 +114,6 @@ moving = false;
     }
 }
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if(shooting){
-    draw_set_colour(c_green);
-    draw_circle(room_width/2-50, room_height/2, 50, false);
-}
-if(moving){
-    draw_set_colour(c_yellow);
-    draw_circle(room_width/2+50, room_height/2, 50, false);
-}
 </string>
           </argument>
         </arguments>
