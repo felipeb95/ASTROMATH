@@ -165,6 +165,57 @@ if(ds_map_exists(map, "operaciones")){
     show_debug_message(str_operaciones);
     global.operaciones = str_operaciones;
 }
+
+if(ds_map_exists(map, "maxSuma")){
+    var maxSuma = map[? "maxSuma"];
+     show_debug_message("maxSuma funciona");
+     show_debug_message(maxSuma);
+     global.maxSuma = real(maxSuma);
+}
+if(ds_map_exists(map, "minResta")){
+    var minResta = map[? "minResta"];
+     show_debug_message("minResta funciona");
+     show_debug_message(minResta);
+     global.minResta = real(minResta);
+}
+if(ds_map_exists(map, "minAS")){
+    var minAS = map[? "minAS"];
+     show_debug_message("minAS funciona");
+     show_debug_message(minAS);
+     global.minAS = real(minAS);
+}
+if(ds_map_exists(map, "maxBS")){
+    var maxBS = map[? "maxBS"];
+     show_debug_message("maxBS funciona");
+     show_debug_message(maxBS);
+     global.maxBS = real(maxBS);
+}
+if(ds_map_exists(map, "minAR")){
+    var minAR = map[? "minAR"];
+     show_debug_message("minAR funciona");
+     show_debug_message(minAR);
+     global.minAR = real(minAR);
+}
+if(ds_map_exists(map, "maxBR")){
+    var maxBR = map[? "maxBR"];
+     show_debug_message("maxBR funciona");
+     show_debug_message(maxBR);
+     global.maxBR = real(maxBR);
+}
+if(ds_map_exists(map, "minAD")){
+    var minAD = map[? "minAD"];
+     show_debug_message("minAD funciona");
+     show_debug_message(minAD);
+     global.minAD = real(minAD);
+}
+if(ds_map_exists(map, "maxBD")){
+    var maxBD = map[? "maxBD"];
+     show_debug_message("maxBD funciona");
+     show_debug_message(maxBD);
+     global.maxBD = real(maxBD);
+}
+
+
 go_to_next = true;
 global.loaded = 1;
 </string>
