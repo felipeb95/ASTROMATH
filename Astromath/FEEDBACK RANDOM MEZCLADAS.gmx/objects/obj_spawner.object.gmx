@@ -431,22 +431,22 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
             }
             if(global.operacion=="D"){
                 while(global.a==global.memA and global.b==global.memB){
-                    global.a = choose(floor(random_range(global.minA,global.maxB)));
-                    global.b = choose(floor(random_range(global.minA,global.a)));
+                    global.a = choose(floor(random_range(global.minAD,global.maxBD)));
+                    global.b = choose(floor(random_range(global.minAD,global.a)));
                 }
                 global.r = floor(global.a/global.b);
             }
             if(global.operacion=="S"){
                 while(global.a==global.memA and global.b==global.memB){
-                    global.a = choose(floor(random_range(global.minA,global.maxB)));
-                    global.b = choose(floor(random_range(global.minA,global.maxB)));
+                    global.a = choose(floor(random_range(global.minAS,global.maxBS)));
+                    global.b = choose(floor(random_range(global.minAS,global.maxSuma-global.a)));
                 }
                 global.r = global.a+global.b;
             }
             if(global.operacion=="R"){
                 while(global.a==global.memA and global.b==global.memB){
-                    global.a = choose(floor(random_range(global.minA,global.maxB)));
-                    global.b = choose(floor(random_range(global.minA,global.a)));
+                    global.a = choose(floor(random_range(global.minAR,global.maxBR)));
+                    global.b = choose(floor(random_range(global.minAR,global.minResta+global.a)));
                 }
                 global.r = global.a-global.b;
             }

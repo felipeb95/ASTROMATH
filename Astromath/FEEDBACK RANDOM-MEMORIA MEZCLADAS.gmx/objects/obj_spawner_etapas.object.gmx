@@ -26,20 +26,27 @@
           <argument>
             <kind>1</kind>
             <string>randomize();
-global.maxSuma = 10;
-global.minResta = 0;
-global.minAS = 1;
-global.maxBS = 9;
-global.minAR = 1;
-global.maxBR = 10;
 //TABLA DE EJERCICIOS
 for(i=global.minA;i&lt;=global.maxB;i++){
     for(j=global.minA;j&lt;=global.maxB;j++){
         global.tablaM[i,j]=0;
+    }
+}
+for(i=global.minAD;i&lt;=global.maxBD;i++){
+    for(j=global.minAD;j&lt;=global.maxBD;j++){
         global.tablaD[i,j]=0;
+        if(i%j != 0) global.tablaD[i,j] = -1;
+    }
+}
+for(i=global.minAS;i&lt;=global.maxBS;i++){
+    for(j=global.minAS;j&lt;=global.maxBS;j++){
         global.tablaS[i,j]=0;
-        global.tablaR[i,j]=0;
         if(i+j &gt; global.maxSuma) global.tablaS[i,j] = -1;
+    }
+}
+for(i=global.minAR;i&lt;=global.maxBR;i++){
+    for(j=global.minAR;j&lt;=global.maxBR;j++){
+        global.tablaR[i,j]=0;
         if(i-j &lt; global.minResta) global.tablaR[i,j] = -1;
     }
 }
@@ -519,12 +526,9 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
                 global.tablaM[global.a,global.b]=1;
             }
             if(global.operacion=="D"){
-            var auxi = false;
                 while(global.a==global.memA and global.b==global.memB){
-                    global.r = choose(floor(random_range(global.minA,global.maxB)));
-                    global.b = choose(floor(random_range(global.minA,global.maxB)));
-                    global.a = global.r*global.b;
-                    auxi = true;
+                    global.a = choose(floor(random_range(global.minAD,global.maxBD)));
+                    global.b = choose(floor(random_range(global.minAD,global.a)));
                 }
                 var indicesCeroA = undefined;
                 var indicesCeroB = undefined;
@@ -543,7 +547,6 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
                     indexEscogido=irandom_range(0,contIndicesCero-1);
                     global.a = indicesCeroA[indexEscogido];
                     global.b = indicesCeroB[indexEscogido];
-                    auxi = false;
                 }
                 if(indexCat&lt;global.rangoBuenas){
                     if(global.imemBD&gt;2){
@@ -551,7 +554,6 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
                         indexMem = choose(floor(random_range(0,global.imemBD)));
                         global.a=global.memABD[indexMem];
                         global.b=global.memBBD[indexMem];
-                        auxi = false;
                     }
                 }
                 if(indexCat&gt;global.rangoMalas){
@@ -560,10 +562,9 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
                         indexMem = choose(floor(random_range(0,global.imemMD)));
                         global.a=global.memAMD[indexMem];
                         global.b=global.memBMD[indexMem];
-                        auxi = false;
                     }
                 }
-                if(auxi == false) global.r = floor(global.a/global.b);
+                global.r = floor(global.a/global.b);
                 global.tablaD[global.a,global.b]=1;
             }
             if(global.operacion=="S"){
@@ -611,7 +612,7 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
             if(global.operacion=="R"){
                 while(global.a==global.memA and global.b==global.memB){
                     global.a = choose(floor(random_range(global.minAR,global.maxBR)));
-                    global.b = choose(floor(random_range(global.minAS,global.minResta+global.a)));
+                    global.b = choose(floor(random_range(global.minAR,global.minResta+global.a)));
                 }
                 var indicesCeroA = undefined;
                 var indicesCeroB = undefined;
