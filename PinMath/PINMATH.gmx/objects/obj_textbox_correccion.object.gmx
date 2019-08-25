@@ -30,6 +30,7 @@ alarm[0] = room_speed*2; // Igual que en el Step del obj_spawner (wave_generator
 a = string(global.a);
 b = string(global.b);
 r = string(global.r);
+signo = "x";
 
 show_debug_message("MENSAJE DE FEEDBACK");
 </string>
@@ -91,7 +92,9 @@ y = view_yview + view_hview/2;
 
 draw_sprite(spr_feedback,0,x,y+30);
 str = "RECUERDA";
-str2 = a+"x"+b+" es "+r;
+if(global.ejercicioTerminado) signo = "+";
+else signo = "x";
+str2 = a+signo+b+" es "+r;
 
 draw_set_font(font_correccion);
 draw_set_colour(c_red);

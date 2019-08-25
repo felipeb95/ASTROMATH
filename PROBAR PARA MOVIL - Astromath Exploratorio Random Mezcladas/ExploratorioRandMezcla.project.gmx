@@ -53,6 +53,7 @@
     <sprite>sprites\spr_moon</sprite>
     <sprite>sprites\spr_tecla_m</sprite>
     <sprite>sprites\spr_loading</sprite>
+    <sprite>sprites\spr_joystick</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_space</background>
@@ -119,6 +120,7 @@
     <object>objects\obj_loading_gif</object>
     <object>objects\obj_controles</object>
     <object>objects\obj_multitouch</object>
+    <object>objects\obj_UI</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_aux</room>
