@@ -111,8 +111,8 @@ if(device_mouse_check_button(0,mb_left))
         if(mx &lt;= room_width/2 &amp;&amp; y &gt;= room_height/2){
             joystick_x = mx;
             joystick_y = my;
+            joystick_active = true;
         }
-        joystick_active = true;
     } else {
         var joystick_angle = point_direction(joystick_x,joystick_y,mx,my);
         var distance = point_distance(joystick_x,joystick_y,mx,my);

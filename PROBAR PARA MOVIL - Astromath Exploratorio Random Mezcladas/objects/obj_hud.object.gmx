@@ -25,7 +25,16 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>switch (os_type)
+   {
+   case os_windows: global.Config = 0; break;
+   case os_android: global.Config = 1; break;
+   case os_linux: global.Config = 2; break;
+   case os_macosx: global.Config = 3; break;
+   case os_ios: global.Config = 4; break;
+   case os_winphone: global.Config = 5; break;
+   }
+</string>
           </argument>
         </arguments>
       </action>
@@ -74,6 +83,7 @@ draw_text(room_width - 100, 80, "Vel: " + string(global.sp2*-1));
 //draw_text(room_width - 100, 60, "Ultimo Puntaje: " + string(global.dsmap[? global.name]));
 
 //draw_text(room_width - 100, 50, "Algo: " + string(global.puntaje));
+draw_text(room_width/2,room_height-50, "OS Type: "+string(os_type));
 draw_text(room_width/2,room_height-20, "("+string(mouse_x)+","+string(mouse_y)+")");
   
 }else{
