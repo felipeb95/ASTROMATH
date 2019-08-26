@@ -77,20 +77,22 @@ point = "("+string(click_x)+","+string(click_y)+")";
 str_click_point = "Click en "+point;
 show_debug_message(str_click_point);
 
-if(point_in_rectangle(mouse_x,mouse_y,228,205,640,420)){
-    instance_create(obj_ship.x,obj_ship.y,obj_bullet);
-}
-
-if(point_in_rectangle(mouse_x,mouse_y,0,230,205,300)){
-    obj_ship.y = obj_ship.moves[0];
-}
-
-if(point_in_rectangle(mouse_x,mouse_y,0,301,205,370)){
-    obj_ship.y = obj_ship.moves[1];
-}
-
-if(point_in_rectangle(mouse_x,mouse_y,0,371,205,420)){
-    obj_ship.y = obj_ship.moves[2];
+if(global.tipo_os_equipo == 2){
+    if(point_in_rectangle(mouse_x,mouse_y,228,205,640,420)){
+        instance_create(obj_ship.x,obj_ship.y,obj_bullet);
+    }
+    
+    if(point_in_rectangle(mouse_x,mouse_y,0,230,205,300)){
+        obj_ship.y = obj_ship.moves[0];
+    }
+    
+    if(point_in_rectangle(mouse_x,mouse_y,0,301,205,370)){
+        obj_ship.y = obj_ship.moves[1];
+    }
+    
+    if(point_in_rectangle(mouse_x,mouse_y,0,371,205,420)){
+        obj_ship.y = obj_ship.moves[2];
+    }
 }
 </string>
           </argument>

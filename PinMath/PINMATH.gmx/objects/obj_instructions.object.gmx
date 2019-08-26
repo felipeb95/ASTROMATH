@@ -8,6 +8,72 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>tutorial_subimg = 0;
+
+if(global.tipo_os_equipo == 1)
+    total_subimg = sprite_get_number(spr_tutorial_desk);
+
+
+if(global.tipo_os_equipo == 2)
+    total_subimg = sprite_get_number(spr_tutorial_mobile);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(global.tipo_os_equipo == 1)
+{
+    if keyboard_check_released(vk_left){
+        tutorial_subimg--;
+        if(tutorial_subimg &lt; 0)
+            tutorial_subimg = 0;
+    }
+    
+    if keyboard_check_released(vk_right){
+         tutorial_subimg++;
+        if(tutorial_subimg &gt; total_subimg-1)
+            tutorial_subimg = total_subimg-1;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="6" enumb="56">
       <action>
         <libid>1</libid>
@@ -26,7 +92,23 @@
           <argument>
             <kind>1</kind>
             <string>global.modo = 0; //Antiguamente 2 era para multiplicaciones.
-room_goto(rm_loading);
+if(global.tipo_os_equipo == 2)
+{
+    if(point_in_rectangle(mouse_x, mouse_y,0,room_height-50,50,room_height)){
+        tutorial_subimg--;
+        if(tutorial_subimg &lt; 0)
+            tutorial_subimg = 0;    
+    }
+    
+    if(point_in_rectangle(mouse_x, mouse_y,room_width-50,room_height-50,room_width,room_height)){
+        tutorial_subimg++;
+        if(tutorial_subimg &gt; total_subimg-1)
+            tutorial_subimg = total_subimg-1;
+    }
+    
+    if(point_in_rectangle(mouse_x, mouse_y, room_width/2-150,room_height-50,room_width/2+150,room_height))
+        room_goto(rm_loading);
+}
 </string>
           </argument>
         </arguments>
@@ -56,19 +138,35 @@ draw_set_font(fntMainMed);
 menu_x=room_width/2; 
 menu_y=room_height/2;
 draw_set_font(fontInstrucciones);
-draw_text(menu_x, menu_y-170, "INSTRUCCIONES DE JUEGO");
+draw_text(menu_x, 20, "INSTRUCCIONES DE JUEGO");
 
 draw_set_font(font_teclas);
-draw_text(menu_x-140,menu_y+40,"Dispara con la barra de espacio");
-draw_sprite(spr_spacekey,0,menu_x-140,menu_y-10);
-draw_text(menu_x+170,menu_y+40,"Muevete con las flechas");
-draw_sprite(spr_arrowkeysFilled,0,menu_x+170,menu_y-50  );
-draw_sprite(spr_tecla_m,0,menu_x-100,menu_y+110);
-draw_set_halign(fa_left);
-draw_text(menu_x-45,menu_y+110, "Si presionas M puedes activar #o desactivar la musica en la partida");
-
 draw_set_halign(fa_center);
-draw_text(menu_x,menu_y+190,"Presiona ENTER para continuar");
+
+if(global.tipo_os_equipo == 1)
+{
+    draw_sprite(spr_tutorial_desk,tutorial_subimg,room_width/2,room_height/2-10);
+    draw_text(menu_x,menu_y+180,"Recorre el tutorial con las flechas del teclado.#"+
+    "Presiona ENTER para ir directo al juego");
+}
+
+if(global.tipo_os_equipo == 2)
+{
+    draw_sprite(spr_tutorial_mobile,tutorial_subimg,room_width/2,room_height/2-10);
+    draw_text(menu_x,menu_y+180,"Presiona las flechas para recorrer el tutorial.#"+
+    "Presiona AQUÍ para ir directo al juego");
+}
+
+if(tutorial_subimg != 0)
+    draw_sprite(spr_selmenu_leftarrow,0,30,room_height-30);
+    
+if(tutorial_subimg != total_subimg-1)
+    draw_sprite(spr_selmenu_rightarrow,0,room_width-30,room_height-30);
+
+// draw_rectangle(0,room_height-50,50,room_height,1); //guía flecha izq.
+// draw_rectangle(room_width-50,room_height-50,room_width,room_height,1); // guía flecha der.
+//draw_rectangle(menu_x-150,room_height-50,menu_x+150,room_height,1); // guía salto tutorial.
+
 </string>
           </argument>
         </arguments>
@@ -92,7 +190,8 @@ draw_text(menu_x,menu_y+190,"Presiona ENTER para continuar");
           <argument>
             <kind>1</kind>
             <string>global.modo = 0; //Antiguamente 2 era para multiplicaciones.
-room_goto(rm_loading);
+if(global.tipo_os_equipo == 1)
+    room_goto(rm_loading);
 </string>
           </argument>
         </arguments>

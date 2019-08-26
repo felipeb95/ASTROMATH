@@ -99,7 +99,7 @@ if( push == 1)
         room_goto(rm_loading);
     
     if(point_in_rectangle( mouse_x, mouse_y, 150, 200, 480, 270))
-        room_goto(rm_start);
+        room_goto(rm_start2);
 }
 </string>
           </argument>
@@ -148,7 +148,7 @@ for (i=0;i&lt;array_length_1d(menu);i++)
     menu_y+=string_height(menu[i])+line_spacing;
 }
 
-if(global.tipo_os_equipo == 2){
+if(global.tipo_os_equipo == 1){
     draw_sprite(spr_moon,0,x-255,(y-60) + mpos*space);
     draw_sprite(spr_moon,0,x+65,(y-60) + mpos*space);
 }

@@ -64,7 +64,10 @@
     <sprite>sprites\spr_congrats</sprite>
     <sprite>sprites\spr_feedback</sprite>
     <sprite>sprites\spr_sparkles</sprite>
-    <sprite>sprites\spr_tutorial_movil</sprite>
+    <sprite>sprites\spr_tutorial_mobile</sprite>
+    <sprite>sprites\spr_tutorial_desk</sprite>
+    <sprite>sprites\spr_selmenu_leftarrow</sprite>
+    <sprite>sprites\spr_selmenu_rightarrow</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_space</background>

@@ -159,11 +159,11 @@ if(hp == 0){
 
 //disparo
 shootKey = keyboard_check(vk_space);
-if(shootKey &amp;&amp; cooldown == false){
-instance_deactivate_object(obj_shoter);
- instance_create(x,y,obj_bullet);
- cooldown = true;
- alarm[0] = 10 //segundos
+if(shootKey &amp;&amp; cooldown == false &amp;&amp; global.tipo_os_equipo == 1){
+    instance_deactivate_object(obj_shoter);
+    instance_create(x,y,obj_bullet);
+    cooldown = true;
+    alarm[0] = 10 //segundos
 }
 </string>
           </argument>
@@ -211,10 +211,12 @@ instance_deactivate_object(obj_shoter);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>move_pos++;
-if(move_pos &gt; 2)
-    move_pos = 0;  
-y = moves[move_pos];
+            <string>if(global.tipo_os_equipo == 1){
+        move_pos++;
+    if(move_pos &gt; 2)
+        move_pos = 0;  
+    y = moves[move_pos];
+}
 
 </string>
           </argument>
@@ -238,11 +240,12 @@ y = moves[move_pos];
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>move_pos--;
-if(move_pos &lt; 0)
-    move_pos = 2;  
-y = moves[move_pos];
-
+            <string>if(global.tipo_os_equipo == 1){
+    move_pos--;
+    if(move_pos &lt; 0)
+        move_pos = 2;  
+    y = moves[move_pos];
+}
 </string>
           </argument>
         </arguments>

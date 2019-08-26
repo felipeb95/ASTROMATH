@@ -25,10 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.loaded = 0;
-menu[0]="Pulsa aquí para comenzar a jugar";
-menu[1]="Revisa acá las instrucciones de juego";
-line_spacing=15; //Line Spacing
+            <string>line_spacing=15; //Line Spacing
 reverse = false;
 alpha_change = 1.0;
 </string>
@@ -86,7 +83,8 @@ alpha_change = 1.0;
           <argument>
             <kind>1</kind>
             <string>global.modo = 0; //Antiguamente 2 era para multiplicaciones.
-room_goto(rm_instructions);
+if(global.tipo_os_equipo == 2)
+    room_goto(rm_instructions);
 </string>
           </argument>
         </arguments>
@@ -116,7 +114,16 @@ menu_x=room_width/2;
 menu_y=room_height/2;
 draw_set_colour(c_white);
 c1 = c_white;
-draw_text_transformed_colour(menu_x+150, menu_y+180, "Pulsa para comenzar", 1, 1, 0, c1, c1, c1, c1, alpha_change);
+
+if(global.tipo_os_equipo == 1)
+    draw_text_transformed_colour(menu_x+150, menu_y+180, "Apreta ENTER para comenzar", 1, 1, 0, c1, c1, c1, c1, alpha_change);
+
+if(global.tipo_os_equipo == 2)
+    draw_text_transformed_colour(menu_x+150, menu_y+180, "Pulsa la pantalla para comenzar", 1, 1, 0, c1, c1, c1, c1, alpha_change);
+
+
+
+
 //draw_text(menu_x+150, menu_y+180, "Presiona ENTER para comenzar");
 //draw_sprite(spr_white_enter, 0 , menu_x, menu_y+200);
 </string>
@@ -142,7 +149,8 @@ draw_text_transformed_colour(menu_x+150, menu_y+180, "Pulsa para comenzar", 1, 1
           <argument>
             <kind>1</kind>
             <string>global.modo = 0; //Antiguamente 2 era para multiplicaciones.
-room_goto(rm_instructions);
+if(global.tipo_os_equipo == 1)
+    room_goto(rm_instructions);
 </string>
           </argument>
         </arguments>
