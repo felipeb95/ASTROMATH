@@ -45,7 +45,6 @@
     <sprite>sprites\spr_back</sprite>
     <sprite>sprites\spr_circle</sprite>
     <sprite>sprites\spr_back2</sprite>
-    <sprite>sprites\sprite30</sprite>
     <sprite>sprites\correccion</sprite>
     <sprite>sprites\spr_correccion</sprite>
     <sprite>sprites\spr_celebracion</sprite>
@@ -56,8 +55,11 @@
     <sprite>sprites\spr_index_asteroid</sprite>
     <sprite>sprites\spr_moon</sprite>
     <sprite>sprites\spr_tecla_m</sprite>
-    <sprite>sprites\sprite41</sprite>
     <sprite>sprites\spr_loading</sprite>
+    <sprite>sprites\spr_joystick</sprite>
+    <sprite>sprites\spr_vidas_update</sprite>
+    <sprite>sprites\spr_selmenu_leftarrow</sprite>
+    <sprite>sprites\spr_selmenu_rightarrow</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_space</background>
@@ -98,6 +100,7 @@
     <font>fonts\font_correccion</font>
     <font>fonts\fontseleccion</font>
     <font>fonts\font_loading</font>
+    <font>fonts\font_puntaje</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_ship</object>
@@ -127,6 +130,7 @@
     <object>objects\obj_scale</object>
     <object>objects\obj_loading</object>
     <object>objects\obj_loading_gif</object>
+    <object>objects\obj_UI</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_aux</room>

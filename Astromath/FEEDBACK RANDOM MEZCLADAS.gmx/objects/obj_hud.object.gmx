@@ -53,7 +53,7 @@ currentY = y;
 marginTop = 10;
 
 if(global.dead == false){
-  draw_sprite(spr_vidas, obj_ship.hp ,5,0);
+  draw_sprite(spr_vidas_update, obj_ship.hp ,5,0);
 
 
 //dibujar texto oleadas
@@ -67,10 +67,13 @@ if(global.modo==0 and global.operacion=="R")draw_text(room_width/2, 20, string(g
 if(global.modo==1)draw_text(room_width/2, 20, string(global.a) + "-" + string(global.b));
 if(global.modo==2)draw_text(room_width/2, 20, string(global.a) + "x" + string(global.b));
 if(global.modo==3)draw_text(room_width/2, 20, string(global.a) + "/" + string(global.b));
-draw_set_font(fnt_zeknum2);
-draw_text(room_width - 100, 20, "Puntaje: " + string(global.puntaje));
-draw_text(room_width - 100, 50, "Etapa: " + string(global.dificultad+2));
-draw_text(room_width - 100, 80, "Vel: " + string(global.sp2*-1));
+
+draw_set_font(font_puntaje);
+draw_set_halign(fa_left);
+draw_text(5, 30, "P: " + string(global.puntaje)+
+" | V: " + string(-1*(global.sp2-1))+
+" | E: " + string(global.dificultad+2));
+draw_set_halign(fa_center);
 //draw_text(room_width - 100, 60, "Ultimo Puntaje: " + string(global.dsmap[? global.name]));
 
 //draw_text(room_width - 100, 50, "Algo: " + string(global.puntaje));

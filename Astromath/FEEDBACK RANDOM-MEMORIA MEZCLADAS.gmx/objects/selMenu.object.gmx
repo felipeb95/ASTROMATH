@@ -62,11 +62,14 @@ selMenu_height = 150;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//cambiar seleccion basado en flechas izq y der
-if(keyboard_check_pressed(vk_right)){
-    selected -= 1;
-} else if (keyboard_check_pressed(vk_left)){
-    selected += 1;
+            <string>if(global.tipo_os_equipo == 1)
+{
+//cambiar seleccion basado en flechas izq y der
+    if(keyboard_check_pressed(vk_right)){
+        selected -= 1;
+    } else if (keyboard_check_pressed(vk_left)){
+        selected += 1;
+    }
 }
 
 //rotar hacia la la selección 
@@ -78,6 +81,68 @@ item =-selected mod 8;
 if(item &lt; 0){
 item+= 8;
 } 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="56">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(global.tipo_os_equipo == 2){
+// cambiar selecciión basado en toques del usuario 270,335,410,365
+    if(point_in_rectangle( mouse_x, mouse_y, 270,335,410,365)){
+        switch(item){
+            case 0: global.col = 0
+                    room_goto(rm_loading)
+              break;
+            case 1: global.col = 1
+                    room_goto(rm_loading)
+                break;
+            case 2: global.col = 2
+                    room_goto(rm_loading)
+              break;
+            case 3: global.col = 3
+                    room_goto(rm_loading)
+              break;
+            case 4: global.col = 4
+                    room_goto(rm_loading)
+              break;
+            case 5: global.col = 5
+                    room_goto(rm_loading)
+                break;
+            case 6: global.col = 6
+                    room_goto(rm_loading)
+                 break;
+            case 7: global.col = 7
+                    room_goto(rm_loading) 
+                break;
+        }
+    }
+    
+    if(point_in_rectangle( mouse_x, mouse_y, 170,335,200,365)){
+        selected += 1;
+    }
+    
+    if(point_in_rectangle( mouse_x, mouse_y, 510,335,540,365)){
+         selected -= 1;
+    }
+   
+}
 </string>
           </argument>
         </arguments>
@@ -140,10 +205,25 @@ switch(item){
 draw_set_font(fontseleccion);
 draw_set_halign(fa_center);
 draw_set_colour(c_white);
-draw_text(340,350,text);
-draw_text(340, 20, "Muevete con las flechas del teclado.");
-draw_text(340, 48, "Presiona ENTER para elegir nave");
-draw_text(340, 76, "y comienza a jugar");
+
+if(global.tipo_os_equipo == 1){
+    draw_text(340,50,"Muevete con las flechas del teclado."+
+    "#Presiona ENTER para elegir nave"+
+    "#y comienza a jugar");
+}
+
+if(global.tipo_os_equipo == 2){
+    draw_text(340,350,"¡Estoy listo!");
+    //draw_rectangle(270,335,410,365,1); guía botón ready
+    //draw_rectangle(170,335,200,365,1); guía flecha izq
+    //draw_rectangle(510,335,540,365,1); guía flecha der
+    draw_sprite(spr_selmenu_leftarrow,0,185,350);
+    draw_sprite(spr_selmenu_rightarrow,0,525,350);
+    draw_text(340,50,"Pulsa sobre las flechas para ver las naves."+
+    "#Presiona '¡Estoy listo!' para elegir tu nave"+
+    "#y comienza a jugar");
+}
+
 </string>
           </argument>
         </arguments>

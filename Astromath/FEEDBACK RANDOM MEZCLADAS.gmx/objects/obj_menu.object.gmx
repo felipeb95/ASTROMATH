@@ -25,11 +25,36 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>menu[0]="Apreta ENTER para comenzar a jugar";
+            <string>menu_text[0]="Apreta ENTER para comenzar a jugar";
+menu_text[1]="Pulsa en cualquier parte para comenzar a jugar";
 line_spacing=15; //Line Spacing
 global.loaded = 0;
 
 show_debug_message(room_first);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="56">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(global.tipo_os_equipo == 2)
+    room_goto(rm_instructions);
 </string>
           </argument>
         </arguments>
@@ -58,8 +83,15 @@ draw_set_font(fntMainMed);
 menu_x=room_width/2; 
 menu_y=room_height/2;
 draw_set_colour(c_white);
-draw_text(menu_x, menu_y, "Presiona ENTER para comenzar");
-draw_sprite(spr_white_enter, 0 , menu_x, menu_y+100);
+if(global.tipo_os_equipo == 1){
+    draw_text(menu_x,menu_y,menu_text[0]);
+    draw_sprite(spr_white_enter, 0 , menu_x, menu_y+100);
+}
+
+if(global.tipo_os_equipo == 2)
+    draw_text(menu_x, menu_y, menu_text[1]);
+    
+
 
 </string>
           </argument>
