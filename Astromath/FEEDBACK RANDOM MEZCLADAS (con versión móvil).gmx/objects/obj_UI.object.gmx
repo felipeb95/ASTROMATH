@@ -132,7 +132,7 @@ else {
 
 if(device_mouse_check_button_released(right_finger,mb_any))
 {
-    if(point_in_rectangle(device_mouse_x(right_finger),device_mouse_y(right_finger),room_width/2,0,room_width,room_height)){
+    if(point_in_rectangle(device_mouse_x(right_finger),device_mouse_y(right_finger),room_width/2,40,room_width,room_height)){
         instance_create(obj_ship.x,obj_ship.y,obj_bullet);
     }
 }
@@ -165,6 +165,7 @@ obj_ship.y += (joystick_my / 50) * obj_ship.spd;
             <kind>1</kind>
             <string>draw_sprite(spr_joystick,0,joystick_x,joystick_y);
 draw_sprite(spr_joystick,1,joystick_x + joystick_mx,joystick_y+joystick_my);
+//draw_rectangle(room_width/2,40,room_width,room_height,1); // guía para área disparo.
 </string>
           </argument>
         </arguments>

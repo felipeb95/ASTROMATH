@@ -129,35 +129,35 @@ global.segundos = 0;
 global.aparicionCorrecta = 0;
 global.tiempoUltimaRespuesta = 0;
 
-global.arrAltura[0,0] = 208;
-global.arrAltura[1,0] = 124;
-global.arrAltura[2,0] = 40;
-global.arrAltura[3,0] = 376;
-global.arrAltura[4,0] = 282;
+global.arrAltura[0,0] = 238;
+global.arrAltura[1,0] = 164;
+global.arrAltura[2,0] = 89;
+global.arrAltura[3,0] = 386;
+global.arrAltura[4,0] = 312;
 
-global.arrAltura[0,1] = 50;
-global.arrAltura[1,1] = 218;
-global.arrAltura[2,1] = 134;
-global.arrAltura[3,1] = 302;
-global.arrAltura[4,1] = 386;
+global.arrAltura[0,1] = 312;
+global.arrAltura[1,1] = 238;
+global.arrAltura[2,1] = 386;
+global.arrAltura[3,1] = 164;
+global.arrAltura[4,1] = 89;
 
-global.arrAltura[0,2] = 129;
-global.arrAltura[1,2] = 381;
-global.arrAltura[2,2] = 297;
-global.arrAltura[3,2] = 45;
-global.arrAltura[4,2] = 213;
+global.arrAltura[0,2] = 89;
+global.arrAltura[1,2] = 312;
+global.arrAltura[2,2] = 164;
+global.arrAltura[3,2] = 238;
+global.arrAltura[4,2] = 386;
 
-global.arrAltura[0,3] = 223;
-global.arrAltura[1,3] = 55;
-global.arrAltura[2,3] = 307;
-global.arrAltura[3,3] = 391;
-global.arrAltura[4,3] = 139;
+global.arrAltura[0,3] = 386;
+global.arrAltura[1,3] = 89;
+global.arrAltura[2,3] = 238;
+global.arrAltura[3,3] = 312;
+global.arrAltura[4,3] = 164;
 
-global.arrAltura[0,4] = 203;
-global.arrAltura[1,4] = 345;
-global.arrAltura[2,4] = 371;
-global.arrAltura[3,4] = 287;
-global.arrAltura[4,4] = 35;
+global.arrAltura[0,4] = 164;
+global.arrAltura[1,4] = 386;
+global.arrAltura[2,4] = 164;
+global.arrAltura[3,4] = 89;
+global.arrAltura[4,4] = 238;
 
 global.bigMap = ds_map_create();
 global.intentosRonda = ds_map_create();

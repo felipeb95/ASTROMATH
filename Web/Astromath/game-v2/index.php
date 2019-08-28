@@ -91,7 +91,7 @@ if (!isset($_SESSION['user']) || $_SESSION['grupo']!=1) {
             });
         </script>
         <!-- Run the game code -->
-        <script type="text/javascript" src="html5game/FeedbackRandMemMezcla.js?FWEAC=1533056226&v=123"></script>
+        <script type="text/javascript" src="html5game/FeedbackRandMezcla.js?ERXZB=1448524429&v=123"></script>
         <script>window.onload = GameMaker_Init;</script>
     </body>
 </html>

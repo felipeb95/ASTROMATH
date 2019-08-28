@@ -68,6 +68,8 @@ draw_set_halign(fa_center);
 //draw_text(room_width - 100, 60, "Ultimo Puntaje: " + string(global.dsmap[? global.name]));
 
 //draw_text(room_width - 100, 50, "Algo: " + string(global.puntaje));
+
+draw_rectangle(-10,40,room_width,room_height,1);
   
 }else{
     audio_stop_sound(global.snd);

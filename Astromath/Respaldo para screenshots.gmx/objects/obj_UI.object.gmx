@@ -132,7 +132,7 @@ else {
 
 if(device_mouse_check_button_released(right_finger,mb_any))
 {
-    if(point_in_rectangle(device_mouse_x(right_finger),device_mouse_y(right_finger),room_width/2,0,room_width,room_height)){
+    if(point_in_rectangle(device_mouse_x(right_finger),device_mouse_y(right_finger),room_width/2,40,room_width,room_height)){
         instance_create(obj_ship.x,obj_ship.y,obj_bullet);
     }
 }

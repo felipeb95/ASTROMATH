@@ -10,7 +10,7 @@ define('DB_USERNAME', 'fitnet');
 define('DB_PASSWORD', 'p#q4LTUG');
 define('DB_DATABASE', 'fitnet');
 
-$direccion = 'http://localhost/Astromath/'
+//$direccion = 'http://localhost/Astromath/'
 //$direccion = 'http://astromathapp.000webhostapp.com/'
-//$direccion = 'http://astromath.informaticapucv.cl/'
+$direccion = 'http://astromath.informaticapucv.cl/'
 ?>
