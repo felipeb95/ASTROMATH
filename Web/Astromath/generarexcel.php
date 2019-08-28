@@ -3,13 +3,13 @@ require 'vendor/autoload.php';
 
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
-
 include 'database.php';
+
 
 $spreadsheet = new Spreadsheet();
 $sheet = $spreadsheet->getActiveSheet();
 
-$sheet->setTitle("Grupo Experimental");
+$sheet->setTitle("Feedback Random");
 $conexion = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 if ($conexion->connect_error) {
     die("La conexion falló: " . $conexion->connect_error);
@@ -31,6 +31,7 @@ $sheet->getColumnDimension('N')->setWidth(15);
 $sheet->getColumnDimension('O')->setWidth(15);
 $sheet->getColumnDimension('P')->setWidth(15);
 $sheet->getColumnDimension('Q')->setWidth(15);
+$sheet->getColumnDimension('R')->setWidth(15);
 $sheet->setCellValue('A1', 'NOMBRE');
 $sheet->setCellValue('B1', 'CORRECTAS');
 $sheet->setCellValue('C1', 'INCORRECTAS');
@@ -47,21 +48,22 @@ $sheet->setCellValue('M1', 'SEGUNDOS');
 $sheet->setCellValue('N1', 'ESTADO');
 $sheet->setCellValue('O1', 'ETAPA');
 $sheet->setCellValue('P1', 'ORIGEN');
-$sheet->setCellValue('Q1', 'INTENTOS');
-$sheet->getStyle('A1:Q1')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('bababa');
+$sheet->setCellValue('Q1', 'OPERACION');
+$sheet->setCellValue('R1', 'INTENTOS');
+$sheet->getStyle('A1:R1')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('bababa');
 $i=2;
 $aux=0;
 $aux2=0;
 $aux3=0;
 $aux4=0;
-$sql="SELECT * FROM users WHERE grupo=1";
+$sql="SELECT * FROM users WHERE grupo=0";
 $result = $conexion->query($sql);
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         $sheet->setCellValue('A'.$i.'', $row["nombre"]." ".$row["apellido"]);
         $sheet->getStyle('A'.$i.'')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('efed5d');
         $idUser = $row["id"];
-        $sql2="SELECT * FROM experimental WHERE idUser='$idUser'";
+        $sql2="SELECT * FROM astromath_partida WHERE idUser='$idUser'";
         $result2 = $conexion->query($sql2);
         while($row2 = $result2->fetch_assoc()) {
             $sheet->setCellValue('B'.$i.'', $row2["correctas"]);
@@ -74,7 +76,7 @@ if ($result->num_rows > 0) {
             $sheet->setCellValue('I'.$i.'', $row2["dificiles"]);
             $sheet->getStyle('B'.$i.':I'.$i.'')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('5cefc5');
             $idPartida = $row2["id"];
-            $sql3="SELECT * FROM teste WHERE idPartida='$idPartida'";
+            $sql3="SELECT * FROM astromath_ejercicio WHERE idPartida='$idPartida'";
             $result3 = $conexion->query($sql3);
             while($row3 = $result3->fetch_assoc()) {
                 $sheet->setCellValue('J'.$i.'', $row3["a"]."x".$row3["b"]);
@@ -84,13 +86,14 @@ if ($result->num_rows > 0) {
                 $sheet->setCellValue('N'.$i.'', $row3["estado"]);
                 $sheet->setCellValue('O'.$i.'', $row3["etapa"]);
                 $sheet->setCellValue('P'.$i.'', $row3["origen"]);
-                $sheet->getStyle('J'.$i.':P'.$i.'')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('ef5c96');
+                $sheet->setCellValue('Q'.$i.'', $row3["operacion"]);
+                $sheet->getStyle('J'.$i.':Q'.$i.'')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('ef5c96');
                 $idEjercicio = $row3["id"];
-                $sql4="SELECT * FROM intentose WHERE idEjercicio='$idEjercicio'";
+                $sql4="SELECT * FROM astromath_intento WHERE idEjercicio='$idEjercicio'";
                 $result4 = $conexion->query($sql4);
                 while($row4 = $result4->fetch_assoc()) {
-                    $sheet->setCellValue('Q'.$i.'', $row4["intento"]);
-                    $sheet->getStyle('Q'.$i.'')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('CD9184');
+                    $sheet->setCellValue('R'.$i.'', $row4["intento"]);
+                    $sheet->getStyle('R'.$i.'')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('CD9184');
                     $i++;
                     $aux=1;
                 }
@@ -119,7 +122,7 @@ if ($result->num_rows > 0) {
 $spreadsheet->createSheet();
 $spreadsheet->setActiveSheetIndex(1);
 $sheet = $spreadsheet->getActiveSheet();
-$sheet->setTitle("Grupo Control");
+$sheet->setTitle("Feedback Memoria");
 
 $sheet->getColumnDimension('A')->setWidth(20);
 $sheet->getColumnDimension('B')->setWidth(15);
@@ -138,6 +141,7 @@ $sheet->getColumnDimension('N')->setWidth(15);
 $sheet->getColumnDimension('O')->setWidth(15);
 $sheet->getColumnDimension('P')->setWidth(15);
 $sheet->getColumnDimension('Q')->setWidth(15);
+$sheet->getColumnDimension('R')->setWidth(15);
 $sheet->setCellValue('A1', 'NOMBRE');
 $sheet->setCellValue('B1', 'CORRECTAS');
 $sheet->setCellValue('C1', 'INCORRECTAS');
@@ -154,21 +158,22 @@ $sheet->setCellValue('M1', 'SEGUNDOS');
 $sheet->setCellValue('N1', 'ESTADO');
 $sheet->setCellValue('O1', 'ETAPA');
 $sheet->setCellValue('P1', 'ORIGEN');
-$sheet->setCellValue('Q1', 'INTENTOS');
-$sheet->getStyle('A1:Q1')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('bababa');
+$sheet->setCellValue('Q1', 'OPERACION');
+$sheet->setCellValue('R1', 'INTENTOS');
+$sheet->getStyle('A1:R1')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('bababa');
 $i=2;
 $aux=0;
 $aux2=0;
 $aux3=0;
 $aux4=0;
-$sql="SELECT * FROM users WHERE grupo=0";
+$sql="SELECT * FROM users WHERE grupo=1";
 $result = $conexion->query($sql);
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         $sheet->setCellValue('A'.$i.'', $row["nombre"]." ".$row["apellido"]);
         $sheet->getStyle('A'.$i.'')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('efed5d');
         $idUser = $row["id"];
-        $sql2="SELECT * FROM control WHERE idUser='$idUser'";
+        $sql2="SELECT * FROM astromath_partida WHERE idUser='$idUser'";
         $result2 = $conexion->query($sql2);
         while($row2 = $result2->fetch_assoc()) {
             $sheet->setCellValue('B'.$i.'', $row2["correctas"]);
@@ -181,7 +186,7 @@ if ($result->num_rows > 0) {
             $sheet->setCellValue('I'.$i.'', $row2["dificiles"]);
             $sheet->getStyle('B'.$i.':I'.$i.'')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('5cefc5');
             $idPartida = $row2["id"];
-            $sql3="SELECT * FROM testc WHERE idPartida='$idPartida'";
+            $sql3="SELECT * FROM astromath_ejercicio WHERE idPartida='$idPartida'";
             $result3 = $conexion->query($sql3);
             while($row3 = $result3->fetch_assoc()) {
                 $sheet->setCellValue('J'.$i.'', $row3["a"]."x".$row3["b"]);
@@ -191,13 +196,14 @@ if ($result->num_rows > 0) {
                 $sheet->setCellValue('N'.$i.'', $row3["estado"]);
                 $sheet->setCellValue('O'.$i.'', $row3["etapa"]);
                 $sheet->setCellValue('P'.$i.'', $row3["origen"]);
-                $sheet->getStyle('J'.$i.':P'.$i.'')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('ef5c96');
+                $sheet->setCellValue('Q'.$i.'', $row3["operacion"]);
+                $sheet->getStyle('J'.$i.':Q'.$i.'')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('ef5c96');
                 $idEjercicio = $row3["id"];
-                $sql4="SELECT * FROM intentosc WHERE idEjercicio='$idEjercicio'";
+                $sql4="SELECT * FROM astromath_intento WHERE idEjercicio='$idEjercicio'";
                 $result4 = $conexion->query($sql4);
                 while($row4 = $result4->fetch_assoc()) {
-                    $sheet->setCellValue('Q'.$i.'', $row4["intento"]);
-                    $sheet->getStyle('Q'.$i.'')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('CD9184');
+                    $sheet->setCellValue('R'.$i.'', $row4["intento"]);
+                    $sheet->getStyle('R'.$i.'')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('CD9184');
                     $i++;
                     $aux=1;
                 }
@@ -230,7 +236,7 @@ $writer = new Xlsx($spreadsheet);
 
 
 
-$filename = "exceltest";
+$filename = "Resultados Astromath";
 
 
 

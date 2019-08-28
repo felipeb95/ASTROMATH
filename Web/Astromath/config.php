@@ -30,6 +30,17 @@ while($row = $result->fetch_assoc()) {
     $min_vel = $row["min_vel"];
     $max_vel = $row["max_vel"];
     $acel = $row["acel"];
+    $modo = $row["modo"];
+    $epe = $row["epe"];
+    $operaciones = $row["operaciones"];
+    $maxSuma = $row["maxSuma"];
+    $minResta = $row["minResta"];
+    $minAS = $row["minAS"];
+    $maxBS = $row["maxBS"];
+    $minAR = $row["minAR"];
+    $maxBR = $row["maxBR"];
+    $minAD = $row["minAD"];
+    $maxBD = $row["maxBD"];
 }
 ?>
 
@@ -108,6 +119,30 @@ while($row = $result->fetch_assoc()) {
                             Mayor Múltiplo
                             <input type="number" name="mayorMultiplo" class="form-control" placeholder="Mayor Múltiplo" value=<?php echo $mayorMultiplo ?>>
                             <br>
+                            Menor Sumando
+                            <input type="number" name="minAS" class="form-control" placeholder="Menor Sumando" value=<?php echo $minAS ?>>
+                            <br>
+                            Mayor Sumando
+                            <input type="number" name="maxBS" class="form-control" placeholder="Mayor Sumando" value=<?php echo $maxBS ?>>
+                            <br>
+                            Menor Rango Resta
+                            <input type="number" name="minAR" class="form-control" placeholder="Menor Rango Resta" value=<?php echo $minAR ?>>
+                            <br>
+                            Mayor Rango Resta
+                            <input type="number" name="maxBR" class="form-control" placeholder="Mayor Rango Resta" value=<?php echo $maxBR ?>>
+                            <br>
+                            Menor Rango División
+                            <input type="number" name="minAD" class="form-control" placeholder="Menor Rango División" value=<?php echo $minAD ?>>
+                            <br>
+                            Mayor Rango División
+                            <input type="number" name="maxBD" class="form-control" placeholder="Mayor Rango División" value=<?php echo $maxBD ?>>
+                            <br>
+                            Máximo Resultado Suma
+                            <input type="number" name="maxSuma" class="form-control" placeholder="Máximo Resultado Suma" value=<?php echo $maxSuma ?>>
+                            <br>
+                            Mínimo Resultado Resta
+                            <input type="number" name="minResta" class="form-control" placeholder="Mínimo Resultado Resta" value=<?php echo $minResta ?>>
+                            <br>
                             Rondas
                             <input type="text" name="rondas" class="form-control" placeholder="{FacilR1,MedioR1,DificilR1}-{FacilR2,MedioR2,DificilR2}-{FacilRN,MedioRN,DificilRN}" value=<?php echo $rondas ?>>
                             <br>
@@ -128,6 +163,23 @@ while($row = $result->fetch_assoc()) {
                             <br>
                             Aceleración
                             <input type="number" name="acel" min="0" step="0.01" class="form-control" placeholder="Aceleración" value=<?php echo $acel?>>
+                            <br>
+                            Modo de Juego<br>
+                            <?php if($modo==1){?>
+                            <input type="radio" class="form" name="modo" value="1" checked required> Mezcladas
+                            <input type="radio" class="form" name="modo" value="2" required> Etapas
+                            <br>
+                            <?php } if($modo==2){?>
+                            <input type="radio" class="form" name="modo" value="1" required> Mezcladas
+                            <input type="radio" class="form" name="modo" value="2" checked required> Etapas
+                            <br>
+                            <?php } ?>
+                            <br>
+                            Ejercicios por Etapa
+                            <input type="number" name="epe" min="1" class="form-control" placeholder="Ejercicios por Etapa" value=<?php echo $epe?>>
+                            <br>
+                            Operaciones
+                            <input type="text" name="operaciones" class="form-control" placeholder="Ejemplo: MDSR " value=<?php echo $operaciones ?>>
                             <br>
                             <input type="hidden" name="grupo" class="form-control" value=<?php echo $_GET['grupo'];?>>
                             <input type="submit" class="btn btn-default">

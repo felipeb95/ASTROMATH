@@ -10,6 +10,17 @@ $min_vel = $_POST['min_vel'];
 $max_vel = $_POST['max_vel'];
 $acel = $_POST['acel'];
 $grupo = $_POST['grupo'];
+$modo = $_POST['modo'];
+$epe = $_POST['epe'];
+$operaciones = $_POST['operaciones'];
+$maxSuma = $_POST["maxSuma"];
+$minResta = $_POST["minResta"];
+$minAS = $_POST["minAS"];
+$maxBS = $_POST["maxBS"];
+$minAR = $_POST["minAR"];
+$maxBR = $_POST["maxBR"];
+$minAD = $_POST["minAD"];
+$maxBD = $_POST["maxBD"];
 
 $nro = $mayorMultiplo-$menorMultiplo+1;
 
@@ -21,6 +32,24 @@ if($max_vel<=$min_vel){
 
 if($mayorMultiplo<=$menorMultiplo){
     $Message = urlencode("Mayor múltiplo debe ser mayor a menor múltiplo.");
+    header("Location: config.php?Message=".$Message."&grupo=".$grupo);
+    die;
+}
+
+if($minAS>=$maxBS){
+    $Message = urlencode("Mayor sumando debe ser mayor a menor sumando.");
+    header("Location: config.php?Message=".$Message."&grupo=".$grupo);
+    die;
+}
+
+if($minAR>=$maxBR){
+    $Message = urlencode("Mayor operador resta debe ser mayor a menor operador resta.");
+    header("Location: config.php?Message=".$Message."&grupo=".$grupo);
+    die;
+}
+
+if($minAD>=$maxBD){
+    $Message = urlencode("Mayor operador división debe ser mayor a menor operador división.");
     header("Location: config.php?Message=".$Message."&grupo=".$grupo);
     die;
 }
@@ -77,12 +106,11 @@ if ($conexion->connect_error) {
 }
 if($grupo==0) {
     $sql = "UPDATE parametros_con
-        SET menorMultiplo='$menorMultiplo', mayorMultiplo='$mayorMultiplo', rondas='$rondas', porcBuenas='$porcBuenas', porcMalas='$porcMalas', setMemoria='$setMemoria', min_vel='$min_vel', max_vel='$max_vel', acel='$acel'";
+        SET maxSuma='$maxSuma', minResta='$minResta', minAD='$minAD', maxBD='$maxBD', minAR='$minAR', maxBR='$maxBR', minAS='$minAS', maxBS='$maxBS', menorMultiplo='$menorMultiplo', mayorMultiplo='$mayorMultiplo', rondas='$rondas', porcBuenas='$porcBuenas', porcMalas='$porcMalas', setMemoria='$setMemoria', min_vel='$min_vel', max_vel='$max_vel', acel='$acel', modo='$modo', epe='$epe', operaciones='$operaciones'";
 }
 if($grupo==1){
     $sql = "UPDATE parametros_exp
-        SET menorMultiplo='$menorMultiplo', mayorMultiplo='$mayorMultiplo', rondas='$rondas', porcBuenas='$porcBuenas', porcMalas='$porcMalas', setMemoria='$setMemoria', min_vel='$min_vel', max_vel='$max_vel', acel='$acel'";
-
+        SET maxSuma='$maxSuma', minResta='$minResta', minAD='$minAD', maxBD='$maxBD', minAR='$minAR', maxBR='$maxBR', minAS='$minAS', maxBS='$maxBS', menorMultiplo='$menorMultiplo', mayorMultiplo='$mayorMultiplo', rondas='$rondas', porcBuenas='$porcBuenas', porcMalas='$porcMalas', setMemoria='$setMemoria', min_vel='$min_vel', max_vel='$max_vel', acel='$acel', modo='$modo', epe='$epe', operaciones='$operaciones'";
 }
 if ($conexion->query($sql) === TRUE) {
 } 
