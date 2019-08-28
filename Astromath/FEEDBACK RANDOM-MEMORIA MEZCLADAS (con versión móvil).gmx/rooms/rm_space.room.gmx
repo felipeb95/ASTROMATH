@@ -18,6 +18,10 @@
 if(global.modo_juego == 2){
     instance_create(0,0,obj_spawner_etapas);   
     instance_create(0,0,obj_waves_etapas);
+}
+
+if(global.tipo_os_equipo == 2){
+    instance_create(80,350,obj_UI);
 }</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
