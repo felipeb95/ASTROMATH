@@ -28,163 +28,150 @@ while($row = $result->fetch_assoc()) {
 <html lang="en">
 
 <head>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+    <script src="app.js"></script>
+    <!-- Bootstrap core CSS -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <title>Tu perfil</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
-    <script src="app.js"></script>
+    <title>Perfil</title>
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template -->
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="device-mockups/device-mockups.min.css">
     <!-- Custom styles for this template -->
-    <link href="css/simple-sidebar.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Bungee|Fjalla+One|Rubik" rel="stylesheet"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="estiloPerfiles.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-    <script src=”https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js”></script>
+    <link href="css/new-age.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
-
-
-<body ng-app = "myapp">
-<header class="clearfix fixed-nav-bar">
+<body id="page-top" ng-app = "myapp">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <div class="container">
-      <div class="header-left">
-        <h1><span class="span-logo">
-        <a href="#top" class="navlink"><img id="img" src="astromath.png" /></a>
-        </span></h1>
-      </div>
-      <div class="header-right">
-        <label for="open">
-          <span class="hidden-desktop"></span>
-        </label>
-        <input type="checkbox" name="" id="open">
-        <nav>
-          <?php if($_SESSION["grupo"]==0){?><a class="navlinkplay" href="game-v1" target="_blank">J U G A R</a>
-          <?php }if($_SESSION["grupo"]==1){?><a class="navlinkplay" href="game-v2" target="_blank">J U G A R</a><?php } ?>
-          <a class="navlink hvr-fade" href="#puntuaciones">Tabla de puntajes</a>
-          <a class="navlink hvr-fade" href="#instrucciones">Instrucciones</a>
-          <a class="navlinklogout hvr-bounce-in" href="logout.php">Cerrar sesión</a>
-        </nav>
-      </div>
-    </div>
-  </header>
-
-<div class="container-fluid" id="top">
-<a href="#" id="scroll" style="display: none;"><span></span></a>
-<div class = "row">
-
-    <div class="col-md-12" id="nombre"> 
-        <h1 style="text-align: center;margin-top:80px"> Hola, <b><?php echo $_SESSION["nombre"]; ?></b>, bienvenido a tu perfil.</h1>
-    </div>
-
-</div>
-
-<div class = "row" style="margin-top: 50px;">
-
-    <div class="col-md-4" id="info"> 
-        <h1 class="titulo"> Información </h1>
-        <p class="datos">
-          <?php 
-          echo $_SESSION["curso"]." básico ".$_SESSION["letra"];
-          ?>
-        </p>
-        <p class="datos">
-        <?php 
-          echo $_SESSION["colegio"];
-        ?>
-        </p>
-    </div>
-
-    <div class="col-md-4" id="info"> 
-        <h1 class="titulo"> Mejor puntuación </h1>
-        <span class="cifra" style="font-size: 50px;">
-          <?php echo $highscore; ?>
-        </span>
-    </div>
-
-    <div class="col-md-4" id="info"> 
-        <h1 class="titulo"> Sesiones iniciadas </h1>
-        <span class="cifra" style="font-size: 50px;">
-          <?php echo $nLogin; ?>
-        </span>
-    </div>
-
-</div>
-
-
-<div class = "row" id="puntuaciones">
-
-    <div class="col-md-2"></div>
-    <div class="col-md-8" ng-controller="puntuaciones"  style="margin-top:70px;">
-      <h1 class="titulo"> Mejores puntuaciones </h1>
-      <p class="textorelleno" style="text-align:center;margin-top:50px;"> En la tabla a continuación puedes ver el puntaje tuyo y de todos tus compañeros ordenados de mayor a menor. Puedes buscar a tus amigos escribiendo su nombre en la barrita de búsqueda sobre la tabla.</p>
-    <div class="input-group" style="margin-top:30px;">
-              <!--<span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-search"></i></span>-->
-              <input type="text" class="form-control" placeholder="Buscar compañeros" aria-describedby="basic-addon1" ng-model="searchText">
-    </div>
-     <div  class="tablaPuntuaciones"> 
-        <table style="margin:0 auto;" border=1 class="tablaSeg">
-          <th class="titulostabla"> Puntaje </th>
-          <th class="titulostabla"> Nombre </th>
-          <th class="titulostabla"> Colegio </th>
-          <th class="titulostabla"> Curso </th>
-          <th class="titulostabla"> Perfil </th>
-          <tr ng-repeat = "h in highscores | filter:searchText">
-            <td class="titulostabla" id="puntajetabla"> {{h.highscore}}</td>
-            <td class="titulostabla"> {{h.nombre}}</td>
-            <td class="titulostabla"> {{h.colegio}}</td>
-            <td class="titulostabla"> {{h.curso}} básico {{h.letra}}</td>  
-            <td style="padding-top:10px; text-align:center;width: 20px;"><a class="linkstabla" href="perfilAlumno.php?id={{h.id}}" target="_blank">Ir a perfil</a></td>
-          </tr>
-          </tbody>
-        </table>
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">AstroMath</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <?php if($_SESSION["grupo"]==0){?><a class="nav-link js-scroll-trigger" href="game-v1" target="_blank">Jugar</a>
+              <?php }if($_SESSION["grupo"]==1){?><a class="nav-link js-scroll-trigger" href="game-v2" target="_blank">Jugar</a><?php } ?>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#puntuaciones">Tabla de puntajes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#instrucciones">Instrucciones</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="logout.php">Cerrar sesión</a>
+            </li>
+        </ul>
       </div>
     </div>
-    <div class="col-md-2"></div>
+  </nav>
 
-</div>
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-heading text-center">
+        <h3 style="text-align: center;margin-top:80px"> Hola, <b><?php echo $_SESSION["nombre"]; ?></b>, bienvenido a tu perfil.</h2>
+      </div>
+      <div class = "row" style="margin-top: 50px;">
+        <div class="col-md-4" id="info"> 
+          <h3 class="titulo"> Información </h1>
+          <p class="datos">
+            <?php 
+              echo $_SESSION["curso"]." básico ".$_SESSION["letra"];
+            ?>
+          </p>
+          <p class="datos">
+            <?php 
+              echo $_SESSION["colegio"];
+            ?>
+          </p>
+        </div>
+        <div class="col-md-4" id="info"> 
+          <h3 class="titulo"> Mejor puntuación </h1>
+          <p class="datos">
+            <?php echo $highscore; ?>
+          </p>
+        </div>
+        <div class="col-md-4" id="info"> 
+          <h3 class="titulo"> Sesiones iniciadas </h1>
+          <p class="datos">
+            <?php echo $nLogin; ?>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="puntuaciones" id="puntuaciones">
+    <div class = "row" id="info" ng-controller="puntuaciones"> 
+      <div class="container">
+        <div class="section-heading text-center">
+          <h3 class="titulo"> Tabla de puntuaciones </h1>
+          <div class="feature-item">
+            <input type="text" class="form-control" placeholder="Buscar compañeros" aria-describedby="basic-addon1" ng-model="searchText">
+          </div>
+          <div class="table-responsive">
+            <table class="table table-light table-striped">
+              <thead class="thead-dark">
+                <th class="titulostabla"> Puntaje </th>
+                <th class="titulostabla"> Nombre </th>
+                <th class="titulostabla"> Colegio </th>
+                <th class="titulostabla"> Curso </th>
+                <th class="titulostabla"> Perfil </th>
+              </thead>
+              <tbody>
+                <tr ng-repeat = "h in highscores | filter:searchText">
+                  <td class="titulostabla" id="puntajetabla"> {{h.highscore}}</td>
+                  <td class="titulostabla"> {{h.nombre}}</td>
+                  <td class="titulostabla"> {{h.colegio}}</td>
+                  <td class="titulostabla"> {{h.curso}} básico {{h.letra}}</td>  
+                  <td style="padding-top:10px; text-align:center;width: 20px;"><a class="linkstabla" href="perfilAlumno.php?id={{h.id}}" target="_blank">Ir a perfil</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>        
+        </div>
+      </div>
+    </div>
+  </section>
 
-<div class = "row" style="margin-top:70px;">
-
-    <div class="col-md-12"> 
-        <h1 class="titulo" id="instrucciones"> Instrucciones </h1>
-        <div style="text-align:center; margin-top: 50px;">
-            <p class="textorelleno"> En el siguiente video encontrarás instrucciones sobre cómo jugar una vez que comiences una partida </p>
-            <<iframe style="margin-top:20px;" width="560" height="315" src="https://www.youtube.com/embed/Lcn4C13gfD8?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <section class="instrucciones" id="instrucciones">
+    <div class="row" id="info"> 
+      <div class="container">
+        <div class="section-heading text-center">
+          <h3 class="titulo"> Instrucciones </h1>
+            <div class="video-responsive">
+              <iframe  src="https://www.youtube.com/embed//Lcn4C13gfD8" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+            </div>
+          </div>
         </div>
     </div>
-
-</div>
-
-
-<div class = "row" style="margin-top:50px;">
-
-</div>
-
-  <a onclick="topFunction()" href="#top" id="button" title="Go to top"></a> 
-
-</div> <!--SE CIERRA EL CONTAINER-->
-
+  </section>
+    
+  <footer>
+    <div class="container">
+      <p>&copy; 2017 Start Bootstrap. All Rights Reserved.</p>
+    </div>
+  </footer>
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <!-- Custom scripts for this template -->
+  <script src="js/new-age.min.js"></script>
 </body>
 
-</html>
-
-<style>
- 
-</style>
 
 <script>
 

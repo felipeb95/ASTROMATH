@@ -84,9 +84,14 @@ if (!isset($_SESSION['user']) || $_SESSION['grupo']!=1) {
                <p>Your browser doesn't support HTML5 canvas.</p>
             </canvas>
         </div>
-
+        <script>
+            addEventListener("touchstart", function() {
+              var el = document.documentElement;
+              el.requestFullscreen();
+            });
+        </script>
         <!-- Run the game code -->
-        <script type="text/javascript" src="html5game/AstromathConFeedback.js?AMJYB=1320493897"></script>
+        <script type="text/javascript" src="html5game/FeedbackRandMemMezcla.js?FWEAC=1533056226&v=123"></script>
         <script>window.onload = GameMaker_Init;</script>
     </body>
 </html>

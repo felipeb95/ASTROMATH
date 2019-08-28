@@ -39,7 +39,7 @@ if($dificiles != 'null'){
     $dificilesToString = "{".implode(",",$dificiles)."}";
 }
 
-$sql="INSERT INTO experimental (idUser, correctas, incorrectas, puntaje, ejercicios, faciles, medios, dificiles) VALUES ('$user','$correctas','$incorrectas','$puntaje','$ejercicios','$facilesToString','$mediosToString','$dificilesToString')";
+$sql="INSERT INTO astromath_partida (idUser, correctas, incorrectas, puntaje, ejercicios, faciles, medios, dificiles) VALUES ('$user','$correctas','$incorrectas','$puntaje','$ejercicios','$facilesToString','$mediosToString','$dificilesToString')";
 if ($conexion->query($sql) === TRUE) {
     //QUERY EXITOSA
     $ultimaIdExperimental = $conexion->insert_id;
@@ -59,14 +59,15 @@ if ($conexion->query($sql) === TRUE) {
         $estado = $objEjercicios[$x]["estado_respuesta"];
         $etapa = $objEjercicios[$x]["etapa"];
         $origen = $objEjercicios[$x]["origen"];
+        $operacion = $objEjercicios[$x]["operacion"];
         
-        $sqlEjercicios = "INSERT INTO teste (a, b, r, idPartida, segundos, intentos, estado, etapa, origen) VALUES ('$a','$b','$r','$ultimaIdExperimental','$segundos','$cantidad_intentos','$estado','$etapa','$origen')";
+        $sqlEjercicios = "INSERT INTO astromath_ejercicio (a, b, r, idPartida, segundos, intentos, estado, etapa, origen, operacion) VALUES ('$a','$b','$r','$ultimaIdExperimental','$segundos','$cantidad_intentos','$estado','$etapa','$origen','$operacion')";
         if ($conexion->query($sqlEjercicios) === TRUE) {
             //QUERY EXITOSA
             $ultimaIdEjercicios = $conexion->insert_id;
             if($intentosCount>0){
                 for($i = 1; $i <= count($intentos);$i++){
-                    $sqlIntentos = "INSERT INTO intentose (idEjercicio, intento) VALUES ('$ultimaIdEjercicios', '$intentos[$i]')";
+                    $sqlIntentos = "INSERT INTO astromath_intento (idEjercicio, intento) VALUES ('$ultimaIdEjercicios', '$intentos[$i]')";
                     if($conexion->query($sqlIntentos) == TRUE){
                         //QUERY EXITOSA
                         echo "Datos guardados";
