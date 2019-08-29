@@ -8,6 +8,29 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>image_speed = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="6" enumb="4">
       <action>
         <libid>1</libid>
@@ -25,14 +48,47 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(sprite_index==mute){
-    audio_stop_sound(global.snd);
-    sprite_index=unmute;
+            <string>if(global.tipo_os_equipo == 2){
+    if(image_index==1){
+        audio_resume_sound(global.snd);
+        image_index=0;
+    }
+    else {
+        audio_pause_sound(global.snd);
+        image_index=1;
+    }
 }
-else {
-    global.snd=audio_play_sound(music,10,true);
-    audio_sound_gain(global.snd,0.4,0);
-    sprite_index=mute;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="77">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(global.tipo_os_equipo == 1){
+    if(image_index==1){
+        audio_resume_sound(global.snd);
+        image_index=0;
+    }
+    else {
+        audio_pause_sound(global.snd);
+        image_index=1;
+    }
 }
 </string>
           </argument>
