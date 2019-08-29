@@ -489,7 +489,7 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
                 var contIndicesCero = 0;
                 for(i=global.minA;i&lt;=global.maxB;i++){
                     for(j=global.minA;j&lt;=global.maxB;j++){
-                        if(global.tablaM[i,j]==0){
+                        if(global.tablaM[i,j]==0 and global.memA!=i and global.memB!=j){
                             indicesCeroA[contIndicesCero]=i;
                             indicesCeroB[contIndicesCero]=j;
                             contIndicesCero++;
@@ -531,7 +531,7 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
                 var contIndicesCero = 0;
                 for(i=global.minA;i&lt;=global.maxB;i++){
                     for(j=global.minA;j&lt;=global.maxB;j++){
-                        if(i&gt;=j and global.tablaD[i,j]==0){
+                        if(i&gt;=j and global.tablaD[i,j]==0 and global.memA!=i and global.memB!=j){
                             indicesCeroA[contIndicesCero]=i;
                             indicesCeroB[contIndicesCero]=j;
                             contIndicesCero++;
@@ -573,7 +573,7 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
                 var contIndicesCero = 0;
                 for(i=global.minA;i&lt;=global.maxB;i++){
                     for(j=global.minA;j&lt;=global.maxB;j++){
-                        if(global.tablaS[i,j]==0){
+                        if(global.tablaS[i,j]==0 and global.memA!=i and global.memB!=j){
                             indicesCeroA[contIndicesCero]=i;
                             indicesCeroB[contIndicesCero]=j;
                             contIndicesCero++;
@@ -615,7 +615,7 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
                 var contIndicesCero = 0;
                 for(i=global.minA;i&lt;=global.maxB;i++){
                     for(j=global.minA;j&lt;=global.maxB;j++){
-                        if(i&gt;=j and global.tablaR[i,j]==0){
+                        if(i&gt;=j and global.tablaR[i,j]==0 and global.memA!=i and global.memB!=j){
                             indicesCeroA[contIndicesCero]=i;
                             indicesCeroB[contIndicesCero]=j;
                             contIndicesCero++;
