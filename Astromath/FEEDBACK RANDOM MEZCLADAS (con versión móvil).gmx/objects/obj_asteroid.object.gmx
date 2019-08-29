@@ -27,17 +27,34 @@
             <kind>1</kind>
             <string>u7=0;
 randomize();
+enemy = undefined;
 correctValue = global.r;
+randValue = global.r;
+for (i = 0; i &lt; instance_number(obj_asteroid); i += 1) {
+   enemy[i] = instance_find(obj_asteroid,i);
+}
+arrayNum = undefined;
+iarrayNum = 0;
+if(global.r-10&gt;=0) contador = -10;
+if(global.r-10&lt;0) contador = 0;
+while(true){
+    
+    if(array_length_1d(enemy)==0) if(global.r != global.r+contador) arrayNum[iarrayNum]=global.r+contador;
+    if(array_length_1d(enemy)==1) if(global.r != global.r+contador and enemy[0].randValue!=global.r+contador) arrayNum[iarrayNum]=global.r+contador;
+    if(array_length_1d(enemy)==2) if(global.r != global.r+contador and enemy[0].randValue!=global.r+contador and enemy[1].randValue!=global.r+contador) arrayNum[iarrayNum]=global.r+contador;
+    if(array_length_1d(enemy)==3) if(global.r != global.r+contador and enemy[0].randValue!=global.r+contador and enemy[1].randValue!=global.r+contador and enemy[2].randValue!=global.r+contador) arrayNum[iarrayNum]=global.r+contador;
+    if(array_length_1d(enemy)==4) if(global.r != global.r+contador and enemy[0].randValue!=global.r+contador and enemy[1].randValue!=global.r+contador and enemy[2].randValue!=global.r+contador and enemy[3].randValue!=global.r+contador) arrayNum[iarrayNum]=global.r+contador;
+    if(array_length_1d(enemy)==5) if(global.r != global.r+contador and enemy[0].randValue!=global.r+contador and enemy[1].randValue!=global.r+contador and enemy[2].randValue!=global.r+contador and enemy[3].randValue!=global.r+contador and enemy[4].randValue!=global.r+contador) arrayNum[iarrayNum]=global.r+contador;
+    iarrayNum++;
+    contador++;
+    if(contador&gt;10) break;
+}
+
 if(global.bot==0){
-    randValue = floor(random_range(global.r-10,global.r+10));
-    if(randValue&lt;0) randValue=floor(random_range(0,global.r+5));
-    while(randValue==global.r){
-        randValue=floor(random_range(global.r-10,global.r+10)); 
-        if(randValue&lt;0) randValue=floor(random_range(0,global.r+5));
-    }
+    randValue = irandom_range(0,array_length_1d(arrayNum)-1);
+    randValue = arrayNum[randValue];
 }
 if(global.bot==1){
-    randValue = global.r;
     global.aparicionCorrecta = global.segundos;
 }
 //speed
