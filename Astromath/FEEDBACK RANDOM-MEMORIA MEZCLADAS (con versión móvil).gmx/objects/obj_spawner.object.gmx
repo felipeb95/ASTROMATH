@@ -268,7 +268,8 @@ draw_set_font(fntMain);
 }
 //AQUÍ SE CUMPLE UNA OLEADA
 if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen de pantalla
-                
+        global.metNum = undefined;
+        global.imetNum = 0;
         if(global.intentos == 0 || global.bot2 ==0){
             x = view_xview + view_wview/2;
             y = view_yview + view_hview/2;

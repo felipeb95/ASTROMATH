@@ -25,38 +25,51 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>u7=0;
-randomize();
-enemy = undefined;
-correctValue = global.r;
-randValue = global.r;
-for (i = 0; i &lt; instance_number(obj_asteroid); i += 1) {
-   enemy[i] = instance_find(obj_asteroid,i);
-}
+            <string>randomize();
+u7 = irandom_range(global.r+10,global.r+20);
 arrayNum = undefined;
 iarrayNum = 0;
-if(global.r-10&gt;=0) contador = -10;
-if(global.r-10&lt;0) contador = 0;
-while(true){
-    
-    if(array_length_1d(enemy)==0) if(global.r != global.r+contador) arrayNum[iarrayNum]=global.r+contador;
-    if(array_length_1d(enemy)==1) if(global.r != global.r+contador and enemy[0].randValue!=global.r+contador) arrayNum[iarrayNum]=global.r+contador;
-    if(array_length_1d(enemy)==2) if(global.r != global.r+contador and enemy[0].randValue!=global.r+contador and enemy[1].randValue!=global.r+contador) arrayNum[iarrayNum]=global.r+contador;
-    if(array_length_1d(enemy)==3) if(global.r != global.r+contador and enemy[0].randValue!=global.r+contador and enemy[1].randValue!=global.r+contador and enemy[2].randValue!=global.r+contador) arrayNum[iarrayNum]=global.r+contador;
-    if(array_length_1d(enemy)==4) if(global.r != global.r+contador and enemy[0].randValue!=global.r+contador and enemy[1].randValue!=global.r+contador and enemy[2].randValue!=global.r+contador and enemy[3].randValue!=global.r+contador) arrayNum[iarrayNum]=global.r+contador;
-    if(array_length_1d(enemy)==5) if(global.r != global.r+contador and enemy[0].randValue!=global.r+contador and enemy[1].randValue!=global.r+contador and enemy[2].randValue!=global.r+contador and enemy[3].randValue!=global.r+contador and enemy[4].randValue!=global.r+contador) arrayNum[iarrayNum]=global.r+contador;
-    iarrayNum++;
-    contador++;
-    if(contador&gt;10) break;
-}
-
+if((global.r-10)&gt;=0) contador = -10;
+else contador = 0;
 if(global.bot==0){
+    while(true){
+        if(global.r != (global.r+contador)){
+            if(global.imetNum==0){
+                arrayNum[iarrayNum]=global.r+contador;
+                iarrayNum++;
+            }
+            else{
+                if(global.imetNum==1) if(global.metNum[0]!=global.r+contador){
+                    arrayNum[iarrayNum]=global.r+contador;
+                    iarrayNum++;
+                }
+                if(global.imetNum==2) if(global.metNum[0]!=global.r+contador and global.metNum[1]!=global.r+contador){
+                    arrayNum[iarrayNum]=global.r+contador;
+                    iarrayNum++;
+                }
+                if(global.imetNum==3) if(global.metNum[0]!=global.r+contador and global.metNum[1]!=global.r+contador and global.metNum[2]!=global.r+contador){
+                    arrayNum[iarrayNum]=global.r+contador;
+                    iarrayNum++;
+                }
+                if(global.imetNum==4) if(global.metNum[0]!=global.r+contador and global.metNum[1]!=global.r+contador and global.metNum[2]!=global.r+contador and global.metNum[3]!=global.r+contador){
+                    arrayNum[iarrayNum]=global.r+contador;
+                    iarrayNum++;    
+                }
+            }
+        }
+        contador++;
+        if(contador&gt;10) break;
+    }
     randValue = irandom_range(0,array_length_1d(arrayNum)-1);
-    randValue = arrayNum[randValue];
+    u7 = arrayNum[randValue];
+    global.metNum[global.imetNum] = u7;
+    global.imetNum++;
 }
-if(global.bot==1){
+else {
+    u7 = global.r;
     global.aparicionCorrecta = global.segundos;
 }
+
 //speed
 randomize();
 hspeed = choose(global.sp1,global.sp2,global.sp3);
@@ -217,11 +230,6 @@ if(place_meeting(x,y,obj_ship)){
             <kind>1</kind>
             <string>spr_index = asset_get_index("sprite2");
 draw_sprite_ext(spr_index, image_index, x, y, 0.81, 0.81, image_angle, image_blend, image_alpha);
-//if(global.cont==global.alternativa){
-//u7=correctValue;
-//}else {
-u7 = randValue;
-//}
 draw_set_font(fnt_meteo);
 draw_text(x,y,u7);
 
