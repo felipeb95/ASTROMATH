@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>randomize();
+global.cantidadEj = 0;
 //NO TOCAR
 global.memA=0;
 global.memB=0;
@@ -249,6 +250,7 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
         ds_map_add(roundMap, "etapa",(global.dificultad+1));
         ds_map_add(roundMap, "origen", global.origen);
         ds_map_add(roundMap, "operacion",global.operacion);
+        global.cantidadEj++;
         //OONDICIÓN SI ES QUE NO SE LE DISPARÓ A NINGÚN METEROTIO (NO HUBO INTENTO)
         
         var copiaIntentosRonda = ds_map_create();

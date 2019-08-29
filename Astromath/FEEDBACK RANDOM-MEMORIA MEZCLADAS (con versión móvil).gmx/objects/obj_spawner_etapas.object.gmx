@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>randomize();
+global.cantidadEj = 0;
 //TABLA DE EJERCICIOS
 for(i=global.minA;i&lt;=global.maxB;i++){
     for(j=global.minA;j&lt;=global.maxB;j++){
@@ -300,6 +301,7 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
         ds_map_add(roundMap, "etapa",(global.dificultad+1));
         ds_map_add(roundMap, "origen", global.origen);
         ds_map_add(roundMap, "operacion",global.operacion);
+        global.cantidadEj++;
         //OONDICIÓN SI ES QUE NO SE LE DISPARÓ A NINGÚN METEROTIO (NO HUBO INTENTO)
         
         var copiaIntentosRonda = ds_map_create();

@@ -63,7 +63,7 @@ if(argument0){
     var data_send = "puntaje="+string(global.puntaje)+
     "&correctas="+string(global.correctas)+
     "&incorrectas="+string(global.incorrectas)+
-    "&ejercicios="+string(global.wave)+
+    "&ejercicios="+string(global.cantidadEj)+
     "&nRondas="+string(global.nrondas)+
     "&jsonEjercicios="+string(jsonEjercicios)+
     "&jsonExtras="+string(jsonExtras);
