@@ -216,6 +216,18 @@ if(ds_map_exists(map, "maxBD")){
      show_debug_message(maxBD);
      global.maxBD = real(maxBD);
 }
+if(ds_map_exists(map, "porcBuenas")){
+    var porcBuenas = map[? "porcBuenas"];
+     show_debug_message("porcBuenas funciona");
+     show_debug_message(porcBuenas);
+     global.rangoBuenas = real(porcBuenas);
+}
+if(ds_map_exists(map, "porcMalas")){
+    var porcMalas = map[? "porcMalas"];
+     show_debug_message("porcMalas funciona");
+     show_debug_message(porcMalas);
+     global.rangoMalas = real(porcMalas);
+}
 
 
 go_to_next = true;

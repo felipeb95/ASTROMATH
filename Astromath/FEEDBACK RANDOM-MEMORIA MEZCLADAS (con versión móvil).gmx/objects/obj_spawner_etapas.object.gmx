@@ -52,8 +52,6 @@ for(i=global.minAR;i&lt;=global.maxBR;i++){
     }
 }
 //MEMORIA
-global.rangoBuenas=0.4;
-global.rangoMalas=0.6;
 global.memABM=undefined;
 global.memABD=undefined;
 global.memABS=undefined;
