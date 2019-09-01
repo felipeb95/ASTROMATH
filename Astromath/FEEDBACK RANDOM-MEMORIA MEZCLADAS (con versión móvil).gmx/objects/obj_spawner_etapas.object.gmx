@@ -26,6 +26,18 @@
           <argument>
             <kind>1</kind>
             <string>randomize();
+
+//CAMBIOS DOS DIGITOS
+global.porcDig = 0.6;
+
+//PARAMETROS VARIOS
+global.restoD = false;
+global.canjeS = false;
+global.canjeR = false;
+
+
+
+
 global.cantidadEj = 0;
 //TABLA DE EJERCICIOS
 for(i=global.minA;i&lt;=global.maxB;i++){
@@ -36,19 +48,55 @@ for(i=global.minA;i&lt;=global.maxB;i++){
 for(i=global.minAD;i&lt;=global.maxBD;i++){
     for(j=global.minAD;j&lt;=global.maxBD;j++){
         global.tablaD[i,j]=0;
-        if(i%j != 0) global.tablaD[i,j] = -1;
+        if((!global.restoD and i%j != 0) or i&lt;j) global.tablaD[i,j] = -1;
     }
 }
 for(i=global.minAS;i&lt;=global.maxBS;i++){
     for(j=global.minAS;j&lt;=global.maxBS;j++){
         global.tablaS[i,j]=0;
         if(i+j &gt; global.maxSuma) global.tablaS[i,j] = -1;
+        if((!global.canjeS and i &gt; 9) or (!global.canjeS and j &gt; 9)){
+            comprobar = true;
+            auxi1 = i;
+            auxi2 = j;
+            while(auxi1!=0 and auxi2!=0){
+                num1 = auxi1%10;
+                num2 = auxi2%10;
+                if(num1+num2&gt;9) {
+                    comprobar = false;
+                    break;
+                }
+                else {
+                    auxi1 = floor(auxi1/10);
+                    auxi2 = floor(auxi2/10);
+                }
+            }
+            if(comprobar==false) global.tablaS[i,j] = -1;
+        }
     }
 }
 for(i=global.minAR;i&lt;=global.maxBR;i++){
     for(j=global.minAR;j&lt;=global.maxBR;j++){
         global.tablaR[i,j]=0;
-        if(i-j &lt; global.minResta) global.tablaR[i,j] = -1;
+        if(i-j &lt; global.minResta or i&lt;j) global.tablaR[i,j] = -1;
+        if(!global.canjeR and i &gt; 9){
+            comprobar = true;
+            auxi1 = i;
+            auxi2 = j;
+            while(auxi1!=0 and auxi2!=0){
+                num1 = auxi1%10;
+                num2 = auxi2%10;
+                if(num1&lt;num2) {
+                    comprobar = false;
+                    break;
+                }
+                else {
+                    auxi1 = floor(auxi1/10);
+                    auxi2 = floor(auxi2/10);
+                }
+            }
+            if(comprobar==false) global.tablaS[i,j] = -1;
+        }
     }
 }
 //MEMORIA
@@ -357,7 +405,7 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
             global.waveFake=1;
         }
         
-        if(global.wave==global.nEjercicios+1){
+        /*if(global.wave==global.nEjercicios+1){
             global.existeF=0;
             global.existeM=0;
             global.existeD=0;
@@ -478,13 +526,17 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
         if(global.dificultad&gt;=0){show_debug_message("EJERCICIOS FACILES POR SALIR: ");show_debug_message(global.eFacil[global.dificultad]);}
         if(global.dificultad&gt;=0){show_debug_message("EJERCICIOS MEDIOS POR SALIR: ");show_debug_message(global.eMedio[global.dificultad]);}
         if(global.dificultad&gt;=0){show_debug_message("EJERCICIOS DIFICLES POR SALIR: ");show_debug_message(global.eDificil[global.dificultad]);}
-
+        */
         show_debug_message("Ejercicio");
         show_debug_message(global.waveUltraFake);
         
         if(global.modo==0) {
             global.origen="random";
             indexCat = random_range(0,1);
+            randomize();
+            indexDig = random_range(0,1);
+            show_debug_message("Index Seleccion Digito");
+            show_debug_message(indexDig); 
             if(global.operacion=="M"){
                 while(global.a==global.memA and global.b==global.memB){
                     global.a = choose(floor(random_range(global.minA,global.maxB)));
@@ -499,6 +551,18 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
                             indicesCeroA[contIndicesCero]=i;
                             indicesCeroB[contIndicesCero]=j;
                             contIndicesCero++;
+                        }
+                    }
+                }
+                if(contIndicesCero==0){
+                    for(i=global.minA;i&lt;=global.maxB;i++){
+                        for(j=global.minA;j&lt;=global.maxB;j++){
+                            if(global.tablaM[i,j]==1 and global.memA!=i and global.memB!=j){
+                                global.tablaM[i,j]=0;
+                                indicesCeroA[contIndicesCero]=i;
+                                indicesCeroB[contIndicesCero]=j;
+                                contIndicesCero++;
+                            }
                         }
                     }
                 }
@@ -535,12 +599,24 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
                 var indicesCeroA = undefined;
                 var indicesCeroB = undefined;
                 var contIndicesCero = 0;
-                for(i=global.minA;i&lt;=global.maxB;i++){
-                    for(j=global.minA;j&lt;=global.maxB;j++){
-                        if(i&gt;=j and global.tablaD[i,j]==0 and global.memA!=i and global.memB!=j){
+                for(i=global.minAD;i&lt;=global.maxBD;i++){
+                    for(j=global.minAD;j&lt;=global.maxBD;j++){
+                        if(global.tablaD[i,j]==0 and global.memA!=i and global.memB!=j){
                             indicesCeroA[contIndicesCero]=i;
                             indicesCeroB[contIndicesCero]=j;
                             contIndicesCero++;
+                        }
+                    }
+                }
+                if(contIndicesCero==0){
+                    for(i=global.minAD;i&lt;=global.maxBD;i++){
+                        for(j=global.minAD;j&lt;=global.maxBD;j++){
+                            if(global.tablaD[i,j]==1 and global.memA!=i and global.memB!=j){
+                                global.tablaD[i,j]=0;
+                                indicesCeroA[contIndicesCero]=i;
+                                indicesCeroB[contIndicesCero]=j;
+                                contIndicesCero++;
+                            }
                         }
                     }
                 }
@@ -577,12 +653,33 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
                 var indicesCeroA = undefined;
                 var indicesCeroB = undefined;
                 var contIndicesCero = 0;
-                for(i=global.minA;i&lt;=global.maxB;i++){
-                    for(j=global.minA;j&lt;=global.maxB;j++){
-                        if(global.tablaS[i,j]==0 and global.memA!=i and global.memB!=j){
-                            indicesCeroA[contIndicesCero]=i;
-                            indicesCeroB[contIndicesCero]=j;
-                            contIndicesCero++;
+                for(i=global.minAS;i&lt;=global.maxBS;i++){
+                    for(j=global.minAS;j&lt;=global.maxBS;j++){
+                        if(indexDig&lt;=global.porcDig){
+                            if(global.tablaS[i,j]==0 and global.memA!=i and global.memB!=j and i&lt;10 and j&lt;10){
+                                indicesCeroA[contIndicesCero]=i;
+                                indicesCeroB[contIndicesCero]=j;
+                                contIndicesCero++;
+                            }
+                        }
+                        else {
+                           if(global.tablaS[i,j]==0 and global.memA!=i and global.memB!=j and i&gt;=10 and j&gt;=10){
+                                indicesCeroA[contIndicesCero]=i;
+                                indicesCeroB[contIndicesCero]=j;
+                                contIndicesCero++;
+                            } 
+                        }
+                    }
+                }
+                if(contIndicesCero==0){
+                    for(i=global.minAS;i&lt;=global.maxBS;i++){
+                        for(j=global.minAS;j&lt;=global.maxBS;j++){
+                            if(global.tablaS[i,j]==1 and global.memA!=i and global.memB!=j){
+                                global.tablaS[i,j]=0;
+                                indicesCeroA[contIndicesCero]=i;
+                                indicesCeroB[contIndicesCero]=j;
+                                contIndicesCero++;
+                            }
                         }
                     }
                 }
@@ -619,12 +716,33 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
                 var indicesCeroA = undefined;
                 var indicesCeroB = undefined;
                 var contIndicesCero = 0;
-                for(i=global.minA;i&lt;=global.maxB;i++){
-                    for(j=global.minA;j&lt;=global.maxB;j++){
-                        if(i&gt;=j and global.tablaR[i,j]==0 and global.memA!=i and global.memB!=j){
-                            indicesCeroA[contIndicesCero]=i;
-                            indicesCeroB[contIndicesCero]=j;
-                            contIndicesCero++;
+                for(i=global.minAR;i&lt;=global.maxBR;i++){
+                    for(j=global.minAR;j&lt;=global.maxBR;j++){
+                        if(indexDig&lt;=global.porcDig){
+                            if(global.tablaR[i,j]==0 and global.memA!=i and global.memB!=j and i&lt;10 and j&lt;10){
+                                indicesCeroA[contIndicesCero]=i;
+                                indicesCeroB[contIndicesCero]=j;
+                                contIndicesCero++;
+                            }
+                        }
+                        else {
+                            if(global.tablaR[i,j]==0 and global.memA!=i and global.memB!=j and i&gt;=10 and j&gt;=10){
+                                indicesCeroA[contIndicesCero]=i;
+                                indicesCeroB[contIndicesCero]=j;
+                                contIndicesCero++;
+                            } 
+                        }
+                    }
+                }
+                if(contIndicesCero==0){
+                    for(i=global.minAR;i&lt;=global.maxBR;i++){
+                        for(j=global.minAR;j&lt;=global.maxBR;j++){
+                            if(global.tablaR[i,j]==1 and global.memA!=i and global.memB!=j){
+                                global.tablaR[i,j]=0;
+                                indicesCeroA[contIndicesCero]=i;
+                                indicesCeroB[contIndicesCero]=j;
+                                contIndicesCero++;
+                            }
                         }
                     }
                 }

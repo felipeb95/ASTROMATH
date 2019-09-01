@@ -204,10 +204,10 @@ if(global.r == global.numM){ //BUENA
     y = view_yview + view_hview/2;
     instance_create(x,y,obj_textbox_celebracion);
     
-    if(global.wave&lt;9){
+    /*if(global.wave&lt;9){
         global.oBuenas[global.a]++;
         global.oBuenas[global.b]++;
-    }
+    }*/
     global.respondida = true;
     global.puntaje += 10;
     global.correctas++;
