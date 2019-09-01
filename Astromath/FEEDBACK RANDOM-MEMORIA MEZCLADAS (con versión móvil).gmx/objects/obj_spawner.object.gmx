@@ -31,7 +31,7 @@
 global.porcDig = 0.6;
 
 //PARAMETROS VARIOS
-global.restoD = true;
+global.restoD = false;
 global.canjeS = false;
 global.canjeR = false;
 
@@ -48,14 +48,14 @@ for(i=global.minA;i&lt;=global.maxB;i++){
 for(i=global.minAD;i&lt;=global.maxBD;i++){
     for(j=global.minAD;j&lt;=global.maxBD;j++){
         global.tablaD[i,j]=0;
-        if((global.restoD and i%j != 0) or i&lt;j) global.tablaD[i,j] = -1;
+        if((!global.restoD and i%j != 0) or i&lt;j) global.tablaD[i,j] = -1;
     }
 }
 for(i=global.minAS;i&lt;=global.maxBS;i++){
     for(j=global.minAS;j&lt;=global.maxBS;j++){
         global.tablaS[i,j]=0;
         if(i+j &gt; global.maxSuma) global.tablaS[i,j] = -1;
-        if((global.canjeS and i &gt; 9) or (global.canjeS and j &gt; 9)){
+        if((!global.canjeS and i &gt; 9) or (!global.canjeS and j &gt; 9)){
             comprobar = true;
             auxi1 = i;
             auxi2 = j;
@@ -79,7 +79,7 @@ for(i=global.minAR;i&lt;=global.maxBR;i++){
     for(j=global.minAR;j&lt;=global.maxBR;j++){
         global.tablaR[i,j]=0;
         if(i-j &lt; global.minResta or i&lt;j) global.tablaR[i,j] = -1;
-        if(global.canjeR and i &gt; 9){
+        if(!global.canjeR and i &gt; 9){
             comprobar = true;
             auxi1 = i;
             auxi2 = j;
@@ -95,7 +95,7 @@ for(i=global.minAR;i&lt;=global.maxBR;i++){
                     auxi2 = floor(auxi2/10);
                 }
             }
-            if(comprobar==false) global.tablaS[i,j] = -1;
+            if(comprobar==false) global.tablaR[i,j] = -1;
         }
     }
 }

@@ -28,7 +28,7 @@
             <string>randomize();
 
 //CAMBIOS DOS DIGITOS
-global.porcDig = 0.6;
+global.porcDig = 0.2;
 
 //PARAMETROS VARIOS
 global.restoD = false;
@@ -95,7 +95,7 @@ for(i=global.minAR;i&lt;=global.maxBR;i++){
                     auxi2 = floor(auxi2/10);
                 }
             }
-            if(comprobar==false) global.tablaS[i,j] = -1;
+            if(comprobar==false) global.tablaR[i,j] = -1;
         }
     }
 }
