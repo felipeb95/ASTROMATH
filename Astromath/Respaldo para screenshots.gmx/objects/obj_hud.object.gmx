@@ -52,6 +52,7 @@ draw_text(5, 30, "P: " + string(global.puntaje)+
 " | V: " + string(-1*(global.sp2-1))+
 " | E: " + string(global.dificultad+2));
 draw_set_halign(fa_center);
+draw_text(room_width/2,room_height-20,string(global.segundos));
 //draw_text(room_width - 100, 60, "Ultimo Puntaje: " + string(global.dsmap[? global.name]));
 
 //draw_text(room_width - 100, 50, "Algo: " + string(global.puntaje));

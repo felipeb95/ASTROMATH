@@ -72,6 +72,11 @@ hspeed = choose(global.sp1,global.sp2,global.sp3);
 
 //asteroide choca con nave
 
+if(x &gt;= 0 &amp;&amp; x &lt;= 420 &amp;&amp; type == 1){
+    global.on_screen = true;
+} else
+    global.on_screen = false;
+
 if(place_meeting(x,y,obj_ship)){
     global.bot2=1;
     obj_ship.hp -= 1;
@@ -88,6 +93,7 @@ if(place_meeting(x,y,obj_ship)){
     instance_create(x,y,obj_shake);
     instance_change(obj_explode, true);
 }
+
 </string>
           </argument>
         </arguments>
