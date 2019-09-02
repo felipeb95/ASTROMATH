@@ -819,7 +819,8 @@ alarm[0] = spawn_rate;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.segundos += 1/room_speed;
+            <string>if(global.on_screen)
+    global.segundos += 1/room_speed;
 </string>
           </argument>
         </arguments>

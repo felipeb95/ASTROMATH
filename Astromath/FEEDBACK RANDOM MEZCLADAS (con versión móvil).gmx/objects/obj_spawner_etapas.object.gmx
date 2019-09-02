@@ -202,6 +202,7 @@ global.intentos = 0;
 global.numEjercicio = 1;
 global.respondida = 0;
 global.segundos = 0;
+global.segundos_max_ej = 0;
 global.aparicionCorrecta = 0;
 global.tiempoUltimaRespuesta = 0;
 
@@ -243,6 +244,11 @@ global.faciles = undefined;
 global.medios = undefined;
 global.dificiles = undefined;
 
+global.on_screen = false;
+global.choque = false;
+global.p_adapt_vel = 0.4;
+global.time_to_cross = 0;
+
 meteoros = 5;
 spawn_rate = 50;
 alarm[0] = spawn_rate;
@@ -276,12 +282,17 @@ if(global.cont&lt;meteoros &amp;&amp; !global.dead){
 global.cont++;
 nuevay = global.cont-1;
 if(global.cont!=global.alternativa &amp;&amp; obj_ship.hp != 0){
-    instance_create(room_width + 40, global.arrAltura[nuevay,global.alturas], obj_asteroid);
-
+    var this = instance_create(room_width + 40, global.arrAltura[nuevay,global.alturas], obj_asteroid);
+    with(this){
+        type = 0;
+    }
 }else{
     global.bot=1;
     nuevay = global.cont-1;
-    instance_create(room_width + 40, global.arrAltura[nuevay,global.alturas], obj_asteroid);
+    var this = instance_create(room_width + 40, global.arrAltura[nuevay,global.alturas], obj_asteroid);
+    with(this){
+        type = 1;
+    }
     global.bot=0;
 }
 draw_set_color(c_white);
@@ -290,6 +301,7 @@ draw_set_font(fntMain);
 }
 //AQUÍ SE CUMPLE UNA OLEADA
 if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen de pantalla  
+        global.on_screen = false;
         global.metNum = undefined;
         global.imetNum = 0;
         if(global.intentos == 0 || global.bot2 ==0){
@@ -786,6 +798,27 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
         global.cont = 0;
         global.ccont=0;
         
+        // Si hubo un choque, se respondió mal o bajo el tiempo requerido, se baja velocidad
+        if(global.choque || global.estado == "incorrecta" || global.tiempoUltimaRespuesta &gt; global.time_to_cross*global.p_adapt_vel){
+            show_debug_message("[ VELOCIDAD PERCIBIDA COMO ALTA, DEBE BAJAR ] ");
+            if(global.sp2&lt;global.min_vel){
+                global.sp1 += global.acel;
+                global.sp2 += global.acel;
+                global.sp3 += global.acel;
+                show_debug_message("[ REDUCCIÓN DE VELOCIDAD ] ");
+            }
+        } // si se pudo contestar en tiempo requerido, se sube velocidad
+        else
+        {
+            show_debug_message("[ VELOCIDAD PERCIBIDA COMO BAJA, DEBE SUBIR ] ");
+            if(global.sp2&gt;global.max_vel){
+                global.sp1 -= global.acel;
+                global.sp2 -= global.acel;
+                global.sp3 -= global.acel;
+                show_debug_message("[ AUMENTO DE VELOCIDAD ] ");
+            }
+        }
+        
         
         alarm[0] = room_speed*1;
         global.intentos = 0; /*CUANDO YA PASARON TODOS LOS ASTEROIDES (RONDA TERMINADA
@@ -795,7 +828,10 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
         global.tiempoUltimaRespuesta = 0;
         global.aparicionCorrecta = 0;
         global.segundos = 0;
+        global.segundos_max_ej = 0;
         global.estado = "omitida";
+        global.choque = false;
+        
 }else{
 
 //nueva llamada 
@@ -825,7 +861,10 @@ alarm[0] = spawn_rate;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.segundos += 1/room_speed;
+            <string>if(global.on_screen)
+    global.segundos += 1/room_speed;  
+global.segundos_max_ej += 1/room_speed;  
+
 
 </string>
           </argument>

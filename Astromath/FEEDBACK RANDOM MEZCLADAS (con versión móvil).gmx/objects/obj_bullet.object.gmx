@@ -87,12 +87,13 @@ with (other){
 if(global.r == global.numM){
     global.malasSeguidas=0;
     global.nrondasc++;
-    if(global.nrondasc&gt;=2 &amp;&amp; global.sp2&gt;global.max_vel){
+    /*if(global.nrondasc&gt;=2 &amp;&amp; global.sp2&gt;global.max_vel){
         global.sp1 -= global.acel;
         global.sp2 -= global.acel;
         global.sp3 -= global.acel;
         show_debug_message("SUBE VEL");
     }
+    */
     x = view_xview + view_wview/2;
     y = view_yview + view_hview/2;
     instance_create(x,y,obj_textbox_celebracion);
@@ -106,21 +107,22 @@ if(global.r == global.numM){
     global.correctas++;
     if(global.nrondasc&gt;global.nrondas) global.nrondas=global.nrondasc;
     
-    global.tiempoUltimaRespuesta = global.segundos - global.aparicionCorrecta;
     audio_play_sound(correct,10,false);
     obj_ship.hp+=1;
     global.bot2=1;
     if(obj_ship.hp&gt;3) obj_ship.hp=3;
     global.estado = "correcta";
+    global.on_screen = false;
 }else{
     global.malasSeguidas++;
     global.nrondasc=0;
-    if(global.malasSeguidas&gt;=2 &amp;&amp; global.sp2&lt;global.min_vel){
+    /*if(global.malasSeguidas&gt;=2 &amp;&amp; global.sp2&lt;global.min_vel){
         global.sp1 += global.acel;
         global.sp2 += global.acel;
         global.sp3 += global.acel;
         show_debug_message("BAJA VEL");
     }
+    */
     
     x = view_xview + view_wview/2;
     y = view_yview + view_hview/2;
@@ -135,8 +137,9 @@ if(global.r == global.numM){
         guardar(true); // SE EXPORTA A JSON Y SE ENVIA A PHP PARA STORE
     }
     global.bot2=1;
+    global.on_screen = false;
 }
-
+global.tiempoUltimaRespuesta = global.segundos;
 global.ccont++;
 global.feedback = 1;
 instance_create(x,y,obj_shake);
