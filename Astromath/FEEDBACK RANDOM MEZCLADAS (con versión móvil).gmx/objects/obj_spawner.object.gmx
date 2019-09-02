@@ -26,7 +26,79 @@
           <argument>
             <kind>1</kind>
             <string>randomize();
+
+//CAMBIOS DOS DIGITOS
+global.porcDig = 0.2;
+
+//PARAMETROS VARIOS
+global.restoD = false;
+global.canjeS = false;
+global.canjeR = false;
+
+
+
+
 global.cantidadEj = 0;
+//TABLA DE EJERCICIOS
+for(i=global.minA;i&lt;=global.maxB;i++){
+    for(j=global.minA;j&lt;=global.maxB;j++){
+        global.tablaM[i,j]=0;
+    }
+}
+for(i=global.minAD;i&lt;=global.maxBD;i++){
+    for(j=global.minAD;j&lt;=global.maxBD;j++){
+        global.tablaD[i,j]=0;
+        if((!global.restoD and i%j != 0) or i&lt;j) global.tablaD[i,j] = -1;
+    }
+}
+for(i=global.minAS;i&lt;=global.maxBS;i++){
+    for(j=global.minAS;j&lt;=global.maxBS;j++){
+        global.tablaS[i,j]=0;
+        if(i+j &gt; global.maxSuma) global.tablaS[i,j] = -1;
+        if((!global.canjeS and i &gt; 9) or (!global.canjeS and j &gt; 9)){
+            comprobar = true;
+            auxi1 = i;
+            auxi2 = j;
+            while(auxi1!=0 and auxi2!=0){
+                num1 = auxi1%10;
+                num2 = auxi2%10;
+                if(num1+num2&gt;9) {
+                    comprobar = false;
+                    break;
+                }
+                else {
+                    auxi1 = floor(auxi1/10);
+                    auxi2 = floor(auxi2/10);
+                }
+            }
+            if(comprobar==false) global.tablaS[i,j] = -1;
+        }
+    }
+}
+for(i=global.minAR;i&lt;=global.maxBR;i++){
+    for(j=global.minAR;j&lt;=global.maxBR;j++){
+        global.tablaR[i,j]=0;
+        if(i-j &lt; global.minResta or i&lt;j) global.tablaR[i,j] = -1;
+        if(!global.canjeR and i &gt; 9){
+            comprobar = true;
+            auxi1 = i;
+            auxi2 = j;
+            while(auxi1!=0 and auxi2!=0){
+                num1 = auxi1%10;
+                num2 = auxi2%10;
+                if(num1&lt;num2) {
+                    comprobar = false;
+                    break;
+                }
+                else {
+                    auxi1 = floor(auxi1/10);
+                    auxi2 = floor(auxi2/10);
+                }
+            }
+            if(comprobar==false) global.tablaR[i,j] = -1;
+        }
+    }
+}
 //NO TOCAR
 global.memA=0;
 global.memB=0;
@@ -299,7 +371,7 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
             global.waveFake=1;
         }
         
-        if(global.wave==global.nEjercicios+1){
+        /*if(global.wave==global.nEjercicios+1){
             global.existeF=0;
             global.existeM=0;
             global.existeD=0;
@@ -420,43 +492,129 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
         if(global.dificultad&gt;=0){show_debug_message("EJERCICIOS FACILES POR SALIR: ");show_debug_message(global.eFacil[global.dificultad]);}
         if(global.dificultad&gt;=0){show_debug_message("EJERCICIOS MEDIOS POR SALIR: ");show_debug_message(global.eMedio[global.dificultad]);}
         if(global.dificultad&gt;=0){show_debug_message("EJERCICIOS DIFICLES POR SALIR: ");show_debug_message(global.eDificil[global.dificultad]);}
-
+        */
         show_debug_message("Ejercicio");
         show_debug_message(global.waveUltraFake);
         
         if(global.modo==0) {
+            global.origen="random";
+            randomize();
+            indexDig = random_range(0,1);
+            show_debug_message("Index Seleccion Digito");
+            show_debug_message(indexDig); 
             indexO = choose(round(random_range(0,string_length(global.operaciones))));
             global.operacion = string_char_at(global.operaciones, indexO);
             if(global.operacion=="M"){
-                while(global.a==global.memA and global.b==global.memB){
-                    global.a = choose(floor(random_range(global.minA,global.maxB)));
-                    global.b = choose(floor(random_range(global.minA,global.maxB)));
+                var indicesCeroA = undefined;
+                var indicesCeroB = undefined;
+                var contIndicesCero = 0;
+                for(i=global.minA;i&lt;=global.maxB;i++){
+                    for(j=global.minA;j&lt;=global.maxB;j++){
+                        if(global.tablaM[i,j]==0 and global.memA!=i and global.memB!=j){
+                            indicesCeroA[contIndicesCero]=i;
+                            indicesCeroB[contIndicesCero]=j;
+                            contIndicesCero++;
+                        }
+                    }
+                }
+                if(contIndicesCero&gt;0){
+                    global.origen=("no en memoria");
+                    indexEscogido=irandom_range(0,contIndicesCero-1);
+                    global.a = indicesCeroA[indexEscogido];
+                    global.b = indicesCeroB[indexEscogido];
                 }
                 global.r = global.a*global.b;
+                global.tablaM[global.a,global.b]=1;
             }
             if(global.operacion=="D"){
-                while(global.a==global.memA and global.b==global.memB){
-                    global.a = choose(floor(random_range(global.minAD,global.maxBD)));
-                    global.b = choose(floor(random_range(global.minAD,global.a)));
+                var indicesCeroA = undefined;
+                var indicesCeroB = undefined;
+                var contIndicesCero = 0;
+                for(i=global.minAD;i&lt;=global.maxBD;i++){
+                    for(j=global.minAD;j&lt;=global.maxBD;j++){
+                        if(global.tablaD[i,j]==0 and global.memA!=i and global.memB!=j){
+                            indicesCeroA[contIndicesCero]=i;
+                            indicesCeroB[contIndicesCero]=j;
+                            contIndicesCero++;
+                        }
+                    }
+                }
+                if(contIndicesCero&gt;0){
+                    global.origen=("no en memoria");
+                    indexEscogido=irandom_range(0,contIndicesCero-1);
+                    global.a = indicesCeroA[indexEscogido];
+                    global.b = indicesCeroB[indexEscogido];
                 }
                 global.r = floor(global.a/global.b);
+                global.tablaD[global.a,global.b]=1;
             }
             if(global.operacion=="S"){
-                while(global.a==global.memA and global.b==global.memB){
-                    global.a = choose(floor(random_range(global.minAS,global.maxBS)));
-                    global.b = choose(floor(random_range(global.minAS,global.maxSuma-global.a)));
+                var indicesCeroA = undefined;
+                var indicesCeroB = undefined;
+                var contIndicesCero = 0;
+                for(i=global.minAS;i&lt;=global.maxBS;i++){
+                    for(j=global.minAS;j&lt;=global.maxBS;j++){
+                        if(indexDig&lt;=global.porcDig){
+                            if(global.tablaS[i,j]==0 and global.memA!=i and global.memB!=j and i&lt;10 and j&lt;10){
+                                indicesCeroA[contIndicesCero]=i;
+                                indicesCeroB[contIndicesCero]=j;
+                                contIndicesCero++;
+                            }
+                        }
+                        else {
+                           if(global.tablaS[i,j]==0 and global.memA!=i and global.memB!=j and i&gt;=10 and j&gt;=10){
+                                indicesCeroA[contIndicesCero]=i;
+                                indicesCeroB[contIndicesCero]=j;
+                                contIndicesCero++;
+                            } 
+                        }
+                    }
+                }
+                if(contIndicesCero&gt;0){
+                    global.origen=("no en memoria");
+                    indexEscogido=irandom_range(0,contIndicesCero-1);
+                    global.a = indicesCeroA[indexEscogido];
+                    global.b = indicesCeroB[indexEscogido];
                 }
                 global.r = global.a+global.b;
+                global.tablaS[global.a,global.b]=1;
             }
             if(global.operacion=="R"){
-                while(global.a==global.memA and global.b==global.memB){
-                    global.a = choose(floor(random_range(global.minAR,global.maxBR)));
-                    global.b = choose(floor(random_range(global.minAR,global.minResta+global.a)));
+                var indicesCeroA = undefined;
+                var indicesCeroB = undefined;
+                var contIndicesCero = 0;
+                for(i=global.minAR;i&lt;=global.maxBR;i++){
+                    for(j=global.minAR;j&lt;=global.maxBR;j++){
+                        if(indexDig&lt;=global.porcDig){
+                            if(global.tablaR[i,j]==0 and global.memA!=i and global.memB!=j and i&lt;10 and j&lt;10){
+                                indicesCeroA[contIndicesCero]=i;
+                                indicesCeroB[contIndicesCero]=j;
+                                contIndicesCero++;
+                            }
+                        }
+                        else {
+                            if(global.tablaR[i,j]==0 and global.memA!=i and global.memB!=j and i&gt;=10 and j&gt;=10){
+                                indicesCeroA[contIndicesCero]=i;
+                                indicesCeroB[contIndicesCero]=j;
+                                contIndicesCero++;
+                            } 
+                        }
+                    }
+                }
+                if(contIndicesCero&gt;0){
+                    global.origen=("no en memoria");
+                    indexEscogido=irandom_range(0,contIndicesCero-1);
+                    global.a = indicesCeroA[indexEscogido];
+                    global.b = indicesCeroB[indexEscogido];
                 }
                 global.r = global.a-global.b;
+                global.tablaR[global.a,global.b]=1;
             }
             global.memA=global.a;
             global.memB=global.b;
+            show_debug_message("ORIGEN");
+            show_debug_message(global.origen);
+            
         }
         if(global.modo==1) {
             global.a = choose(floor(random_range(1,20)));

@@ -36,25 +36,111 @@ show_debug_message(global.waveUltraFake);
 
 if(global.modo==0) {
     indexO = choose(round(random_range(0,string_length(global.operaciones))));
+    randomize();
+    indexDig = random_range(0,1);
+    show_debug_message("Index Seleccion Digito");
+    show_debug_message(indexDig); 
     global.operacion = string_char_at(global.operaciones, indexO);
     if(global.operacion=="M"){
-        global.a = choose(floor(random_range(global.minA,global.maxB)));
-        global.b = choose(floor(random_range(global.minA,global.maxB)));
+        var indicesCeroA = undefined;
+        var indicesCeroB = undefined;
+        var contIndicesCero = 0;
+        for(i=global.minA;i&lt;=global.maxB;i++){
+            for(j=global.minA;j&lt;=global.maxB;j++){
+                if(global.tablaM[i,j]==0){
+                    indicesCeroA[contIndicesCero]=i;
+                    indicesCeroB[contIndicesCero]=j;
+                    contIndicesCero++;
+                }
+            }
+        }
+        if(contIndicesCero&gt;0){
+            global.origen=("no en memoria");
+            indexEscogido=irandom_range(0,contIndicesCero-1);
+            global.a = indicesCeroA[indexEscogido];
+            global.b = indicesCeroB[indexEscogido];
+        }
         global.r = global.a*global.b;
     }
     if(global.operacion=="D"){      
-        global.a = choose(floor(random_range(global.minAD,global.maxBD)));
-        global.b = choose(floor(random_range(global.minAD,global.a)));
+        var indicesCeroA = undefined;
+        var indicesCeroB = undefined;
+        var contIndicesCero = 0;
+        for(i=global.minAD;i&lt;=global.maxBD;i++){
+            for(j=global.minAD;j&lt;=global.maxBD;j++){
+                if(global.tablaD[i,j]==0){
+                    indicesCeroA[contIndicesCero]=i;
+                    indicesCeroB[contIndicesCero]=j;
+                    contIndicesCero++;
+                }
+            }
+        }
+        if(contIndicesCero&gt;0){
+            global.origen=("no en memoria");
+            indexEscogido=irandom_range(0,contIndicesCero-1);
+            global.a = indicesCeroA[indexEscogido];
+            global.b = indicesCeroB[indexEscogido];
+        }
         global.r = floor(global.a/global.b);
     }
     if(global.operacion=="S"){
-        global.a = choose(floor(random_range(global.minAS,global.maxBS)));
-        global.b = choose(floor(random_range(global.minAS,global.maxSuma-global.a)));
+        var indicesCeroA = undefined;
+        var indicesCeroB = undefined;
+        var contIndicesCero = 0;
+        for(i=global.minAS;i&lt;=global.maxBS;i++){
+            for(j=global.minAS;j&lt;=global.maxBS;j++){
+                if(indexDig&lt;=global.porcDig){
+                    if(global.tablaS[i,j]==0 and global.memA!=i and global.memB!=j and i&lt;10 and j&lt;10){
+                        indicesCeroA[contIndicesCero]=i;
+                        indicesCeroB[contIndicesCero]=j;
+                        contIndicesCero++;
+                    }
+                }
+                else {
+                   if(global.tablaS[i,j]==0 and global.memA!=i and global.memB!=j and i&gt;=10 and j&gt;=10){
+                        indicesCeroA[contIndicesCero]=i;
+                        indicesCeroB[contIndicesCero]=j;
+                        contIndicesCero++;
+                    } 
+                }
+            }
+        }
+        if(contIndicesCero&gt;0){
+            global.origen=("no en memoria");
+            indexEscogido=irandom_range(0,contIndicesCero-1);
+            global.a = indicesCeroA[indexEscogido];
+            global.b = indicesCeroB[indexEscogido];
+        }
         global.r = global.a+global.b;
     }
     if(global.operacion=="R"){
-        global.a = choose(floor(random_range(global.minAR,global.maxBR)));
-        global.b = choose(floor(random_range(global.minAR,global.minResta+global.a)));
+        var indicesCeroA = undefined;
+        var indicesCeroB = undefined;
+        var contIndicesCero = 0;
+        for(i=global.minAR;i&lt;=global.maxBR;i++){
+            for(j=global.minAR;j&lt;=global.maxBR;j++){
+                if(indexDig&lt;=global.porcDig){
+                    if(global.tablaR[i,j]==0 and global.memA!=i and global.memB!=j and i&lt;10 and j&lt;10){
+                        indicesCeroA[contIndicesCero]=i;
+                        indicesCeroB[contIndicesCero]=j;
+                        contIndicesCero++;
+                    }
+                }
+                else {
+                    if(global.tablaR[i,j]==0 and global.memA!=i and global.memB!=j and i&gt;=10 and j&gt;=10){
+                        indicesCeroA[contIndicesCero]=i;
+                        indicesCeroB[contIndicesCero]=j;
+                        contIndicesCero++;
+                    } 
+                }
+            }
+        }
+        if(contIndicesCero&gt;0){
+            global.origen=("no en memoria");
+            indexEscogido=irandom_range(0,contIndicesCero-1);
+            global.a = indicesCeroA[indexEscogido];
+            global.b = indicesCeroB[indexEscogido];
+        }
         global.r = global.a-global.b;
     }
     global.memA=global.a;
