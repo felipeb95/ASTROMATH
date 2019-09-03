@@ -76,8 +76,16 @@ draw_text(5, 30, "P: " + string(global.puntaje)+
 " | V: " + string(-1*(global.sp2-1))+
 " | E: " + string(global.dificultad+2));
 draw_set_halign(fa_center);
-draw_text(room_width/2,room_height-30,string(global.segundos));
-draw_text(room_width/2,room_height-10,string(global.segundos_max_ej));
+
+if(global.time_to_cross == 0){
+    draw_text(room_width/2,room_height-50,"Cronómetro de respuesta correcta: "+string(global.segundos)+" (pausado)");
+    draw_text(room_width/2,room_height-30,"Tiempo en cruzar pantalla: "+"asteroide no ha sido creado");
+    draw_text(room_width/2,room_height-10,"Tiempo requerido para contestar: (al "+string(global.p_adapt_vel*100)+"%): asteroide no ha sido creado");
+}else{
+    draw_text(room_width/2,room_height-50,"Cronómetro de respuesta correcta: "+string(global.segundos));
+    draw_text(room_width/2,room_height-30,"Tiempo en cruzar pantalla: "+string(global.time_to_cross));
+    draw_text(room_width/2,room_height-10,"Tiempo requerido para contestar (al "+string(global.p_adapt_vel*100)+"%): "+string(global.time_to_cross*global.p_adapt_vel));
+}
 //draw_text(room_width - 100, 60, "Ultimo Puntaje: " + string(global.dsmap[? global.name]));
 
 //draw_text(room_width - 100, 50, "Algo: " + string(global.puntaje));

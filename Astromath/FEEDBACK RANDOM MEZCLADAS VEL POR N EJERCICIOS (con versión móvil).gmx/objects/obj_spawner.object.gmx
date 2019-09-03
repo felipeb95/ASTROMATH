@@ -819,6 +819,7 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
         global.segundos_max_ej = 0;
         global.estado = "omitida";
         global.choque = false;
+        global.time_to_cross = 0;
 }else{
 
 //nueva llamada 

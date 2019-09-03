@@ -788,22 +788,26 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
         
         // Si hubo un choque, se respondió mal o bajo el tiempo requerido, se baja velocidad
         if(global.choque || global.estado == "incorrecta" || global.estado == "omitida" || global.tiempoUltimaRespuesta &gt; global.time_to_cross*global.p_adapt_vel){
-            show_debug_message("[ VELOCIDAD PERCIBIDA COMO ALTA, DEBE BAJAR ] ");
             if(global.sp2&lt;global.min_vel){
                 global.sp1 += global.acel;
                 global.sp2 += global.acel;
                 global.sp3 += global.acel;
-                show_debug_message("[ REDUCCIÓN DE VELOCIDAD ] ");
+                show_debug_message("[ REDUCCIÓN DE VELOCIDAD ] Tiempo cruce asteroide: "
+                +string(global.time_to_cross)+" | Tiempo requerido para contestar (al "+string(global.p_adapt_vel*100)+"%): "+
+                string(global.time_to_cross*global.p_adapt_vel)+" | Tiempo en contestar: "+
+                string(global.tiempoUltimaRespuesta));
             }
         } // si se pudo contestar en tiempo requerido, se sube velocidad
         else
         {
-            show_debug_message("[ VELOCIDAD PERCIBIDA COMO BAJA, DEBE SUBIR ] ");
             if(global.sp2&gt;global.max_vel){
                 global.sp1 -= global.acel;
                 global.sp2 -= global.acel;
                 global.sp3 -= global.acel;
-                show_debug_message("[ AUMENTO DE VELOCIDAD ] ");
+                show_debug_message("[ AUMENTO DE VELOCIDAD ] Tiempo cruce asteroide: "
+                +string(global.time_to_cross)+" | Tiempo requerido para contestar (al "+string(global.p_adapt_vel*100)+"%): "+
+                string(global.time_to_cross*global.p_adapt_vel)+" | Tiempo en contestar: "+
+                string(global.tiempoUltimaRespuesta));
             }
         }
         
@@ -819,6 +823,7 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
         global.segundos_max_ej = 0;
         global.estado = "omitida";
         global.choque = false;
+        global.time_to_cross = 0;
 }else{
 
 //nueva llamada 

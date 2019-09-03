@@ -108,7 +108,7 @@ if(message &amp;&amp; type == 1 &amp;&amp; x &lt;= 640){
     message = false;
     time_to_cross = ((room_width/hspeed/60)*-1);
     global.time_to_cross = time_to_cross;
-    str = "[CORRECTO] Tiempo en pasar pantalla: "+string(time_to_cross)+
+    str = "[ASTEROIDE CORRECTO] Tiempo en pasar pantalla: "+string(time_to_cross)+
     " | Tiempo de aparición: "+string(global.segundos_max_ej)
     +" | Tiempo requerido: "+string(global.time_to_cross*global.p_adapt_vel);
     show_debug_message(str);
