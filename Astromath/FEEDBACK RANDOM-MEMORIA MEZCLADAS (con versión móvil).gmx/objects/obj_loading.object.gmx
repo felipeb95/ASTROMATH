@@ -235,7 +235,7 @@ if(ds_map_exists(map, "porcDig")){
     global.porcDig = real(porcDig);
 }
 if(ds_map_exists(map, "restoD")){
-    var restoD = map[? "restoD"];
+    var restoD = real(map[? "restoD"]);
      show_debug_message("restoD funciona");
      show_debug_message(restoD);
      if(restoD == 0)
@@ -244,7 +244,7 @@ if(ds_map_exists(map, "restoD")){
         global.restoD = true;
 }
 if(ds_map_exists(map, "canjeR")){
-    var canjeR = map[? "canjeR"];
+    var canjeR = real(map[? "canjeR"]);
      show_debug_message("canjeR funciona");
      show_debug_message(canjeR);
      if(canjeR == 0)
@@ -253,7 +253,7 @@ if(ds_map_exists(map, "canjeR")){
         global.canjeR = true;
 }
 if(ds_map_exists(map, "canjeS")){
-    var canjeS = map[? "canjeS"];
+    var canjeS = real(map[? "canjeS"]);
      show_debug_message("canjeS funciona");
      show_debug_message(canjeS);
      if(canjeS == 0)
