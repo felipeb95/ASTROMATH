@@ -103,6 +103,7 @@
     <font>fonts\fontseleccion</font>
     <font>fonts\font_loading</font>
     <font>fonts\font_puntaje</font>
+    <font>fonts\font_testing</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_ship</object>
