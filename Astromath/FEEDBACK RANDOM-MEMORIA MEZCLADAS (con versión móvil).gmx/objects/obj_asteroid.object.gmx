@@ -117,6 +117,8 @@ if(place_meeting(x,y,obj_ship)){
     global.ccont++;
     instance_create(x,y,obj_shake);
     instance_change(obj_explode, true);
+    global.on_screen = false;
+    global.choque = true;
 }
 </string>
           </argument>

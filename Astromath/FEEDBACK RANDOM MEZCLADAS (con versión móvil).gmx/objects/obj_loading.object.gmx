@@ -33,6 +33,7 @@ menu_x=room_width/2;
 menu_y=room_height/2;
 instance_create(menu_x,menu_y-100,obj_loading_gif);
 go_to_next = false;
+
 </string>
           </argument>
         </arguments>
@@ -216,6 +217,46 @@ if(ds_map_exists(map, "maxBD")){
      show_debug_message(maxBD);
      global.maxBD = real(maxBD);
 }
+if(ds_map_exists(map, "porcDig")){
+    var porcDig = map[? "porcDig"];
+    show_debug_message("porcDig funciona");
+    show_debug_message(porcDig);
+    global.porcDig = real(porcDig);
+}
+if(ds_map_exists(map, "restoD")){
+    var restoD = map[? "restoD"];
+     show_debug_message("restoD funciona");
+     show_debug_message(restoD);
+     if(restoD == 0)
+        global.restoD = false;
+     else
+        global.restoD = true;
+}
+if(ds_map_exists(map, "canjeR")){
+    var canjeR = map[? "canjeR"];
+     show_debug_message("canjeR funciona");
+     show_debug_message(canjeR);
+     if(canjeR == 0)
+        global.canjeR = false;
+     else
+        global.canjeR = true;
+}
+if(ds_map_exists(map, "canjeS")){
+    var canjeS = map[? "canjeS"];
+     show_debug_message("canjeS funciona");
+     show_debug_message(canjeS);
+     if(canjeS == 0)
+        global.canjeS = false;
+     else
+        global.canjeS = true;
+}
+if(ds_map_exists(map, "p_adapt_vel")){
+    var p_adapt_vel = map[? "p_adapt_vel"];
+     show_debug_message("p_adapt_vel funciona");
+     show_debug_message(p_adapt_vel);
+     global.p_adapt_vel = p_adapt_vel;
+}
+
 go_to_next = true;
 global.loaded = 1;
 </string>
