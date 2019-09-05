@@ -10,7 +10,10 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code>if(global.modo_juego == 1){
+  <code>global.metNum = undefined;
+global.imetNum = 0;
+
+if(global.modo_juego == 1){
     instance_create(0,0,obj_spawner);
     instance_create(0,0,obj_waves);
     show_debug_message("MEZCLADAS");

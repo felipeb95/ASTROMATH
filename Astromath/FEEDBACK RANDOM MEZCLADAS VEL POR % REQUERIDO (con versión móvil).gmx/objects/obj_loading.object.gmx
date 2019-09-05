@@ -25,9 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.metNum = undefined;
-global.imetNum = 0;
-var url = "http://astromath.informaticapucv.cl/curl_con.php";
+            <string>var url = "http://astromath.informaticapucv.cl/curl_con.php";
 http_get(url);
 menu_x=room_width/2; 
 menu_y=room_height/2;
@@ -256,6 +254,16 @@ if(ds_map_exists(map, "p_adapt_vel")){
      show_debug_message(p_adapt_vel);
      global.p_adapt_vel = p_adapt_vel;
 }
+if(ds_map_exists(map, "debug")){
+    var debug = real(map[? "debug"]);
+     show_debug_message("debug funciona");
+     show_debug_message(debug);
+     if(debug == 0)
+        global.debug = false;
+     else
+        global.debug = true;
+}
+
 
 go_to_next = true;
 global.loaded = 1;

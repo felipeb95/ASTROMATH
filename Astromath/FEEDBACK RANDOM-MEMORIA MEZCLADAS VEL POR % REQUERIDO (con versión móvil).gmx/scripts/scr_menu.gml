@@ -1,7 +1,7 @@
 switch(mpos){
     case 0:
     {
-        room_goto(rm_loading);
+        room_goto(rm_space);
         break;
     }
     case 1:
