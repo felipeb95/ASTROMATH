@@ -278,6 +278,9 @@ global.time_to_cross = 0;
 meteoros = 5;
 spawn_rate = 50;
 alarm[0] = spawn_rate;
+
+global.snd=audio_play_sound(music,10,true);
+audio_sound_gain(global.snd,0.4,0);
 </string>
           </argument>
         </arguments>
