@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>randomize();
+global.indexMemoria=0;
 /*
 //CAMBIOS DOS DIGITOS
 global.porcDig = 0.2;
@@ -539,6 +540,7 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
         if(global.modo==0) {
             global.origen="random";
             indexCat = random_range(0,1);
+            global.indexMemoria=indexCat;
             randomize();
             indexDig = random_range(0,1);
             show_debug_message("Index Seleccion Digito");
