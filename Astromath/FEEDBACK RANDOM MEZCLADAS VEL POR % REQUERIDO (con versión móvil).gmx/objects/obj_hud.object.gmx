@@ -111,19 +111,26 @@ else
     draw_set_colour(c_green);
     
 
-
-if(global.time_to_cross == 0){
-    //draw_text(room_width/2,room_height-50,"Cronómetro de respuesta correcta: "+string(global.segundos)+" (pausado)");
-    //draw_text(room_width/2,room_height-30,"Tiempo en cruzar pantalla: "+"asteroide no ha sido creado");
-    //draw_text(room_width/2,room_height-10,"Tiempo requerido para contestar: (al "+string(global.p_adapt_vel*100)+"%): asteroide no ha sido creado");
-    //draw_text(room_width/2,room_height-10,"0%");
-    draw_text(room_width/2,room_height-10,"0%");
-}else{
-    //draw_text(room_width/2,room_height-50,"Cronómetro de respuesta correcta: "+string(global.segundos));
-    //draw_text(room_width/2,room_height-30,"Tiempo en cruzar pantalla: "+string(global.time_to_cross));
-    //draw_text(room_width/2,room_height-10,"Tiempo requerido para contestar (al "+string(global.p_adapt_vel*100)+"%): "+string(global.time_to_cross*global.p_adapt_vel));
-    //draw_text(room_width/2,room_height-10,string((global.segundos/global.time_to_cross)*100)+"%");
-    draw_text(room_width/2,room_height-10,string(answer_time_ratio)+"%");
+if(global.debug){
+    draw_set_halign(fa_right);
+    if(global.time_to_cross == 0){
+        //draw_text(room_width/2,room_height-50,"Cronómetro de respuesta correcta: "+string(global.segundos)+" (pausado)");
+        //draw_text(room_width/2,room_height-30,"Tiempo en cruzar pantalla: "+"asteroide no ha sido creado");
+        //draw_text(room_width/2,room_height-10,"Tiempo requerido para contestar: (al "+string(global.p_adapt_vel*100)+"%): asteroide no ha sido creado");
+        //draw_text(room_width/2,room_height-10,"0%");
+        draw_text(room_width,room_height-10,"0%");
+    }else{
+        //draw_text(room_width/2,room_height-50,"Cronómetro de respuesta correcta: "+string(global.segundos));
+        //draw_text(room_width/2,room_height-30,"Tiempo en cruzar pantalla: "+string(global.time_to_cross));
+        //draw_text(room_width/2,room_height-10,"Tiempo requerido para contestar (al "+string(global.p_adapt_vel*100)+"%): "+string(global.time_to_cross*global.p_adapt_vel));
+        //draw_text(room_width/2,room_height-10,string((global.segundos/global.time_to_cross)*100)+"%");
+        draw_text(room_width,room_height-10,string(answer_time_ratio)+"%");
+    }
+    
+    draw_set_colour(c_white);
+    //draw_text(room_width,room_height-30,"origen: "+global.origen+"( prob: "+string(global.indexMemoria)+")");
+    
+    draw_set_halign(fa_center);
 }
 draw_set_colour(c_white);
 //draw_text(room_width - 100, 60, "Ultimo Puntaje: " + string(global.dsmap[? global.name]));

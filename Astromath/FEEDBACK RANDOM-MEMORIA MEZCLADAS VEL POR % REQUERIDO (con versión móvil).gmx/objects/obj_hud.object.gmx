@@ -25,7 +25,31 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>answer_time_ratio = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>answer_time_ratio = (global.segundos/global.time_to_cross)*100;
+</string>
           </argument>
         </arguments>
       </action>
@@ -74,10 +98,40 @@ draw_text(5, 30, "P: " + string(global.puntaje)+
 " | V: " + string(-1*(global.sp2-1))+
 " | E: " + string(global.dificultad+2));
 draw_set_halign(fa_center);
-//draw_text(room_width - 100, 60, "Ultimo Puntaje: " + string(global.dsmap[? global.name]));
 
-//draw_text(room_width - 100, 50, "Algo: " + string(global.puntaje));
-  
+draw_set_font(font_testing)
+
+if(answer_time_ratio &gt; global.p_adapt_vel*100)
+    draw_set_colour(c_red);
+else if(answer_time_ratio &lt;= global.p_adapt_vel*100 &amp;&amp; answer_time_ratio &gt;= (global.p_adapt_vel*100)-5)
+    draw_set_colour(c_yellow)
+else
+    draw_set_colour(c_green);
+
+if(global.debug){
+    draw_set_halign(fa_right);
+    if(global.time_to_cross == 0){
+        //draw_text(room_width/2,room_height-50,"Cronómetro de respuesta correcta: "+string(global.segundos)+" (pausado)");
+        //draw_text(room_width/2,room_height-30,"Tiempo en cruzar pantalla: "+"asteroide no ha sido creado");
+        //draw_text(room_width/2,room_height-10,"Tiempo requerido para contestar: (al "+string(global.p_adapt_vel*100)+"%): asteroide no ha sido creado");
+        //draw_text(room_width/2,room_height-10,"0%");
+        draw_text(room_width,room_height-10,"0%");
+    }else{
+        //draw_text(room_width/2,room_height-50,"Cronómetro de respuesta correcta: "+string(global.segundos));
+        //draw_text(room_width/2,room_height-30,"Tiempo en cruzar pantalla: "+string(global.time_to_cross));
+        //draw_text(room_width/2,room_height-10,"Tiempo requerido para contestar (al "+string(global.p_adapt_vel*100)+"%): "+string(global.time_to_cross*global.p_adapt_vel));
+        //draw_text(room_width/2,room_height-10,string((global.segundos/global.time_to_cross)*100)+"%");
+        draw_text(room_width,room_height-10,string(answer_time_ratio)+"%");
+    }
+    
+    draw_set_colour(c_white);
+    draw_text(room_width,room_height-30,global.origen+"(p="+string(global.indexMemoria)+")");
+    
+    draw_set_halign(fa_center);
+}
+ 
+draw_set_font(font_puntaje)
+ 
 }
 </string>
           </argument>

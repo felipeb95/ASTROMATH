@@ -281,12 +281,17 @@ if(global.cont&lt;meteoros &amp;&amp; !global.dead){
 global.cont++;
 nuevay = global.cont-1;
 if(global.cont!=global.alternativa &amp;&amp; obj_ship.hp != 0){
-    instance_create(room_width + 40, global.arrAltura[nuevay,global.alturas], obj_asteroid);
-
+    var this = instance_create(room_width + 40, global.arrAltura[nuevay,global.alturas], obj_asteroid);
+    with(this){
+        type = 0;
+    }
 }else{
     global.bot=1;
     nuevay = global.cont-1;
-    instance_create(room_width + 40, global.arrAltura[nuevay,global.alturas], obj_asteroid);
+    var this = instance_create(room_width + 40, global.arrAltura[nuevay,global.alturas], obj_asteroid);
+    with(this){
+        type = 1;
+    }
     global.bot=0;
 }
 draw_set_color(c_white);
