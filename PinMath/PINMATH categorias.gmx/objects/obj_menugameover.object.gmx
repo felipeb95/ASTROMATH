@@ -95,7 +95,7 @@ if( push == 1)
             <kind>1</kind>
             <string>if(global.tipo_os_equipo == 2){
     if(point_in_rectangle( mouse_x, mouse_y, 150, 120, 480, 190)){
-        room_goto(rm_loading);
+        room_goto(rm_space);
     }
     
     if(point_in_rectangle( mouse_x, mouse_y, 150, 200, 480, 270)){

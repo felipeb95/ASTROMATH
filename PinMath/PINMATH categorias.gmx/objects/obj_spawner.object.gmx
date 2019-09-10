@@ -109,6 +109,7 @@ global.nrondasc=0
 global.contadorcito = 2;
 
 global.dificultad = -1;
+if(!global.ronda0) global.dificultad = 0;
 //DIFICULTAD POR SET DE RONDAS
 
 
@@ -138,10 +139,11 @@ global.bigMap = ds_map_create();
 global.intentosRonda = ds_map_create();
 global.dificultadesMap = ds_map_create();
 
-global.faciles = undefined;
-global.medios = undefined;
-global.dificiles = undefined;
-
+if(global.ronda0){
+    global.faciles = undefined;
+    global.medios = undefined;
+    global.dificiles = undefined;
+}
 global.spawner_enabled = true;
 global.ejercicioTerminado = false;
 global.num1_displayed = 0;
@@ -742,6 +744,7 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
             global.existeF=0;
             global.existeM=0;
             global.existeD=0;
+            global.ronda0=false;
             for(i=global.minA;i&lt;=global.maxB;i++){
                 
                 if(global.oBuenas[i]==2){
