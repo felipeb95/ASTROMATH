@@ -141,6 +141,10 @@ global.dificiles = undefined;
 
 global.spawner_enabled = true;
 global.ejercicioTerminado = false;
+global.num1_displayed = 0;
+global.num2_displayed = 0;
+global.den1_displayed = 0;
+global.den2_displayed = 0;
 
 meteoros = 3;
 spawn_rate = 50; // original es 50;
@@ -203,10 +207,12 @@ if(global.spawner_enabled){
     }
     global.spawner_enabled = false;
     
-    global.num1_displayed = global.num1;
-    global.num2_displayed = global.num2;
-    global.den1_displayed = global.den1;
-    global.den2_displayed = global.den2;
+    if(global.dificultad &gt;= 0){
+        global.num1_displayed = global.num1;
+        global.num2_displayed = global.num2;
+        global.den1_displayed = global.den1;
+        global.den2_displayed = global.den2;
+    }
 }
 
 /*
@@ -1139,9 +1145,10 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
             /* Se esperan 4 segundos para visualizar la fracción completa
              y generar un nuevo ejercicio (mariposa) más nuevas libélulas */
              
-               
-        if(!global.ejercicioTerminado)
-            global.suma_correcta = global.ar + global.br;
+        if(global.dificultad &gt;= 0){       
+            if(!global.ejercicioTerminado)
+                global.suma_correcta = global.ar + global.br;
+        }
             /* Guardo el valor de la suma que corresponde al resultado correcto
             en el numerador, para que si cambia por la alarma y generación de nuevo ejercicio,
             se siga mostrando hasta que termine el timer tras finalizar una mariposa */

@@ -49,16 +49,18 @@ reverse = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(global.subEjercicio == 2 || global.subEjercicio == 4){
-    if(scale_factor &lt; 1.5 &amp;&amp; !reverse){
-        scale_factor += 0.03;
-        if(scale_factor &gt;= 1.5)
-            reverse = true;
-    }
-    else if(reverse){
-        scale_factor -= 0.03;
-        if(scale_factor &lt;= 0.8)
-            reverse = false;
+            <string>if(global.dificultad &gt;= 0){
+    if(global.subEjercicio == 2 || global.subEjercicio == 4){
+        if(scale_factor &lt; 1.5 &amp;&amp; !reverse){
+            scale_factor += 0.03;
+            if(scale_factor &gt;= 1.5)
+                reverse = true;
+        }
+        else if(reverse){
+            scale_factor -= 0.03;
+            if(scale_factor &lt;= 0.8)
+                reverse = false;
+        }
     }
 }
 </string>
@@ -85,18 +87,19 @@ reverse = false;
             <kind>1</kind>
             <string>color1 = $76de91;
 color2 = $ff266e;
-
-if(global.subEjercicio == 2 &amp;&amp; !global.ejercicioTerminado){
-    draw_text_transformed_colour(x, y-5, string(global.num2_displayed), scale_factor, scale_factor, 0, color1, color1, color1, color1, 1);
-}
-else
-    draw_text(x,y-5,string(global.num2_displayed));
-  
-if(global.subEjercicio&gt;2 &amp;&amp; global.subEjercicio!=4){
-    draw_text(x,y-42,string(global.br));
-}
-else if(global.subEjercicio == 4 &amp;&amp; !global.ejercicioTerminado){
-    draw_text_transformed_colour(x, y-45, string(global.br), scale_factor, scale_factor, 0, color1, color1, color1, color1, 1);
+if(global.dificultad &gt;= 0){
+    if(global.subEjercicio == 2 &amp;&amp; !global.ejercicioTerminado){
+        draw_text_transformed_colour(x, y-5, string(global.num2_displayed), scale_factor, scale_factor, 0, color1, color1, color1, color1, 1);
+    }
+    else
+        draw_text(x,y-5,string(global.num2_displayed));
+      
+    if(global.subEjercicio&gt;2 &amp;&amp; global.subEjercicio!=4){
+        draw_text(x,y-42,string(global.br));
+    }
+    else if(global.subEjercicio == 4 &amp;&amp; !global.ejercicioTerminado){
+        draw_text_transformed_colour(x, y-45, string(global.br), scale_factor, scale_factor, 0, color1, color1, color1, color1, 1);
+    }
 }
 </string>
           </argument>

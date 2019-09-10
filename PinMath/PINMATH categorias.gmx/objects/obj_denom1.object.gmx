@@ -49,16 +49,18 @@ reverse = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(global.subEjercicio == 2 || global.subEjercicio == 3){
-    if(scale_factor &lt; 1.5 &amp;&amp; !reverse){
-        scale_factor += 0.03;
-        if(scale_factor &gt;= 1.5)
-            reverse = true;
-    }
-    else if(reverse){
-        scale_factor -= 0.03;
-        if(scale_factor &lt;= 0.8)
-            reverse = false;
+            <string>if(global.dificultad &gt;= 0){
+    if(global.subEjercicio == 2 || global.subEjercicio == 3){
+        if(scale_factor &lt; 1.5 &amp;&amp; !reverse){
+            scale_factor += 0.03;
+            if(scale_factor &gt;= 1.5)
+                reverse = true;
+        }
+        else if(reverse){
+            scale_factor -= 0.03;
+            if(scale_factor &lt;= 0.8)
+                reverse = false;
+        }
     }
 }
 </string>
@@ -83,13 +85,14 @@ reverse = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if((global.subEjercicio == 2 || global.subEjercicio == 3) &amp;&amp; !global.ejercicioTerminado){
-     color = $76de91;
-    draw_text_transformed_colour(x, y-5, string(global.den1_displayed), scale_factor, scale_factor, 0, color, color, color, color, 1);
+            <string>if(global.dificultad &gt;=0){
+    if((global.subEjercicio == 2 || global.subEjercicio == 3) &amp;&amp; !global.ejercicioTerminado){
+         color = $76de91;
+        draw_text_transformed_colour(x, y-5, string(global.den1_displayed), scale_factor, scale_factor, 0, color, color, color, color, 1);
+    }
+    else
+        draw_text(x,y-5,string(global.den1_displayed));
 }
-else
-    draw_text(x,y-5,string(global.den1_displayed));
-
 </string>
           </argument>
         </arguments>

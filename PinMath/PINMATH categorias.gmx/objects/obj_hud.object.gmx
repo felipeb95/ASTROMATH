@@ -76,30 +76,35 @@ draw_set_font(fnt_roboto);
 
 //draw_text(room_width/2 + 45, 25, global.num2);
 //draw_text(room_width/2 + 45, 55, global.den2);
-if(global.ejercicioTerminado)
-    str = "";
-
-if(global.modo==0 and global.subEjercicio&lt;4 and !global.ejercicioTerminado){
-    str = "Multiplica " + string(global.a) + "x" + string(global.b);
+if(global.dificultad &gt;= 0){
+    if(global.ejercicioTerminado)
+        str = "";
+    
+    if(global.modo==0 and global.subEjercicio&lt;4 and !global.ejercicioTerminado){
+        str = "Multiplica " + string(global.a) + "x" + string(global.b);
+    }
+    if(global.modo==0 and global.subEjercicio==4 and !global.ejercicioTerminado){
+        /*if(global.tipo_operacion)=="suma")
+            suma_resta = "suma" 
+        else
+            suma_resta = "resta"
+        */
+        str = "Resuelve la "+suma_resta +" "+ string(global.a) + "+" + string(global.b);
+    }
+    if(global.modo==1){
+        draw_text(room_width/2, 20, string(global.a) + "-" + string(global.b));
+    }
+    if(global.modo==2){
+        
+    }
+    if(global.modo==3){
+        draw_text(room_width/2, 20, string(global.a) + "/" + string(global.b));
+    }
 }
-if(global.modo==0 and global.subEjercicio==4 and !global.ejercicioTerminado){
-    /*if(global.tipo_operacion)=="suma")
-        suma_resta = "suma" 
-    else
-        suma_resta = "resta"
-    */
-    str = "Resuelve la "+suma_resta +" "+ string(global.a) + "+" + string(global.b);
-}
-if(global.modo==1){
-    draw_text(room_width/2, 20, string(global.a) + "-" + string(global.b));
-}
-if(global.modo==2){
+else
     draw_text(room_width/2, 20, string(global.a) + "x" + string(global.b));
-}
-if(global.modo==3){
-    draw_text(room_width/2, 20, string(global.a) + "/" + string(global.b));
-}
-
+    
+    
 
 draw_set_font(fnt_roboto);
 draw_text(room_width/2, 190, str);
