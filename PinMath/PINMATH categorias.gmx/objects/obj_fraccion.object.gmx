@@ -49,7 +49,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(global.dificultad &gt;= 0){
+            <string>if(global.butterfly){
     draw_line_width(250, y, 290, y, 3);
     draw_text(room_width/2, y, suma_resta);
     draw_line_width(350, y, 390, y, 3);

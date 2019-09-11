@@ -56,7 +56,7 @@ sparkles_snd_play = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(global.dificultad &gt;= 0){
+            <string>if(global.butterfly){
     if(global.ejercicioTerminado){
         sparkle_subimg++;
         if(sparkle_subimg == sparkle_subimg_total)
@@ -94,7 +94,7 @@ sparkles_snd_play = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(global.dificultad &gt;= 0){
+            <string>if(global.butterfly){
     if(global.subEjercicio&gt;=2)
         numerador = string(global.ar) + " + ?";
     
@@ -134,7 +134,7 @@ sparkles_snd_play = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(global.dificultad &gt;= 0){
+            <string>if(global.butterfly){
     draw_sprite_ext(spr_woodenboard,0,x,y,0.95,0.95,image_angle,image_blend,image_alpha);
     draw_set_font(fnt_roboto_big)
     draw_line_width(x-50, y, x+50, y, 3);

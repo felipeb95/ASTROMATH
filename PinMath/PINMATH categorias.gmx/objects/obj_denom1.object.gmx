@@ -49,7 +49,7 @@ reverse = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(global.dificultad &gt;= 0){
+            <string>if(global.butterfly){
     if(global.subEjercicio == 2 || global.subEjercicio == 3){
         if(scale_factor &lt; 1.5 &amp;&amp; !reverse){
             scale_factor += 0.03;
@@ -85,7 +85,7 @@ reverse = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(global.dificultad &gt;=0){
+            <string>if(global.butterfly){
     if((global.subEjercicio == 2 || global.subEjercicio == 3) &amp;&amp; !global.ejercicioTerminado){
          color = $76de91;
         draw_text_transformed_colour(x, y-5, string(global.den1_displayed), scale_factor, scale_factor, 0, color, color, color, color, 1);
