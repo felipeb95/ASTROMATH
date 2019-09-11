@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var url = "http://pin.informaticapucv.cl/curl_con.php";
+            <string>global.ronda0=true;
+var url = "http://pin.informaticapucv.cl/curl_con.php";
 http_get(url);
 menu_x=room_width/2; 
 menu_y=room_height/2;
@@ -57,8 +58,7 @@ go_to_next = false;
             <string>if(go_to_next){
     instance_destroy(obj_loading_gif);
     room_goto(rm_space);
-    global.snd=audio_play_sound(music,10,true);
-    audio_sound_gain(global.snd,0.4,0);
+    
 }
 </string>
           </argument>

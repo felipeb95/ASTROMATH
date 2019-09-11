@@ -88,16 +88,23 @@ if(global.r == global.numM){
     global.destruir=true;
     global.malasSeguidas=0;
     global.nrondasc++;
+    if(global.dificultad&gt;=0 and global.nrondasc==global.subeCat){
+        global.nrondasc=0;
+        if(global.categoria=="F") global.categoria="M";
+        else global.categoria="D";
+        show_debug_message("SUBE CATEGORIA");
+        show_debug_message(global.categoria);
+    }
     if(global.nrondasc&gt;=2 &amp;&amp; global.sp2&gt;global.max_vel){
         global.sp1 -= global.acel;
         global.sp2 -= global.acel;
         global.sp3 -= global.acel;
         show_debug_message("SUBE VEL");
     }
-    /*if(global.wave&lt;9){
+    if(global.wave&lt;global.nEjercicios){
         global.oBuenas[global.a]++;
         global.oBuenas[global.b]++;
-    }*/
+    }
     global.respondida = true;
     global.puntaje += 10;
     global.correctas++;
@@ -113,6 +120,13 @@ if(global.r == global.numM){
 }else{ 
     global.malasSeguidas++;
     global.nrondasc=0;
+    if(global.dificultad&gt;=0 and global.malasSeguidas==global.bajaCat){
+        global.malasSeguidas=0;
+        if(global.categoria=="D") global.categoria="M";
+        else global.categoria="F";
+        show_debug_message("BAJA CATEGORIA");
+        show_debug_message(global.categoria);
+    }
     if(global.malasSeguidas&gt;=2 &amp;&amp; global.sp2&lt;global.min_vel){
         global.sp1 += global.acel;
         global.sp2 += global.acel;

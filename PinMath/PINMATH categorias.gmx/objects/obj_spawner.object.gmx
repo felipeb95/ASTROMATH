@@ -27,6 +27,9 @@
             <kind>1</kind>
             <string>randomize();
 muted = 0;
+global.categoria="F";
+global.subeCat=8;
+global.bajaCat=1;
 global.nMalo=0;
 global.destruir=false;
 global.subEjercicio = 1;
@@ -106,6 +109,7 @@ global.nrondasc=0
 global.contadorcito = 2;
 
 global.dificultad = -1;
+if(!global.ronda0) global.dificultad = 0;
 //DIFICULTAD POR SET DE RONDAS
 
 
@@ -135,10 +139,11 @@ global.bigMap = ds_map_create();
 global.intentosRonda = ds_map_create();
 global.dificultadesMap = ds_map_create();
 
-global.faciles = undefined;
-global.medios = undefined;
-global.dificiles = undefined;
-
+if(global.ronda0){
+    global.faciles = undefined;
+    global.medios = undefined;
+    global.dificiles = undefined;
+}
 global.spawner_enabled = true;
 global.ejercicioTerminado = false;
 global.num1_displayed = 0;
@@ -741,6 +746,7 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
             global.existeF=0;
             global.existeM=0;
             global.existeD=0;
+            global.ronda0=false;
             for(i=global.minA;i&lt;=global.maxB;i++){
                 
                 if(global.oBuenas[i]==2){
@@ -801,6 +807,10 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
         if(global.waveUltraFake==global.nEjercicios+1){
             global.waveUltraFake=1;
             global.dificultad++;
+            if(global.dificultad==0){
+                global.nrondasc=0;
+                global.malasSeguidas=0;
+            }
             if(global.existeF==1){
                 show_debug_message("FACILES: ");
                 show_debug_message(global.faciles);
@@ -855,9 +865,9 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
         }
         show_debug_message("Ronda");
         show_debug_message(global.dificultad+1);
-        if(global.dificultad&gt;=0){show_debug_message("EJERCICIOS FACILES POR SALIR: ");show_debug_message(global.eFacil[global.dificultad]);}
+        /*if(global.dificultad&gt;=0){show_debug_message("EJERCICIOS FACILES POR SALIR: ");show_debug_message(global.eFacil[global.dificultad]);}
         if(global.dificultad&gt;=0){show_debug_message("EJERCICIOS MEDIOS POR SALIR: ");show_debug_message(global.eMedio[global.dificultad]);}
-        if(global.dificultad&gt;=0){show_debug_message("EJERCICIOS DIFICLES POR SALIR: ");show_debug_message(global.eDificil[global.dificultad]);}
+        if(global.dificultad&gt;=0){show_debug_message("EJERCICIOS DIFICLES POR SALIR: ");show_debug_message(global.eDificil[global.dificultad]);}*/
 
         show_debug_message("Ejercicio");
         show_debug_message(global.waveUltraFake);
@@ -940,11 +950,153 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
                 }
             }
             else{
-                if(global.subEjercicio==1){
+                if(global.subEjercicio==1){   
+                    if(global.categoria=="F"){
+                        if(global.existeF==1){
+                            global.origen = "facil";
+                            global.den1=global.faciles[0];
+                            var numa=global.faciles[0];
+                            for(x= 0; x&lt;array_length_1d(global.faciles)-1; x++){
+                                global.faciles[x] = global.faciles[x+1];
+                            }
+                            global.den2=global.faciles[0];
+                            var numa=global.faciles[0];
+                            for(x= 0; x&lt;array_length_1d(global.faciles)-1; x++){
+                                global.faciles[x] = global.faciles[x+1];
+                            }
+                            global.faciles[array_length_1d(global.faciles)-1]= numa; 
+                        }
+                        else{
+                            if(global.existeM==1){
+                                global.origen = "medio";
+                                global.den1=global.medios[0];
+                                var numa=global.medios[0];
+                                for(x= 0; x&lt;array_length_1d(global.medios)-1; x++){
+                                    global.medios[x] = global.medios[x+1];
+                                }
+                                global.den2=global.medios[0];
+                                var numa=global.medios[0];
+                                for(x= 0; x&lt;array_length_1d(global.medios)-1; x++){
+                                    global.medios[x] = global.medios[x+1];
+                                }
+                                global.medios[array_length_1d(global.medios)-1]= numa; 
+                            }
+                            else{
+                                if(global.existeD==1){
+                                    global.origen = "dificil";
+                                    global.den1=global.dificiles[0];
+                                    var numa=global.dificiles[0];
+                                    for(x= 0; x&lt;array_length_1d(global.dificiles)-1; x++){
+                                        global.dificiles[x] = global.dificiles[x+1];
+                                    }
+                                    global.den2=global.dificiles[0];
+                                    var numa=global.dificiles[0];
+                                    for(x= 0; x&lt;array_length_1d(global.dificiles)-1; x++){
+                                        global.dificiles[x] = global.dificiles[x+1];
+                                    }
+                                    global.dificiles[array_length_1d(global.dificiles)-1]= numa; 
+                                }
+                            }
+                        }
+                    }
+                    if(global.categoria=="M"){
+                        if(global.existeM==1){
+                            global.origen = "medio";
+                            global.den1=global.medios[0];
+                            var numa=global.medios[0];
+                            for(x= 0; x&lt;array_length_1d(global.medios)-1; x++){
+                                global.medios[x] = global.medios[x+1];
+                            }
+                            global.den2=global.medios[0];
+                            var numa=global.medios[0];
+                            for(x= 0; x&lt;array_length_1d(global.medios)-1; x++){
+                                global.medios[x] = global.medios[x+1];
+                            }
+                            global.medios[array_length_1d(global.medios)-1]= numa; 
+                        }
+                        else{
+                            if(global.existeD==1){
+                                global.origen = "dificil";
+                                global.den1=global.dificiles[0];
+                                var numa=global.dificiles[0];
+                                for(x= 0; x&lt;array_length_1d(global.dificiles)-1; x++){
+                                    global.dificiles[x] = global.dificiles[x+1];
+                                }
+                                global.den2=global.dificiles[0];
+                                var numa=global.dificiles[0];
+                                for(x= 0; x&lt;array_length_1d(global.dificiles)-1; x++){
+                                    global.dificiles[x] = global.dificiles[x+1];
+                                }
+                                global.dificiles[array_length_1d(global.dificiles)-1]= numa;
+                            }
+                            else{
+                                if(global.existeF==1){
+                                    global.origen = "facil";
+                                    global.den1=global.faciles[0];
+                                    var numa=global.faciles[0];
+                                    for(x= 0; x&lt;array_length_1d(global.faciles)-1; x++){
+                                        global.faciles[x] = global.faciles[x+1];
+                                    }
+                                    global.den2=global.faciles[0];
+                                    var numa=global.faciles[0];
+                                    for(x= 0; x&lt;array_length_1d(global.faciles)-1; x++){
+                                        global.faciles[x] = global.faciles[x+1];
+                                    }
+                                    global.faciles[array_length_1d(global.faciles)-1]= numa;
+                                }
+                            }
+                        }
+                    }
+                    if(global.categoria=="D"){
+                        if(global.existeD==1){
+                            global.origen = "dificil";
+                            global.den1=global.dificiles[0];
+                            var numa=global.dificiles[0];
+                            for(x= 0; x&lt;array_length_1d(global.dificiles)-1; x++){
+                                global.dificiles[x] = global.dificiles[x+1];
+                            }
+                            global.den2=global.dificiles[0];
+                            var numa=global.dificiles[0];
+                            for(x= 0; x&lt;array_length_1d(global.dificiles)-1; x++){
+                                global.dificiles[x] = global.dificiles[x+1];
+                            }
+                            global.dificiles[array_length_1d(global.dificiles)-1]= numa;
+                        }
+                        else{
+                            if(global.existeM==1){
+                                global.origen = "medio";
+                                global.den1=global.medios[0];
+                                var numa=global.medios[0];
+                                for(x= 0; x&lt;array_length_1d(global.medios)-1; x++){
+                                    global.medios[x] = global.medios[x+1];
+                                }
+                                global.den2=global.medios[0];
+                                var numa=global.medios[0];
+                                for(x= 0; x&lt;array_length_1d(global.medios)-1; x++){
+                                    global.medios[x] = global.medios[x+1];
+                                }
+                                global.medios[array_length_1d(global.medios)-1]= numa; 
+                            }
+                            else{
+                                if(global.existeF==1){
+                                    global.origen = "facil";
+                                    global.den1=global.faciles[0];
+                                    var numa=global.faciles[0];
+                                    for(x= 0; x&lt;array_length_1d(global.faciles)-1; x++){
+                                        global.faciles[x] = global.faciles[x+1];
+                                    }
+                                    global.den2=global.faciles[0];
+                                    var numa=global.faciles[0];
+                                    for(x= 0; x&lt;array_length_1d(global.faciles)-1; x++){
+                                        global.faciles[x] = global.faciles[x+1];
+                                    }
+                                    global.faciles[array_length_1d(global.faciles)-1]= numa;
+                                }
+                            }
+                        }
+                    }
                     global.num1=choose(floor(random_range(global.minA,global.maxB)));
                     global.num2=choose(floor(random_range(global.minA,global.maxB)));
-                    global.den1=choose(floor(random_range(global.minA,global.maxB)));
-                    global.den2=choose(floor(random_range(global.minA,global.maxB)));
                     global.a = global.num1;
                     global.b = global.den2;
                     global.r = global.a*global.b;
