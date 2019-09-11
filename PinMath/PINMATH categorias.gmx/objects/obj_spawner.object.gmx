@@ -736,6 +736,7 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
         reverse_scale_setter();
         if(global.subEjercicio==5){
             global.subEjercicio=1;
+            show_debug_message("Ejercicio terminado");
             global.ejercicioTerminado = true;
         }
         if(global.waveFake==global.nTests+1){
