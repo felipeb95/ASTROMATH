@@ -28,7 +28,7 @@
             <string>randomize();
 muted = 0;
 global.categoria="F";
-global.subeCat=8;
+global.subeCat=3;
 global.bajaCat=1;
 global.nMalo=0;
 global.destruir=false;
@@ -109,7 +109,13 @@ global.nrondasc=0
 global.contadorcito = 2;
 
 global.dificultad = -1;
-if(!global.ronda0) global.dificultad = 0;
+if(!global.ronda0) {
+    global.dificultad = 0;
+    global.existeF=1;
+    global.existeM=1;
+    global.existeD=1;
+
+}
 //DIFICULTAD POR SET DE RONDAS
 
 
@@ -743,7 +749,7 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
             global.waveFake=1;
         }
         
-        if(global.wave==global.nEjercicios+1){
+        if(global.wave==global.nEjercicios+1 and global.ronda0){
             global.existeF=0;
             global.existeM=0;
             global.existeD=0;
@@ -808,10 +814,6 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
         if(global.waveUltraFake==global.nEjercicios+1){
             global.waveUltraFake=1;
             global.dificultad++;
-            if(global.dificultad==0){
-                global.nrondasc=0;
-                global.malasSeguidas=0;
-            }
             if(global.existeF==1){
                 show_debug_message("FACILES: ");
                 show_debug_message(global.faciles);
