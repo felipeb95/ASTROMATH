@@ -87,7 +87,7 @@ with (other){
 if(global.r == global.numM){
     global.destruir=true;
     global.malasSeguidas=0;
-    global.nrondasc++;
+    if(!global.ronda0) global.nrondasc++;
     if(global.dificultad&gt;=0 and global.nrondasc==global.subeCat){
         global.nrondasc=0;
         if(global.categoria=="F") global.categoria="M";
@@ -101,7 +101,7 @@ if(global.r == global.numM){
         global.sp3 -= global.acel;
         show_debug_message("SUBE VEL");
     }
-    if(global.wave&lt;global.nEjercicios){
+    if(global.wave&lt;global.nEjercicios and global.ronda0){
         global.oBuenas[global.a]++;
         global.oBuenas[global.b]++;
     }
@@ -118,7 +118,7 @@ if(global.r == global.numM){
     global.estado = "correcta";
     instance_create(0,0,obj_textbox_celebracion);
 }else{ 
-    global.malasSeguidas++;
+    if(!global.ronda0) global.malasSeguidas++;
     global.nrondasc=0;
     if(global.dificultad&gt;=0 and global.malasSeguidas==global.bajaCat){
         global.malasSeguidas=0;

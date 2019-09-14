@@ -33,7 +33,7 @@ show_debug_message("Ejercicio");
 show_debug_message(global.waveUltraFake);
 
 if(global.modo==0) {
-    //if(global.ronda0){
+    if(global.ronda0){
         global.a = choose(floor(random_range(global.minA,global.maxB)));
         global.numeros[0]=global.a;
         var aux=0;
@@ -57,8 +57,8 @@ if(global.modo==0) {
         global.b = arrayFake[indice];
         global.numeros[1]=global.b;
         global.r = global.a*global.b;
-    /*}
-    else{
+    }
+    /*else{
         global.num1=choose(floor(random_range(global.minA,global.maxB)));
         global.num1_displayed = global.num1;
         global.num2=choose(floor(random_range(global.minA,global.maxB)));
