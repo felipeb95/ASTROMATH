@@ -20,6 +20,8 @@ if(spawner_enabled){
 		var little_bubble = instance_create_depth(x_first_little_bubble+(i*150),y_little_bubble,-1000,obj_little_bubble);
 		with(little_bubble){
 			number_on_bubble = obj_spawner.multiples_list[| obj_spawner.i];
+			first_x = obj_spawner.x_first_little_bubble+(obj_spawner.i*150);
+			first_y = obj_spawner.y_little_bubble;
 		}
 	}
 	
