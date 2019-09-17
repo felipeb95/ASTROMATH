@@ -16,6 +16,7 @@ else {
 	else {
 		inst = instance_place(x,y,obj_bubble);
 		show_debug_message("Soy "+string(number_on_bubble)+" y estoy en "+string(inst.number_on_bubble));
+		inst.number_on_bubble = number_on_bubble;
 	}
 
 }
