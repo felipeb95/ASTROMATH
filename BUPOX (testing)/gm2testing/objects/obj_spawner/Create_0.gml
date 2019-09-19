@@ -1,13 +1,12 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-//number_of_bubbles = 2;
 spawner_enabled = true;
 ejercicioTerminado = false;
 left_number = 30;
 right_number = 72;
 
-//Ejemplo para calcular divisores
+/*Ejemplo para calcular divisores
 index_left_div = 0;
 index_right_div = 0;
 index_total_div = 0;
@@ -40,11 +39,26 @@ show_debug_message(nums_total);
 left_number_red = left_number;
 right_number_red = right_number;
 selected_number = undefined;
+*/
+
 wave_generator_timer = 1.5;
 multiples_list = ds_list_create();
 
+/* Lista de números primos */
 
-for(i=0;i<7;i++){
-	ds_list_add(multiples_list,irandom_range(2,50));	
-}
+ds_list_add(multiples_list,2);
+ds_list_add(multiples_list,3);
+ds_list_add(multiples_list,5);
+ds_list_add(multiples_list,7);
+ds_list_add(multiples_list,11);
+ds_list_add(multiples_list,13);
+
 alarm[0] = 1;
+
+/* Variables de posiciones relativas */
+
+x_left_bubble = room_width/2-300;
+x_right_bubble = room_width/2+300;
+x_first_little_bubble = room_width/8;
+y_little_bubble = room_height-100;
+space_between_bubbles = sprite_get_width(obj_little_bubble);

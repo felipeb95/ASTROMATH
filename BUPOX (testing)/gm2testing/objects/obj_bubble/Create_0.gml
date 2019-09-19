@@ -3,3 +3,5 @@
 
 bubble_radius = 50;
 number_on_bubble = 0;
+side = undefined;
+

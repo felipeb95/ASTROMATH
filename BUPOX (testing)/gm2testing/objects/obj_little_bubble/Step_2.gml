@@ -15,11 +15,26 @@ else {
 	}
 	else {
 		inst = instance_place(x,y,obj_bubble);
-		show_debug_message("Soy "+string(number_on_bubble)+" y estoy en "+string(inst.number_on_bubble));
-		inst.number_on_bubble = number_on_bubble;
+		if(inst.number_on_bubble mod number_on_bubble == 0){
+			inst.number_on_bubble /= number_on_bubble;
+			show_debug_message("Lado: "+inst.side);
+			switch(inst.side){
+				case "left" : obj_spawner.left_number /= number_on_bubble; break;
+				case "right" : obj_spawner.right_number /= number_on_bubble; break;
+				default: break;
+			}
+		}
+		if(bubbles_module(number_on_bubble))
+			instance_destroy(self);
+		else{
+			x =	first_x;
+			y = first_y;
+		}
+		
 	}
 
 }
+
 
 if(mouse_check_button_released(mb_left)){
 	
