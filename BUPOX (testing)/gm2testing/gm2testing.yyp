@@ -111,6 +111,14 @@
             }
         },
         {
+            "Key": "5dde470b-03ff-4683-be00-cb13c481068b",
+            "Value": {
+                "id": "8bdc98b3-fdb0-4a85-bd53-32470d42d87b",
+                "resourcePath": "objects\\obj_info_report\\obj_info_report.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "5e086725-5e67-4abc-8dee-0e4b2de20fdb",
             "Value": {
                 "id": "81d849ed-10c2-4321-8b76-45c83acc0491",
@@ -159,11 +167,27 @@
             }
         },
         {
+            "Key": "8c2b0ad6-57ed-4031-9efc-cd1edeb7368c",
+            "Value": {
+                "id": "90056804-286f-4eef-b36e-55ce803f7a0b",
+                "resourcePath": "scripts\\numbers_reduced\\numbers_reduced.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "93566aad-c3b3-48a9-8fa7-9c5ee19f74ac",
             "Value": {
                 "id": "25c0c2cb-9f93-4727-9cbf-4bd28125d1f6",
                 "resourcePath": "options\\tvos\\options_tvos.yy",
                 "resourceType": "GMtvOSOptions"
+            }
+        },
+        {
+            "Key": "9404dd42-9554-45ef-8f13-b4fe9163f419",
+            "Value": {
+                "id": "b7acd2b3-b2ee-4d4c-bc8d-6707366817d4",
+                "resourcePath": "scripts\\multiples_list_on_bubbles\\multiples_list_on_bubbles.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -263,14 +287,6 @@
             }
         },
         {
-            "Key": "dc8ab4dc-0d39-44c4-ae84-4c269c7b6a42",
-            "Value": {
-                "id": "142b60d7-6f41-41a8-90ae-1643db812da8",
-                "resourcePath": "scripts\\bm_example\\bm_example.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "dcf7b2bc-73bf-45c1-af02-7f2034c57d83",
             "Value": {
                 "id": "4c7b3fc0-d51e-4f6f-b8d0-7526c5a2d982",
@@ -306,7 +322,8 @@
     "script_order": [
         "eae5d056-2549-43dc-8574-8635718adcf5",
         "0f3c3b30-8ff7-43f8-872b-179a0f0076d2",
-        "dc8ab4dc-0d39-44c4-ae84-4c269c7b6a42"
+        "9404dd42-9554-45ef-8f13-b4fe9163f419",
+        "8c2b0ad6-57ed-4031-9efc-cd1edeb7368c"
     ],
     "tutorial": ""
 }

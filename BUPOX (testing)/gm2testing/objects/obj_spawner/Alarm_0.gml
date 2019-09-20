@@ -1,16 +1,15 @@
-/// @description Insert description here
-// You can write your code in this editor
-
-
+/* When the spawner gets enabled, then bubbles are created */
 if(spawner_enabled){
 	var left_bubble = instance_create_depth(x_left_bubble,room_height/2,-1000,obj_bubble);
 	with(left_bubble){
 		number_on_bubble = obj_spawner.left_number;
+		first_number = obj_spawner.left_number;
 		side = "left";
 	}
 	var right_bubble = instance_create_depth(x_right_bubble,room_height/2,-1000,obj_bubble);
 	with(right_bubble){
 		number_on_bubble = obj_spawner.right_number;
+		first_number = obj_spawner.right_number;
 		side = "right";
 	}
 	

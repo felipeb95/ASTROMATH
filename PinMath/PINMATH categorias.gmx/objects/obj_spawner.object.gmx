@@ -206,7 +206,7 @@ draw_set_font(fntMain);
 }
 */
 //AQUÍ SE CUMPLE UNA OLEADA
-
+// ALARM
 if(global.spawner_enabled){
     global.ejercicioTerminado = false;
     global.alternativa=irandom_range(0,2);
