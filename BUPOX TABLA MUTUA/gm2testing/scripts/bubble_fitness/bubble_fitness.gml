@@ -1,4 +1,4 @@
-/// bubbles_module(divisor)
+/// bubble_fitness(divisor)
 
 /* 
 	Checks wether the little bubble should be eliminated because it isn't able to divide both numbers

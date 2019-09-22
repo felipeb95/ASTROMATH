@@ -13,7 +13,7 @@ else {
 	else {
 		inst = instance_place(x,y,obj_bubble); // Instance of bubble where little bubble is dropped.
 		//if(inst.number_on_bubble mod number_on_bubble == 0){
-		if(modules_check(inst, number_on_bubble)){
+		if(modules_check(inst, number_on_bubble, inst_of_left, inst_of_middle, inst_of_right)){
 			
 			/* Next two lines are not for mutual table */
 			//inst.number_on_bubble /= number_on_bubble; // Number on bubble where little bubble drops changes to its division.
@@ -44,7 +44,7 @@ else {
 			global.multiples_on_bubbles_report = true; // The multiples list for each bubble is reported.
 		}
 		
-		if(bubbles_module(number_on_bubble)) // Checks if the number in the little bubble can entirely divide the one in the big bubble.
+		if(bubble_fitness(number_on_bubble)) // Checks if the number in the little bubble can entirely divide the one in the big bubble.
 			instance_destroy(self);
 		else{
 			x =	first_x;

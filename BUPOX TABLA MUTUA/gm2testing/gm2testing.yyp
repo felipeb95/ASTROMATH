@@ -42,7 +42,7 @@
             "Key": "0f3c3b30-8ff7-43f8-872b-179a0f0076d2",
             "Value": {
                 "id": "ee5ad958-2fe0-4c98-9ee5-d8caadcf4b79",
-                "resourcePath": "scripts\\bubbles_module\\bubbles_module.yy",
+                "resourcePath": "scripts\\bubble_fitness\\bubble_fitness.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -132,6 +132,14 @@
                 "id": "9214cab3-25ed-4bb4-8747-8c48a1d26606",
                 "resourcePath": "fonts\\font_little_bubble\\font_little_bubble.yy",
                 "resourceType": "GMFont"
+            }
+        },
+        {
+            "Key": "69b4d763-6ebc-4623-972f-dd48638efaf9",
+            "Value": {
+                "id": "cf557fdb-f27b-405e-b1b5-8e8af07feb9d",
+                "resourcePath": "objects\\obj_board\\obj_board.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -250,7 +258,7 @@
             "Key": "b3d7f1e7-7928-4329-95df-ee4ac018ebc5",
             "Value": {
                 "id": "fd257c55-7706-4d06-9a37-96ec745747e8",
-                "resourcePath": "rooms\\room0\\room0.yy",
+                "resourcePath": "rooms\\rm_play\\rm_play.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -260,6 +268,14 @@
                 "id": "30cbca57-dbdd-4a95-ba16-c42a44c38642",
                 "resourcePath": "scripts\\modules_check\\modules_check.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "c55504be-12c9-406f-9066-2b325ab0eae7",
+            "Value": {
+                "id": "db2041d9-7c75-43cc-8bc2-5db75891f84f",
+                "resourcePath": "sprites\\spr_board\\spr_board.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

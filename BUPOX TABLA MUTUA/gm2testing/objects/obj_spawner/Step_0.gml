@@ -2,7 +2,7 @@
 If the steps to select number are to long, move code to alarm 0 and set time to the alarm
 at the bottom of this file. */
 
-// Code was moved to alarm 0.
+// Code was moved to Alarm 0.
 
 /* As both numbers have been reduced to 1, bubbles should disappear
 and the next phase of the excercise should start, that is, the times phase */
