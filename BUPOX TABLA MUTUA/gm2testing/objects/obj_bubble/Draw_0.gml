@@ -5,8 +5,12 @@ draw_set_font(font_bubble);
 draw_set_colour(c_white);
 draw_set_halign(fa_center);
 draw_self();
-if(side == "middle")
-	draw_text(x,y,string(left_bubble_number)+" y "+string(right_bubble_number));
+if(side == "middle"){
+	if(obj_spawner.phaseOneDone)
+		draw_text(x,y,"¡MUY BIEN!");
+	else
+		draw_text(x,y,string(left_bubble_number)+" y "+string(right_bubble_number));
+	}
 else
-	draw_text(x,y,string(number_on_bubble));
+	draw_text(x,y,+string(number_on_bubble));
 

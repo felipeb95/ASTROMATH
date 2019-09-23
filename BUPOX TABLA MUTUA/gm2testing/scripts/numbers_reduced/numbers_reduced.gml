@@ -6,6 +6,6 @@ Next phase is the times part of the excercise, where multiples or both bubbles
 are mutiplied to get the MCM */
 
 if(obj_spawner.left_number == 1 and obj_spawner.right_number == 1)
-	obj_spawner.multiplesExcerciseDone = true;
+	obj_spawner.phaseOneDone = true;
 
 

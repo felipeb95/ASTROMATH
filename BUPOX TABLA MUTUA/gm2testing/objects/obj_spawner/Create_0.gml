@@ -1,13 +1,15 @@
 /* Initial numbers for testing */
 left_number = 30;
+left_to_table_header = 30;
 right_number = 72;
+right_to_table_header = 72;
 
 /* Creation of bubbles flag */
 spawner_enabled = true;
 
 /* Excercise by phase flag */
-multiplesExcerciseDone = false; // Set to true when numbers where reduced to 1 by its multiples.
-timesExcerciseDone = false; // Set to true when the multiples are multiplied between them.
+phaseOneDone = false; // Set to true when numbers where reduced to 1 by its multiples.
+phaseTwoDone= false; // Set to true when the multiples are multiplied between them.
 
 
 /* If feedback or animations are added, the generation of the excercise should delay some time */
@@ -27,8 +29,13 @@ ds_list_add(multiples_list,13);
 to_next_phase_message = false;
 alarm[0] = 1;
 excercise_finished_message = false;
-alarm[1] = 1;
+alarm[1] = 1; // Alarm form the table creation code, which is delayed to get all variables set.
 
+/* Saving instances in globals */
+
+global.left_bubble_inst = undefined;
+global.right_bubble_inst = undefined;
+global.middle_bubble_inst = undefined;
 
 /* Variables for relative positioning */
 big_bubble_width = sprite_get_width(spr_big_bubble);

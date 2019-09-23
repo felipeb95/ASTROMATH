@@ -40,8 +40,12 @@ else {
 					break;
 				default: break;
 			}
+			
+			ds_list_add(inst_of_left.partials, inst_of_left.number_on_bubble);
+			ds_list_add(inst_of_right.partials, inst_of_right.number_on_bubble);
+			ds_list_add(obj_table.table_multiples, number_on_bubble);
 
-			global.multiples_on_bubbles_report = true; // The multiples list for each bubble is reported.
+			global.partials_and_multiples_report= true; // The multiples list for each bubble is reported.
 		}
 		
 		if(bubble_fitness(number_on_bubble)) // Checks if the number in the little bubble can entirely divide the one in the big bubble.

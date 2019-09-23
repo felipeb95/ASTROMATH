@@ -7,23 +7,27 @@ at the bottom of this file. */
 /* As both numbers have been reduced to 1, bubbles should disappear
 and the next phase of the excercise should start, that is, the times phase */
 
-if(multiplesExcerciseDone){
+if(phaseOneDone){
 	
 	/* A message to congratulate or to give feedback appears and all bubbles are popped. */
 	/* with(obj_bubble)
 		instance_destroy();	
+	*/
 	
 	with(obj_little_bubble)
 		instance_destroy();
-	*/
-	multiplesExcerciseDone = false;
-	show_debug_message("Phase 1 Done");
-	timesExcerciseDone = true;
+	
+	if(!instance_exists(obj_bubble)){
+		phaseOneDone = false;
+		show_debug_message("Phase 1 Done");
+		phaseTwoDone = true;
+	}
+	
 }
 /* In here, a new pair of numbers is selected to be the next excercise
 and to set the creation of new bubbles*/
 
-if(timesExcerciseDone){
+if(phaseTwoDone){
 	show_debug_message("Phase 2 Done");
 	left_number = 82;
 	right_number = 14;

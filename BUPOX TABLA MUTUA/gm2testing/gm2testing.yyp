@@ -71,6 +71,14 @@
             }
         },
         {
+            "Key": "24bdc36f-c2ae-4e9f-b61b-bd172a8c23cb",
+            "Value": {
+                "id": "3b51dd78-8d64-4b74-8757-b5210ee806dd",
+                "resourcePath": "scripts\\multiples_on_table\\multiples_on_table.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "2841b86c-05b0-4512-916d-c7fe84b07d41",
             "Value": {
                 "id": "c487f81a-b723-4d07-9610-315c8ebda415",
@@ -138,7 +146,7 @@
             "Key": "69b4d763-6ebc-4623-972f-dd48638efaf9",
             "Value": {
                 "id": "cf557fdb-f27b-405e-b1b5-8e8af07feb9d",
-                "resourcePath": "objects\\obj_board\\obj_board.yy",
+                "resourcePath": "objects\\obj_table\\obj_table.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -271,6 +279,14 @@
             }
         },
         {
+            "Key": "bba8aa45-5011-474b-9519-5cbd705c2632",
+            "Value": {
+                "id": "32988d1d-7523-4d74-bf6d-3b59a6706d30",
+                "resourcePath": "scripts\\partials_list_on_bubbles\\partials_list_on_bubbles.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "c55504be-12c9-406f-9066-2b325ab0eae7",
             "Value": {
                 "id": "db2041d9-7c75-43cc-8bc2-5db75891f84f",
@@ -300,6 +316,14 @@
                 "id": "fc48f431-8f95-41c3-a54c-44bf061b21c3",
                 "resourcePath": "options\\windows\\options_windows.yy",
                 "resourceType": "GMWindowsOptions"
+            }
+        },
+        {
+            "Key": "ce7c7ca3-be62-43ee-bba8-99a2046f5f07",
+            "Value": {
+                "id": "9511a9f6-e76c-446d-b283-dfc47067dfb0",
+                "resourcePath": "fonts\\font_table_number\\font_table_number.yy",
+                "resourceType": "GMFont"
             }
         },
         {
@@ -348,7 +372,9 @@
         "0f3c3b30-8ff7-43f8-872b-179a0f0076d2",
         "9404dd42-9554-45ef-8f13-b4fe9163f419",
         "8c2b0ad6-57ed-4031-9efc-cd1edeb7368c",
-        "ba20bfe3-d585-4b65-9bf7-6b05a6d78afb"
+        "ba20bfe3-d585-4b65-9bf7-6b05a6d78afb",
+        "bba8aa45-5011-474b-9519-5cbd705c2632",
+        "24bdc36f-c2ae-4e9f-b61b-bd172a8c23cb"
     ],
     "tutorial": ""
 }
