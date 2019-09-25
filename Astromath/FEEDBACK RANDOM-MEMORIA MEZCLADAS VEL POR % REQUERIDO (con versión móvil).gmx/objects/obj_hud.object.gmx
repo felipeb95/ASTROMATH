@@ -109,6 +109,8 @@ else
     draw_set_colour(c_green);
 
 if(global.debug){
+    draw_text(50, 50, "B: " + string(global.correctas)+
+" | M: " + string(global.incorrectas));
     draw_set_halign(fa_right);
     if(global.time_to_cross == 0){
         //draw_text(room_width/2,room_height-50,"Cronómetro de respuesta correcta: "+string(global.segundos)+" (pausado)");
