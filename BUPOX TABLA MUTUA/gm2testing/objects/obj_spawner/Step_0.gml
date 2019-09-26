@@ -20,7 +20,8 @@ if(phaseOneDone){
 	if(!instance_exists(obj_bubble)){
 		phaseOneDone = false;
 		show_debug_message("Phase 1 Done");
-		//phaseTwo = true;
+		mult_list_inst = instance_create_depth(-room_width/2,room_height/2,-1000,obj_multiples_list);
+		phaseTwo = true;
 	}
 	
 }
