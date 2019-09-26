@@ -20,7 +20,7 @@ if(phaseOneDone){
 	if(!instance_exists(obj_bubble)){
 		phaseOneDone = false;
 		show_debug_message("Phase 1 Done");
-		phaseTwoDone = true;
+		//phaseTwo = true;
 	}
 	
 }

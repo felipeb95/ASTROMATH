@@ -7,7 +7,7 @@ if(obj_spawner.phaseOneDone){
 	aceleration += 0.5;
 	image_angle += 2;
 	
-	if(x == -300){
+	if(x >= 1500){
 		show_debug_message("Bubble destroyed");
 		instance_destroy(self);
 	}
