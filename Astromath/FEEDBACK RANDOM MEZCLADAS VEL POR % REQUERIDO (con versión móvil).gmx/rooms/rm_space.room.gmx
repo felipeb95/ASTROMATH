@@ -16,12 +16,12 @@ global.snd=audio_play_sound(music,10,true);
 audio_sound_gain(global.snd,0.4,0);
 if(global.modo_juego == 1){
     instance_create(0,0,obj_spawner);
-    instance_create(0,0,obj_waves);
+    //instance_create(0,0,obj_waves);
 }
 
 if(global.modo_juego == 2){
     instance_create(0,0,obj_spawner_etapas);   
-    instance_create(0,0,obj_waves_etapas);
+    //instance_create(0,0,obj_waves_etapas);
 }
 
 if(global.tipo_os_equipo == 2){

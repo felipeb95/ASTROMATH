@@ -1,3 +1,5 @@
+if(obj_spawner.new_exercise) instance_destroy(self);
+
 if(rotation == 1)
 	image_angle -= rotation_degree;
 else

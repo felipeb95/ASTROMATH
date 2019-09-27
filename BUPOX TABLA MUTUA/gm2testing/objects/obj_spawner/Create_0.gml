@@ -1,3 +1,8 @@
+/* Counters for the steps of the exercise and the exercise number (Joel suck my dick)*/
+exercise_number = 1;
+step_number = 0;
+new_exercise = false;
+
 /* Initial numbers for testing */
 left_number = 30;
 left_to_table_header = 30;

@@ -1,5 +1,12 @@
 /* When the spawner gets enabled, then bubbles are created */
 if(spawner_enabled){
+	if(new_exercise){
+		left_number = 40;
+		left_to_table_header = 40;
+		right_number = 82;
+		right_to_table_header = 82;
+		new_exercise = false;
+	}
 	var left_bubble = instance_create_depth(x_left_bubble,y_for_bubbles,-1000,obj_bubble);
 	global.left_bubble_inst = left_bubble;
 	with(left_bubble){
@@ -32,6 +39,7 @@ if(spawner_enabled){
 	}
 	
 	spawner_enabled = false;
+	
 }
 
 alarm[0] = 1;

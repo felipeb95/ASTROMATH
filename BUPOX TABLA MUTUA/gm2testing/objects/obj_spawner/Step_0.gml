@@ -23,6 +23,8 @@ if(phaseOneDone){
 		phaseTwoDone = true;
 	}
 	
+	
+	
 }
 /* In here, a new pair of numbers is selected to be the next excercise
 and to set the creation of new bubbles*/
@@ -34,6 +36,11 @@ if(phaseTwoDone){
 	wave_generator_timer = 1.5; // Set value to Congratulations or Feedback message's time on screen.
 	alarm[0] = room_speed*wave_generator_timer;
 	spawner_enabled = true;
+	
+	exercise_number++;
+	new_exercise = true;
+	show_debug_message(exercise_number);
+	show_debug_message(new_exercise);
 }
 
 /* In case steps are too long for the spawner's creation of bubbles*/

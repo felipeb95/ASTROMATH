@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-
+if(obj_spawner.new_exercise) instance_destroy(self);
 
 if(obj_spawner.phaseOneDone){
 	x += aceleration;

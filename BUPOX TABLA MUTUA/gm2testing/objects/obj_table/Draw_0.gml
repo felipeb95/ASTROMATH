@@ -1,3 +1,4 @@
+if(obj_spawner.new_exercise) instance_destroy(self);
 /* Lines to make the table */
 draw_line_width(hline_x1,hline_y,hline_x2,hline_y,hline_width);
 draw_line_width(vline_x, vline_y1, vline_x, vline_y2, vline_width);
