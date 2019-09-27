@@ -14,6 +14,7 @@ spawner_enabled = true;
 
 /* Excercise by phase flag */
 phaseOneDone = false; // Set to true when numbers where reduced to 1 by its multiples.
+phaseTwo = false;
 phaseTwoDone= false; // Set to true when the multiples are multiplied between them.
 
 

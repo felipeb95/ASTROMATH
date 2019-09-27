@@ -111,6 +111,14 @@
             }
         },
         {
+            "Key": "5bcfb757-9fed-4938-9c19-9555c9c18e9b",
+            "Value": {
+                "id": "4be62dac-cc56-4c95-b8e2-d9febf159b2c",
+                "resourcePath": "fonts\\font_multiples_list\\font_multiples_list.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "5d706558-29f3-42c5-b528-730ba40aefdd",
             "Value": {
                 "id": "5436e09e-9865-4e36-a1ea-e56cb658a038",
@@ -148,6 +156,22 @@
                 "id": "cf557fdb-f27b-405e-b1b5-8e8af07feb9d",
                 "resourcePath": "objects\\obj_table\\obj_table.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "6c84e0e1-db7f-4b63-9118-378f377427e8",
+            "Value": {
+                "id": "fa328339-3835-4add-b7d4-8400b1aae03f",
+                "resourcePath": "objects\\obj_multiples_list\\obj_multiples_list.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "729c60c3-2416-465f-961e-26e613b5503b",
+            "Value": {
+                "id": "15c9298d-9a2f-4341-a7a0-41c99b6e117c",
+                "resourcePath": "fonts\\font_x_list\\font_x_list.yy",
+                "resourceType": "GMFont"
             }
         },
         {

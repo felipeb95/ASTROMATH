@@ -13,11 +13,11 @@ draw_text(right_number_x, hline_y + hline_width+1, string(obj_spawner.right_to_t
 draw_set_font(font_table_number);
 draw_set_valign(fa_middle);
 
-if(!ds_list_empty(inst_of_left.partials)){ // Any of the list can be used, as their partials list have the same size.
+if(!ds_list_empty(left_partials)){ // Any of the list can be used, as their partials list have the same size.
 	
-	for(i = 0; i < ds_list_size(inst_of_left.partials); i++){
-		draw_text(left_number_x, hline_y + first_partial_y + space_between_numbers*i, string(inst_of_left.partials[| i]));
-		draw_text(right_number_x, hline_y + first_partial_y + space_between_numbers*i, string(inst_of_right.partials[| i]));
+	for(i = 0; i < ds_list_size(left_partials); i++){
+		draw_text(left_number_x, hline_y + first_partial_y + space_between_numbers*i, string(left_partials[| i]));
+		draw_text(right_number_x, hline_y + first_partial_y + space_between_numbers*i, string(right_partials[| i]));
 	}
 	
 	for(i = 0; i < ds_list_size(table_multiples); i++){ // If there are partials, there are multiples on table.

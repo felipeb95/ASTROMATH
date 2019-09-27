@@ -1,6 +1,8 @@
 /*  Instances of bubbles */
 inst_of_left = global.left_bubble_inst;
 inst_of_right = global.right_bubble_inst;
+left_partials = inst_of_left.partials;
+right_partials = inst_of_right.partials;
 
 /* List that collects the multiples */
 table_multiples = ds_list_create();
