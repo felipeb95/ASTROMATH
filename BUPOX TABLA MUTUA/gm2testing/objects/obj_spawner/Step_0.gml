@@ -8,7 +8,7 @@ at the bottom of this file. */
 and the next phase of the excercise should start, that is, the times phase */
 
 if(phaseOneDone){
-	
+	phaseOne = false;
 	/* A message to congratulate or to give feedback appears and all bubbles are popped. */
 	/* with(obj_bubble)
 		instance_destroy();	

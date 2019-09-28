@@ -9,6 +9,9 @@ is_dragging = false;
 
 first_x = 0;
 first_y = 0;
+x_to_move = 0;
+y_to_move = 0
+speed_to_move = 0;
 
 inst_of_left = instance_place(obj_spawner.x_left_bubble,obj_spawner.y_for_bubbles,obj_bubble);
 inst_of_right = instance_place(obj_spawner.x_right_bubble,obj_spawner.y_for_bubbles,obj_bubble);

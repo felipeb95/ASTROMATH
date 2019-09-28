@@ -4,15 +4,16 @@ step_number = 0;
 new_exercise = false;
 
 /* Initial numbers for testing */
-left_number = 30;
-left_to_table_header = 30;
-right_number = 72;
-right_to_table_header = 72;
+left_number = 20;
+left_to_table_header = 20;
+right_number = 14;
+right_to_table_header = 14;
 
 /* Creation of bubbles flag */
 spawner_enabled = true;
 
 /* Excercise by phase flag */
+phaseOne= true;
 phaseOneDone = false; // Set to true when numbers where reduced to 1 by its multiples.
 phaseTwo = false;
 phaseTwoDone= false; // Set to true when the multiples are multiplied between them.
