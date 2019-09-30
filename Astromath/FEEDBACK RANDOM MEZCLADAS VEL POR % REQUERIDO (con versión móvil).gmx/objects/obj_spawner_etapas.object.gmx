@@ -595,6 +595,7 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
         }  
         global.waveFake++;
         global.waveUltraFake++;
+        global.contadorBG++;
         if(global.waveFake==global.nTests+1){
             global.waveFake=1;
         }

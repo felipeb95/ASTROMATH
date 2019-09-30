@@ -620,9 +620,12 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
         }  
         global.waveFake++;
         global.waveUltraFake++;
+        global.contadorBG++;
         if(global.waveFake==global.nTests+1){
             global.waveFake=1;
+            
         }
+        
         
         /*if(global.wave==global.nEjercicios+1){
             global.existeF=0;
@@ -1226,6 +1229,8 @@ alarm[0] = spawn_rate;
             <string>if(global.on_screen)
     global.segundos += 1/room_speed;  
 global.segundos_max_ej += 1/room_speed;  
+
+
 </string>
           </argument>
         </arguments>

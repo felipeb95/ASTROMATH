@@ -69,6 +69,8 @@
     <background>background\bg_stars</background>
     <background>background\logo</background>
     <background>background\logo2</background>
+    <background>background\bg_space2</background>
+    <background>background\bg_space3</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
