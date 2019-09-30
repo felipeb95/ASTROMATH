@@ -6,7 +6,7 @@ switch(mpos){
     }
     case 1:
     {
-        room_goto(rm_start);
+        room_goto(rm_start2);
         break;
     }
     default: break;
