@@ -10,7 +10,10 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code>global.metNum = undefined;
+  <code>global.indiceBG = 0;
+global.contadorBG = 0;
+
+global.metNum = undefined;
 global.imetNum = 0;
 global.snd=audio_play_sound(music,10,true);
 audio_sound_gain(global.snd,0.4,0);

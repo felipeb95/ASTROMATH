@@ -49,6 +49,17 @@
           <argument>
             <kind>1</kind>
             <string>answer_time_ratio = (global.segundos/global.time_to_cross)*100;
+
+if(global.contadorBG == 10){
+    global.contadorBG = 0;
+    global.indiceBG++;
+    if(global.indiceBG==1) background_index[0] = bg_space2;
+    if(global.indiceBG==2) background_index[0] = bg_space3;
+    if(global.indiceBG&gt;2){
+        global.indiceBG=0;
+        background_index[0] = bg_space;
+    }
+}
 </string>
           </argument>
         </arguments>
