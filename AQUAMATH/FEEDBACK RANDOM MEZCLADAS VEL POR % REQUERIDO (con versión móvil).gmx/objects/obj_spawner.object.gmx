@@ -25,6 +25,170 @@
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>global.waveUltraFake = 1;
+global.memA=0;
+global.memB=0;
+//inicio oleadas
+randomize();
+global.intentos = 0;
+show_debug_message("Ejercicio");
+show_debug_message(global.waveUltraFake);
+
+if(global.modo==0) {
+    indexO = choose(round(random_range(0,string_length(global.operaciones))));
+    randomize();
+    indexDig = random_range(0,1);
+    show_debug_message("Index Seleccion Digito");
+    show_debug_message(indexDig); 
+    global.operacion = string_char_at(global.operaciones, indexO);
+    if(global.operacion=="M"){
+        var indicesCeroA = undefined;
+        var indicesCeroB = undefined;
+        var contIndicesCero = 0;
+        for(i=global.minA;i&lt;=global.maxB;i++){
+            for(j=global.minA;j&lt;=global.maxB;j++){
+                if(global.tablaM[i,j]==0){
+                    indicesCeroA[contIndicesCero]=i;
+                    indicesCeroB[contIndicesCero]=j;
+                    contIndicesCero++;
+                }
+            }
+        }
+        if(contIndicesCero&gt;0){
+            global.origen=("no en memoria");
+            indexEscogido=irandom_range(0,contIndicesCero-1);
+            global.a = indicesCeroA[indexEscogido];
+            global.b = indicesCeroB[indexEscogido];
+        }
+        global.r = global.a*global.b;
+    }
+    if(global.operacion=="D"){      
+        var indicesCeroA = undefined;
+        var indicesCeroB = undefined;
+        var contIndicesCero = 0;
+        for(i=global.minAD;i&lt;=global.maxBD;i++){
+            for(j=global.minAD;j&lt;=global.maxBD;j++){
+                if(global.tablaD[i,j]==0){
+                    indicesCeroA[contIndicesCero]=i;
+                    indicesCeroB[contIndicesCero]=j;
+                    contIndicesCero++;
+                }
+            }
+        }
+        if(contIndicesCero&gt;0){
+            global.origen=("no en memoria");
+            indexEscogido=irandom_range(0,contIndicesCero-1);
+            global.a = indicesCeroA[indexEscogido];
+            global.b = indicesCeroB[indexEscogido];
+        }
+        global.r = floor(global.a/global.b);
+    }
+    if(global.operacion=="S"){
+        var indicesCeroA = undefined;
+        var indicesCeroB = undefined;
+        var contIndicesCero = 0;
+        for(i=global.minAS;i&lt;=global.maxBS;i++){
+            for(j=global.minAS;j&lt;=global.maxBS;j++){
+                if(global.tablaS[i,j]==0){
+                    indicesCeroA[contIndicesCero]=i;
+                    indicesCeroB[contIndicesCero]=j;
+                    contIndicesCero++;
+                }
+                
+            }
+        }
+        if(contIndicesCero&gt;0){
+            global.origen=("no en memoria");
+            indexEscogido=irandom_range(0,contIndicesCero-1);
+            global.a = indicesCeroA[indexEscogido];
+            global.b = indicesCeroB[indexEscogido];
+        }
+        global.r = global.a+global.b;
+    }
+    if(global.operacion=="R"){
+        var indicesCeroA = undefined;
+        var indicesCeroB = undefined;
+        var contIndicesCero = 0;
+        for(i=global.minAR;i&lt;=global.maxBR;i++){
+            for(j=global.minAR;j&lt;=global.maxBR;j++){
+                if(global.tablaR[i,j]==0){
+                    indicesCeroA[contIndicesCero]=i;
+                    indicesCeroB[contIndicesCero]=j;
+                    contIndicesCero++;
+                }
+                
+            }
+        }
+        if(contIndicesCero&gt;0){
+            global.origen=("no en memoria");
+            indexEscogido=irandom_range(0,contIndicesCero-1);
+            global.a = indicesCeroA[indexEscogido];
+            global.b = indicesCeroB[indexEscogido];
+        }
+        global.r = global.a-global.b;
+    }
+    global.memA=global.a;
+    global.memB=global.b;
+}
+if(global.modo==1) {
+    global.a = choose(floor(random_range(1,20)));
+    global.b = choose(floor(random_range(1,global.a)));
+    global.r = global.a-global.b;
+}
+if(global.modo==2) {
+    global.a = choose(floor(random_range(global.minA,global.maxB)));
+    global.numeros[0]=global.a;
+    var aux=0;
+    var ii=0;
+    var arrayFake;
+    for(i=0;i&lt;array_length_1d(global.numero);i++){
+        aux=0;
+        for(j=0;j&lt;array_length_1d(global.numeros);j++){
+            if(global.numero[i]==global.numeros[j]){
+                aux=1;
+                break;
+            }
+        }
+        if(aux==0){
+            arrayFake[ii]=global.numero[i];
+            ii++;
+        }
+    }
+    var largo = array_length_1d(arrayFake)-1;
+    var indice = choose(floor(random_range(0,largo)));
+    global.b = arrayFake[indice];
+    global.numeros[1]=global.b;
+    global.r = global.a*global.b;
+}
+if(global.modo==3) {
+    global.a = choose(floor(random_range(2,12)));
+    global.b = choose(floor(random_range(2,global.a)));
+    global.r = global.a/global.b;
+}
+
+
+//15s por oleada
+//alarm[0] = room_speed*15
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>randomize();
 /*
 //CAMBIOS DOS DIGITOS
@@ -247,6 +411,10 @@ global.on_screen = false;
 global.choque = false;
 //global.p_adapt_vel = 0.4;
 global.time_to_cross = 0;
+waves_passed = 0;
+waves_to_bg_change = 2;
+global.bgs_total = 3;
+global.bg_counter = 1;
 
 meteoros = 5;
 spawn_rate = 50;
@@ -256,170 +424,6 @@ global.stringOperacionesB = undefined;
 global.iStringOperacionesB = 0;
 global.stringOperacionesM = undefined;
 global.iStringOperacionesM = 0;
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>global.waveUltraFake = 1;
-global.memA=0;
-global.memB=0;
-//inicio oleadas
-randomize();
-global.intentos = 0;
-show_debug_message("Ejercicio");
-show_debug_message(global.waveUltraFake);
-
-if(global.modo==0) {
-    indexO = choose(round(random_range(0,string_length(global.operaciones))));
-    randomize();
-    indexDig = random_range(0,1);
-    show_debug_message("Index Seleccion Digito");
-    show_debug_message(indexDig); 
-    global.operacion = string_char_at(global.operaciones, indexO);
-    if(global.operacion=="M"){
-        var indicesCeroA = undefined;
-        var indicesCeroB = undefined;
-        var contIndicesCero = 0;
-        for(i=global.minA;i&lt;=global.maxB;i++){
-            for(j=global.minA;j&lt;=global.maxB;j++){
-                if(global.tablaM[i,j]==0){
-                    indicesCeroA[contIndicesCero]=i;
-                    indicesCeroB[contIndicesCero]=j;
-                    contIndicesCero++;
-                }
-            }
-        }
-        if(contIndicesCero&gt;0){
-            global.origen=("no en memoria");
-            indexEscogido=irandom_range(0,contIndicesCero-1);
-            global.a = indicesCeroA[indexEscogido];
-            global.b = indicesCeroB[indexEscogido];
-        }
-        global.r = global.a*global.b;
-    }
-    if(global.operacion=="D"){      
-        var indicesCeroA = undefined;
-        var indicesCeroB = undefined;
-        var contIndicesCero = 0;
-        for(i=global.minAD;i&lt;=global.maxBD;i++){
-            for(j=global.minAD;j&lt;=global.maxBD;j++){
-                if(global.tablaD[i,j]==0){
-                    indicesCeroA[contIndicesCero]=i;
-                    indicesCeroB[contIndicesCero]=j;
-                    contIndicesCero++;
-                }
-            }
-        }
-        if(contIndicesCero&gt;0){
-            global.origen=("no en memoria");
-            indexEscogido=irandom_range(0,contIndicesCero-1);
-            global.a = indicesCeroA[indexEscogido];
-            global.b = indicesCeroB[indexEscogido];
-        }
-        global.r = floor(global.a/global.b);
-    }
-    if(global.operacion=="S"){
-        var indicesCeroA = undefined;
-        var indicesCeroB = undefined;
-        var contIndicesCero = 0;
-        for(i=global.minAS;i&lt;=global.maxBS;i++){
-            for(j=global.minAS;j&lt;=global.maxBS;j++){
-                if(global.tablaS[i,j]==0){
-                    indicesCeroA[contIndicesCero]=i;
-                    indicesCeroB[contIndicesCero]=j;
-                    contIndicesCero++;
-                }
-                
-            }
-        }
-        if(contIndicesCero&gt;0){
-            global.origen=("no en memoria");
-            indexEscogido=irandom_range(0,contIndicesCero-1);
-            global.a = indicesCeroA[indexEscogido];
-            global.b = indicesCeroB[indexEscogido];
-        }
-        global.r = global.a+global.b;
-    }
-    if(global.operacion=="R"){
-        var indicesCeroA = undefined;
-        var indicesCeroB = undefined;
-        var contIndicesCero = 0;
-        for(i=global.minAR;i&lt;=global.maxBR;i++){
-            for(j=global.minAR;j&lt;=global.maxBR;j++){
-                if(global.tablaR[i,j]==0){
-                    indicesCeroA[contIndicesCero]=i;
-                    indicesCeroB[contIndicesCero]=j;
-                    contIndicesCero++;
-                }
-                
-            }
-        }
-        if(contIndicesCero&gt;0){
-            global.origen=("no en memoria");
-            indexEscogido=irandom_range(0,contIndicesCero-1);
-            global.a = indicesCeroA[indexEscogido];
-            global.b = indicesCeroB[indexEscogido];
-        }
-        global.r = global.a-global.b;
-    }
-    global.memA=global.a;
-    global.memB=global.b;
-}
-if(global.modo==1) {
-    global.a = choose(floor(random_range(1,20)));
-    global.b = choose(floor(random_range(1,global.a)));
-    global.r = global.a-global.b;
-}
-if(global.modo==2) {
-    global.a = choose(floor(random_range(global.minA,global.maxB)));
-    global.numeros[0]=global.a;
-    var aux=0;
-    var ii=0;
-    var arrayFake;
-    for(i=0;i&lt;array_length_1d(global.numero);i++){
-        aux=0;
-        for(j=0;j&lt;array_length_1d(global.numeros);j++){
-            if(global.numero[i]==global.numeros[j]){
-                aux=1;
-                break;
-            }
-        }
-        if(aux==0){
-            arrayFake[ii]=global.numero[i];
-            ii++;
-        }
-    }
-    var largo = array_length_1d(arrayFake)-1;
-    var indice = choose(floor(random_range(0,largo)));
-    global.b = arrayFake[indice];
-    global.numeros[1]=global.b;
-    global.r = global.a*global.b;
-}
-if(global.modo==3) {
-    global.a = choose(floor(random_range(2,12)));
-    global.b = choose(floor(random_range(2,global.a)));
-    global.r = global.a/global.b;
-}
-
-
-//15s por oleada
-//alarm[0] = room_speed*15
 </string>
           </argument>
         </arguments>
@@ -449,26 +453,41 @@ randY = choose(floor(random_range(40,room_height-40)));
 if(global.cont&lt;meteoros &amp;&amp; !global.dead){
 global.cont++;
 nuevay = global.cont-1;
+bonus_prob = 0.1;
+bonus_checker = random_range(0,1);
 if(global.cont!=global.alternativa &amp;&amp; obj_ship.hp != 0){
+    if(bonus_checker &lt;= bonus_prob){
+        str_bp = "Prob: "+string(bonus_checker);
+        show_debug_message(str_bp);
+        show_debug_message("###### BONUS #######");
+         instance_create(room_width+100,irandom_range(70,370),obj_bonus);
+    }
+    
     var this = instance_create(room_width + 40, global.arrAltura[nuevay,global.alturas], obj_asteroid);
     with(this){
         type = 0;
     }
-}else{
-    global.bot=1;
-    nuevay = global.cont-1;
-    var this = instance_create(room_width + 40, global.arrAltura[nuevay,global.alturas], obj_asteroid);
-    with(this){
-        type = 1;
+    }else{
+        global.bot=1;
+        nuevay = global.cont-1;
+        var this = instance_create(room_width + 40, global.arrAltura[nuevay,global.alturas], obj_asteroid);
+        with(this){
+            type = 1;
+        }
+        global.bot=0;
     }
-    global.bot=0;
-}
-draw_set_color(c_white);
-draw_set_font(fntMain);
+    draw_set_color(c_white);
+    draw_set_font(fntMain);
 
 }
 //AQUÍ SE CUMPLE UNA OLEADA
 if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen de pantalla
+        waves_passed++;
+        if(waves_passed == waves_to_bg_change){
+            instance_create(0,0,obj_fader);
+            waves_passed = 0;
+            global.bg_counter++;
+        }
         global.metNum = undefined;
         global.imetNum = 0;        
         if(global.intentos == 0 || global.bot2 ==0){
