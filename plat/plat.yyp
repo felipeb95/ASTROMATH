@@ -151,11 +151,27 @@
             }
         },
         {
+            "Key": "681e99f7-56c4-4592-937b-194bedc1825e",
+            "Value": {
+                "id": "68900049-6238-4a83-9728-477af53780d7",
+                "resourcePath": "rooms\\rThree\\rThree.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "690b04b2-abcd-4514-9656-e4b6a9a22b9d",
             "Value": {
                 "id": "efb01740-3d26-47a9-97d8-03be4f2b0427",
                 "resourcePath": "objects\\oPlayer\\oPlayer.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "6cd8d46b-3a36-4172-adc0-bee6d8246f58",
+            "Value": {
+                "id": "cafefa16-1e3a-474a-81fa-ce35a6bcc40c",
+                "resourcePath": "sprites\\sMountain\\sMountain.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -271,6 +287,14 @@
             }
         },
         {
+            "Key": "a0fb6aaa-7a09-4f7d-9bc7-610ccd9b0ef2",
+            "Value": {
+                "id": "f0f8586c-7761-4895-8e80-44a161c5695f",
+                "resourcePath": "scripts\\ScreenShake\\ScreenShake.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "a128950b-5063-4876-b4a6-b99dbd2ea6d1",
             "Value": {
                 "id": "56683f7a-d96d-41b3-b737-56b98147ee08",
@@ -367,6 +391,14 @@
             }
         },
         {
+            "Key": "e1582655-f9fb-4e9f-b995-eb75d1c44230",
+            "Value": {
+                "id": "536840f2-8f9c-4396-ac38-2433c20b7dbd",
+                "resourcePath": "sprites\\sTrees\\sTrees.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "e42bf5cc-3f46-4d67-a6d0-a4885a11ac3f",
             "Value": {
                 "id": "ee92a5fd-f8e0-46b6-9359-ab802cca5a71",
@@ -416,7 +448,8 @@
         }
     ],
     "script_order": [
-        "9a85ce63-658c-47b3-91fa-6f49bded295f"
+        "9a85ce63-658c-47b3-91fa-6f49bded295f",
+        "a0fb6aaa-7a09-4f7d-9bc7-610ccd9b0ef2"
     ],
     "tutorial": ""
 }
