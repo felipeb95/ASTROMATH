@@ -4,7 +4,7 @@ if(moving_text){
 	first_x += aceleration;
 	aceleration += 0.5;
 	show_debug_message("X value is : "+string(x));
-	if(x > room_width/2-1)
+	if(x > (room_width/2  - string_width(str_marked+str_not_marked)/2) -1)
 		moving_text = false;
 }
 
@@ -50,7 +50,7 @@ if(correct_bubble_clicked){
 	correct_bubble_clicked = false;
 }
 
-/*
+
 if(ds_list_size(table_multiples) >= 2){
 	str_marked = string(table_multiples[| 0]) +" x "+ string(table_multiples[| 1]);
 	str_not_marked = "";
@@ -65,5 +65,4 @@ else{
 	str_not_marked = "";
 }
 
-show_debug_message(str_marked+str_not_marked);
-*/
+show_debug_message("|"+str_marked+str_not_marked+"|");

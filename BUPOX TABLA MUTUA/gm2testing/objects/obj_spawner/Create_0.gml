@@ -49,7 +49,7 @@ x_right_bubble = room_width/2+big_bubble_width*1.5;
 x_middle_bubble = room_width/2;
 y_for_bubbles = room_height/2+40;
 
-x_first_little_bubble = room_width/8;
+x_first_little_bubble = room_width/4.5;
 y_little_bubble = room_height-60;
 space_between_bubbles = sprite_get_width(obj_little_bubble);
 
