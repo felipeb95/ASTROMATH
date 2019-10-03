@@ -16,3 +16,4 @@ with(obj_little_bubble)
 {
 	instance_destroy(self);
 }
+

@@ -103,6 +103,22 @@
             }
         },
         {
+            "Key": "32d86f66-28f4-4ef9-a6a7-0fa9d6b8e7f9",
+            "Value": {
+                "id": "2f550e6b-a609-41bf-ae9b-33e20aa6fa2f",
+                "resourcePath": "scripts\\draw_text_custom\\draw_text_custom.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "39440ca1-44f9-4247-9340-283550a27e54",
+            "Value": {
+                "id": "7f7f0eee-c25a-4d87-b766-d0e644cdb959",
+                "resourcePath": "notes\\compatibility_report_011019_111203123.yy",
+                "resourceType": "GMNotes"
+            }
+        },
+        {
             "Key": "3b702226-44f3-4405-8f2d-32afadf5c783",
             "Value": {
                 "id": "59dcc462-abd5-415e-aef2-04a3e7feebd6",
@@ -235,6 +251,14 @@
             "Value": {
                 "id": "b7acd2b3-b2ee-4d4c-bc8d-6707366817d4",
                 "resourcePath": "scripts\\multiples_list_on_bubbles\\multiples_list_on_bubbles.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "9410da40-be59-4886-a9c5-a1490dfaf7d3",
+            "Value": {
+                "id": "b71b21fb-ea3c-4c22-b49c-bffd76a4ab3a",
+                "resourcePath": "scripts\\string_extract\\string_extract.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -416,7 +440,9 @@
         "bba8aa45-5011-474b-9519-5cbd705c2632",
         "24bdc36f-c2ae-4e9f-b61b-bd172a8c23cb",
         "bf1ea3ab-4922-46ba-80cb-48f3fcb9e986",
-        "82785625-3406-4c25-8615-dbaac3790033"
+        "82785625-3406-4c25-8615-dbaac3790033",
+        "32d86f66-28f4-4ef9-a6a7-0fa9d6b8e7f9",
+        "9410da40-be59-4886-a9c5-a1490dfaf7d3"
     ],
     "tutorial": ""
 }
