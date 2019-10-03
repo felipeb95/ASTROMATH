@@ -763,6 +763,13 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
                     global.a = indicesCeroA[indexEscogido];
                     global.b = indicesCeroB[indexEscogido];
                 }
+                else{
+                    for(i=global.minA;i&lt;=global.maxB;i++){
+                        for(j=global.minA;j&lt;=global.maxB;j++){
+                            if(global.tablaM[i,j]==1) global.tablaM[i,j]=0;
+                        }
+                    }
+                }
                 global.r = global.a*global.b;
                 global.tablaM[global.a,global.b]=1;
             }
@@ -784,6 +791,13 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
                     indexEscogido=irandom_range(0,contIndicesCero-1);
                     global.a = indicesCeroA[indexEscogido];
                     global.b = indicesCeroB[indexEscogido];
+                }
+                else{
+                    for(i=global.minAD;i&lt;=global.maxBD;i++){
+                        for(j=global.minAD;j&lt;=global.maxBD;j++){
+                            if(global.tablaD[i,j]==1) global.tablaD[i,j]=0;
+                        }
+                    }
                 }
                 global.r = floor(global.a/global.b);
                 global.tablaD[global.a,global.b]=1;
@@ -816,6 +830,13 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
                     global.a = indicesCeroA[indexEscogido];
                     global.b = indicesCeroB[indexEscogido];
                 }
+                else{
+                    for(i=global.minAS;i&lt;=global.maxBS;i++){
+                        for(j=global.minAS;j&lt;=global.maxBS;j++){
+                            if(global.tablaS[i,j]==1) global.tablaS[i,j]=0;
+                        }
+                    }
+                }
                 global.r = global.a+global.b;
                 global.tablaS[global.a,global.b]=1;
             }
@@ -846,6 +867,13 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
                     indexEscogido=irandom_range(0,contIndicesCero-1);
                     global.a = indicesCeroA[indexEscogido];
                     global.b = indicesCeroB[indexEscogido];
+                }
+                else{
+                    for(i=global.minAR;i&lt;=global.maxBR;i++){
+                        for(j=global.minAR;j&lt;=global.maxBR;j++){
+                            if(global.tablaR[i,j]==1) global.tablaR[i,j]=0;
+                        }
+                    }
                 }
                 global.r = global.a-global.b;
                 global.tablaR[global.a,global.b]=1;
