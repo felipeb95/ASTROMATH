@@ -6,6 +6,8 @@ operation_index = 0;
 n_choices = 3; // Quantity of alternatives in the times excercise.
 choice_n = undefined; // Bubble number where answer is (set in alarm 1).
 correct_answer = undefined;
+str_marked = "";
+str_not_marked = "";
 
 /* Flags */
 numbers_in_position = false; // Numbers already moved across the screen.
@@ -22,8 +24,7 @@ multiples_y = room_height/2;
 x_out = 500; // Puts the little bubbles out of screen with a 500 px offset.
 
 /* Colours */
-
-marked_color = $0a5bff;
+marked_color = c_orange;
 not_marked_color = c_white;
 text_color = c_white;
 /* Physics */

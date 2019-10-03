@@ -49,3 +49,21 @@ if(correct_bubble_clicked){
 	}
 	correct_bubble_clicked = false;
 }
+
+/*
+if(ds_list_size(table_multiples) >= 2){
+	str_marked = string(table_multiples[| 0]) +" x "+ string(table_multiples[| 1]);
+	str_not_marked = "";
+	if(ds_list_size(table_multiples) > 2){
+		for(i = 2 ; i < ds_list_size(table_multiples); i++){
+			str_not_marked += " x "+string(table_multiples[| i]); 	
+		}
+	}
+} 
+else{
+	str_marked = string(table_multiples[| 0]);
+	str_not_marked = "";
+}
+
+show_debug_message(str_marked+str_not_marked);
+*/
