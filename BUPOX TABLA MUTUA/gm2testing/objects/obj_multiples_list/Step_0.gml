@@ -4,13 +4,14 @@ if(moving_text){
 	first_x += aceleration;
 	aceleration += 0.5;
 	show_debug_message("X value is : "+string(x));
-	if(x > (room_width/2  - string_width(str_marked+str_not_marked)/2) -1)
+	if(x > (room_width/2  - string_width(str_marked+str_not_marked)/2) -1){
 		moving_text = false;
+		numbers_in_position = true;
+	}
 }
 
 if(correct_bubble_clicked){
 	table_multiples_reorder(table_multiples);
-	numbers_in_position = true
 	correct_answer = (ds_list_size(table_multiples) > 1 ? table_multiples[| 0] * table_multiples[| 1] : table_multiples[| 0]);
 	show_debug_message("Correct answer is :"+string(correct_answer));
 	
@@ -65,4 +66,3 @@ else{
 	str_not_marked = "";
 }
 
-show_debug_message("|"+str_marked+str_not_marked+"|");

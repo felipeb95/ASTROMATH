@@ -35,8 +35,7 @@ if(!ds_list_empty(left_partials)){ // Any of the list can be used, as their part
 draw_set_font(font_instructions);
 
 if(obj_spawner.phaseOne)
-	draw_text(room_width/2, room_height - room_height/5, "Arrastra las burbujas pequeñas a las  grandes que pueda dividir");
-	//draw_circle(room_width/2, 600, 10, false);
+	draw_text(room_width/2, 600, "Arrastra las burbujas pequeñas a las  grandes que pueda dividir");
 
 if(obj_spawner.phaseTwo and !obj_multiples_list.moving_text)
 	draw_text(room_width/2, room_height/2 + 50, "Revienta la burbuja con la respuesta haciendo click sobre ella");
