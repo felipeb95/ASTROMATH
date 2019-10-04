@@ -47,6 +47,10 @@ if(!place_meeting(x,y+1,oWall)){
 	else image_index = 0;
 }
 else{
+	if(sprite_index==sPlayerA){
+		audio_sound_pitch(snLanding,choose(0.8,1.0,1.2));
+		audio_play_sound(snLanding,4,false);
+	}
 	image_speed = 1;
 	if(hsp==0) sprite_index = sPlayer;
 	else sprite_index = sPlayerR;
