@@ -13,11 +13,15 @@ else{
 //Movimiento
 var move = key_right - key_left;
 
-hsp = move * walksp;
-vsp = vsp + grv;
+hsp = (move * walksp) + gunkickx;
+gunkickx = 0;
+vsp = (vsp + grv) + gunkicky;
+gunkicky = 0;
 
-if(place_meeting(x,y+1,oWall) and key_jump){
-	vsp = -12;
+canjump-=1;
+if(canjump>0 and key_jump){
+	vsp = -13;
+	canjump = 0;
 }
 
 
@@ -47,9 +51,15 @@ if(!place_meeting(x,y+1,oWall)){
 	else image_index = 0;
 }
 else{
+	canjump = 10;
 	if(sprite_index==sPlayerA){
 		audio_sound_pitch(snLanding,choose(0.8,1.0,1.2));
 		audio_play_sound(snLanding,4,false);
+		repeat(5){
+			with(instance_create_layer(x,bbox_bottom,"Bullets",oDust)){
+				vsp = 0;
+			}
+		}
 	}
 	image_speed = 1;
 	if(hsp==0) sprite_index = sPlayer;

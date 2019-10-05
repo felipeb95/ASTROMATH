@@ -15,16 +15,6 @@
             "m_owner": "f32ce776-fab1-4226-99de-83bf87a599b3"
         },
         {
-            "id": "17deb88b-8da9-40b1-87a9-110a64673b7e",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 8,
-            "m_owner": "f32ce776-fab1-4226-99de-83bf87a599b3"
-        },
-        {
             "id": "899ef1a6-fb5f-465f-9ec1-01b346fef126",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -33,11 +23,21 @@
             "enumb": 1,
             "eventtype": 3,
             "m_owner": "f32ce776-fab1-4226-99de-83bf87a599b3"
+        },
+        {
+            "id": "60d7427f-581c-4292-a486-cbf12a50f7e1",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "f32ce776-fab1-4226-99de-83bf87a599b3"
         }
     ],
     "maskSpriteId": "de24bc16-c45e-4652-859c-553ab88fe67d",
     "overriddenProperties": null,
-    "parentObjectId": "00000000-0000-0000-0000-000000000000",
+    "parentObjectId": "946b8fc0-5440-40f7-8f7a-c2c7d0a8a5c5",
     "persistent": false,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,
@@ -109,34 +109,6 @@
             "varType": 0
         },
         {
-            "id": "4b0be859-013e-48f3-91ec-858291ca2505",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "4",
-            "varName": "hp",
-            "varType": 0
-        },
-        {
-            "id": "a6022d37-42a7-4e11-9201-98bfb6667022",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "0",
-            "varName": "flash",
-            "varType": 0
-        },
-        {
             "id": "b8379608-61e0-4abe-b9f7-55d470357f2b",
             "modelName": "GMObjectProperty",
             "mvc": "1.0",
@@ -163,6 +135,48 @@
             "value": "1",
             "varName": "size",
             "varType": 0
+        },
+        {
+            "id": "2c66fcac-3318-4dfd-8892-1427cdd31bc7",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "True",
+            "varName": "afraidofheights",
+            "varType": 3
+        },
+        {
+            "id": "9a1304d2-677c-4f61-bd49-0403c561b0fe",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "False",
+            "varName": "grounded",
+            "varType": 3
+        },
+        {
+            "id": "20589381-99fd-478f-8377-7e71e59490af",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "hasweapon",
+            "varType": 3
         }
     ],
     "solid": false,

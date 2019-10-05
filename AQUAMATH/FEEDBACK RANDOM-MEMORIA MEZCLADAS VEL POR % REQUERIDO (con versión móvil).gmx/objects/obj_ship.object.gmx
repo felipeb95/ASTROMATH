@@ -33,7 +33,7 @@ rate = 8;
 hp = 3;
 cooldown = false;
 global.dead = false;
-image_speed = 0.2;
+//image_speed = 0.2;
 
 act = false;
 image_xscale = 0.6;
@@ -133,7 +133,7 @@ if(rKey || deKey/*|| ((obj_palanca.act == true) &amp;&amp;(global.dir &gt;= 292.
     //image_index = global.col + 8;
 }
 
-image_speed = 0;
+//image_speed = 0;
 //prevenir que el personaje salga de la pantalla
 
 x=clamp(x, 0+sprite_width/2, room_width-sprite_width/2);
