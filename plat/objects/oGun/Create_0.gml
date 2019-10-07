@@ -1,3 +1,3 @@
 firingdelay = 0;
 recoil = 0;
-if(global.hasgun==false) instance_destroy();
+if(global.hasgun==0) instance_destroy();

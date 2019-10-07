@@ -1,7 +1,7 @@
 #macro RES_W 1280
 #macro RES_H 720
 
-global.hasgun = false;
+global.hasgun = 0;
 global.kills = 0;
 global.killsthisroom = 0;
 global.puntaje = 0;
