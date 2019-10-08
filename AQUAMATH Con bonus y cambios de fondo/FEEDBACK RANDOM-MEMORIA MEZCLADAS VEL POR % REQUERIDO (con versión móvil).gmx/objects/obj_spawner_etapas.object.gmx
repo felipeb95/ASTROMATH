@@ -516,6 +516,112 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
         show_debug_message(global.tiempoUltimaRespuesta);
         show_debug_message("Estado de la respuesta:")
         show_debug_message(global.estado);
+        if(global.origen!="malas" and global.estado=="omitida"){ //SI PROVIENE DE RANDOM O BUENAS
+            if(global.operacion=="M"){
+                global.memAMM[global.imemMM]=global.a;
+                global.memBMM[global.imemMM]=global.b;
+                global.imemMM++;
+                show_debug_message("Se agrega a memoria malas M");
+                if(global.imemBM&gt;0){
+                    var arrayAuxA = undefined;
+                    var arrayAuxB = undefined;
+                    var contAux = 0;
+                    for(i=0;i&lt;global.imemBM;i++){
+                        if(global.a!=global.memABM[i] and global.b!=global.memBBM[i]){
+                           arrayAuxA[contAux]=global.memABM[i] 
+                           arrayAuxB[contAux]=global.memBBM[i]
+                           contAux++; 
+                        }
+                    }
+                    global.memABM = undefined;
+                    global.memBBM = undefined;
+                    global.memABM = arrayAuxA;
+                    global.memBBM = arrayAuxB;
+                    global.imemBM = contAux;
+                    var arrayAuxA = undefined;
+                    var arrayAuxB = undefined;
+                    var contAux = 0;
+                }
+            }
+            if(global.operacion=="D"){
+                global.memAMD[global.imemMD]=global.a;
+                global.memBMD[global.imemMD]=global.b;
+                global.imemMD++;
+                show_debug_message("Se agrega a memoria malas D");
+                if(global.imemBD&gt;0){
+                    var arrayAuxA = undefined;
+                    var arrayAuxB = undefined;
+                    var contAux = 0;
+                    for(i=0;i&lt;global.imemBD;i++){
+                        if(global.a!=global.memABD[i] and global.b!=global.memBBD[i]){
+                           arrayAuxA[contAux]=global.memABD[i] 
+                           arrayAuxB[contAux]=global.memBBD[i]
+                           contAux++; 
+                        }
+                    }
+                    global.memABD = undefined;
+                    global.memBBD = undefined;
+                    global.memABD = arrayAuxA;
+                    global.memBBD = arrayAuxB;
+                    global.imemBD = contAux;
+                    var arrayAuxA = undefined;
+                    var arrayAuxB = undefined;
+                    var contAux = 0;
+                }
+            }
+            if(global.operacion=="S"){
+                global.memAMS[global.imemMS]=global.a;
+                global.memBMS[global.imemMS]=global.b;
+                global.imemMS++;
+                show_debug_message("Se agrega a memoria malas S");
+                if(global.imemBS&gt;0){
+                    var arrayAuxA = undefined;
+                    var arrayAuxB = undefined;
+                    var contAux = 0;
+                    for(i=0;i&lt;global.imemBS;i++){
+                        if(global.a!=global.memABS[i] and global.b!=global.memBBS[i]){
+                           arrayAuxA[contAux]=global.memABS[i] 
+                           arrayAuxB[contAux]=global.memBBS[i]
+                           contAux++; 
+                        }
+                    }
+                    global.memABS = undefined;
+                    global.memBBS = undefined;
+                    global.memABS = arrayAuxA;
+                    global.memBBS = arrayAuxB;
+                    global.imemBS = contAux;
+                    var arrayAuxA = undefined;
+                    var arrayAuxB = undefined;
+                    var contAux = 0;
+                }
+            }
+            if(global.operacion=="R"){
+                global.memAMR[global.imemMR]=global.a;
+                global.memBMR[global.imemMR]=global.b;
+                global.imemMR++;
+                show_debug_message("Se agrega a memoria malas R");
+                if(global.imemBR&gt;0){
+                    var arrayAuxA = undefined;
+                    var arrayAuxB = undefined;
+                    var contAux = 0;
+                    for(i=0;i&lt;global.imemBR;i++){
+                        if(global.a!=global.memABR[i] and global.b!=global.memBBR[i]){
+                           arrayAuxA[contAux]=global.memABR[i] 
+                           arrayAuxB[contAux]=global.memBBR[i]
+                           contAux++; 
+                        }
+                    }
+                    global.memABR = undefined;
+                    global.memBBR = undefined;
+                    global.memABR = arrayAuxA;
+                    global.memBBR = arrayAuxB;
+                    global.imemBR = contAux;
+                    var arrayAuxA = undefined;
+                    var arrayAuxB = undefined;
+                    var contAux = 0;
+                }
+            }
+        }
         
         roundMap = ds_map_create();
         ds_map_add(roundMap, "multiplo_a", global.a);
@@ -534,7 +640,7 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
                 global.stringOperacionesB[global.iStringOperacionesB] = string(global.a) + "x" + string(global.b);
                 global.iStringOperacionesB++;
             }
-            if(global.estado=="incorrecta"){
+            if(global.estado=="incorrecta" or global.estado=="omitida"){
                 global.stringOperacionesM[global.iStringOperacionesM] = string(global.a) + "x" + string(global.b);
                 global.iStringOperacionesM++;
             }
@@ -544,7 +650,7 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
                 global.stringOperacionesB[global.iStringOperacionesB] = string(global.a) + "/" + string(global.b);
                 global.iStringOperacionesB++;
             }
-            if(global.estado=="incorrecta"){
+            if(global.estado=="incorrecta" or global.estado=="omitida"){
                 global.stringOperacionesM[global.iStringOperacionesM] = string(global.a) + "/" + string(global.b);
                 global.iStringOperacionesM++;
             }
@@ -554,7 +660,7 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
                 global.stringOperacionesB[global.iStringOperacionesB] = string(global.a) + "+" + string(global.b);
                 global.iStringOperacionesB++;
             }
-            if(global.estado=="incorrecta"){
+            if(global.estado=="incorrecta" or global.estado=="omitida"){
                 global.stringOperacionesM[global.iStringOperacionesM] = string(global.a) + "+" + string(global.b);
                 global.iStringOperacionesM++;
             }
@@ -564,7 +670,7 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
                 global.stringOperacionesB[global.iStringOperacionesB] = string(global.a) + "-" + string(global.b);
                 global.iStringOperacionesB++;
             }
-            if(global.estado=="incorrecta"){
+            if(global.estado=="incorrecta" or global.estado=="omitida"){
                 global.stringOperacionesM[global.iStringOperacionesM] = string(global.a) + "-" + string(global.b);
                 global.iStringOperacionesM++;
             }
