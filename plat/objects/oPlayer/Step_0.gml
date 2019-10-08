@@ -14,9 +14,10 @@ else{
 var move = key_right - key_left;
 
 hsp = (move * walksp) + gunkickx;
+view = sign(move);
 gunkickx = 0;
-vsp = (vsp + grv) + gunkicky;
-gunkicky = 0;
+vsp = (vsp + grv); //+ gunkicky;
+//gunkicky = 0;
 
 canjump-=1;
 if(canjump>0 and key_jump){

@@ -6,4 +6,6 @@ hascontrol = true;
 canjump = 0;
 
 gunkickx = 0;
-gunkicky = 0;
+//gunkicky = 0;
+
+view = 1;
