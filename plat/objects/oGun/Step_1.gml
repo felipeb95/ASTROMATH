@@ -19,7 +19,7 @@ if(keyboard_check(vk_space) and firingdelay<0){
 	}
 	with(oPlayer){
 		gunkickx = lengthdir_x(1.5,other.image_angle-180);
-		gunkicky = lengthdir_x(1,other.image_angle-180);
+		//gunkicky = lengthdir_x(1,other.image_angle-180);
 	}
 }
 

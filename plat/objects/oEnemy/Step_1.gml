@@ -11,6 +11,7 @@ if(hp<=0){
 		global.kills++;
 		global.killsthisroom++;
 		global.puntaje+=10;
+		global.puntajethisroom+=10;
 		with(oGame) killtextscale = 2;
 	}
 	instance_destroy();
