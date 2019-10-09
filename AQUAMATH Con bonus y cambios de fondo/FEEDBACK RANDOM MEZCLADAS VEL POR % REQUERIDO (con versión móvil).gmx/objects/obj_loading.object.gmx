@@ -158,6 +158,7 @@ if(ds_map_exists(map, "epe")){
     show_debug_message("N ejercicios de juego funciona");
     show_debug_message(n_ejercicios);
     global.N = real(n_ejercicios);
+    global.epe = real(n_ejercicios);
 }
 if(ds_map_exists(map, "operaciones")){
     var str_operaciones = map[? "operaciones"];

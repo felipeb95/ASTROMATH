@@ -134,6 +134,8 @@ if(place_meeting(x,y,obj_ship)){
     global.on_screen = false;
     global.choque = true;
 }
+
+y = ystart + sin(get_timer()/500000)*15;
 </string>
           </argument>
         </arguments>

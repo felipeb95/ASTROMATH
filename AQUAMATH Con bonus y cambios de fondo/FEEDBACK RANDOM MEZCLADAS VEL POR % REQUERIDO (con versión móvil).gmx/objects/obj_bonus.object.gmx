@@ -29,9 +29,10 @@
 x_speed = choose(3,5,7);
 sub_img = irandom_range(0,sprite_get_number(spr_bonus)-1); // N Tipos de bonus;
 
-/*  sub_img = 0  -&gt; +100 puntos
-    sub_img = 1 -&gt; escudo activado 
-    sub_img = 2 -&gt; velocidad turbo
+/*  sub_img = 0  -&gt; +100 puntos 
+    sub_img = 1 -&gt; escudo activado que protege ante colisiones
+    sub_img = 2 -&gt; velocidad turbo de la nave
+    sub_img = 3 -&gt; multiplicador de puntos x3 (para próximo ejercicio correcto)
 */
 </string>
           </argument>
@@ -70,6 +71,9 @@ if(place_meeting(x,y,obj_ship)){
             obj_ship.powerup = true;
             obj_ship.spd = 12;
             obj_ship.alarm[2] = room_speed*5;
+            break;
+        case 3:
+            obj_ship.bonus_multiplier = true;
             break;
         default: 
             break;

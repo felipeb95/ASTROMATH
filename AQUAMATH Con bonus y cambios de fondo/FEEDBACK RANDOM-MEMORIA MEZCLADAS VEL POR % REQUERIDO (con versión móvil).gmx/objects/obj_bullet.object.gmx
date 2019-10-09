@@ -203,13 +203,46 @@ if(global.r == global.numM){ //BUENA
     x = view_xview + view_wview/2;
     y = view_yview + view_hview/2;
     instance_create(x,y,obj_textbox_celebracion);
-    
+    global.tiempoUltimaRespuesta = global.segundos;
     /*if(global.wave&lt;9){
         global.oBuenas[global.a]++;
         global.oBuenas[global.b]++;
     }*/
     global.respondida = true;
-    global.puntaje += 10;
+    if(obj_ship.bonus_multiplier){
+        if(global.tiempoUltimaRespuesta &lt;= global.time_to_cross*global.p_adapt_vel){
+            global.puntaje += 10*6;
+            msg_inst = instance_create(180,20,obj_points_multiplied);
+            with(msg_inst){
+                msg_type = 1;
+            }
+        }
+        else{
+            global.puntaje += 10*3;
+            msg_inst = instance_create(180,20,obj_points_multiplied);
+            with(msg_inst){
+                msg_type = 2;
+            }
+        }
+        obj_ship.bonus_multiplier = false;
+    }
+    else{
+        if(global.tiempoUltimaRespuesta &lt;= global.time_to_cross*global.p_adapt_vel){
+            global.puntaje += 10*2;
+            msg_inst = instance_create(180,20,obj_points_multiplied);
+            with(msg_inst){
+                msg_type = 3;
+            }
+        }
+        else{
+            global.puntaje += 10;
+            msg_inst = instance_create(180,20,obj_points_multiplied);
+            with(msg_inst){
+                msg_type = 4;
+            }
+        }
+    
+    }
     global.correctas++;
     if(global.nrondasc&gt;global.nrondas) global.nrondas=global.nrondasc;
     
