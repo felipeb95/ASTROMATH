@@ -250,7 +250,7 @@ global.choque = false;
 global.time_to_cross = 0;
 waves_passed = 0;
 waves_to_bg_change = 2;
-global.bgs_total = 3;
+global.bgs_total = 9;
 global.bg_counter = 1;
 
 

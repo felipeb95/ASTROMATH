@@ -39,6 +39,58 @@ act = false;
 image_xscale = 0.6;
 image_yscale = 0.6;
 x = 100;
+
+shield = false;
+powerup = false;
+powerup_subimg = 0;
+total_powerup_subimg = sprite_get_number(spr_powerup);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>powerup = false;
+spd = 6;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>shield = false;
 </string>
           </argument>
         </arguments>
@@ -212,6 +264,10 @@ if(shootKey &amp;&amp; cooldown == false){
  cooldown = true;
  alarm[0] = 10 //segundos
 }
+
+powerup_subimg++;
+if(powerup_subimg == total_powerup_subimg)
+    powerup_subimg = 0;
 </string>
           </argument>
         </arguments>
@@ -236,6 +292,12 @@ if(shootKey &amp;&amp; cooldown == false){
             <kind>1</kind>
             <string>draw_self()
 //draw_text_transformed(x,y-28,global.name,0.6,0.6,0)
+if(shield)
+    draw_sprite(spr_shield,0,x-20,y);
+    
+if(powerup)
+    draw_sprite(spr_powerup, powerup_subimg, x-20,y);
+
 
 </string>
           </argument>

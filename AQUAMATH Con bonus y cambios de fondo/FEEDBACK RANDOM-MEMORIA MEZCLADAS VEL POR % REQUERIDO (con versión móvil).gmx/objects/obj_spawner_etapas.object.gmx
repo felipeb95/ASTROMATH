@@ -274,6 +274,10 @@ global.on_screen = false;
 global.choque = false;
 //global.p_adapt_vel = 0.4;
 global.time_to_cross = 0;
+waves_passed = 0;
+waves_to_bg_change = 2;
+global.bgs_total = 9;
+global.bg_counter = 1;
 
 meteoros = 5;
 spawn_rate = 50;
@@ -474,6 +478,8 @@ randY = choose(floor(random_range(40,room_height-40)));
 if(global.cont&lt;meteoros &amp;&amp; !global.dead){
 global.cont++;
 nuevay = global.cont-1;
+bonus_prob = 0.9;
+bonus_checker = random_range(0,1);
 if(global.cont!=global.alternativa &amp;&amp; obj_ship.hp != 0){
     var this = instance_create(room_width + 40, global.arrAltura[nuevay,global.alturas], obj_asteroid);
     with(this){
@@ -487,13 +493,27 @@ if(global.cont!=global.alternativa &amp;&amp; obj_ship.hp != 0){
         type = 1;
     }
     global.bot=0;
+  /* FOR BONUS APPEARANCE */
+        if(bonus_checker &lt;= bonus_prob){
+            str_bp = "Prob: "+string(bonus_checker);
+            show_debug_message(str_bp);
+            show_debug_message("###### BONUS #######");
+             instance_create(room_width+100,irandom_range(70,370),obj_bonus);
+        }
 }
 draw_set_color(c_white);
 draw_set_font(fntMain);
 
 }
 //AQUÍ SE CUMPLE UNA OLEADA
-if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen de pantalla  
+if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen de pantalla
+        /* FOR BACKGROUND CHANGE */
+        waves_passed++;
+        if(waves_passed == waves_to_bg_change){
+            instance_create(0,0,obj_fader);
+            waves_passed = 0;
+            global.bg_counter++;
+        }  
         global.metNum = undefined;
         global.imetNum = 0;
         if(global.intentos == 0 || global.bot2 ==0){
