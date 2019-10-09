@@ -276,6 +276,13 @@ if(ds_map_exists(map, "debug")){
         global.debug = true;
 }
 
+if(ds_map_exists(map,"bonus_prob")){
+    var bonus_prob = map[? "bonus_prob"];
+    show_debug_message("bonus_prob funciona");
+    show_debug_message(bonus_prob);
+    global.bonus_prob = bonus_prob;
+}
+
 go_to_next = true;
 global.loaded = 1;
 </string>
