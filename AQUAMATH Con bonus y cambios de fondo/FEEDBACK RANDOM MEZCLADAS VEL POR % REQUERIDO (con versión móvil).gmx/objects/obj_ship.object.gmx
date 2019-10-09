@@ -39,6 +39,58 @@ act = false;
 image_xscale = 0.6;
 image_yscale = 0.6;
 x = 100;
+
+shield = false;
+powerup = false;
+powerup_subimg = 0;
+total_powerup_subimg = sprite_get_number(spr_powerup);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>powerup = false;
+spd = 6;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>shield = false;
 </string>
           </argument>
         </arguments>
@@ -142,64 +194,6 @@ y=clamp(y, 0+sprite_height/2, room_height-sprite_height/2);
 //morir
 
 if(hp &lt;= 0){
-    /*
-    roundMap = ds_map_create();
-    ds_map_add(roundMap, "multiplo_a", global.a);
-    ds_map_add(roundMap, "multiplo_b", global.b);
-    ds_map_add(roundMap, "respuesta_correcta", global.r);
-    ds_map_add(roundMap, "total_intentos", global.intentos);
-    ds_map_add(roundMap, "ultima_respuesta", global.numM);
-    ds_map_add(roundMap, "tiempo_respuesta", global.tiempoUltimaRespuesta);
-    ds_map_add(roundMap, "estado_respuesta", global.estado);
-    ds_map_add(roundMap, "etapa", (global.dificultad+1));
-    //OONDICIÓN SI ES QUE NO SE LE DISPARÓ A NINGÚN METEROTIO (NO HUBO INTENTO)
-    var copiaIntentosRonda = ds_map_create();
-    ds_map_copy(copiaIntentosRonda, global.intentosRonda);
-    ds_map_add_map(roundMap, "intentos", copiaIntentosRonda);
-    
-    var copiaRonda = ds_map_create();
-    ds_map_copy(copiaRonda, roundMap);
-    ds_map_add_map(global.bigMap, global.numEjercicio, copiaRonda);
-    
-    ds_map_clear(global.intentosRonda); // Se agrega la última ronda (en la que se muere)
-    //ds_map_clear(roundMap);
-    
-    
-    if(!is_undefined(global.faciles))
-        ds_map_add(global.dificultadesMap, "faciles", global.faciles);
-    else 
-        ds_map_add(global.dificultadesMap, "faciles", "null");
-
-    if(!is_undefined(global.medios)) 
-        ds_map_add(global.dificultadesMap, "medios", global.medios);
-    else 
-        ds_map_add(global.dificultadesMap, "medios", "null");
-
-    if(!is_undefined(global.dificiles))
-        ds_map_add(global.dificultadesMap, "dificiles", global.dificiles)
-    else
-        ds_map_add(global.dificultadesMap, "dificiles", "null");
-    
-    var jsonEjercicios = json_encode(global.bigMap);
-    var jsonExtras = json_encode(global.dificultadesMap);
-
-    show_debug_message("//////////// GAME OVER ////////////");
-    show_debug_message(jsonEjercicios);
-    show_debug_message(jsonExtras);
-    
-
-    //VERSION 1 SIN ELEMENTOS GAMIFICACIÓN 
-
-    http_get("async.php?f=sv&amp;puntaje="+string(global.puntaje)+
-    "&amp;correctas="+string(global.correctas)+
-    "&amp;incorrectas="+string(global.incorrectas)+
-    "&amp;ejercicios="+string(global.wave)+
-    "&amp;nRondas="+string(global.nrondas)+
-    "&amp;jsonEjercicios="+string(jsonEjercicios)+
-    "&amp;jsonExtras="+string(jsonExtras));
-    
-    wait(2*1000000);
-    */
     global.dead = true;
     
 }
@@ -212,6 +206,10 @@ if(shootKey &amp;&amp; cooldown == false){
  cooldown = true;
  alarm[0] = 10 //segundos
 }
+
+powerup_subimg++;
+if(powerup_subimg == total_powerup_subimg)
+    powerup_subimg = 0;
 </string>
           </argument>
         </arguments>
@@ -236,6 +234,11 @@ if(shootKey &amp;&amp; cooldown == false){
             <kind>1</kind>
             <string>draw_self()
 //draw_text_transformed(x,y-28,global.name,0.6,0.6,0)
+if(shield)
+    draw_sprite(spr_shield,0,x-20,y);
+    
+if(powerup)
+    draw_sprite(spr_powerup, powerup_subimg, x-20,y);
 
 </string>
           </argument>

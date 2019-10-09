@@ -27,9 +27,12 @@
             <kind>1</kind>
             <string>randomize();
 x_speed = choose(3,5,7);
-sub_img = 0;
-//sub_img = irandom_range(0,5); // 5 Tipos de bonus;
+sub_img = irandom_range(0,sprite_get_number(spr_bonus)-1); // N Tipos de bonus;
 
+/*  sub_img = 0  -&gt; +100 puntos
+    sub_img = 1 -&gt; escudo activado 
+    sub_img = 2 -&gt; velocidad turbo
+*/
 </string>
           </argument>
         </arguments>
@@ -55,8 +58,24 @@ sub_img = 0;
             <string>x = x - x_speed;
 
 if(place_meeting(x,y,obj_ship)){
-   global.puntaje += 100;
-   instance_destroy(self);
+    switch(sub_img){
+        case 0:
+            global.puntaje += 100;
+            break;
+        case 1: 
+            obj_ship.shield = true;
+            obj_ship.alarm[1] = room_speed*5;
+            break;
+        case 2:
+            obj_ship.powerup = true;
+            obj_ship.spd = 12;
+            obj_ship.alarm[2] = room_speed*5;
+            break;
+        default: 
+            break;
+    }
+    
+    instance_destroy(self);
 }
 
 if(x &lt; -100)

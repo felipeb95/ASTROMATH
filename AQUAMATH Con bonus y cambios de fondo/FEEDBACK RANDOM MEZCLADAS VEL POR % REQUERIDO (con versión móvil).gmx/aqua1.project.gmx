@@ -68,6 +68,8 @@
     <sprite>sprites\spr_pescadohuesos</sprite>
     <sprite>sprites\spr_bonus</sprite>
     <sprite>sprites\spr_pescado</sprite>
+    <sprite>sprites\spr_shield</sprite>
+    <sprite>sprites\spr_powerup</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_space</background>

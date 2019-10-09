@@ -67,7 +67,7 @@ if(global.tipo_os_equipo == 2){
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="obj_ship" x="32" y="192" name="inst_EBDBA5B9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_ship" x="60" y="210" name="inst_EBDBA5B9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_hud" x="544" y="0" name="inst_44799922" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_mute" x="570" y="-20" name="inst_118ED7B8" locked="0" code="" scaleX="0.680000007152557" scaleY="0.680000007152557" colour="4294967295" rotation="0"/>
     <instance objName="obj_scale" x="90" y="320" name="inst_9E086264" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

@@ -449,7 +449,7 @@ if(global.modo==3) {
             <string>
 randomize();
 randY = choose(floor(random_range(40,room_height-40)));
-bonus_prob = 0.1;
+bonus_prob = 0.9;
 bonus_checker = random_range(0,1);
 //crear asteroide
 if(global.cont&lt;meteoros &amp;&amp; !global.dead){
