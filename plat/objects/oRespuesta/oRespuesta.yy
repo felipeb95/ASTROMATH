@@ -53,7 +53,7 @@
     "physicsStartAwake": true,
     "properties": [
         {
-            "id": "988b1564-d2fd-4342-991f-d6ee718420f5",
+            "id": "7d699847-774d-4bd7-b148-472bf979f0d0",
             "modelName": "GMObjectProperty",
             "mvc": "1.0",
             "listItems": null,
@@ -62,9 +62,9 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "False",
-            "varName": "correcta",
-            "varType": 3
+            "value": "1",
+            "varName": "numAlternativa",
+            "varType": 0
         }
     ],
     "solid": false,

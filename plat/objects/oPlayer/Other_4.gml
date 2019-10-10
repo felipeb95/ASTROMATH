@@ -1,3 +1,5 @@
+global.mostrarEjercicio = true;
+
 //Sobreescribir
 if(file_exists(SAVEFILE)) file_delete(SAVEFILE);
 

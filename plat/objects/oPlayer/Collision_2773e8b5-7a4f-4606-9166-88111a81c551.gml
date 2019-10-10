@@ -1,5 +1,6 @@
 if(keyboard_check_pressed(vk_down)){	
 	global.respondida = true;
+	global.mostrarEjercicio = false;
 	with(other){
 		global.respuesta = num;
 		if(num==global.r) {
