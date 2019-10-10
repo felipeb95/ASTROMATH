@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>randomize();
 muted = 0;
+global.feedback = 0;
 global.malasSeguidas=0;
 global.origen = "random";
 global.actual_sprite = undefined;

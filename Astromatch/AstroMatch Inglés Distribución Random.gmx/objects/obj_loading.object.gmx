@@ -182,7 +182,8 @@ if(ds_map_exists(mapaLectura,"pNuevas"))
 str_prob = "Prob buenas: "+string(global.pBuenas)+
     " | Prob malas: "+string(global.pMalas)+
     " | Prob nuevas: "+string(global.pNuevas);
-
+if(ds_map_exists(mapaLectura,"carril"))
+    global.carril = real(mapaLectura[? "carril"]);
 if(ds_map_exists(mapaLectura,"min_vel"))
     global.min_vel = real(mapaLectura[? "min_vel"]);
 if(ds_map_exists(mapaLectura,"max_vel"))

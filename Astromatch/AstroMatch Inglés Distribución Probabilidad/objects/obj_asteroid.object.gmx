@@ -82,6 +82,11 @@ if(place_meeting(x,y,obj_ship)){
     instance_create(x,y,obj_shake);
     instance_change(obj_explode, true);
 }
+if(global.feedback==1){
+    global.ccont++;
+    if(global.ccont==5)global.feedback=0;
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>

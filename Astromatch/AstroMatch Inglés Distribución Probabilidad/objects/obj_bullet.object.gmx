@@ -85,6 +85,7 @@ with (other){
 }
 
 if(global.correcta_actual == global.numM){
+    global.feedback=1;
     global.malasSeguidas=0;
     global.nrondasc++;
     if(global.nrondasc&gt;=2 &amp;&amp; global.sp1&gt;-4.9 &amp;&amp; global.sp2&gt;-5.0 &amp;&amp; global.sp3&gt;-5.1 ){
