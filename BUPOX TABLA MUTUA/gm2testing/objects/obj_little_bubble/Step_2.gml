@@ -50,6 +50,16 @@ if(obj_spawner.phaseOne){
 				x =	first_x;
 				y = first_y;
 			}
+			
+			/* All big bubbles' size is reset to its original size and all of their alarms tick after 50 steps
+				to start shrinking the bubbles */
+				
+			with(obj_bubble){
+				deinflate = false; // Stops shrinking
+				image_xscale = 1; 
+				image_yscale = 1;
+				alarm[0] = 50; // Delay
+			}
 		
 			numbers_reduced(); // Checks if both numbers are 1, so it can delete the bubbles from the spawner object.
 		
@@ -66,7 +76,6 @@ if(obj_spawner.phaseOne){
 if(obj_spawner.phaseTwo){
 	if(point_distance(x, y, x_to_move, y_to_move) > 50){
 		move_towards_point( x_to_move, y_to_move, speed_to_move);
-		//show_debug_message("Bubble at: ("+string(x)+","+string(y)+") moving to: ("+string(x_to_move)+","+string(y_to_move)+")");	
 	}
 	else{
 		speed_to_move = 0;
@@ -75,9 +84,10 @@ if(obj_spawner.phaseTwo){
 	if(mouse_check_button_pressed(mb_left))
 		if(position_meeting(mouse_x,mouse_y,self)){
 			obj_multiples_list.bubble_clicked = true;
-			if(check_answer(self.number_on_bubble,obj_multiples_list.correct_answer))
-				//show_debug_message("Correct bubble was clicked");
+			if(check_answer(self.number_on_bubble,obj_multiples_list.correct_answer)){
+				show_debug_message("Correct bubble was clicked");
 				obj_multiples_list.correct_bubble_clicked = true;
+			}
 			else
 				show_debug_message("Wrong bubble was clicked");
 			
