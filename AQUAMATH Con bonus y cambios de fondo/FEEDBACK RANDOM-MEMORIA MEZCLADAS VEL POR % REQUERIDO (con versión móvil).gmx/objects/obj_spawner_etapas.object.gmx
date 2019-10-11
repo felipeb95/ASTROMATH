@@ -283,6 +283,7 @@ meteoros = 5;
 spawn_rate = 50;
 alarm[0] = spawn_rate;
 
+global.enemy_slowed = false;
 
 global.stringOperacionesB = undefined;
 global.iStringOperacionesB = 0;

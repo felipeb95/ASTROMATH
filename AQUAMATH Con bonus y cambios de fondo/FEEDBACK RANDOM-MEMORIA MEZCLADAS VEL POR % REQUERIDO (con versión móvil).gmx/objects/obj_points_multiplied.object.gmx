@@ -80,11 +80,11 @@ alarm[0] = room_speed*2;
             <string>draw_set_halign(fa_left);
 if(msg_type == 1){
     draw_set_font(font_puntaje_ganado)
-    draw_text(5,55,"+60");
+    draw_text(5,55,"+"+string(20*obj_bonus_info.m_value));
 }
 if(msg_type == 2){
 draw_set_font(font_puntaje_ganado)
-    draw_text(5,55,"+30");
+    draw_text(5,55,"+"+string(10*obj_bonus_info.m_value));
 }
 if(msg_type == 3){
     draw_set_font(font_puntaje_ganado)
@@ -94,6 +94,7 @@ if(msg_type == 4){
     draw_set_font(font_puntaje_ganado)
     draw_text(5,55,"+10");
 }
+draw_set_halign(fa_middle);
 </string>
           </argument>
         </arguments>
