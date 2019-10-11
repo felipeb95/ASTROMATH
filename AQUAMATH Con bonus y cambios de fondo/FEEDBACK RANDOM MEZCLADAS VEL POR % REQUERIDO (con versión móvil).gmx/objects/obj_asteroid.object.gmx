@@ -76,6 +76,7 @@ time_to_cross = undefined;
 //speed
 randomize();
 hspeed = choose(global.sp1,global.sp2,global.sp3);
+og_hspeed = hspeed;
 </string>
           </argument>
         </arguments>
@@ -138,7 +139,13 @@ if(place_meeting(x,y,obj_ship)){
     global.choque = true;
 }
 
-y = ystart + sin(get_timer()/500000)*15;
+if(global.numEjercicio &gt;= global.zigzag_start)
+    y = ystart + sin(get_timer()/500000)*15;
+
+if(obj_ship.enemy_slowed)
+    hspeed = og_hspeed*obj_ship.enemy_speed_factor;
+else
+    hspeed = og_hspeed;
 </string>
           </argument>
         </arguments>

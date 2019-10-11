@@ -271,6 +271,55 @@ if(ds_map_exists(map,"bonus_prob")){
     global.bonus_prob = bonus_prob;
 }
 
+if(ds_map_exists(map,"shield_prob")){
+    var shield_prob = map[? "shield_prob"];
+    show_debug_message("shield_prob funciona");
+    show_debug_message(shield_prob);
+    global.shield_prob = shield_prob;
+}
+
+if(ds_map_exists(map,"_100points_prob")){
+    var _100points_prob = map[? "_100points_prob"];
+    show_debug_message("_100points_prob funciona");
+    show_debug_message(_100points_prob);
+    global._100points_prob = _100points_prob;
+}
+
+if(ds_map_exists(map,"_50points_prob")){
+    var _50points_prob = map[? "_50points_prob"];
+    show_debug_message("_50points_prob funciona");
+    show_debug_message(_50points_prob);
+    global._50points_prob = _50points_prob;
+}
+
+if(ds_map_exists(map,"turbo_prob")){
+    var turbo_prob = map[? "turbo_prob"];
+    show_debug_message("turbo_prob funciona");
+    show_debug_message(turbo_prob)
+    global.turbo_prob = turbo_prob;
+}
+
+if(ds_map_exists(map,"multiplier_prob")){
+    var multiplier_prob = map[? "multiplier_prob"];
+    show_debug_message("multiplier_prob funciona");
+    show_debug_message(multiplier_prob)
+    global.multiplier_prob = multiplier_prob;
+}
+
+if(ds_map_exists(map,"slowed_prob")){
+    var slowed_prob = map[? "slowed_prob"];
+    show_debug_message("slowed_prob funciona");
+    show_debug_message(slowed_prob)
+    global.slowed_prob = slowed_prob;
+}
+
+if(ds_map_exists(map,"zigzag_start")){
+    var zigzag_start = map[? "zigzag_start"];
+    show_debug_message("zigzag_start funciona");
+    show_debug_message(zigzag_start)
+    global.zigzag_start = zigzag_start;
+}
+
 go_to_next = true;
 global.loaded = 1;
 </string>

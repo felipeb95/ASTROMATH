@@ -27,13 +27,50 @@
             <kind>1</kind>
             <string>randomize();
 x_speed = choose(3,5,7);
-sub_img = irandom_range(0,sprite_get_number(spr_bonus)-1); // N Tipos de bonus;
+multiplier = false;
+multiplier_text = undefined;
 
-/*  sub_img = 0  -&gt; +100 puntos 
-    sub_img = 1 -&gt; escudo activado que protege ante colisiones
-    sub_img = 2 -&gt; velocidad turbo de la nave
-    sub_img = 3 -&gt; multiplicador de puntos x3 (para próximo ejercicio correcto)
+/*  
+    sub_img = 0 -&gt; +100 puntos con probabilidad pb0
+    sub_img = 1 -&gt; +50 puntos con probabilidad pb1
+    sub_img = 2 -&gt; escudo activado con probabilidad pb2
+    sub_img = 3 -&gt; velocidad turbo con probabilidad pb3
+    sub_img = 4 -&gt; multiplicador de puntos aleatorios (para próximo ejercicio correcto) con probabilidad pb4
+    sub_img = 5 -&gt; ralentizador de 1/2 a velocidad asteroides con probabilidad pb5
+    
 */
+
+pb0 = global._100points_prob;
+pb1 = global._50points_prob;
+pb2 = global.shield_prob;
+pb3 = global.turbo_prob;
+pb4 = global.multiplier_prob;
+pb5 = global.slowed_prob;
+
+bonus_picker = random_range(0,1);
+str = "Probabilidad del bonus = "+string(bonus_picker*100);
+show_debug_message(str);
+
+if(bonus_picker &gt;= 0 &amp;&amp; bonus_picker &lt;= pb0)
+    sub_img = 0;
+if(bonus_picker &gt; pb0 &amp;&amp; bonus_picker  &lt;= (pb0 + pb1))
+    sub_img = 1;
+if(bonus_picker &gt; (pb0+pb1) &amp;&amp; bonus_picker &lt;= (pb0+pb1+pb2))
+    sub_img = 2;
+if(bonus_picker &gt; (pb0+pb1+pb2) &amp;&amp; bonus_picker &lt;= (pb0+pb1+pb2+pb3))
+    sub_img = 3;
+if(bonus_picker &gt; (pb0+pb1+pb2+pb3) &amp;&amp; bonus_picker &lt;= (pb0+pb1+pb2+pb3+pb4)){
+    sub_img = 4;
+    multiplier = true;
+    multiplier_value = irandom_range(2,5);
+    obj_bonus_info.m_value = multiplier_value;
+    multiplier_text = "Puntos #X"+string(multiplier_value);
+    
+}
+if(bonus_picker &gt; (pb0+pb1+pb2+pb3+pb4) &amp;&amp; bonus_picker &lt;= (pb0+pb1+pb2+pb3+pb4+pb5))
+    sub_img = 5;
+
+
 </string>
           </argument>
         </arguments>
@@ -64,16 +101,23 @@ if(place_meeting(x,y,obj_ship)){
             global.puntaje += 100;
             break;
         case 1: 
+            global.puntaje += 50;
+            break;
+        case 2: 
             obj_ship.shield = true;
             obj_ship.alarm[1] = room_speed*5;
             break;
-        case 2:
+        case 3:
             obj_ship.powerup = true;
             obj_ship.spd = 12;
             obj_ship.alarm[2] = room_speed*5;
             break;
-        case 3:
+        case 4:
             obj_ship.bonus_multiplier = true;
+            break;
+        case 5:
+            obj_ship.enemy_slowed = true;
+            obj_ship.alarm[3] = room_speed*5;
             break;
         default: 
             break;
@@ -107,6 +151,12 @@ if(x &lt; -100)
           <argument>
             <kind>1</kind>
             <string>draw_sprite(spr_bonus,sub_img,x,y);
+draw_set_font(fa_middle);
+draw_set_font(font_multiplier);
+draw_set_colour(c_black);
+if(multiplier)
+    draw_text(x,y,multiplier_text);
+draw_set_colour(c_white);
 </string>
           </argument>
         </arguments>

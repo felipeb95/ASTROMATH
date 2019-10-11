@@ -106,14 +106,14 @@ if(global.r == global.numM){
     global.respondida = true;
     if(obj_ship.bonus_multiplier){
         if(global.tiempoUltimaRespuesta &lt;= global.time_to_cross*global.p_adapt_vel){
-            global.puntaje += 10*6;
+            global.puntaje += 20*obj_bonus_info.m_value;
             msg_inst = instance_create(180,20,obj_points_multiplied);
             with(msg_inst){
                 msg_type = 1;
             }
         }
         else{
-            global.puntaje += 10*3;
+            global.puntaje += 10*obj_bonus_info.m_value;
             msg_inst = instance_create(180,20,obj_points_multiplied);
             with(msg_inst){
                 msg_type = 2;
