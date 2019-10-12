@@ -9,7 +9,9 @@ if(obj_spawner.phaseOne){
 		if(!position_meeting(x,y,obj_bubble))
 		{
 			x =	first_x;
-			y = first_y;
+			if(mouse_check_button_released(mb_left))
+				y =	anchorY;
+			
 		}
 		else {
 			inst = instance_place(x,y,obj_bubble); // Instance of bubble where little bubble is dropped.
@@ -36,7 +38,7 @@ if(obj_spawner.phaseOne){
 					default: break;
 				}
 			
-				show_debug_message("ADDED");
+				show_debug_message("A multiple has been added.");
 				ds_list_add(inst_of_left.partials, inst_of_left.number_on_bubble);
 				ds_list_add(inst_of_right.partials, inst_of_right.number_on_bubble);
 				ds_list_add(obj_table.table_multiples, number_on_bubble);
@@ -48,7 +50,7 @@ if(obj_spawner.phaseOne){
 				instance_destroy(self);
 			else{
 				x =	first_x;
-				y = first_y;
+				y = anchorY;
 			}
 			
 			/* All big bubbles' size is reset to its original size and all of their alarms tick after 50 steps

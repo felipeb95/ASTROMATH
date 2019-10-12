@@ -7,6 +7,13 @@ mx = -1;
 my = -1;
 is_dragging = false;
 
+anchorY = room_height-60;
+frequency = 0.05;
+amplitude = 20;
+timer = 0;
+alarm[0] = 1;
+
+
 first_x = 0;
 first_y = 0;
 x_to_move = 0;

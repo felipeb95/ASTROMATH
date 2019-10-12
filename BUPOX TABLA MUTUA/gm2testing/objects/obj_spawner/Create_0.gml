@@ -53,3 +53,5 @@ x_first_little_bubble = room_width/4.5;
 y_little_bubble = room_height-60;
 space_between_bubbles = sprite_get_width(obj_little_bubble);
 
+/* For sinusoidal oscilation of little bubbles, so they're all equal */
+timer = 0;

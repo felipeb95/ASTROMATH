@@ -179,7 +179,7 @@ if(global.cont!=global.alternativa){
     global.bot=0;
     
     /* FOR BONUS APPEARANCE */
-        if(bonus_checker &lt;= 1.0){ //global.bonus_prob
+        if(bonus_checker &lt;= global.bonus_prob){ 
             str_bp = "Prob: "+string(bonus_checker);
             show_debug_message(str_bp);
             show_debug_message("###### BONUS #######");

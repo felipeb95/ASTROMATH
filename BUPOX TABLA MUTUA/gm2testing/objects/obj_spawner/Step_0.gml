@@ -6,6 +6,7 @@ at the bottom of this file. */
 
 /* As both numbers have been reduced to 1, bubbles should disappear
 and the next phase of the excercise should start, that is, the times phase */
+timer++;
 
 if(phaseOneDone){
 	phaseOne = false;

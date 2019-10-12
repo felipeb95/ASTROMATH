@@ -11,3 +11,8 @@ if(position_meeting(mouse_x,mouse_y,id) and mouse_check_button_pressed(mb_left))
 	is_dragging = true;
 	
 }
+
+if(!is_dragging and obj_spawner.phaseOne)
+{
+	y = anchorY + sin(obj_spawner.timer*frequency)*amplitude;
+}

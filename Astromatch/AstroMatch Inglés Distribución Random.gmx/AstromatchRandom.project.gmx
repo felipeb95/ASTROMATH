@@ -157,6 +157,9 @@
     <sprite>sprites\spr_info</sprite>
     <sprite>sprites\spr_reintentar</sprite>
     <sprite>sprites\spr_volver</sprite>
+    <sprite>sprites\spr_bonus</sprite>
+    <sprite>sprites\spr_powerup</sprite>
+    <sprite>sprites\spr_shield</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_space</background>
@@ -222,6 +225,8 @@
     <font>fonts\font_loading</font>
     <font>fonts\font_puntaje</font>
     <font>fonts\font_bonuspoints</font>
+    <font>fonts\font_multiplier</font>
+    <font>fonts\font_puntaje_ganado</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_ship</object>
@@ -252,6 +257,9 @@
     <object>objects\obj_fader</object>
     <object>objects\obj_info</object>
     <object>objects\obj_shaky_text</object>
+    <object>objects\obj_bonus</object>
+    <object>objects\obj_bonus_info</object>
+    <object>objects\obj_points_multiplied</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_aux</room>
