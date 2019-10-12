@@ -115,7 +115,6 @@
   <sprites name="sprites">
     <sprite>sprites\spr_ship</sprite>
     <sprite>sprites\sprite1</sprite>
-    <sprite>sprites\sprite2</sprite>
     <sprite>sprites\spr_explo</sprite>
     <sprite>sprites\spr_live</sprite>
     <sprite>sprites\spr_liveart</sprite>
@@ -154,6 +153,11 @@
     <sprite>sprites\spr_tecla_m</sprite>
     <sprite>sprites\spr_loading</sprite>
     <sprite>sprites\spr_vidas_update</sprite>
+    <sprite>sprites\sprite2</sprite>
+    <sprite>sprites\spr_info</sprite>
+    <sprite>sprites\spr_bonus</sprite>
+    <sprite>sprites\spr_powerup</sprite>
+    <sprite>sprites\spr_shield</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_space</background>
@@ -210,6 +214,9 @@
     <font>fonts\fontOpcionesGO</font>
     <font>fonts\font_loading</font>
     <font>fonts\font_puntaje</font>
+    <font>fonts\font_info</font>
+    <font>fonts\font_multiplier</font>
+    <font>fonts\font_puntaje_ganado</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_ship</object>
@@ -238,6 +245,10 @@
     <object>objects\obj_loading_gif</object>
     <object>objects\obj_actual_sprite</object>
     <object>objects\obj_fader</object>
+    <object>objects\obj_info</object>
+    <object>objects\obj_bonus</object>
+    <object>objects\obj_bonus_info</object>
+    <object>objects\obj_points_multiplied</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_aux</room>
@@ -253,6 +264,7 @@
     <room>rooms\rm_instructions</room>
     <room>rooms\rm_loading</room>
     <room>rooms\rm_loading_next</room>
+    <room>rooms\rm_info</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

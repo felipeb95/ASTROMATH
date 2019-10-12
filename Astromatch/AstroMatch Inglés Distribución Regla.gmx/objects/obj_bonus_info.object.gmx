@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>2</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>m_value = undefined;
+</string>
           </argument>
         </arguments>
       </action>
@@ -47,32 +48,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>wy = 0;
-x = room_width/2;
-currentY = y;
-marginTop = 10;
+            <string>draw_set_font(font_puntaje);
+if(obj_ship.bonus_multiplier)
+    draw_text(room_width/2,room_height-10,"La próxima vez que aciertes obtendrás puntos X"+string(m_value));
+    
 
-if(global.dead == false){
-  draw_sprite(spr_vidas_update, obj_ship.hp ,1,0);
-
-
-//dibujar texto oleadas
-
-draw_set_color(c_white);
-draw_set_font(font_puntaje);
-draw_set_halign(fa_left);
-draw_text(5, 30, "P: " + string(global.puntaje)+
-" | V: " + string(-1*(global.sp2))+
-" | E: " + string(global.etapa));
-draw_set_halign(fa_center);
-//draw_text(room_width - 100, 60, "Ultimo Puntaje: " + string(global.dsmap[? global.name]));
-
-//draw_text(room_width - 100, 50, "Algo: " + string(global.puntaje));
-  
-}else{
-    audio_stop_sound(global.snd);
-    room_goto(rm_gameover);
-}
 </string>
           </argument>
         </arguments>

@@ -67,7 +67,7 @@ draw_text(menu_x,menu_y+190,"Presiona ENTER para continuar");
           <argument>
             <kind>1</kind>
             <string>global.modo = 0; //Antiguamente 2 era para multiplicaciones.
-room_goto(rm_select);
+room_goto(rm_info);
 </string>
           </argument>
         </arguments>

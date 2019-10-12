@@ -198,6 +198,72 @@ show_debug_message(str_prob);
 show_debug_message(str_vel);
 show_debug_message(" "); 
     
+if(ds_map_exists(mapaLectura, "p_adapt_vel")){
+    var p_adapt_vel = mapaLectura[? "p_adapt_vel"];
+     show_debug_message("p_adapt_vel funciona");
+     show_debug_message(p_adapt_vel);
+     global.p_adapt_vel = p_adapt_vel;
+}
+
+if(ds_map_exists(mapaLectura, "debug")){
+    var debug = real(mapaLectura[? "debug"]);
+     show_debug_message("debug funciona");
+     show_debug_message(debug);
+     if(debug == 0)
+        global.debug = false;
+     else
+        global.debug = true;
+}
+
+if(ds_map_exists(mapaLectura,"bonus_prob")){
+    var bonus_prob = mapaLectura[? "bonus_prob"];
+    show_debug_message("bonus_prob funciona");
+    show_debug_message(bonus_prob);
+    global.bonus_prob = bonus_prob;
+}
+
+if(ds_map_exists(mapaLectura,"shield_prob")){
+    var shield_prob = mapaLectura[? "shield_prob"];
+    show_debug_message("shield_prob funciona");
+    show_debug_message(shield_prob);
+    global.shield_prob = shield_prob;
+}
+
+if(ds_map_exists(mapaLectura,"_100points_prob")){
+    var _100points_prob = mapaLectura[? "_100points_prob"];
+    show_debug_message("_100points_prob funciona");
+    show_debug_message(_100points_prob);
+    global._100points_prob = _100points_prob;
+}
+
+if(ds_map_exists(mapaLectura,"_50points_prob")){
+    var _50points_prob = mapaLectura[? "_50points_prob"];
+    show_debug_message("_50points_prob funciona");
+    show_debug_message(_50points_prob);
+    global._50points_prob = _50points_prob;
+}
+
+if(ds_map_exists(mapaLectura,"turbo_prob")){
+    var turbo_prob = mapaLectura[? "turbo_prob"];
+    show_debug_message("turbo_prob funciona");
+    show_debug_message(turbo_prob)
+    global.turbo_prob = turbo_prob;
+}
+
+if(ds_map_exists(mapaLectura,"multiplier_prob")){
+    var multiplier_prob = mapaLectura[? "multiplier_prob"];
+    show_debug_message("multiplier_prob funciona");
+    show_debug_message(multiplier_prob)
+    global.multiplier_prob = multiplier_prob;
+}
+
+if(ds_map_exists(mapaLectura,"slowed_prob")){
+    var slowed_prob = mapaLectura[? "slowed_prob"];
+    show_debug_message("slowed_prob funciona");
+    show_debug_message(slowed_prob)
+    global.slowed_prob = slowed_prob;
+}
+
 go_to_next = true;
 global.loaded = 1;
 </string>

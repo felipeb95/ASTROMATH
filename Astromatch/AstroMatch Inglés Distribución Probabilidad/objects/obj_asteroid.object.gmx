@@ -42,9 +42,12 @@ if(global.bot==1){
 
     global.aparicionCorrecta = global.segundos;
 }
+message = true;
+time_to_cross = undefined;
 //speed
 randomize();
 hspeed = choose(global.sp1,global.sp2,global.sp3);
+og_hspeed = hspeed;
 </string>
           </argument>
         </arguments>
@@ -70,23 +73,48 @@ hspeed = choose(global.sp1,global.sp2,global.sp3);
             <string>//asteroide choca con nave
 image_angle += rotation;
 
+if(message &amp;&amp; type == 1 &amp;&amp; x &lt;= 640){
+    message = false;
+    time_to_cross = ((room_width/hspeed/60)*-1);
+    global.time_to_cross = time_to_cross;
+    str = "[ASTEROIDE CORRECTO] Tiempo en pasar pantalla: "+string(time_to_cross)+
+    " | Tiempo de aparición: "+string(global.segundos_max_ej)
+    +" | Tiempo requerido: "+string(global.time_to_cross*global.p_adapt_vel);
+    show_debug_message(str);
+}
+
+if(type == 1 &amp;&amp; x &gt;= 0 &amp;&amp; x &lt;= 640){
+    global.on_screen = true;
+}
+
 if(place_meeting(x,y,obj_ship)){
     global.bot2=1;
-    obj_ship.hp -= 1;
+    if(!obj_ship.shield)
+        obj_ship.hp -= 1;
      if(obj_ship.hp == 0){
         show_debug_message("MUERE CON CHOQUE, CORRER SCRIPT");
         guardar(true); //SCRIPT QUE EXPORTA JSON A PHP PARA STORE
-        global.dead = true; 
+        global.dead = true;
+        x = view_xview + view_wview/2;
+        y = view_yview + view_hview/2;
+        //instance_create(x,y,obj_textbox_correccion);
     }
     global.ccont++;
     instance_create(x,y,obj_shake);
     instance_change(obj_explode, true);
+    global.on_screen = false;
+    global.choque = true;
 }
 if(global.feedback==1){
     global.ccont++;
     if(global.ccont==5)global.feedback=0;
     instance_destroy();
 }
+
+if(obj_ship.enemy_slowed)
+    hspeed = og_hspeed*obj_ship.enemy_speed_factor;
+else
+    hspeed = og_hspeed;
 </string>
           </argument>
         </arguments>
