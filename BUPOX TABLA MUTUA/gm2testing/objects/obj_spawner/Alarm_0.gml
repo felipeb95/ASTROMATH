@@ -31,6 +31,7 @@ if(spawner_enabled){
 			inst_of_left = left_bubble;
 			inst_of_right = right_bubble;
 			inst_of_middle = middle_bubble;
+			my_timer =  10*obj_spawner.i; // This adds to the timer in each little bubble so they start in different y values.
 		}
 	}
 	

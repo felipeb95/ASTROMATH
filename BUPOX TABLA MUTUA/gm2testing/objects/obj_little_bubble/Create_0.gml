@@ -5,12 +5,16 @@ rotation = irandom_range(0,1);
 rotation_degree = random_range(0,0.3);
 mx = -1;
 my = -1;
-is_dragging = false;
+
+/* Flags */
+is_dragging = false; // Sets to true when player is holding its click down and/or moving it.
+bubble_popped = false; // Sets to true if the bubble was popped.
 
 anchorY = room_height-60;
-frequency = 0.05;
-amplitude = 20;
-timer = 0;
+frequency = 0.05;	// How fast the bubble jumps
+amplitude = 20; // How far up and down it will go
+timer = 0; // For sinusoidal function
+my_timer = undefined; //This timer adds a little y difference between bubbles as they are created in the spawner.
 alarm[0] = 1;
 
 

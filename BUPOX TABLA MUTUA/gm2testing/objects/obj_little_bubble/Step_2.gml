@@ -83,16 +83,19 @@ if(obj_spawner.phaseTwo){
 		speed_to_move = 0;
 	}
 	
-	if(mouse_check_button_pressed(mb_left))
+	if(mouse_check_button_released(mb_left)){
 		if(position_meeting(mouse_x,mouse_y,self)){
-			obj_multiples_list.bubble_clicked = true;
 			if(check_answer(self.number_on_bubble,obj_multiples_list.correct_answer)){
 				show_debug_message("Correct bubble was clicked");
 				obj_multiples_list.correct_bubble_clicked = true;
+				audio_play_sound(snd_correct_bubble,10,false);
+				// instance_create_depth(room_width/2,room_height,-1000,obj_bubble_animation);
 			}
 			else
 				show_debug_message("Wrong bubble was clicked");
-			
+		
+		audio_play_sound(snd_bubble_pop,10,false);
+		instance_destroy(self);
 		}
-	
+	}
 }

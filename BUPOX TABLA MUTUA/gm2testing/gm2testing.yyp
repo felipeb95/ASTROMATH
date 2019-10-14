@@ -119,6 +119,14 @@
             }
         },
         {
+            "Key": "2f6f28a3-4c0a-4659-a532-c44aa94e26e5",
+            "Value": {
+                "id": "2ba58eea-4f21-4f0a-b2ba-bf1631d7b8a8",
+                "resourcePath": "sounds\\snd_bubble_pop\\snd_bubble_pop.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "326e7262-e9f4-4f13-912c-6d2cb2a1ad45",
             "Value": {
                 "id": "e5069dc8-d3ad-472c-b1cd-c6752b96c756",
@@ -172,6 +180,14 @@
                 "id": "81d849ed-10c2-4321-8b76-45c83acc0491",
                 "resourcePath": "views\\5e086725-5e67-4abc-8dee-0e4b2de20fdb.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "60660ecc-0917-47f7-9dac-d1bf4d1304e3",
+            "Value": {
+                "id": "60edbe29-adc3-42b6-ab86-8e64114c3ed8",
+                "resourcePath": "sprites\\spr_bubbles_animation\\spr_bubbles_animation.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -268,6 +284,14 @@
                 "id": "90056804-286f-4eef-b36e-55ce803f7a0b",
                 "resourcePath": "scripts\\numbers_reduced\\numbers_reduced.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "90ecd886-6aa0-418b-b43c-0b7a2b3bbdb0",
+            "Value": {
+                "id": "0df7361c-f1e6-4da7-abca-985b1752662c",
+                "resourcePath": "objects\\obj_bubble_animation\\obj_bubble_animation.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -428,6 +452,14 @@
                 "id": "5590aa5a-ede2-4c9a-a4ac-38deb363e9c3",
                 "resourcePath": "views\\cecafb84-ba67-4d58-874c-7be1a0b4ce79.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "d556622f-f45c-4e97-8fbf-f48764afff93",
+            "Value": {
+                "id": "d85d3a1b-9756-4bba-b674-eb9fb2593512",
+                "resourcePath": "sounds\\snd_correct_bubble\\snd_correct_bubble.yy",
+                "resourceType": "GMSound"
             }
         },
         {
