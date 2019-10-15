@@ -50,8 +50,6 @@ moves[4] = 386;
 
 move_pos = 2;
 
-move_pos = 1;
-
 shield = false;
 powerup = false;
 powerup_subimg = 0;
