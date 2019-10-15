@@ -3,7 +3,7 @@
     "modelName": "GMHtml5Options",
     "mvc": "1.0",
     "name": "HTML5",
-    "option_html5_allow_fullscreen": true,
+    "option_html5_allow_fullscreen": false,
     "option_html5_browser_title": "Made in GameMaker Studio 2",
     "option_html5_centregame": false,
     "option_html5_display_cursor": true,
@@ -11,7 +11,7 @@
     "option_html5_facebook_id": "",
     "option_html5_flurry_enable": false,
     "option_html5_flurry_id": "",
-    "option_html5_foldername": "html5game",
+    "option_html5_foldername": "juego",
     "option_html5_google_analytics_enable": false,
     "option_html5_google_tracking_id": "",
     "option_html5_icon": "${base_options_dir}\\html5\\fav.ico",
@@ -31,9 +31,9 @@
     "option_html5_usesplash": false,
     "option_html5_version": {
         "build": 0,
-        "major": 1,
+        "major": 2,
         "minor": 0,
         "revision": 0
     },
-    "option_html5_webgl": 1
+    "option_html5_webgl": 2
 }
