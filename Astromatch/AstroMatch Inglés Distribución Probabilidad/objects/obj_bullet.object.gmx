@@ -85,15 +85,13 @@ with (other){
 }
 
 if(global.correcta_actual == global.numM){
+    obj_spawner.wave_delay_after_feedback = 1;
     global.feedback=1;
     global.malasSeguidas=0;
     global.nrondasc++;
-    if(global.nrondasc&gt;=2 &amp;&amp; global.sp1&gt;-4.9 &amp;&amp; global.sp2&gt;-5.0 &amp;&amp; global.sp3&gt;-5.1 ){
-        global.sp1 -= 0.1;
-        global.sp2 -= 0.1;
-        global.sp3 -= 0.1;
-        show_debug_message("SUBE VEL");
-    }
+    x = view_xview + view_wview/2;
+    y = view_yview + view_hview/2;
+    instance_create(x,y,obj_textbox_celebracion);
     
     global.respondida = true;
     if(obj_ship.bonus_multiplier){
@@ -143,16 +141,17 @@ if(global.correcta_actual == global.numM){
     global.last_correct = global.correcta_actual;
     next_level_condition();
 }else{ 
+    obj_spawner.wave_delay_after_feedback = 2;
     global.malasSeguidas++;
     global.nrondasc=0;
-    if(global.malasSeguidas&gt;=2 &amp;&amp; global.sp1&lt;-0.9 &amp;&amp; global.sp2&lt;-1.0 &amp;&amp; global.sp3&lt;-1.1 ){
-        global.sp1 += 0.1;
-        global.sp2 += 0.1;
-        global.sp3 += 0.1;
-        show_debug_message("BAJA VEL");
-    }
-    
     if(global.puntaje&gt;=10)    global.puntaje -=10;
+    
+    x = view_xview + view_wview/2;
+    y = view_yview + view_hview/2;
+    var feedback_msg = instance_create(x,y,obj_textbox_correccion);
+    with(feedback_msg){
+        correcta = global.correcta_actual;
+    }
     
     global.incorrectas++;
     audio_play_sound(incorrect,10,false);
@@ -164,6 +163,7 @@ if(global.correcta_actual == global.numM){
     global.bot2=1;
 }
 global.ccont++;
+global.feedback = 1;
 instance_create(x,y,obj_shake);
 
 instance_destroy();

@@ -129,6 +129,7 @@ global.on_screen = false;
 global.choque = false;
 global.time_to_cross = 0;
 //global.p_adapt_vel = 0.4;
+wave_delay_after_feedback = 2;
 
 meteoros = 5;
 spawn_rate = 50;
@@ -192,10 +193,18 @@ draw_set_font(fntMain);
 }
 //AQUÍ SE CUMPLE UNA OLEADA
 if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de pantalla
-        if(!global.respondida){ /*TERMINÓ EL EJERCICIO Y RESPONDIÓ CORRECTAMENTE*/
+        if(!global.respondida){ /*TERMINÓ EL EJERCICIO Y NO RESPONDIÓ CORRECTAMENTE*/
             move_to_wrong();   
             global.last_wrong = global.correcta_actual;  
+             wave_delay_after_feedback = 2;
+             x = view_xview + view_wview/2;
+             y = view_yview + view_hview/2;
+             var feedback_msg = instance_create(x,y,obj_textbox_correccion);
+             with(feedback_msg){
+                correcta = global.correcta_actual;
+             }
         }
+        global.feedback = 0 ;
         game_state();    
         roundMap = ds_map_create();
         ds_map_add(roundMap, "palabra", global.correcta_actual);
@@ -266,7 +275,7 @@ if(global.ccont == meteoros){ //contador de meteoritos destruidos o q salen de p
         }
         //ACÁ SE ELIGE EL SIGUIENTE EJERCICIO.
         
-        alarm[0] = room_speed*1;
+        alarm[0] = room_speed*wave_delay_after_feedback;
         global.intentos = 0; /*CUANDO YA PASARON TODOS LOS ASTEROIDES (RONDA TERMINADA
                                 EL CONTADOR DE INTENTOS SE RESETEA*/
         global.numEjercicio++;
