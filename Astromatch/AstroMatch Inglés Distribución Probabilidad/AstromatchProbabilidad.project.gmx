@@ -158,6 +158,8 @@
     <sprite>sprites\spr_bonus</sprite>
     <sprite>sprites\spr_powerup</sprite>
     <sprite>sprites\spr_shield</sprite>
+    <sprite>sprites\spr_celebracion</sprite>
+    <sprite>sprites\spr_correccion</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_space</background>
@@ -217,6 +219,7 @@
     <font>fonts\font_info</font>
     <font>fonts\font_multiplier</font>
     <font>fonts\font_puntaje_ganado</font>
+    <font>fonts\font_correccion</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_ship</object>
@@ -249,6 +252,8 @@
     <object>objects\obj_bonus</object>
     <object>objects\obj_bonus_info</object>
     <object>objects\obj_points_multiplied</object>
+    <object>objects\obj_textbox_celebracion</object>
+    <object>objects\obj_textbox_correccion</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_aux</room>
