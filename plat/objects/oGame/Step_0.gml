@@ -7,5 +7,3 @@ if(global.respondida){
 	global.respuestaCorrecta = irandom_range(1,3);
 	global.respondida = false;
 }
-
-show_debug_message(global.respuestaCorrecta);

@@ -20,4 +20,15 @@ global.b = irandom_range(2,9);
 global.r = global.a * global.b;
 global.respuesta = 0;
 
+
+//BONUS
+global.escudo = 0;
+global.poder = 0;
+global.puntos = 0.5;
+global.multiplicador = 1;
+global.slowMo = 0;
+global.bonusActivo = 0;
+global.valorMultiplicador = 1;
+
+
 killtextscale = 1;

@@ -71,6 +71,22 @@
             }
         },
         {
+            "Key": "0da623da-3d97-4599-ba1a-2471d3f1cfaf",
+            "Value": {
+                "id": "c3a2a8a7-2929-4709-b5ea-64c6562fcf31",
+                "resourcePath": "objects\\oSlowMo\\oSlowMo.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "0f05f828-bde4-4be0-8cb7-795ccae44bd5",
+            "Value": {
+                "id": "187264e3-0b4b-4d58-b41d-7621c6b83962",
+                "resourcePath": "sprites\\sSlowMo\\sSlowMo.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "0f7a812c-880e-4fa2-91c8-a87cb4bd8cf5",
             "Value": {
                 "id": "dfac41cb-7740-4986-bb43-5631964a5edd",
@@ -111,6 +127,14 @@
             }
         },
         {
+            "Key": "184e9c1d-b563-49d2-b7cf-e79e5e36b6e5",
+            "Value": {
+                "id": "29354e7e-aebf-4f40-84f6-beec81304a90",
+                "resourcePath": "objects\\oEscudo\\oEscudo.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "19dc635a-1a32-4af8-b082-1ba917a19212",
             "Value": {
                 "id": "9bbe9e66-f8e8-41b9-bb71-7d5b60719035",
@@ -148,6 +172,14 @@
                 "id": "33b1376a-aa09-4a6c-b64a-5059c98a140d",
                 "resourcePath": "tilesets\\tTiles\\tTiles.yy",
                 "resourceType": "GMTileSet"
+            }
+        },
+        {
+            "Key": "269b9013-b767-459f-bac2-25375ea4d856",
+            "Value": {
+                "id": "31c88bfd-3bb6-4044-b20c-8ae1199ad8be",
+                "resourcePath": "sprites\\sPuntos\\sPuntos.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -311,6 +343,14 @@
             }
         },
         {
+            "Key": "65a02a88-9320-47fe-967b-389e52400387",
+            "Value": {
+                "id": "87aeb279-8cb4-4fc8-99c6-84723dfdba2f",
+                "resourcePath": "sprites\\sMultiplicador\\sMultiplicador.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "6801f9b2-3a00-4ddb-bdb3-74ee81577b4e",
             "Value": {
                 "id": "5b4db775-123f-464d-9129-bba69874a742",
@@ -332,6 +372,14 @@
                 "id": "cc006664-0660-48c7-bb9c-c5913f2f16c1",
                 "resourcePath": "rooms\\rEight\\rEight.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "6af61614-ca2f-4274-af0a-451af3c061d0",
+            "Value": {
+                "id": "ff184a88-1c5c-4dbf-961c-c89ee023c0f2",
+                "resourcePath": "objects\\oPuntos\\oPuntos.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -543,6 +591,14 @@
             }
         },
         {
+            "Key": "a35bc2b6-a357-48a4-9147-540e0ed18c80",
+            "Value": {
+                "id": "2f6c8d23-cee7-4a40-ba88-b7e7377bf8d3",
+                "resourcePath": "sprites\\sPoder\\sPoder.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "a69c9545-767e-4959-8290-882a5e81efe8",
             "Value": {
                 "id": "e5906c9a-33db-41f9-99e5-3698b181c78b",
@@ -563,6 +619,14 @@
             "Value": {
                 "id": "39c0ffc4-efb4-451e-bfa7-86c83f59b10e",
                 "resourcePath": "objects\\oEnemyBig\\oEnemyBig.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "ad6151c4-fc58-4476-bb0f-b508f6de4a7f",
+            "Value": {
+                "id": "b4697aaa-c18e-4ff9-831b-30123f52ebb9",
+                "resourcePath": "objects\\oPoder\\oPoder.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -591,6 +655,14 @@
             }
         },
         {
+            "Key": "beae9352-2453-4d9d-a67c-eb1b3764e579",
+            "Value": {
+                "id": "34534aaf-0a53-4103-993b-a93e9c686a46",
+                "resourcePath": "sprites\\sBonus\\sBonus.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "c279a922-bbb1-444a-b5e1-8b8a22c102c9",
             "Value": {
                 "id": "87ab93b2-a0c1-42fa-a33e-22351cc2d877",
@@ -604,6 +676,14 @@
                 "id": "92a57b70-89a8-44ff-aea6-8b5caca0c2a9",
                 "resourcePath": "rooms\\rOne\\rOne.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "c69fa681-68a3-4457-8bc6-ba93bfe05afa",
+            "Value": {
+                "id": "cdd4e73e-c238-4c55-baef-4ef2a684f72f",
+                "resourcePath": "objects\\oBonus\\oBonus.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -663,6 +743,14 @@
             }
         },
         {
+            "Key": "d7a4cf5e-bf67-413c-bbec-259dc67d7500",
+            "Value": {
+                "id": "9315813f-21c1-43d3-818e-e4dbee07efa9",
+                "resourcePath": "objects\\oMultiplicador\\oMultiplicador.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "d7e13341-6826-4c0f-b82c-97b16cec051b",
             "Value": {
                 "id": "9c22c699-15ea-44ad-964a-0c71c42ea6fe",
@@ -684,6 +772,14 @@
                 "id": "99bdfa29-c96e-4dde-984b-46568b7e946a",
                 "resourcePath": "objects\\oLevelEnd\\oLevelEnd.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "d9ec8463-ff98-4980-9084-979538e1df6c",
+            "Value": {
+                "id": "fe9056d1-72e5-4467-8f27-d9a39c78d9ff",
+                "resourcePath": "sprites\\sEscudo\\sEscudo.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -740,6 +836,14 @@
                 "id": "ee92a5fd-f8e0-46b6-9359-ab802cca5a71",
                 "resourcePath": "options\\android\\options_android.yy",
                 "resourceType": "GMAndroidOptions"
+            }
+        },
+        {
+            "Key": "e90e7275-c851-442c-981b-934f434e2a5c",
+            "Value": {
+                "id": "d9f07ba6-d935-48b8-9814-9866a7e41f45",
+                "resourcePath": "fonts\\fBonus\\fBonus.yy",
+                "resourceType": "GMFont"
             }
         },
         {

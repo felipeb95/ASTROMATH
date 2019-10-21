@@ -10,8 +10,16 @@ if(hp<=0){
 	if(instance_exists(oPlayer)){
 		global.kills++;
 		global.killsthisroom++;
-		global.puntaje+=10;
-		global.puntajethisroom+=10;
+		if(global.bonusActivo != 4) {
+			global.puntaje+=10;
+			global.puntajethisroom+=10;
+		}
+		if(global.bonusActivo == 4) {
+			global.puntaje+=(10*global.valorMultiplicador);
+			global.puntajethisroom+=(10*global.valorMultiplicador);
+			global.bonusActivo = 0;
+			global.valorMultiplicador = 1;
+		}
 		with(oGame) killtextscale = 2;
 	}
 	instance_destroy();
