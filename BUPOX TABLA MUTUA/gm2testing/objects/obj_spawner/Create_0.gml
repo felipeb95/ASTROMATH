@@ -2,10 +2,10 @@
 exercise_number = 1;
 
 /* Initial numbers for testing */
-left_number = 20;
-left_to_table_header = 20;
-right_number = 14;
-right_to_table_header = 14;
+left_number = 72;
+left_to_table_header = 72;
+right_number = 24;
+right_to_table_header = 24;
 
 /* Creation of bubbles flag */
 spawner_enabled = true;

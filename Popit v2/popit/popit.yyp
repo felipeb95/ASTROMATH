@@ -79,6 +79,22 @@
             }
         },
         {
+            "Key": "4484db5c-28a4-4f39-8580-696a8d7fe394",
+            "Value": {
+                "id": "ef9f810d-e3fc-4168-8ebd-6b04629dbb3f",
+                "resourcePath": "scripts\\findUsefulPrimeNumbers\\findUsefulPrimeNumbers.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "5c804845-4d8a-41c5-9839-cbc76818ab4f",
+            "Value": {
+                "id": "ec6a664b-15e5-49c6-bfe7-320446fd2f55",
+                "resourcePath": "scripts\\findPrimeNumbers\\findPrimeNumbers.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "69f7b6a4-762b-4f60-b099-9d934afe95e7",
             "Value": {
                 "id": "652c7982-2b6d-43c2-a1e5-5a9bced87a81",
@@ -288,7 +304,8 @@
         }
     ],
     "script_order": [
-        
+        "5c804845-4d8a-41c5-9839-cbc76818ab4f",
+        "4484db5c-28a4-4f39-8580-696a8d7fe394"
     ],
     "tutorial": ""
 }

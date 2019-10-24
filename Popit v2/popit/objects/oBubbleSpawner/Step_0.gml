@@ -1,5 +1,5 @@
 if(creating)
 {
-	instance_create_depth(700,400,-1000,oBubble);	
+	alarm[0] = room_speed*1;
 	creating = false;
 }
