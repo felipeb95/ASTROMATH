@@ -22,11 +22,11 @@ global.respuesta = 0;
 
 
 //BONUS
-global.escudo = 0;
-global.poder = 0;
-global.puntos = 0.5;
-global.multiplicador = 1;
-global.slowMo = 0;
+global.escudo = 0.2;
+global.poder = 0.4;
+global.puntos = 0.6;
+global.multiplicador = 0.8;
+global.slowMo = 1.0;
 global.bonusActivo = 0;
 global.valorMultiplicador = 1;
 
