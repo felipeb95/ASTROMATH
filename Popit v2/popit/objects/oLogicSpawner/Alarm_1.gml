@@ -1,5 +1,5 @@
 randomize();
-
+subDivisionAnswered = false;
 if(divisionCounter == 1)// First division subexersise for the recent prime number selected. Division for numberOne.
 	subDivisionNumber = actualNumberOne;
 if(divisionCounter == 2)// For second division subexersise
@@ -16,10 +16,12 @@ for(i = 0; i < numberOfDivisionAlternatives; i++){
 			if(oLogicSpawner.subDivisionNumber mod oLogicSpawner.numberHit == 0){
 				numberOnHolder = oLogicSpawner.subDivisionNumber / oLogicSpawner.numberHit;
 				applies = 1;
+				oLogicSpawner.actualSubDivisionApplies = 1;
 			}
 			else{
 				numberOnHolder = "no aplica";
 				applies = 0;
+				oLogicSpawner.actualSubDivisionApplies = 0;
 			}
 			isCorrect = true;
 		}

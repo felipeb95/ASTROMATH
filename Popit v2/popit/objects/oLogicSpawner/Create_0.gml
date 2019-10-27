@@ -12,13 +12,19 @@ primeNumbersFound = ds_list_create(); // All primer numbers lower or equal to th
 alternativesList = ds_list_create(); // The alternatives that will be displayed in the bubbles. They are all handy.
 xPositionsList = ds_list_create(); // Filled below.
 numberOfDivisionAlternatives = 5;
+actualSubDivisionApplies = -1;
+
+/* GLOBALS */
 
 
 /* FLAGS */
+subDivisionAnswered = false;
+primeAnswered = false;
 primeType = true;
 primeAlternativesCreation = true; // Triggers Alarm 0.
 divisionType = false;
 divisionAlternativesCreation = false; // Triggers Alarm 1.
+multiplyAlternativesCreation = false; // Triggers Alarm 2;
 
 /* POSITIONS & SIZES */
 xLeftLimit = room_width/3;

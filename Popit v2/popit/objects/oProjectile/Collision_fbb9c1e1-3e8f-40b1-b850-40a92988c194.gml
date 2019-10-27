@@ -9,42 +9,69 @@ if(oLogicSpawner.primeType){
 		oLogicSpawner.numberHit = numberHit;
 		//oLogicSpawner.divisionType = true;
 		oLogicSpawner.divisionAlternativesCreation = true;
+		oLogicSpawner.subDivisionAnswered = true;
 	}
-	else
+	else{
 		show_debug_message("[PT Wrong] "+string(numberHit)+" can't entirely divide any of the numbers");
+		oLogicSpawner.primeAlternativesCreation = true;
+	}
 }
 
 if(oLogicSpawner.divisionType){
 	with(other){
 		if(isCorrect){
 			show_debug_message("[DT Correct]");
+			global.answered = true;
 			
-			
-			if(applies == 0){
+			if(applies == 0){ // Check if the division doesn't appliy (can't entirely divide)
 				if(oLogicSpawner.divisionCounter == 1)
-					ds_list_add(oTable.numberOnePartials, oLogicSpawner.subDivisionNumber);
+					ds_list_add(oTable.numberOnePartials, oLogicSpawner.subDivisionNumber); // Same number is written down in table as a partial
 				if(oLogicSpawner.divisionCounter == 2)
-					ds_list_add(oTable.numberTwoPartials, oLogicSpawner.subDivisionNumber);
+					ds_list_add(oTable.numberTwoPartials, oLogicSpawner.subDivisionNumber); // Same number is written down in table as a partial
 			}
-			else{
+			else{ // It does apply, meaning that it can be entirely divided.
 				if(oLogicSpawner.divisionCounter == 1)
-					ds_list_add(oTable.numberOnePartials, numberHit);
+					ds_list_add(oTable.numberOnePartials, numberHit); // The number hit, which is the right division, is written down as a partial.
 				if(oLogicSpawner.divisionCounter == 2)
-					ds_list_add(oTable.numberTwoPartials, numberHit);
+					ds_list_add(oTable.numberTwoPartials, numberHit); // The number hit, which is the right division, is written down as a partial.
 			}
-			
 			oLogicSpawner.divisionCounter++;
-			if(oLogicSpawner.divisionCounter <= 2)
+			
+			if(oLogicSpawner.divisionCounter <= 2) // Only if the the divisionCounter (number of subdivision exersise) is less equel or less than, the alarm is triggered
 				oLogicSpawner.alarm[1] = room_speed*1;
-			else{
-				oLogicSpawner.divisionCounter = 1;
-				oLogicSpawner.divisionAlternativesCreation = false;
-				oLogicSpawner.primeAlternativesCreation = true;
-				show_debug_message("[ # # # RESET # # # ]");
+			else{ // Alarm isn't triggered because the 2 division subexersises have been done.
+				oLogicSpawner.divisionCounter = 1; // Division subexersise counter reseted.
+				oLogicSpawner.divisionAlternativesCreation = false; // No more divsision alternatives are created.
+				oLogicSpawner.primeAlternativesCreation = true; // Time to create prime alternatives.
+				show_debug_message("[ # # # RESET # # # ]"); // New exersise starts message.
 			}
 		}
-		else
+		else{
+			if(oLogicSpawner.actualSubDivisionApplies == 0){ // Check if the division doesn't appliy (can't entirely divide)
+				if(oLogicSpawner.divisionCounter == 1)
+					ds_list_add(oTable.numberOnePartials, oLogicSpawner.subDivisionNumber); // Same number is written down in table as a partial
+				if(oLogicSpawner.divisionCounter == 2)
+					ds_list_add(oTable.numberTwoPartials, oLogicSpawner.subDivisionNumber); // Same number is written down in table as a partial
+			}
+			else{ // It does apply, meaning that it can be entirely divided.
+				if(oLogicSpawner.divisionCounter == 1)
+					ds_list_add(oTable.numberOnePartials, oLogicSpawner.subDivisionNumber / oLogicSpawner.numberHit); // The number hit, which is the right division, is written down as a partial.
+				if(oLogicSpawner.divisionCounter == 2)
+					ds_list_add(oTable.numberTwoPartials, oLogicSpawner.subDivisionNumber / oLogicSpawner.numberHit); // The number hit, which is the right division, is written down as a partial.
+			}
+			oLogicSpawner.divisionCounter++;
+			
+			if(oLogicSpawner.divisionCounter <= 2) // Only if the the divisionCounter (number of subdivision exersise) is less equel or less than, the alarm is triggered
+				oLogicSpawner.alarm[1] = room_speed*1;
+			else{ // Alarm isn't triggered because the 2 division subexersises have been done.
+				oLogicSpawner.divisionCounter = 1; // Division subexersise counter reseted.
+				oLogicSpawner.divisionAlternativesCreation = false; // No more divsision alternatives are created.
+				oLogicSpawner.primeAlternativesCreation = true; // Time to create prime alternatives.
+				show_debug_message("[ # # # RESET # # # ]"); // New exersise starts message.
+			}
 			show_debug_message("[DT Wrong]");
+			
+		}
 	}
 }
 

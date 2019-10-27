@@ -1,0 +1,1 @@
+oLogicSpawner.multiplyAlternativesCreation = true;

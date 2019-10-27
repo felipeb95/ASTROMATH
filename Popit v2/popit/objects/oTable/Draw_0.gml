@@ -12,6 +12,10 @@ if(oLogicSpawner.divisionType){
 		draw_text(xCenterOfTable + xCenterOffset, yForExersise, "Divide "+string(oLogicSpawner.subDivisionNumber)+"/"+string(oLogicSpawner.numberHit));
 }
 
+if(oLogicSpawner.primeType){
+	draw_text(xCenterOfTable + xCenterOffset, yForExersise, "Elige un número primo\nque pueda dividir los\nnúmeros de la tabla");	
+}
+
 /* Exersise's numbers placement */
 draw_text(xForNumberOne, yForHorizontalLine - headersOffset, string(oLogicSpawner.numberOneHeader)); // Left Bubble Number
 draw_text(xForNumberTwo, yForHorizontalLine - headersOffset, string(oLogicSpawner.numberTwoHeader)); // Right Bubble Number

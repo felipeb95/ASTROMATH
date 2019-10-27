@@ -30,3 +30,8 @@ if(divisionAlternativesCreation){
 	alarm[1] = room_speed*1; // One second Delay after trigger.	
 	divisionAlternativesCreation = false;
 }
+
+if(multiplyAlternativesCreation){
+	show_debug_message("[Phase 2 under construction]");
+	multiplyAlternativesCreation = false;
+}
