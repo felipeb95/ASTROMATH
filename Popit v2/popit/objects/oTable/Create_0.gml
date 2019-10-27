@@ -14,5 +14,6 @@ xForNumberTwo = xCenterOfTable + horizontalLineLarge/1.5;
 tableLineWidth = 3;
 headersOffset = 15;
 ySpaceBetweenElements = 40;
+yForExersise = room_height-room_height/6;
 
 show_debug_message("Center: "+string(xCenterOfTable));

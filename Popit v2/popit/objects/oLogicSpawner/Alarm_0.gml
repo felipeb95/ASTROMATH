@@ -39,7 +39,6 @@ show_debug_message(xPositionsString);
 /* Creation of alternatives holders */
 
 ds_list_shuffle(alternativesList); // Shuffle for random appearance.
-var positionsListSize = ds_list_size(xPositionsList);
 var alternativesListSize = ds_list_size(alternativesList);
 var _alternativesList = ds_list_create(); // New list to extract possible numubers.
 ds_list_copy(_alternativesList,alternativesList); // Original list is copied inside the new list so it's not modified.

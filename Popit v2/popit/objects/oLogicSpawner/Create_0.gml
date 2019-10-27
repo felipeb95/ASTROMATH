@@ -1,14 +1,18 @@
 /* VARIABLES */
-numberOne = 14;
-numberOneHeader = numberOne;
-numberTwo = 15;
-numberTwoHeader = numberTwo;
-/* Following 4 lines should be updated when a new exersise is selected */
+numberOne = undefined;
+numberOneHeader = undefined;
+actualNumberOne = undefined;
+numberTwo = undefined;
+actualNumberTwo = undefined;
+numberTwoHeader = undefined;
+numberHit = undefined;
+divisionCounter = 1; // It goes up to 2 and then resets.
+subDivisionNumber = undefined; // Actual number being divided in the sub exersise.
 primeNumbersFound = ds_list_create(); // All primer numbers lower or equal to the biggest of the exersise's numbers.
-findPrimeNumbers(numberOne, numberTwo, primeNumbersFound); 
 alternativesList = ds_list_create(); // The alternatives that will be displayed in the bubbles. They are all handy.
-findUsefulPrimeNumbers(numberOne, numberTwo, primeNumbersFound, alternativesList);
 xPositionsList = ds_list_create(); // Filled below.
+numberOfDivisionAlternatives = 5;
+
 
 /* FLAGS */
 primeType = true;
