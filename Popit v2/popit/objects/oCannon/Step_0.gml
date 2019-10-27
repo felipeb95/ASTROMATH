@@ -4,12 +4,12 @@ left = keyboard_check(vk_left);
 right = keyboard_check(vk_right);
 
 if(left){
-	x -= 5;
+	x -= xSpeed;
 	left = false;
 }
 
 if(right){
-	x += 5;
+	x += xSpeed;
 	right = false;
 }
 

@@ -2,7 +2,7 @@
     "id": "eba5d3e5-c026-4ebc-8c51-e1f371741b0d",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "oBubbleSpawner",
+    "name": "oLogicSpawner",
     "eventList": [
         {
             "id": "f83c8a3b-b466-4019-9908-e6a552d2c678",
@@ -31,6 +31,16 @@
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
+            "eventtype": 2,
+            "m_owner": "eba5d3e5-c026-4ebc-8c51-e1f371741b0d"
+        },
+        {
+            "id": "cb0dc364-08f2-4b95-a888-07d35b61408c",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 1,
             "eventtype": 2,
             "m_owner": "eba5d3e5-c026-4ebc-8c51-e1f371741b0d"
         }

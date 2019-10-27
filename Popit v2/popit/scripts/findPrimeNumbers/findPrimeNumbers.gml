@@ -1,4 +1,4 @@
-/// findPrimeNumbers(number1, number2, listToFill)
+/// findPrimeNumbers(numberOne, numberTwo, listToFill)
 
 /* 
 	DESCRIPTION:
@@ -7,16 +7,16 @@
 	the actual exersise. Check out for 'SIEVE OF ERATOSTHENES'.
 	
 	PARAMETERS:
-	number1,number2: Numbers of the excersise.
+	numberOne,numberTwo: Numbers of the excersise.
 	listToFill: the list in the spawner that will store these prime numbers.
 	
 */
 
-var number1 = argument0;
-var number2 = argument1;
+var numberOne = argument0;
+var numberTwo = argument1;
 var listToFill = argument2;
 var primeIndex = 2; // Starts with number 2.
-var biggestNumber = max(number1,number2); // Checks what's the biggest value so it can iterate until reaching that value.
+var biggestNumber = max(numberOne,numberTwo); // Checks what's the biggest value so it can iterate until reaching that value.
 var primeArray = undefined;
 var i = 0;
 var primeStr = "";

@@ -2,13 +2,13 @@
     "id": "b9e28eb5-a143-447b-91cb-61c0e7a4211a",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "sBubble",
+    "name": "sAlternativeHolder",
     "For3D": false,
     "HTile": false,
     "VTile": false,
-    "bbox_bottom": 127,
+    "bbox_bottom": 63,
     "bbox_left": 0,
-    "bbox_right": 127,
+    "bbox_right": 63,
     "bbox_top": 0,
     "bboxmode": 0,
     "colkind": 1,
@@ -128,7 +128,7 @@
     ],
     "gridX": 0,
     "gridY": 0,
-    "height": 128,
+    "height": 64,
     "layers": [
         {
             "id": "62b53d96-0ef8-4973-9e49-2eb45db8c351",
@@ -152,7 +152,7 @@
     "swfPrecision": 2.525,
     "textureGroupId": "1225f6b0-ac20-43bd-a82e-be73fa0b6f4f",
     "type": 0,
-    "width": 128,
-    "xorig": 64,
-    "yorig": 64
+    "width": 64,
+    "xorig": 32,
+    "yorig": 32
 }
