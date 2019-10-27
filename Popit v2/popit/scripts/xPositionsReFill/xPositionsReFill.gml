@@ -15,3 +15,10 @@ var i = 0;
 
 for( i = 0; i < 6; i ++)
 	ds_list_add(listToFill, leftLimit + alternativeHolderWidth/2 + (alternativeHolderWidth + distance)*i);
+	
+xPositionsString = "[ ";
+for(i = 0; i < ds_list_size(oLogicSpawner.xPositionsList); i++){
+	xPositionsString += string(oLogicSpawner.xPositionsList[| i])+" ";
+}
+xPositionsString += " ]";
+show_debug_message("[Script] "+xPositionsString);

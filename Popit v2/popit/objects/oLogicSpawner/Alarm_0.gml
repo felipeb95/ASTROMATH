@@ -1,24 +1,32 @@
 randomize();
 /* Storing of prime numbers and alternatives in spawner's lists */
 
+/* For debug
 primeNumbersString = "[ ";
 alternativesString = "[ ";
 xPositionsString = "[ ";
+*/
 
-findPrimeNumbers(numberOne, numberTwo, primeNumbersFound);
+//findPrimeNumbers(numberOne, numberTwo, primeNumbersFound);
+/* For debug
 for(i = 0; i < ds_list_size(primeNumbersFound); i++){
 	primeNumbersString += string(primeNumbersFound[| i])+" ";
 }
+*/
 
-findUsefulPrimeNumbers(numberOne, numberTwo, primeNumbersFound, alternativesList);
+//findUsefulPrimeNumbers(numberOne, numberTwo, primeNumbersFound, alternativesList);
+/* For debug
 for(i = 0; i < ds_list_size(alternativesList); i++){
 	alternativesString += string(alternativesList[| i])+" ";
-}
+}*/
 
+/* For debug
 for(i = 0; i < ds_list_size(xPositionsList); i++){
 	xPositionsString += string(xPositionsList[| i])+" ";
 }
+*/
 
+/* For debug
 primeNumbersString += " ]";
 alternativesString += " ]";
 xPositionsString += " ]";
@@ -26,6 +34,7 @@ xPositionsString += " ]";
 show_debug_message(primeNumbersString);
 show_debug_message(alternativesString);
 show_debug_message(xPositionsString);
+*/
 
 /* Creation of alternatives holders */
 

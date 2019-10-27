@@ -207,6 +207,14 @@
             }
         },
         {
+            "Key": "a67f7dc0-8e0d-4f36-a12c-607a5a71ec6c",
+            "Value": {
+                "id": "8b5c7a10-75a5-4c62-a63d-b447c487ef5d",
+                "resourcePath": "fonts\\fTableHeader\\fTableHeader.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "a811e428-3a70-4a6b-8a11-f464c18ec302",
             "Value": {
                 "id": "a3b5852f-acde-4167-ab5a-837cb382df0c",
