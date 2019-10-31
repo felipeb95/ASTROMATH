@@ -5,6 +5,7 @@ oLogicSpawner.alternativeGotHit = true;
 
 if(oLogicSpawner.primeType){
 	if(oLogicSpawner.numberOne mod numberHit == 0 or oLogicSpawner.numberTwo mod numberHit == 0){ // Number on hit can entirely divide at least one of the exersise's numbers.
+		audio_play_sound(sndCorrect,10,false);
 		show_debug_message("[PT Correct] "+string(numberHit)+" can entirely divide one of the numbers");
 		ds_list_add(oTable.tableDivisors, numberHit);
 		oLogicSpawner.numberHit = numberHit;
@@ -13,6 +14,7 @@ if(oLogicSpawner.primeType){
 		oLogicSpawner.subDivisionAnswered = true;
 	}
 	else{
+		audio_play_sound(sndWrong,10,false);
 		show_debug_message("[PT Wrong] "+string(numberHit)+" can't entirely divide any of the numbers");
 		oLogicSpawner.primeAlternativesCreation = true; // Will repeat the question/exersise.
 	}
@@ -21,6 +23,7 @@ if(oLogicSpawner.primeType){
 if(oLogicSpawner.divisionType){
 	with(other){
 		if(isCorrect){
+			audio_play_sound(sndCorrect,10,false);
 			show_debug_message("[DT Correct]");
 			
 			if(applies == 0){ // Check if the division doesn't appliy (can't entirely divide)
@@ -47,6 +50,7 @@ if(oLogicSpawner.divisionType){
 			}
 		}
 		else{ // Correction if wrong holder is hit.
+			audio_play_sound(sndWrong,10,false);
 			if(oLogicSpawner.actualSubDivisionApplies == 0){ // Check if the division doesn't appliy (can't entirely divide)
 				if(oLogicSpawner.divisionCounter == 1)
 					ds_list_add(oTable.numberOnePartials, oLogicSpawner.subDivisionNumber); // Same number is written down in table as a partial

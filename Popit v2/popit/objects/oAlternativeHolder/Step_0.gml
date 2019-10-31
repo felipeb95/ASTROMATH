@@ -4,6 +4,7 @@ if(y >= room_height-sprite_get_height(sCannon)-sprite_get_height(oAlternativeHol
 	instance_destroy(self);
 	
 if(!instance_exists(oAlternativeHolder) and !oLogicSpawner.alternativeGotHit){ // Checks if all holders have passed trough the screen and if the player couldn't hit any of them (omision).
+	audio_play_sound(sndOmision,10,false);
 	show_debug_message("[All Holders Deleted]");
 	show_debug_message("[DT CORRECTION IN OMITION CASE]");
 	
