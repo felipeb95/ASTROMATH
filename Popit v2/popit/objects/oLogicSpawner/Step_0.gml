@@ -42,6 +42,8 @@ if(divisionAlternativesCreation){
 }
 
 if(multiplyAlternativesCreation){
+	multiplyingType = true;
+	alarm[2] = room_speed*3;
 	show_debug_message("[MULTIPLYING TYPE]");
 	alternativeGotHit = false;
 	show_debug_message("[Phase 2 under construction]");

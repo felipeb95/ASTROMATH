@@ -15,7 +15,7 @@ numberOfDivisionAlternatives = 5;
 actualSubDivisionApplies = -1;
 exersiseJustCreated = true; // This only changes to true when multiplying phase is done, so a new pair of numbers can be selected.
 alternativeGotHit = false; // This checks wether the player omitted or couldn't hit any alternative.
-
+maxNumberForHolder = 50;
 /* GLOBALS */
 
 
@@ -26,7 +26,9 @@ primeType = true;
 primeAlternativesCreation = true; // Triggers Alarm 0.
 divisionType = false;
 divisionAlternativesCreation = false; // Triggers Alarm 1.
+multiplyingType = false;
 multiplyAlternativesCreation = false; // Triggers Alarm 2;
+
 
 /* POSITIONS & SIZES */
 xLeftLimit = room_width/3;

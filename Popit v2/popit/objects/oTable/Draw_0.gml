@@ -40,3 +40,6 @@ if(!ds_list_empty(numberTwoPartials)){
 		draw_text(xForNumberTwo, yForHorizontalLine - headersOffset + ySpaceBetweenElements*(i+1), string(numberTwoPartials[| i])); 
 	}
 }
+
+if(multiplyMessage)
+	draw_text(xCenterOfTable + xCenterOffset, yForExersise,"Ahora vamos a \n multiplicar");

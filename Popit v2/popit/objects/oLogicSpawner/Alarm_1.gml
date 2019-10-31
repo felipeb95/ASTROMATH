@@ -7,7 +7,7 @@ if(divisionCounter == 2)// For second division subexersise
 	subDivisionNumber = actualNumberTwo;
 
 
-	
+var numbersForAlternatives = numbersForAlternativeList(subDivisionNumber / numberHit, maxNumberForHolder); // Numbers for holders.
 var randomRightAnswerSelected = irandom_range(0,numberOfDivisionAlternatives-1); // In which instance the right answer will be is selected randomly.
 for(i = 0; i < numberOfDivisionAlternatives; i++){
 	var xPositionSelected = irandom_range(0,ds_list_size(xPositionsList)-1); // X initial position for the alternative is randomly selected from the list of predefined X's.
@@ -28,8 +28,11 @@ for(i = 0; i < numberOfDivisionAlternatives; i++){
 		}
 	}
 	else{
+		var numberListIndexPick = irandom_range(0,ds_list_size(numbersForAlternatives)-1);
+		var numberFromList = numbersForAlternatives[| numberListIndexPick];
+		ds_list_delete(numbersForAlternatives, numberListIndexPick);
 		with(alternativeHolderInst){
-			numberOnHolder = irandom_range(1,50);	
+			numberOnHolder = numberFromList;	
 		}
 	}
 	ds_list_delete(xPositionsList,xPositionSelected);

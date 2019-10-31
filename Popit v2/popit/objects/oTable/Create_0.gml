@@ -18,3 +18,4 @@ yForExersise = room_height-room_height/6;
 
 /* FLAGS */
 phaseOneFinished = false;
+multiplyMessage = false;
