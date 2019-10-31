@@ -47,6 +47,7 @@ ds_list_copy(_alternativesList,alternativesList); // Original list is copied ins
 for(i = 0; i < alternativesListSize; i++){
 	var xPositionSelected = irandom_range(0,ds_list_size(xPositionsList)-1);
 	var alternativeSelected = irandom_range(0,ds_list_size(_alternativesList)-1);
+	show_debug_message("[X POS SEL] "+string(xPositionSelected));
 	var alternativeHolderInst = instance_create_depth(xPositionsList[| xPositionSelected], -100, -1000, oAlternativeHolder);
 	
 	with(alternativeHolderInst)

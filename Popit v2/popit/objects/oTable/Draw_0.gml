@@ -13,7 +13,7 @@ if(oLogicSpawner.divisionType){
 }
 
 if(oLogicSpawner.primeType){
-	draw_text(xCenterOfTable + xCenterOffset, yForExersise, "Elige un número primo\nque pueda dividir los\nnúmeros de la tabla");	
+	draw_text(xCenterOfTable + xCenterOffset, yForExersise, "Elige un número primo\nque pueda dividir al menos uno\n de los números de la tabla");	
 }
 
 /* Exersise's numbers placement */

@@ -1,6 +1,7 @@
 var numberHit = undefined;
 with(other) // Only specifif instance collisioned.
 	numberHit = numberOnHolder;
+oLogicSpawner.alternativeGotHit = true;
 
 if(oLogicSpawner.primeType){
 	if(oLogicSpawner.numberOne mod numberHit == 0 or oLogicSpawner.numberTwo mod numberHit == 0){ // Number on hit can entirely divide at least one of the exersise's numbers.
@@ -13,7 +14,7 @@ if(oLogicSpawner.primeType){
 	}
 	else{
 		show_debug_message("[PT Wrong] "+string(numberHit)+" can't entirely divide any of the numbers");
-		oLogicSpawner.primeAlternativesCreation = true;
+		oLogicSpawner.primeAlternativesCreation = true; // Will repeat the question/exersise.
 	}
 }
 
@@ -21,7 +22,6 @@ if(oLogicSpawner.divisionType){
 	with(other){
 		if(isCorrect){
 			show_debug_message("[DT Correct]");
-			global.answered = true;
 			
 			if(applies == 0){ // Check if the division doesn't appliy (can't entirely divide)
 				if(oLogicSpawner.divisionCounter == 1)
@@ -46,7 +46,7 @@ if(oLogicSpawner.divisionType){
 				show_debug_message("[ # # # RESET # # # ]"); // New exersise starts message.
 			}
 		}
-		else{
+		else{ // Correction if wrong holder is hit.
 			if(oLogicSpawner.actualSubDivisionApplies == 0){ // Check if the division doesn't appliy (can't entirely divide)
 				if(oLogicSpawner.divisionCounter == 1)
 					ds_list_add(oTable.numberOnePartials, oLogicSpawner.subDivisionNumber); // Same number is written down in table as a partial

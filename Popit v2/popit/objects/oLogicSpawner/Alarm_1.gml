@@ -1,4 +1,5 @@
 randomize();
+alternativeGotHit = false;
 subDivisionAnswered = false;
 if(divisionCounter == 1)// First division subexersise for the recent prime number selected. Division for numberOne.
 	subDivisionNumber = actualNumberOne;

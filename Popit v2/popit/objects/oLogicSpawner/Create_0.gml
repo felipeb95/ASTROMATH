@@ -13,6 +13,8 @@ alternativesList = ds_list_create(); // The alternatives that will be displayed 
 xPositionsList = ds_list_create(); // Filled below.
 numberOfDivisionAlternatives = 5;
 actualSubDivisionApplies = -1;
+exersiseJustCreated = true; // This only changes to true when multiplying phase is done, so a new pair of numbers can be selected.
+alternativeGotHit = false; // This checks wether the player omitted or couldn't hit any alternative.
 
 /* GLOBALS */
 
