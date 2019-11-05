@@ -13,7 +13,7 @@ else{
 //Movimiento
 var move = key_right - key_left;
 
-hsp = (move * walksp) + gunkickx;
+hsp = (move * walksp); //+ gunkickx;
 view = sign(move);
 gunkickx = 0;
 vsp = (vsp + grv); //+ gunkicky;

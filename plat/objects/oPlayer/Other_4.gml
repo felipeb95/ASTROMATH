@@ -1,5 +1,5 @@
 global.mostrarEjercicio = true;
-
+instance_destroy(oFondo);
 //Sobreescribir
 if(file_exists(SAVEFILE)) file_delete(SAVEFILE);
 
