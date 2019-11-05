@@ -1,5 +1,5 @@
 /* VARIABLES */
-ySpeed = random_range(1,3);
+ySpeed = random_range(0.1,0.5);
 numberOnHolder = undefined;
 isCorrect = false;
 applies = -1; 

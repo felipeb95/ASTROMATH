@@ -1,40 +1,4 @@
 randomize();
-/* Storing of prime numbers and alternatives in spawner's lists */
-
-/* For debug
-primeNumbersString = "[ ";
-alternativesString = "[ ";
-xPositionsString = "[ ";
-*/
-
-//findPrimeNumbers(numberOne, numberTwo, primeNumbersFound);
-/* For debug
-for(i = 0; i < ds_list_size(primeNumbersFound); i++){
-	primeNumbersString += string(primeNumbersFound[| i])+" ";
-}
-*/
-
-//findUsefulPrimeNumbers(numberOne, numberTwo, primeNumbersFound, alternativesList);
-/* For debug
-for(i = 0; i < ds_list_size(alternativesList); i++){
-	alternativesString += string(alternativesList[| i])+" ";
-}*/
-
-/* For debug
-for(i = 0; i < ds_list_size(xPositionsList); i++){
-	xPositionsString += string(xPositionsList[| i])+" ";
-}
-*/
-
-/* For debug
-primeNumbersString += " ]";
-alternativesString += " ]";
-xPositionsString += " ]";
-
-show_debug_message(primeNumbersString);
-show_debug_message(alternativesString);
-show_debug_message(xPositionsString);
-*/
 
 /* Creation of alternatives holders */
 
@@ -48,7 +12,7 @@ for(i = 0; i < alternativesListSize; i++){
 	var xPositionSelected = irandom_range(0,ds_list_size(xPositionsList)-1);
 	var alternativeSelected = irandom_range(0,ds_list_size(_alternativesList)-1);
 	show_debug_message("[X POS SEL] "+string(xPositionSelected));
-	var alternativeHolderInst = instance_create_depth(xPositionsList[| xPositionSelected], -100, -1000, oAlternativeHolder);
+	var alternativeHolderInst = instance_create_depth(xPositionsList[| xPositionSelected], -1*sprite_get_height(sAlternativeHolder), -1000, oAlternativeHolder);
 	
 	with(alternativeHolderInst)
 		numberOnHolder = _alternativesList[| alternativeSelected];	

@@ -3,10 +3,12 @@ if(primeAlternativesCreation){
 	show_debug_message("[PRIME TYPE]");
 	primeType = true;
 	if(ds_list_empty(oTable.numberOnePartials) and exersiseJustCreated){ // This means that the exersise is new. A pair of numbers needs to be selected.
-		numberOne = 14; // Number chosen from script.
+		randomize();
+		audio_play_sound(sndNewRound,10,false);
+		numberOne = irandom_range(minNumber,maxNumber); // Number chosen randomly;
 		actualNumberOne = numberOne;
 		numberOneHeader = numberOne;
-		numberTwo = 15; // Number chosen from script.
+		numberTwo = numbersElection(numberOne, minNumber, maxNumber); // Number chosen from script.
 		actualNumberTwo = numberTwo;
 		numberTwoHeader = numberTwo;
 		findPrimeNumbers(numberOne, numberTwo, primeNumbersFound);  // All prime numbers below the biggest of the number pair.
@@ -27,8 +29,9 @@ if(primeAlternativesCreation){
 		show_debug_message("[NUMBERS AFTER INIT] "+string(numberOne) +" and "+string(numberTwo));
 	}
 	exersiseJustCreated = false; // Exersise is not new anymore. This only changes to true when multiplying phase is done.
+	multiplyingType = false;
 	divisionType = false;
-	alarm[0] = room_speed*1; // One second Delay after trigger.	
+	alarm[0] = room_speed*1; // One second delay after trigger.	
 	primeAlternativesCreation = false;
 }
 
@@ -37,15 +40,20 @@ if(divisionAlternativesCreation){
 	alternativeGotHit = false;
 	primeType = false;
 	divisionType = true;
-	alarm[1] = room_speed*1; // One second Delay after trigger.	
+	alarm[1] = room_speed*1; // One second delay after trigger.	
 	divisionAlternativesCreation = false;
 }
 
 if(multiplyAlternativesCreation){
-	multiplyingType = true;
-	alarm[2] = room_speed*3;
-	show_debug_message("[MULTIPLYING TYPE]");
-	alternativeGotHit = false;
 	show_debug_message("[Phase 2 under construction]");
+	show_debug_message("[MULTIPLYING TYPE]");
+	divisionType = false;
+	multiplyingType = true;
+	if(ds_list_size(oTable.tableDivisors) > 1)
+		alarm[2] = room_speed*1; // One second delay after trigger.
+	else
+		show_debug_message("[PT STOPS]");
+	alternativeGotHit = false;
 	multiplyAlternativesCreation = false;
+	show_debug_message("[MT last instruction]");
 }

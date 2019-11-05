@@ -1,6 +1,6 @@
 
 {
-    "name": "rPlayroom",
+    "name": "rPlayRoom",
     "id": "8bd5b964-b16a-4eda-a920-28ed08c86ab8",
     "creationCodeFile": "",
     "inheritCode": false,

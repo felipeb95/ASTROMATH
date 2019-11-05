@@ -2,6 +2,13 @@
 numberOnePartials = ds_list_create();
 numberTwoPartials = ds_list_create();
 tableDivisors = ds_list_create();
+strMarked = "";
+strNotMarked = "";
+highlightedRow = -1; // 0 starts the lists. 
+
+/* COLORS */
+markedColor = c_orange;
+notMarkedColor = c_white;
 
 /* POSITIONS & SIZES */
 xCenterOffset = 50; // This is to avoid putting the table to close to the play area.
@@ -15,7 +22,9 @@ tableLineWidth = 3;
 headersOffset = 15;
 ySpaceBetweenElements = 40;
 yForExersise = room_height-room_height/6;
+yForList = room_height*0.6;
+listX = undefined;
 
 /* FLAGS */
-phaseOneFinished = false;
 multiplyMessage = false;
+mcmMessage = false;

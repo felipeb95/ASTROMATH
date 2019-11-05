@@ -38,6 +38,8 @@ if(oLogicSpawner.divisionType){
 				if(oLogicSpawner.divisionCounter == 2)
 					ds_list_add(oTable.numberTwoPartials, numberHit); // The number hit, which is the right division, is written down as a partial.
 			}
+			show_debug_message("[SUB DIVISION] It's on number: "+string(oLogicSpawner.divisionCounter));
+			var localDivCounter = oLogicSpawner.divisionCounter;
 			oLogicSpawner.divisionCounter++;
 			
 			if(oLogicSpawner.divisionCounter <= 2) // Only if the the divisionCounter (number of subdivision exersise) is less equel or less than, the alarm is triggered
@@ -63,9 +65,11 @@ if(oLogicSpawner.divisionType){
 				if(oLogicSpawner.divisionCounter == 2)
 					ds_list_add(oTable.numberTwoPartials, oLogicSpawner.subDivisionNumber / oLogicSpawner.numberHit); // The number hit, which is the right division, is written down as a partial.
 			}
+			show_debug_message("[SUB DIVISION] It's on number: "+string(oLogicSpawner.divisionCounter));
+			var localDivCounter = oLogicSpawner.divisionCounter;
 			oLogicSpawner.divisionCounter++;
 			
-			if(oLogicSpawner.divisionCounter <= 2) // Only if the the divisionCounter (number of subdivision exersise) is less equel or less than, the alarm is triggered
+			if(oLogicSpawner.divisionCounter <= 2) // Only if the the divisionCounter (number of subdivision exersise) is equal or less than 2, the alarm is triggered
 				oLogicSpawner.alarm[1] = room_speed*1;
 			else{ // Alarm isn't triggered because the 2 division subexersises have been done.
 				oLogicSpawner.divisionCounter = 1; // Division subexersise counter reseted.
@@ -77,6 +81,33 @@ if(oLogicSpawner.divisionType){
 			
 		}
 	}
+	
+	if(localDivCounter == 2 and oTable.numberOnePartials[| ds_list_size(oTable.numberOnePartials)-1] == 1 and  oTable.numberTwoPartials[| ds_list_size(oTable.numberTwoPartials)-1] == 1){
+			oLogicSpawner.phaseOneFinished = true;
+	}
+}
+
+if(oLogicSpawner.multiplyingType){
+	with(other){
+		if(isCorrect){
+			audio_play_sound(sndCorrect,7,false);
+			tableDivisorsReorder(oTable.tableDivisors); // Table reorder.
+			show_debug_message("[MT CORRECT]");
+			if(ds_list_size(oTable.tableDivisors) == 1){ // Only one result. Round finished.
+				oTable.alarm[0] = room_speed*1;
+			}
+		}
+		else{
+			audio_play_sound(sndWrong,7,false);
+			tableDivisorsReorder(oTable.tableDivisors); // Table reoder.
+			show_debug_message("[MT WRONG]");
+			if(ds_list_size(oTable.tableDivisors) == 1){ // Only one result. Round finished.
+				oTable.alarm[0] = room_speed*1;
+			}
+		}
+	}
+	
+	oLogicSpawner.multiplyAlternativesCreation = true;
 }
 
 with(oAlternativeHolder) // Looping through all instances of oAlternativeHolder

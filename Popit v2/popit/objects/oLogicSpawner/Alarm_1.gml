@@ -3,7 +3,7 @@ alternativeGotHit = false;
 subDivisionAnswered = false;
 if(divisionCounter == 1)// First division subexersise for the recent prime number selected. Division for numberOne.
 	subDivisionNumber = actualNumberOne;
-if(divisionCounter == 2)// For second division subexersise
+if(divisionCounter == 2) // For second division subexersise
 	subDivisionNumber = actualNumberTwo;
 
 
@@ -11,7 +11,7 @@ var numbersForAlternatives = numbersForAlternativeList(subDivisionNumber / numbe
 var randomRightAnswerSelected = irandom_range(0,numberOfDivisionAlternatives-1); // In which instance the right answer will be is selected randomly.
 for(i = 0; i < numberOfDivisionAlternatives; i++){
 	var xPositionSelected = irandom_range(0,ds_list_size(xPositionsList)-1); // X initial position for the alternative is randomly selected from the list of predefined X's.
-	var alternativeHolderInst = instance_create_depth(xPositionsList[| xPositionSelected], -100, -1000, oAlternativeHolder);
+	var alternativeHolderInst = instance_create_depth(xPositionsList[| xPositionSelected], -1*sprite_get_height(sAlternativeHolder), -1000, oAlternativeHolder);
 	if(i == randomRightAnswerSelected){
 		with(alternativeHolderInst){
 			if(oLogicSpawner.subDivisionNumber mod oLogicSpawner.numberHit == 0){
