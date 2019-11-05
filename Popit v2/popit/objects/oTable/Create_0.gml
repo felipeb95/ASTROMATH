@@ -4,11 +4,12 @@ numberTwoPartials = ds_list_create();
 tableDivisors = ds_list_create();
 strMarked = "";
 strNotMarked = "";
-highlightedRow = -1; // 0 starts the lists. 
+highlightedRow = -1; // 0 starts the lists.
 
 /* COLORS */
 markedColor = c_orange;
 notMarkedColor = c_white;
+fontColor = c_white;
 
 /* POSITIONS & SIZES */
 xCenterOffset = 50; // This is to avoid putting the table to close to the play area.

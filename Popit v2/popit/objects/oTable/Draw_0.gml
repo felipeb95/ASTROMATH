@@ -1,7 +1,7 @@
 draw_set_font(fTableHeader);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
-
+draw_set_color(fontColor);
 /* Lines to make the table */
 draw_line_width(xCenterOfTable - horizontalLineLarge, yForHorizontalLine, xCenterOfTable + horizontalLineLarge + horizontalLineLarge/2, yForHorizontalLine, tableLineWidth);
 draw_line_width(xCenterOfTable + horizontalLineLarge, yForHorizontalLine - yAboveHorizontalLine, xCenterOfTable + horizontalLineLarge, yForHorizontalLine + yAboveHorizontalLine*8, tableLineWidth);
@@ -14,14 +14,14 @@ if(oLogicSpawner.primeType){
 if(oLogicSpawner.divisionType){
 	if(!is_undefined(oLogicSpawner.subDivisionNumber)){
 		draw_set_font(fTableMessage);
-		draw_text(xCenterOfTable + xCenterOffset, yForExersise, "Divide "+string(oLogicSpawner.subDivisionNumber)+"/"+string(oLogicSpawner.numberHit));
+		draw_text(xCenterOfTable + xCenterOffset, yForExersise, "Divide "+string(oLogicSpawner.subDivisionNumber)+" en "+string(oLogicSpawner.numberHit));
 		draw_set_font(fTableHeader); // Reset
 	}
 }
 
 if(multiplyMessage and ds_list_size(tableDivisors)>=2){
 	draw_set_font(fTableMessage);
-	draw_text(xCenterOfTable + xCenterOffset, yForExersise,"Multiplica "+string(tableDivisors[| 0])+" y "+string(tableDivisors[| 1]));
+	draw_text(xCenterOfTable + xCenterOffset, yForExersise,"Multiplica "+string(tableDivisors[| 0])+" por "+string(tableDivisors[| 1]));
 	draw_set_font(fTableHeader); // Reset
 }
 
@@ -41,7 +41,7 @@ if(oLogicSpawner.multiplyingType){
 		draw_text(firstNumberX+string_width(strMarked), yForList, strNotMarked);
 	}
 
-	draw_set_color(c_white); // To keep other elements with white color.
+	draw_set_color(fontColor); // To keep other elements with white color.
 	draw_set_halign(fa_center); // Reset alignment for other drawings.
 	draw_set_font(fTableHeader) // Font Reset for other elements in screen.
 
@@ -52,7 +52,7 @@ if(highlightedRow == -1)
 	draw_set_colour(markedColor);
 draw_text(xForNumberOne, yForHorizontalLine - headersOffset, string(oLogicSpawner.numberOneHeader)); // original numberOne
 draw_text(xForNumberTwo, yForHorizontalLine - headersOffset, string(oLogicSpawner.numberTwoHeader)); // original numberTwo
-draw_set_colour(c_white); // Reset
+draw_set_colour(fontColor); // Reset
 /* Divisors */
 if(!ds_list_empty(tableDivisors)){ // If divisors list isn't empty, then it starts drawing.
 	/* Divisors at rightest column */
@@ -60,7 +60,7 @@ if(!ds_list_empty(tableDivisors)){ // If divisors list isn't empty, then it star
 		if(i == highlightedRow + 1  and (oLogicSpawner.divisionType or oLogicSpawner.primeType))
 			draw_set_colour(markedColor);
 		draw_text(xCenterOfTable + horizontalLineLarge + horizontalLineLarge/4, yForHorizontalLine - headersOffset + ySpaceBetweenElements*i, string(tableDivisors[| i]));
-		draw_set_colour(c_white); // Reset
+		draw_set_colour(fontColor); // Reset
 	}
 }
 
@@ -76,7 +76,7 @@ if(!ds_list_empty(numberOnePartials)){
 		if(i == highlightedRow and (oLogicSpawner.divisionType or oLogicSpawner.primeType))
 			draw_set_colour(markedColor);
 		draw_text(xForNumberOne, yForHorizontalLine - headersOffset + ySpaceBetweenElements*(i+1), string(numberOnePartials[| i])); 
-		draw_set_colour(c_white); // Reset
+		draw_set_colour(fontColor); // Reset
 	}
 }
 
@@ -91,7 +91,7 @@ if(!ds_list_empty(numberTwoPartials)){
 		if(i == highlightedRow  and (oLogicSpawner.divisionType or oLogicSpawner.primeType))
 			draw_set_colour(markedColor);
 		draw_text(xForNumberTwo, yForHorizontalLine - headersOffset + ySpaceBetweenElements*(i+1), string(numberTwoPartials[| i])); 
-		draw_set_colour(c_white); // Reset
+		draw_set_colour(fontColor); // Reset
 	}
 }
 

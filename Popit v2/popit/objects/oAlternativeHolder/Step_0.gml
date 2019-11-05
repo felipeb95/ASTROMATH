@@ -1,6 +1,7 @@
 y += ySpeed;
+image_angle += rotation;
 
-if(y >= room_height-sprite_get_height(sCannon)-sprite_get_height(oAlternativeHolder)/2)
+if(y >= room_height-sprite_get_height(sCannon)-sprite_get_height(sAlternativeHolder)/2)
 	instance_destroy(self);
 	
 if(!instance_exists(oAlternativeHolder) and !oLogicSpawner.alternativeGotHit){ // Checks if all holders have passed trough the screen and if the player couldn't hit any of them (omision).
