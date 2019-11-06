@@ -40,7 +40,7 @@ phaseOneFinished = false;
 xLeftLimit = room_width/3;
 xRightLimit = room_width;
 alternativeHolderWidth = sprite_get_width(sAlternativeHolder);
-xDistance = 25; // 30px minimun margin.
+xDistance = 25; // 25px minimun margin to fit 7 100x100 sprites without collapsing.
 xPositionsReFill(xPositionsList, xLeftLimit, xRightLimit, alternativeHolderWidth, xDistance);
 
 
