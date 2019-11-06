@@ -12,7 +12,8 @@ for(i = 0; i < alternativesListSize; i++){
 	var xPositionSelected = irandom_range(0,ds_list_size(xPositionsList)-1);
 	var alternativeSelected = irandom_range(0,ds_list_size(_alternativesList)-1);
 	show_debug_message("[X POS SEL] "+string(xPositionSelected));
-	var alternativeHolderInst = instance_create_depth(xPositionsList[| xPositionSelected], -1*sprite_get_height(sAlternativeHolder), -1000, oAlternativeHolder);
+	//var alternativeHolderInst = instance_create_depth(xPositionsList[| xPositionSelected], -1*sprite_get_height(sAlternativeHolder), -1000, oAlternativeHolder);
+	var alternativeHolderInst = instance_create_depth(xPositionsList[| xPositionSelected], -100, -1000, oAlternativeHolder);
 	show_debug_message("CREATED!");
 	with(alternativeHolderInst)
 		numberOnHolder = _alternativesList[| alternativeSelected];	

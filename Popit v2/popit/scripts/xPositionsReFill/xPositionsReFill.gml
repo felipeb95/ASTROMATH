@@ -13,7 +13,10 @@ var alternativeHolderWidth = argument3;
 var distance = argument4;
 var i = 0;
 
-for( i = 0; i < 6; i ++)
+show_debug_message("Width is :"+string(alternativeHolderWidth));
+show_debug_message("Distance is :"+string(distance));
+
+for( i = 0; i < 7; i ++)
 	ds_list_add(listToFill, leftLimit + alternativeHolderWidth/2 + (alternativeHolderWidth + distance)*i);
 	
 xPositionsString = "[ ";
