@@ -151,6 +151,14 @@
             }
         },
         {
+            "Key": "1b2de7f2-d411-4db2-90d2-039b5a655663",
+            "Value": {
+                "id": "e83689c2-067d-4884-9ec3-10e1309a5aa8",
+                "resourcePath": "scripts\\SaveToMap\\SaveToMap.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "1dbdbb32-b134-4379-9d06-5fe797ace150",
             "Value": {
                 "id": "3c6754be-980f-476f-975a-23979f631b8f",
@@ -396,6 +404,14 @@
                 "id": "cc006664-0660-48c7-bb9c-c5913f2f16c1",
                 "resourcePath": "rooms\\rEight\\rEight.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "6a192707-d556-4917-a0e9-80e4719af96d",
+            "Value": {
+                "id": "a1febdb5-841c-4eab-aa67-a80f40affc9b",
+                "resourcePath": "objects\\oDataSaver\\oDataSaver.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -987,7 +1003,8 @@
         "9a85ce63-658c-47b3-91fa-6f49bded295f",
         "a0fb6aaa-7a09-4f7d-9bc7-610ccd9b0ef2",
         "6e8b78ff-01ee-47d6-973a-f09028503638",
-        "0f7a812c-880e-4fa2-91c8-a87cb4bd8cf5"
+        "0f7a812c-880e-4fa2-91c8-a87cb4bd8cf5",
+        "1b2de7f2-d411-4db2-90d2-039b5a655663"
     ],
     "tutorial": ""
 }

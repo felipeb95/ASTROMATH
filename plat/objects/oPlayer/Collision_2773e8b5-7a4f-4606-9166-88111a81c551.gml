@@ -37,5 +37,7 @@ if(keyboard_check_pressed(vk_down)){
 	show_debug_message("Respuesta correcta: "+string(global.r));
 	show_debug_message("Respuesta escogida: "+string(global.respuesta));
 	
+	SaveToMap();
+	
 	
 }
