@@ -8,12 +8,18 @@ draw_line_width(xCenterOfTable + horizontalLineLarge, yForHorizontalLine - yAbov
 
 /* Actual exersise */
 if(oLogicSpawner.primeType){
-	draw_text(xCenterOfTable + xCenterOffset, yForExersise, "Elige un número primo\nque pueda dividir al menos uno\n de los números coloreados\nde la tabla");	
+	draw_set_color(c_black);
+	draw_text(xCenterOfTable + xCenterOffset +2, yForExersise+2, "Elige un número primo\nque pueda dividir al menos uno\n de los números coloreados\nde la tabla");
+	draw_set_color(c_white);
+	draw_text(xCenterOfTable + xCenterOffset, yForExersise, "Elige un número primo\nque pueda dividir al menos uno\n de los números coloreados\nde la tabla");
 }
 
 if(oLogicSpawner.divisionType){
 	if(!is_undefined(oLogicSpawner.subDivisionNumber)){
 		draw_set_font(fTableMessage);
+		draw_set_color(c_black);
+		draw_text(xCenterOfTable + xCenterOffset +2, yForExersise+2, "Divide "+string(oLogicSpawner.subDivisionNumber)+" en "+string(oLogicSpawner.numberHit));
+		draw_set_color(c_white);
 		draw_text(xCenterOfTable + xCenterOffset, yForExersise, "Divide "+string(oLogicSpawner.subDivisionNumber)+" en "+string(oLogicSpawner.numberHit));
 		draw_set_font(fTableHeader); // Reset
 	}
@@ -21,12 +27,18 @@ if(oLogicSpawner.divisionType){
 
 if(multiplyMessage and ds_list_size(tableDivisors)>=2){
 	draw_set_font(fTableMessage);
+	draw_set_color(c_black)
+	draw_text(xCenterOfTable + xCenterOffset +2, yForExersise +2,"Multiplica "+string(tableDivisors[| 0])+" por "+string(tableDivisors[| 1]));
+	draw_set_color(c_white)
 	draw_text(xCenterOfTable + xCenterOffset, yForExersise,"Multiplica "+string(tableDivisors[| 0])+" por "+string(tableDivisors[| 1]));
 	draw_set_font(fTableHeader); // Reset
 }
 
 if(mcmMessage){
 	finalMessage = "El MCM entre "+string(oLogicSpawner.numberOneHeader)+" y "+string(oLogicSpawner.numberTwoHeader)+" es";
+	draw_set_color(c_black);
+	draw_text(xCenterOfTable + xCenterOffset +1, yForList - string_height(finalMessage)+1, finalMessage);
+	draw_set_color(c_white);
 	draw_text(xCenterOfTable + xCenterOffset, yForList - string_height(finalMessage), finalMessage);
 }
 if(oLogicSpawner.multiplyingType){
@@ -35,8 +47,12 @@ if(oLogicSpawner.multiplyingType){
 		draw_set_halign(fa_left);
 		firstNumberX = xCenterOfTable + xCenterOffset - listX/2;
 	
+		draw_set_color(c_black)
+		draw_text(firstNumberX+1, yForList+1, strMarked); // Highlighted text
 		draw_set_color(markedColor);
 		draw_text(firstNumberX, yForList, strMarked); // Highlighted text
+		draw_set_color(c_black);
+		draw_text(firstNumberX+string_width(strMarked)+1, yForList+1, strNotMarked);
 		draw_set_color(notMarkedColor);
 		draw_text(firstNumberX+string_width(strMarked), yForList, strNotMarked);
 	}
