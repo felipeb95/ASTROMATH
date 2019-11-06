@@ -18,7 +18,8 @@ if(menu_control){
 		menu_comitted = menu_cursor;
 		ScreenShake(4,30);
 		menu_control = false;
-		audio_play_sound(snDeath,10,false);
+		audio_sound_gain(snCoin, 0.5, 0);
+		audio_play_sound(snCoin,10,false);
 	}
 	
 	var mouse_y_gui = device_mouse_y_to_gui(0);
@@ -29,7 +30,8 @@ if(menu_control){
 			menu_comitted = menu_cursor;
 			ScreenShake(4,30);
 			menu_control = false;
-			audio_play_sound(snDeath,10,false);
+			audio_sound_gain(snCoin, 0.5, 0);
+		audio_play_sound(snCoin,10,false);
 		}
 	}
 }

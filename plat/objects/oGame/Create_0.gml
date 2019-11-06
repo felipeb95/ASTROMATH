@@ -15,11 +15,15 @@ global.respuestaCorrecta = irandom_range(1,3);
 global.operacion = "x";
 global.respondida = false;
 global.mostrarEjercicio = true;
+global.buena = true;
 global.a = irandom_range(2,9);	
 global.b = irandom_range(2,9);	
 global.r = global.a * global.b;
 global.respuesta = 0;
+global.origen = "Random";
 
+global.etapa = 1;
+global.numEjercicios = 1;
 
 //BONUS
 global.escudo = 0.2;

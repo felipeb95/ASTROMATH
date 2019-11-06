@@ -1,4 +1,4 @@
-if(global.bonusActivo>2 and global.hasgun == true) {
+if(global.bonusActivo!=1 and global.bonusActivo!=2 and global.hasgun == true) {
 	KillPlayer();
 }
 else{

@@ -6,4 +6,5 @@ if(global.respondida){
 	global.r = global.a * global.b;
 	global.respuestaCorrecta = irandom_range(1,3);
 	global.respondida = false;
+	global.numEjercicios++;
 }
