@@ -1,6 +1,6 @@
 
 {
-    "name": "rNine",
+    "name": "r9",
     "id": "6801f9b2-3a00-4ddb-bdb3-74ee81577b4e",
     "creationCodeFile": "",
     "inheritCode": false,

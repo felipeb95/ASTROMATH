@@ -1,6 +1,10 @@
 #macro RES_W 1280
 #macro RES_H 720
 
+global.vidas = 3;
+puntajetextscale = 0;
+vidatextscale = 0;
+global.haskey = 0;
 global.hasgun = 0;
 global.kills = 0;
 global.killsthisroom = 0;
