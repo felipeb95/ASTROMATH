@@ -21,6 +21,7 @@ x = clamp(x, room_width/3+sprite_get_width(sCannon)/2,room_width-sprite_get_widt
 space = keyboard_check_released(vk_space);
 
 if(space){
+	audio_play_sound(sndShoot,10,false);
 	instance_create_depth(x,y-sprite_get_height(sCannon),-1001,oProjectile);
 	space = false;
 }

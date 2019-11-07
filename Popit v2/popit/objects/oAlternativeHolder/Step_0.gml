@@ -1,5 +1,20 @@
 y += ySpeed;
-image_angle += rotation;
+//image_angle += rotation;
+
+if(scale){
+	//show_debug_message("[HOLDER "+string(numberOnHolder)+"] Scaling up");
+	image_yscale += yScaleRate;
+	if(image_yscale >= yScaleMax)
+		scale = !scale;
+}
+else{
+	//show_debug_message("[HOLDER] "+string(numberOnHolder)+" Scaling down");
+	image_yscale -= yScaleRate;
+	if(image_yscale <= yScaleMin)
+		scale = !scale;
+}
+	
+
 
 if(y >= room_height-sprite_get_height(sCannon)-sprite_get_height(sAlternativeHolder)/2)
 	instance_destroy(self);

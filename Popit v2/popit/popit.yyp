@@ -39,6 +39,22 @@
             }
         },
         {
+            "Key": "15cef340-0a13-4215-bc85-c79aec3f00ea",
+            "Value": {
+                "id": "d0a9fc6c-f8e0-40f2-ba45-0975305f0a41",
+                "resourcePath": "objects\\oSoundEffects\\oSoundEffects.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "16fcd998-84aa-4234-8146-6ef312a0b6ad",
+            "Value": {
+                "id": "da5e8346-8c0a-433f-ab94-a7071b7783a9",
+                "resourcePath": "sounds\\sndShoot\\sndShoot.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "228841b4-3bfe-4a3a-bd9b-0c2900c7f102",
             "Value": {
                 "id": "7164ecd4-8e8d-4338-9eb2-d162e26d00f9",
@@ -135,6 +151,14 @@
             }
         },
         {
+            "Key": "513a0720-bdb2-4cdd-9942-3a0ba51f4dfc",
+            "Value": {
+                "id": "f8d7850c-083f-4691-8783-94d18c21c5c2",
+                "resourcePath": "sprites\\sBubblePop\\sBubblePop.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "5c804845-4d8a-41c5-9839-cbc76818ab4f",
             "Value": {
                 "id": "ec6a664b-15e5-49c6-bfe7-320446fd2f55",
@@ -156,6 +180,14 @@
                 "id": "6c410f54-75d3-4f65-a7a0-04caf4f9e787",
                 "resourcePath": "sprites\\sAlternativeHolder\\sAlternativeHolder.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "61396e76-3c34-434f-964b-d0262b8cd742",
+            "Value": {
+                "id": "48ba6499-4add-4ca3-91ab-d0c273a6b5bb",
+                "resourcePath": "objects\\oBubblePop\\oBubblePop.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -444,6 +476,14 @@
                 "id": "8d48c970-4108-4fea-bf6b-6d36535db24e",
                 "resourcePath": "scripts\\tableDivisorsReorder\\tableDivisorsReorder.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "fbb88819-cea8-42af-bf8d-7e68111e4511",
+            "Value": {
+                "id": "3aa39468-fde4-41db-bf6c-ee4561d2ff61",
+                "resourcePath": "sounds\\sndBubblePop\\sndBubblePop.yy",
+                "resourceType": "GMSound"
             }
         },
         {
