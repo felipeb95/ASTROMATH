@@ -1,19 +1,21 @@
-if(keyboard_check_pressed(vk_down)){	
+if(keyboard_check_pressed(vk_down) and global.haskey==1){	
 	global.respondida = true;
 	global.mostrarEjercicio = false;
 	with(other){
 		global.respuesta = num;
 		if(num==global.r) {
+			audio_play_sound(snCorrect,5,false);
 			global.buena = true;
 			global.buenas++;
 			instance_destroy();
 		}
 		else {
+			audio_play_sound(snIncorrect,5,false);
 			global.buena = false;
 			global.malas++;	
-			instance_destroy();
-			//KillPlayer();
-			//instance_destroy(oPlayer);
+			//instance_destroy();
+			KillPlayer();
+			instance_destroy(oPlayer);
 		}
 		
 	}
