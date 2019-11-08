@@ -31,7 +31,7 @@ if(primeAlternativesCreation){
 	exersiseJustCreated = false; // Exersise is not new anymore. This only changes to true when multiplying phase is done.
 	multiplyingType = false;
 	divisionType = false;
-	alarm[0] = room_speed*1; // One second delay after trigger.	
+	alarm[0] = 1; //  One tenth of a second delay after trigger.	.	
 	primeAlternativesCreation = false;
 }
 
@@ -40,7 +40,7 @@ if(divisionAlternativesCreation){
 	alternativeGotHit = false;
 	primeType = false;
 	divisionType = true;
-	alarm[1] = room_speed*1; // One second delay after trigger.	
+	alarm[1] = 1; //  One tenth of a second delay after trigger.		
 	divisionAlternativesCreation = false;
 }
 
@@ -56,7 +56,7 @@ if(multiplyAlternativesCreation){
 	}
 		
 	if(ds_list_size(oTable._tableDivisors) > 1)
-		alarm[2] = room_speed*1; // One second delay after trigger.
+		alarm[2] = 1; //  One tenth of a second delay after trigger.	
 	else
 		show_debug_message("[MT STOPS]");
 	alternativeGotHit = false;
