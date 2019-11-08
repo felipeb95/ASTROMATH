@@ -49,10 +49,16 @@ if(multiplyAlternativesCreation){
 	show_debug_message("[MULTIPLYING TYPE]");
 	divisionType = false;
 	multiplyingType = true;
-	if(ds_list_size(oTable.tableDivisors) > 1)
+	
+	if(multiplierJustCreated){
+		ds_list_copy(oTable._tableDivisors, oTable.tableDivisors);
+		multiplierJustCreated = false;
+	}
+		
+	if(ds_list_size(oTable._tableDivisors) > 1)
 		alarm[2] = room_speed*1; // One second delay after trigger.
 	else
-		show_debug_message("[PT STOPS]");
+		show_debug_message("[MT STOPS]");
 	alternativeGotHit = false;
 	multiplyAlternativesCreation = false;
 	show_debug_message("[MT last instruction]");

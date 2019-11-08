@@ -35,6 +35,7 @@ divisionAlternativesCreation = false; // Triggers Alarm 1.
 multiplyingType = false;
 multiplyAlternativesCreation = false; // Triggers Alarm 2;
 phaseOneFinished = false;
+multiplierJustCreated = true;
 
 /* POSITIONS & SIZES */
 xLeftLimit = room_width/3;

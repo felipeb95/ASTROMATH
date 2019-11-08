@@ -15,17 +15,17 @@ if(oLogicSpawner.phaseOneFinished and !ds_list_empty(numberOnePartials) and !ds_
 
 
 // \u00b7
-if(ds_list_size(tableDivisors) >= 2){
-	strMarked = string(tableDivisors[| 0]) +" x "+ string(tableDivisors[| 1]); // \u2022 is the times dot symbol.
+if(ds_list_size(_tableDivisors) >= 2){
+	strMarked = string(_tableDivisors[| 0]) +" x "+ string(tableDivisors[| 1]); // \u2022 is the times dot symbol.
 	strNotMarked = "";
-	if(ds_list_size(tableDivisors) > 2){
-		for(i = 2 ; i < ds_list_size(tableDivisors); i++){
-			strNotMarked += " x "+string(tableDivisors[| i]); 	
+	if(ds_list_size(_tableDivisors) > 2){
+		for(i = 2 ; i < ds_list_size(_tableDivisors); i++){
+			strNotMarked += " x "+string(_tableDivisors[| i]); 	
 		}
 	}
 } 
 else{
-	strMarked = string(tableDivisors[| 0]);
+	strMarked = string(_tableDivisors[| 0]);
 	strNotMarked = "";
 }
 

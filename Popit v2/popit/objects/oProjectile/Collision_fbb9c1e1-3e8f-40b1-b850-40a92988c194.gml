@@ -13,6 +13,7 @@ audio_play_sound(sndBubblePop, 10, false); // Bubble pop sound once.
 
 if(oLogicSpawner.primeType){
 	if(oLogicSpawner.numberOne mod numberHit == 0 or oLogicSpawner.numberTwo mod numberHit == 0){ // Number on hit can entirely divide at least one of the exersise's numbers.
+		oPlayerProperties.playersScore += 10;
 		oSoundEffects.alarm[0] = _soundDelaySteps;//audio_play_sound(sndCorrect,10,false);
 		show_debug_message("[PT Correct] "+string(numberHit)+" can entirely divide one of the numbers");
 		ds_list_add(oTable.tableDivisors, numberHit);
@@ -22,6 +23,7 @@ if(oLogicSpawner.primeType){
 		oLogicSpawner.subDivisionAnswered = true;
 	}
 	else{
+		oPlayerProperties.playersScore -= 10;
 		oSoundEffects.alarm[1] = _soundDelaySteps;//audio_play_sound(sndWrong,10,false);
 		show_debug_message("[PT Wrong] "+string(numberHit)+" can't entirely divide any of the numbers");
 		oLogicSpawner.primeAlternativesCreation = true; // Will repeat the question/exersise.
@@ -31,6 +33,7 @@ if(oLogicSpawner.primeType){
 if(oLogicSpawner.divisionType){
 	with(other){
 		if(isCorrect){
+			oPlayerProperties.playersScore += 10;
 			oSoundEffects.alarm[0] = _soundDelaySteps;//audio_play_sound(sndCorrect,10,false);
 			show_debug_message("[DT Correct]");
 			
@@ -60,6 +63,7 @@ if(oLogicSpawner.divisionType){
 			}
 		}
 		else{ // Correction if wrong holder is hit.
+			oPlayerProperties.playersScore -= 10;
 			oSoundEffects.alarm[1] = _soundDelaySteps;//audio_play_sound(sndWrong,10,false);
 			if(oLogicSpawner.actualSubDivisionApplies == 0){ // Check if the division doesn't appliy (can't entirely divide)
 				if(oLogicSpawner.divisionCounter == 1)
@@ -98,18 +102,20 @@ if(oLogicSpawner.divisionType){
 if(oLogicSpawner.multiplyingType){
 	with(other){
 		if(isCorrect){
+			oPlayerProperties.playersScore += 10;
 			oSoundEffects.alarm[0] = _soundDelaySteps;//audio_play_sound(sndCorrect,7,false);
-			tableDivisorsReorder(oTable.tableDivisors); // Table reorder.
+			tableDivisorsReorder(oTable._tableDivisors); // Table reorder.
 			show_debug_message("[MT CORRECT]");
-			if(ds_list_size(oTable.tableDivisors) == 1){ // Only one result. Round finished.
+			if(ds_list_size(oTable._tableDivisors) == 1){ // Only one result. Round finished.
 				oTable.alarm[0] = room_speed*1;
 			}
 		}
 		else{
+			oPlayerProperties.playersScore -= 10;
 			oSoundEffects.alarm[1] = _soundDelaySteps;//audio_play_sound(sndWrong,7,false);
-			tableDivisorsReorder(oTable.tableDivisors); // Table reoder.
+			tableDivisorsReorder(oTable._tableDivisors); // Table reoder.
 			show_debug_message("[MT WRONG]");
-			if(ds_list_size(oTable.tableDivisors) == 1){ // Only one result. Round finished.
+			if(ds_list_size(oTable._tableDivisors) == 1){ // Only one result. Round finished.
 				oTable.alarm[0] = room_speed*1;
 				
 			}

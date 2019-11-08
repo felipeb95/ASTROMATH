@@ -1,15 +1,17 @@
 /* VARIABLES */
 numberOnePartials = ds_list_create();
 numberTwoPartials = ds_list_create();
-tableDivisors = ds_list_create();
+tableDivisors = ds_list_create(); // Original one as backup.
+_tableDivisors = ds_list_create(); // The one displayed for multiplying exercises.
 strMarked = "";
 strNotMarked = "";
 highlightedRow = -1; // 0 starts the lists.
 
 /* COLORS */
-markedColor = c_orange;
+markedColor = $15ede5;
 notMarkedColor = c_white;
 fontColor = c_white;
+current = $b5c946;
 
 /* POSITIONS & SIZES */
 xCenterOffset = 50; // This is to avoid putting the table to close to the play area.
