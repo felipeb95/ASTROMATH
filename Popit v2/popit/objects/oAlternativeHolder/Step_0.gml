@@ -66,5 +66,9 @@ if(!instance_exists(oAlternativeHolder) and !oLogicSpawner.alternativeGotHit){ /
 		oLogicSpawner.primeAlternativesCreation = true; // Time to create prime alternatives.
 		show_debug_message("[REMEMBER] You must choose one correct prime number to continue");		
 	}
+	
+	oPlayerProperties.playersHp -= 1;
+	oPlayerProperties.playersHp = clamp(oPlayerProperties.playersHp, 0, 3);
+	
 }
 

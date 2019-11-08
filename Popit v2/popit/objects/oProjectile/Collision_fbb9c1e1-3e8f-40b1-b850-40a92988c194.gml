@@ -21,12 +21,16 @@ if(oLogicSpawner.primeType){
 		//oLogicSpawner.divisionType = true;
 		oLogicSpawner.divisionAlternativesCreation = true;
 		oLogicSpawner.subDivisionAnswered = true;
+		oPlayerProperties.playersHp += 1;
+		oPlayerProperties.playersHp = clamp(oPlayerProperties.playersHp, 0, 3);
 	}
 	else{
 		oPlayerProperties.playersScore -= 10;
 		oSoundEffects.alarm[1] = _soundDelaySteps;//audio_play_sound(sndWrong,10,false);
 		show_debug_message("[PT Wrong] "+string(numberHit)+" can't entirely divide any of the numbers");
 		oLogicSpawner.primeAlternativesCreation = true; // Will repeat the question/exersise.
+		oPlayerProperties.playersHp -= 1;
+		oPlayerProperties.playersHp = clamp(oPlayerProperties.playersHp, 0, 3);
 	}
 }
 
@@ -61,6 +65,9 @@ if(oLogicSpawner.divisionType){
 				oLogicSpawner.primeAlternativesCreation = true; // Time to create prime alternatives.
 				show_debug_message("[ # # # RESET # # # ]"); // New exersise starts message.
 			}
+			
+			oPlayerProperties.playersHp += 1;
+			oPlayerProperties.playersHp = clamp(oPlayerProperties.playersHp, 0, 3);
 		}
 		else{ // Correction if wrong holder is hit.
 			oPlayerProperties.playersScore -= 10;
@@ -90,7 +97,9 @@ if(oLogicSpawner.divisionType){
 				show_debug_message("[ # # # RESET # # # ]"); // New exersise starts message.
 			}
 			show_debug_message("[DT Wrong]");
-			
+		
+			oPlayerProperties.playersHp -= 1;
+			oPlayerProperties.playersHp = clamp(oPlayerProperties.playersHp, 0, 3);
 		}
 	}
 	
