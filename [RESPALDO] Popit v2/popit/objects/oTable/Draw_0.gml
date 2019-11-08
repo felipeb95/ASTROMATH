@@ -37,6 +37,8 @@ if(multiplyMessage and ds_list_size(_tableDivisors)>=2){
 	draw_text(xCenterOfTable + xCenterOffset, yForExersise,"Multiplica "+string(_tableDivisors[| 0])+" por "+string(_tableDivisors[| 1]));
 }
 
+
+
 if(mcmMessage){
 	draw_set_halign(fa_center);
 	draw_set_font(fTableMCM);
@@ -48,11 +50,12 @@ if(mcmMessage){
 }
 /* Multiples */
 if(oLogicSpawner.multiplyingType){
+
 	for(i = 0; i < ds_list_size(_tableDivisors); i++){
 		draw_set_halign(fa_left);
 		draw_set_font(fMultiples);
 		firstNumberX = xCenterOfTable + xCenterOffset - listX/2;
-	
+		//draw_circle(firstNumberX = xCenterOfTable + xCenterOffset - listX/2, yForList+15, 3, false);
 		draw_set_color(c_black)
 		draw_text(firstNumberX+1, yForList+1, strMarked); // Highlighted text
 		draw_set_color(markedColor);
@@ -74,7 +77,7 @@ if(highlightedRow == -1){
 	if(oLogicSpawner.divisionType and oLogicSpawner.divisionCounter == 1)
 		draw_set_colour(current);
 	else
-		draw_set_colour(markedColor);
+		draw_set_colour(tableMarkedColor);
 }
 
 draw_text(xForNumberOne, yForHorizontalLine - headersOffset, string(oLogicSpawner.numberOneHeader)); // original numberOne
@@ -83,7 +86,7 @@ if(highlightedRow == -1){
 	if(oLogicSpawner.divisionType and oLogicSpawner.divisionCounter == 2)
 		draw_set_colour(current);
 	else
-		draw_set_colour(markedColor);
+		draw_set_colour(tableMarkedColor);
 }
 
 draw_text(xForNumberTwo, yForHorizontalLine - headersOffset, string(oLogicSpawner.numberTwoHeader)); // original numberTwo
@@ -115,7 +118,7 @@ if(!ds_list_empty(numberOnePartials)){
 			if(oLogicSpawner.divisionType and oLogicSpawner.divisionCounter == 1)
 				draw_set_colour(current);
 			else
-				draw_set_color(markedColor);
+				draw_set_color(tableMarkedColor);
 		draw_text(xForNumberOne, yForHorizontalLine - headersOffset + ySpaceBetweenElements*(i+1), string(numberOnePartials[| i])); 
 		draw_set_colour(fontColor); // Reset
 	}
@@ -133,7 +136,7 @@ if(!ds_list_empty(numberTwoPartials)){
 			if(oLogicSpawner.divisionType and oLogicSpawner.divisionCounter == 2)
 				draw_set_colour(current);
 			else
-				draw_set_color(markedColor);
+				draw_set_color(tableMarkedColor);
 		draw_text(xForNumberTwo, yForHorizontalLine - headersOffset + ySpaceBetweenElements*(i+1), string(numberTwoPartials[| i])); 
 		draw_set_colour(fontColor); // Reset
 	}

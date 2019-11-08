@@ -19,16 +19,19 @@ if(oLogicSpawner.primeType){
 		ds_list_add(oTable.tableDivisors, numberHit);
 		oLogicSpawner.numberHit = numberHit;
 		//oLogicSpawner.divisionType = true;
-		oLogicSpawner.divisionAlternativesCreation = true;
-		oLogicSpawner.subDivisionAnswered = true;
+		feedbackCreation(true, "prime", oLogicSpawner.numberOne, oLogicSpawner.numberTwo, numberHit, false);
+		//oLogicSpawner.divisionAlternativesCreation = true;
+		//oLogicSpawner.subDivisionAnswered = true;
 		oPlayerProperties.playersHp += 1;
 		oPlayerProperties.playersHp = clamp(oPlayerProperties.playersHp, 0, 3);
 	}
 	else{
 		oPlayerProperties.playersScore -= 10;
+		oPlayerProperties.playersScore = clamp(oPlayerProperties.playersScore, 0, 99999);
 		oSoundEffects.alarm[1] = _soundDelaySteps;//audio_play_sound(sndWrong,10,false);
 		show_debug_message("[PT Wrong] "+string(numberHit)+" can't entirely divide any of the numbers");
-		oLogicSpawner.primeAlternativesCreation = true; // Will repeat the question/exersise.
+		feedbackCreation(false,"prime", oLogicSpawner.numberOne, oLogicSpawner.numberTwo, numberHit, false);
+		//oLogicSpawner.primeAlternativesCreation = true; // Will repeat the question/exersise.
 		oPlayerProperties.playersHp -= 1;
 		oPlayerProperties.playersHp = clamp(oPlayerProperties.playersHp, 0, 3);
 	}
@@ -42,19 +45,27 @@ if(oLogicSpawner.divisionType){
 			show_debug_message("[DT Correct]");
 			
 			if(applies == 0){ // Check if the division doesn't appliy (can't entirely divide)
-				if(oLogicSpawner.divisionCounter == 1)
+				if(oLogicSpawner.divisionCounter == 1){
 					ds_list_add(oTable.numberOnePartials, oLogicSpawner.subDivisionNumber); // Same number is written down in table as a partial
-				if(oLogicSpawner.divisionCounter == 2)
+					feedbackCreation(true,"division",oLogicSpawner.numberOne, numberHit, -1, true);
+				}
+				if(oLogicSpawner.divisionCounter == 2){
 					ds_list_add(oTable.numberTwoPartials, oLogicSpawner.subDivisionNumber); // Same number is written down in table as a partial
+					feedbackCreation(true,"division",oLogicSpawner.numberTwo, numberHit, -1, true);
+				}
 			}
 			else{ // It does apply, meaning that it can be entirely divided.
-				if(oLogicSpawner.divisionCounter == 1)
+				if(oLogicSpawner.divisionCounter == 1){
 					ds_list_add(oTable.numberOnePartials, numberHit); // The number hit, which is the right division, is written down as a partial.
-				if(oLogicSpawner.divisionCounter == 2)
+					feedbackCreation(true,"division",oLogicSpawner.numberOne, numberHit, -1, false);
+				}
+				if(oLogicSpawner.divisionCounter == 2){
 					ds_list_add(oTable.numberTwoPartials, numberHit); // The number hit, which is the right division, is written down as a partial.
+					feedbackCreation(true,"division",oLogicSpawner.numberTwo, numberHit, -1, false);
+				}
 			}
 			show_debug_message("[SUB DIVISION] It's on number: "+string(oLogicSpawner.divisionCounter));
-			var localDivCounter = oLogicSpawner.divisionCounter;
+			/*var localDivCounter = oLogicSpawner.divisionCounter;
 			oLogicSpawner.divisionCounter++;
 			
 			if(oLogicSpawner.divisionCounter <= 2) // Only if the the divisionCounter (number of subdivision exersise) is less equel or less than, the alarm is triggered
@@ -64,28 +75,37 @@ if(oLogicSpawner.divisionType){
 				oLogicSpawner.divisionAlternativesCreation = false; // No more divsision alternatives are created.
 				oLogicSpawner.primeAlternativesCreation = true; // Time to create prime alternatives.
 				show_debug_message("[ # # # RESET # # # ]"); // New exersise starts message.
-			}
+			}*/
 			
 			oPlayerProperties.playersHp += 1;
 			oPlayerProperties.playersHp = clamp(oPlayerProperties.playersHp, 0, 3);
 		}
 		else{ // Correction if wrong holder is hit.
 			oPlayerProperties.playersScore -= 10;
+			oPlayerProperties.playersScore = clamp(oPlayerProperties.playersScore, 0, 99999);
 			oSoundEffects.alarm[1] = _soundDelaySteps;//audio_play_sound(sndWrong,10,false);
 			if(oLogicSpawner.actualSubDivisionApplies == 0){ // Check if the division doesn't appliy (can't entirely divide)
-				if(oLogicSpawner.divisionCounter == 1)
+				if(oLogicSpawner.divisionCounter == 1){
 					ds_list_add(oTable.numberOnePartials, oLogicSpawner.subDivisionNumber); // Same number is written down in table as a partial
-				if(oLogicSpawner.divisionCounter == 2)
+					feedbackCreation(false,"division",oLogicSpawner.numberOne,  oLogicSpawner.numberHit, -1, true);
+				}
+				if(oLogicSpawner.divisionCounter == 2){
 					ds_list_add(oTable.numberTwoPartials, oLogicSpawner.subDivisionNumber); // Same number is written down in table as a partial
+					feedbackCreation(false,"division",oLogicSpawner.numberTwo, oLogicSpawner.numberHit, -1, true);
+				}
 			}
 			else{ // It does apply, meaning that it can be entirely divided.
-				if(oLogicSpawner.divisionCounter == 1)
+				if(oLogicSpawner.divisionCounter == 1){
 					ds_list_add(oTable.numberOnePartials, oLogicSpawner.subDivisionNumber / oLogicSpawner.numberHit); // The number hit, which is the right division, is written down as a partial.
-				if(oLogicSpawner.divisionCounter == 2)
+					feedbackCreation(false,"division",oLogicSpawner.numberOne, oLogicSpawner.numberHit, -1, false);
+				}
+				if(oLogicSpawner.divisionCounter == 2){
 					ds_list_add(oTable.numberTwoPartials, oLogicSpawner.subDivisionNumber / oLogicSpawner.numberHit); // The number hit, which is the right division, is written down as a partial.
+					feedbackCreation(false,"division",oLogicSpawner.numberTwo, oLogicSpawner.numberHit, -1, false);
+				}
 			}
 			show_debug_message("[SUB DIVISION] It's on number: "+string(oLogicSpawner.divisionCounter));
-			var localDivCounter = oLogicSpawner.divisionCounter;
+			/*var localDivCounter = oLogicSpawner.divisionCounter;
 			oLogicSpawner.divisionCounter++;
 			
 			if(oLogicSpawner.divisionCounter <= 2) // Only if the the divisionCounter (number of subdivision exersise) is equal or less than 2, the alarm is triggered
@@ -97,15 +117,15 @@ if(oLogicSpawner.divisionType){
 				show_debug_message("[ # # # RESET # # # ]"); // New exersise starts message.
 			}
 			show_debug_message("[DT Wrong]");
-		
+			*/
 			oPlayerProperties.playersHp -= 1;
 			oPlayerProperties.playersHp = clamp(oPlayerProperties.playersHp, 0, 3);
 		}
 	}
 	
-	if(localDivCounter == 2 and oTable.numberOnePartials[| ds_list_size(oTable.numberOnePartials)-1] == 1 and  oTable.numberTwoPartials[| ds_list_size(oTable.numberTwoPartials)-1] == 1){
+	/*if(localDivCounter == 2 and oTable.numberOnePartials[| ds_list_size(oTable.numberOnePartials)-1] == 1 and  oTable.numberTwoPartials[| ds_list_size(oTable.numberTwoPartials)-1] == 1){
 			oLogicSpawner.phaseOneFinished = true;
-	}
+	}*/
 }
 
 if(oLogicSpawner.multiplyingType){
@@ -113,25 +133,27 @@ if(oLogicSpawner.multiplyingType){
 		if(isCorrect){
 			oPlayerProperties.playersScore += 10;
 			oSoundEffects.alarm[0] = _soundDelaySteps;//audio_play_sound(sndCorrect,7,false);
+			feedbackCreation(true, "multiplying", oTable._tableDivisors[| 0], oTable._tableDivisors[| 1], -1, false);
 			tableDivisorsReorder(oTable._tableDivisors); // Table reorder.
 			show_debug_message("[MT CORRECT]");
-			if(ds_list_size(oTable._tableDivisors) == 1){ // Only one result. Round finished.
+			/*if(ds_list_size(oTable._tableDivisors) == 1){ // Only one result. Round finished.
 				oTable.alarm[0] = room_speed*1;
-			}
+			}*/
 		}
 		else{
 			oPlayerProperties.playersScore -= 10;
+			oPlayerProperties.playersScore = clamp(oPlayerProperties.playersScore, 0, 99999);
 			oSoundEffects.alarm[1] = _soundDelaySteps;//audio_play_sound(sndWrong,7,false);
+			feedbackCreation(false, "multiplying", oTable._tableDivisors[| 0], oTable._tableDivisors[| 1], -1, false);
 			tableDivisorsReorder(oTable._tableDivisors); // Table reoder.
 			show_debug_message("[MT WRONG]");
-			if(ds_list_size(oTable._tableDivisors) == 1){ // Only one result. Round finished.
+			/*if(ds_list_size(oTable._tableDivisors) == 1){ // Only one result. Round finished.
 				oTable.alarm[0] = room_speed*1;
-				
-			}
+			}*/
 		}
 	}
 	
-	oLogicSpawner.multiplyAlternativesCreation = true;
+	//oLogicSpawner.multiplyAlternativesCreation = true;
 }
 
 with(oAlternativeHolder) // Looping through all instances of oAlternativeHolder

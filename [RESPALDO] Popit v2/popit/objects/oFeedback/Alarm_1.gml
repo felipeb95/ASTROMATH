@@ -26,7 +26,11 @@ else
 				oLogicSpawner.divisionAlternativesCreation = false; // No more divsision alternatives are created.
 				oLogicSpawner.primeAlternativesCreation = true; // Time to create prime alternatives.
 			}
-			break;
+			
+			if(localDivCounter == 2 and oTable.numberOnePartials[| ds_list_size(oTable.numberOnePartials)-1] == 1 and  oTable.numberTwoPartials[| ds_list_size(oTable.numberTwoPartials)-1] == 1){
+			oLogicSpawner.phaseOneFinished = true;
+			}
+		break;
 			
 		case "multiplying":
 			show_debug_message("[ MT Feedback Flag Change]");

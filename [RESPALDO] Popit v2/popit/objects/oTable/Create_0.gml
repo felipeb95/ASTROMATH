@@ -8,10 +8,11 @@ strNotMarked = "";
 highlightedRow = -1; // 0 starts the lists.
 
 /* COLORS */
-markedColor = $15ede5;
+markedColor = $15ede5; // yellow
+tableMarkedColor = $b5c946; // light blue
 notMarkedColor = c_white;
 fontColor = c_white;
-current = $b5c946;
+current = $15ede5; // yellow
 
 /* POSITIONS & SIZES */
 xCenterOffset = 50; // This is to avoid putting the table to close to the play area.
