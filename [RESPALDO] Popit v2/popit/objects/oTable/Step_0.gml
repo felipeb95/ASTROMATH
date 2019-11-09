@@ -29,4 +29,4 @@ else{
 	strNotMarked = "";
 }
 
-listX = string_width(strMarked+strNotMarked);
+//listX = string_width(strMarked+strNotMarked);

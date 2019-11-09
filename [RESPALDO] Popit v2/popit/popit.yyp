@@ -31,6 +31,14 @@
     },
     "resources": [
         {
+            "Key": "0d011e94-edce-428e-bc44-31e41360bbf2",
+            "Value": {
+                "id": "bd35a6ab-2318-4dec-9f0a-ac5405f5b269",
+                "resourcePath": "rooms\\rEndRoom\\rEndRoom.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "14334d97-a30c-4cf0-86c3-8c9e063389b0",
             "Value": {
                 "id": "c0d39cbf-8199-4282-89bc-7b57867c26cc",

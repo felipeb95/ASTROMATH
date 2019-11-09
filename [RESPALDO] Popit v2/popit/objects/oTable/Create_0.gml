@@ -32,3 +32,5 @@ listX = undefined;
 /* FLAGS */
 multiplyMessage = false;
 mcmMessage = false;
+
+alarm[2] = room_speed*1;

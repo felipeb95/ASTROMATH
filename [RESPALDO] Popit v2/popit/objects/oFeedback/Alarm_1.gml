@@ -1,6 +1,6 @@
 
 if(oPlayerProperties.playersHp == 0)
-	show_message("Game Over");
+	room_goto(rWelcomeRoom);
 else
 	switch(type){
 		case "prime":
