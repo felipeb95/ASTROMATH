@@ -20,7 +20,7 @@ else
 			oLogicSpawner.divisionCounter++;
 			
 			if(oLogicSpawner.divisionCounter <= 2) // Only if the the divisionCounter (number of subdivision exersise) is less equel or less than, the alarm is triggered
-				oLogicSpawner.alarm[1] = room_speed*0.1;
+				oLogicSpawner.alarm[1] = oLogicSpawner.timeForNextCreation;
 			else{ // Alarm isn't triggered because the 2 division subexersises have been done.
 				oLogicSpawner.divisionCounter = 1; // Division subexersise counter reseted.
 				oLogicSpawner.divisionAlternativesCreation = false; // No more divsision alternatives are created.

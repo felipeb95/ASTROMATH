@@ -12,7 +12,7 @@ if(primeAlternativesCreation){
 		actualNumberTwo = numberTwo;
 		numberTwoHeader = numberTwo;
 		findPrimeNumbers(numberOne, numberTwo, primeNumbersFound);  // All prime numbers below the biggest of the number pair.
-		findUsefulPrimeNumbers(numberOne, numberTwo, primeNumbersFound, alternativesList); // All prime numbers that work for the number pair.
+		findUsefulPrimeNumbers(numberOne, numberTwo, primeNumbersFound, alternativesList, wrongAlternativesList); // All prime numbers that work for the number pair.
 		show_debug_message("[Empty partials list]");
 		show_debug_message("[NUMBERS ON INIT] "+string(numberOne) +" and "+string(numberTwo));
 	}
@@ -31,7 +31,7 @@ if(primeAlternativesCreation){
 	exersiseJustCreated = false; // Exersise is not new anymore. This only changes to true when multiplying phase is done.
 	multiplyingType = false;
 	divisionType = false;
-	alarm[0] = 1; //  One tenth of a second delay after trigger.	.	
+	alarm[0] = timeForNextCreation; //  One tenth of a second delay after trigger.	.	
 	primeAlternativesCreation = false;
 }
 
@@ -40,7 +40,7 @@ if(divisionAlternativesCreation){
 	alternativeGotHit = false;
 	primeType = false;
 	divisionType = true;
-	alarm[1] = 1; //  One tenth of a second delay after trigger.		
+	alarm[1] = timeForNextCreation; //  One tenth of a second delay after trigger.		
 	divisionAlternativesCreation = false;
 }
 

@@ -1,4 +1,4 @@
-/// findPrimeNumbers(numberOne, numberTwo, primeNumbersList, listToFill)
+/// findPrimeNumbers(numberOne, numberTwo, primeNumbersList, listToFill, wrongListToFill)
 
 /* 
 	DESCRIPTION:
@@ -15,16 +15,26 @@ var numberOne = argument0;
 var numberTwo = argument1;
 var primeNumbersList = argument2;
 var listToFill = argument3;
+var wrongListToFill = argument4;
 var i = 0;
 var alternativesStr = "";
+var wrongAlternativesStr = "";
 
-show_debug_message("Useful Prime Numbers:");
+
 alternativesStr += "[ ";
+wrongAlternativesStr += "[ ";
 for(i = 0; i < ds_list_size(primeNumbersList); i++){
 	if(numberOne mod primeNumbersList[| i] == 0 or numberTwo mod primeNumbersList[| i] == 0){
 		ds_list_add(listToFill, primeNumbersList[| i]);
 		alternativesStr += string(primeNumbersList[| i])+" ";
 	}
+	else{
+		ds_list_add(wrongListToFill, primeNumbersList[| i]);
+		wrongAlternativesStr += string(primeNumbersList[| i])+" ";
+	}
 }
 alternativesStr += " ]";
-show_debug_message("[Script] "+alternativesStr);
+wrongAlternativesStr += " ]";
+
+show_debug_message("[SCRIPT] Useful Prime Numbers "+alternativesStr);
+show_debug_message("[SCRIPT] Not Useful Prime Numbers "+wrongAlternativesStr);

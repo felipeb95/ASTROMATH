@@ -9,11 +9,11 @@ else{
 	if(image_angle <= minDegree){
 		oscilate = true;	
 	}	
-	
 }
 
 y += ySpeed;
-if(y >= room_height-sprite_get_height(sCannon))
+//if(y >= room_height-sprite_get_height(sCannon))
+if(y >= room_height)
 	instance_destroy(self);
 
 
