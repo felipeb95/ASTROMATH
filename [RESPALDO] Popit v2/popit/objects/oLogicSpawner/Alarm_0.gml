@@ -23,6 +23,15 @@ for(i = 0; i < alternativesListSize; i++){
 	ds_list_delete(_alternativesList, alternativeSelected);
 }
 
+/* POSSIBLE BONUS APPEARANCE */
+var _bonusProbability = random_range(0,1);
+var xBonusPositionSelected = irandom_range(0,ds_list_size(xPositionsList)-1);
+if(_bonusProbability <= bonusProbability){
+	show_debug_message("[BONUS CREATION]");
+	instance_create_depth(xPositionsList[| xBonusPositionSelected], -1*sprite_get_height(sBonusBase), -1000, oBonus);
+}
+
+
 ds_list_destroy(_alternativesList); // Cleared to clean adresses memory.
 
 ds_list_clear(xPositionsList); // List cleared for next creation of alternatives.

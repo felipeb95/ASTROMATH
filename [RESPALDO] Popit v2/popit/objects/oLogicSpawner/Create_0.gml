@@ -22,8 +22,9 @@ numberOfTimesAlternatives = 5;
 multipleOne = undefined;
 multipleTwo = undefined;
 
-/* GLOBALS */
+/* GLOBALS (or parameters loaded by http as example */
 
+bonusProbability = 1;
 
 /* FLAGS */
 subDivisionAnswered = false;
