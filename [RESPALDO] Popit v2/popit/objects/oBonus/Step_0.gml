@@ -12,8 +12,11 @@ else{
 }
 
 y += ySpeed;
+
 //if(y >= room_height-sprite_get_height(sCannon))
-if(y >= room_height)
+if(y >= room_height + sprite_height){
 	instance_destroy(self);
+}
+	
 
 

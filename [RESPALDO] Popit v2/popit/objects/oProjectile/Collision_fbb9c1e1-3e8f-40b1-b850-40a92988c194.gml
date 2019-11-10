@@ -1,7 +1,13 @@
 var numberHit = undefined;
 var _soundDelaySteps = soundDelaySteps;
-with(other) // Only specifif instance collisioned.
+var correct = undefined;
+var pointsMsgX = undefined;
+var pointsMsgY = undefined;
+with(other){ // Only specifif instance collisioned.
 	numberHit = numberOnHolder;
+	pointsMsgX = id.x;
+	pointsMsgY = id.y;
+}
 oLogicSpawner.alternativeGotHit = true;
 
 with(oAlternativeHolder){
@@ -24,6 +30,7 @@ if(oLogicSpawner.primeType){
 		//oLogicSpawner.subDivisionAnswered = true;
 		oPlayerProperties.playersHp += 1;
 		oPlayerProperties.playersHp = clamp(oPlayerProperties.playersHp, 0, 3);
+		correct = true;
 	}
 	else{
 		oPlayerProperties.playersScore -= 10;
@@ -34,6 +41,7 @@ if(oLogicSpawner.primeType){
 		//oLogicSpawner.primeAlternativesCreation = true; // Will repeat the question/exersise.
 		oPlayerProperties.playersHp -= 1;
 		oPlayerProperties.playersHp = clamp(oPlayerProperties.playersHp, 0, 3);
+		correct = false;
 	}
 }
 
@@ -79,6 +87,7 @@ if(oLogicSpawner.divisionType){
 			
 			oPlayerProperties.playersHp += 1;
 			oPlayerProperties.playersHp = clamp(oPlayerProperties.playersHp, 0, 3);
+			correct = true;
 		}
 		else{ // Correction if wrong holder is hit.
 			oPlayerProperties.playersScore -= 10;
@@ -120,6 +129,7 @@ if(oLogicSpawner.divisionType){
 			*/
 			oPlayerProperties.playersHp -= 1;
 			oPlayerProperties.playersHp = clamp(oPlayerProperties.playersHp, 0, 3);
+			correct = false;
 		}
 	}
 	
@@ -139,6 +149,7 @@ if(oLogicSpawner.multiplyingType){
 			/*if(ds_list_size(oTable._tableDivisors) == 1){ // Only one result. Round finished.
 				oTable.alarm[0] = room_speed*1;
 			}*/
+			correct = true;
 		}
 		else{
 			oPlayerProperties.playersScore -= 10;
@@ -150,10 +161,16 @@ if(oLogicSpawner.multiplyingType){
 			/*if(ds_list_size(oTable._tableDivisors) == 1){ // Only one result. Round finished.
 				oTable.alarm[0] = room_speed*1;
 			}*/
+			correct = false;
 		}
 	}
 	
 	//oLogicSpawner.multiplyAlternativesCreation = true;
+}
+
+var pointsMsg = instance_create_depth(pointsMsgX, pointsMsgY, -1001, oPointsWonAnimation);
+with(pointsMsg){
+	isCorrect = correct ? true : false;	
 }
 
 with(oAlternativeHolder) // Looping through all instances of oAlternativeHolder

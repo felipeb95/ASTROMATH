@@ -2,7 +2,7 @@ playersHp= 3;
 playersScore = 0;
 
 
-hpXOffset = 5;
+hpXOffset = 20;
 hpYOffset = 5;
 scoreX = 10;
 scoreY = sprite_get_height(sHealthPoints)/2 + hpYOffset;

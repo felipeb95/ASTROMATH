@@ -103,6 +103,14 @@
             }
         },
         {
+            "Key": "27a44efb-2beb-4add-b2f4-e0528d5af416",
+            "Value": {
+                "id": "56506634-1a17-432e-8cca-2d1c68a34669",
+                "resourcePath": "scripts\\bonusTaken\\bonusTaken.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "2e31a015-a113-4238-9ac3-20f85fcc8661",
             "Value": {
                 "id": "f5097cf4-1ca8-41c8-a7d9-d2087e19c27c",
@@ -143,6 +151,14 @@
             }
         },
         {
+            "Key": "3769e402-a721-48bf-a342-a203e6707d3a",
+            "Value": {
+                "id": "eaae682a-2bd7-4be3-b4ec-f682f09e9a14",
+                "resourcePath": "sounds\\sndBonusTaken\\sndBonusTaken.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "393c4601-9481-44a8-a6b2-bd547ae7996d",
             "Value": {
                 "id": "5858816a-9ada-4089-be73-8b45d7b6a3a0",
@@ -180,6 +196,14 @@
                 "id": "53533f3c-a737-4fb3-88cd-f6af98a8090e",
                 "resourcePath": "sounds\\sndOmision\\sndOmision.yy",
                 "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "4b5db01c-6d26-434b-adee-0fc7fefe73d8",
+            "Value": {
+                "id": "90984861-4d1f-4308-b1b3-5dea416bd0c1",
+                "resourcePath": "sprites\\sBulletExample\\sBulletExample.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -415,6 +439,14 @@
             }
         },
         {
+            "Key": "b4fe0c46-4fe0-468d-98cd-e0878de00c6d",
+            "Value": {
+                "id": "4d76f616-b9c7-4be5-bba9-8c5eeb284bd2",
+                "resourcePath": "objects\\oBonusBox\\oBonusBox.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "b97efb94-1a21-4912-9acf-3ed11801154d",
             "Value": {
                 "id": "a740dff9-35e5-498b-abff-21f7b86c23c7",
@@ -535,6 +567,14 @@
             }
         },
         {
+            "Key": "e14e18ff-56e5-4024-bf36-89f6c0a7c699",
+            "Value": {
+                "id": "b9eb22f8-8536-483b-9190-837f6a15e5c0",
+                "resourcePath": "fonts\\fPointsWon\\fPointsWon.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "e1fe07f5-9c3e-4e15-9be0-74dde3066f14",
             "Value": {
                 "id": "7129b7a5-0e46-4cc4-8ef8-9990d03dd19c",
@@ -548,6 +588,14 @@
                 "id": "49e0bcfc-3b92-4adf-ab8e-731c3f25df4a",
                 "resourcePath": "options\\android\\options_android.yy",
                 "resourceType": "GMAndroidOptions"
+            }
+        },
+        {
+            "Key": "e9279898-c2aa-4579-bb58-6d837802d8f9",
+            "Value": {
+                "id": "793d286e-4bdf-4c25-9877-4c579b12d6ab",
+                "resourcePath": "objects\\oPointsWonAnimation\\oPointsWonAnimation.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -641,7 +689,8 @@
         "f5540fb8-102b-405f-934c-a0a06b94c5fa",
         "fb706df9-6549-42e2-a105-fe2839e5ab17",
         "8d20adb2-421a-4591-9280-f01d911b2de5",
-        "95bb1787-00ef-4c14-95a0-c7da1bfdf52c"
+        "95bb1787-00ef-4c14-95a0-c7da1bfdf52c",
+        "27a44efb-2beb-4add-b2f4-e0528d5af416"
     ],
     "tutorial": ""
 }

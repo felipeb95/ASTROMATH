@@ -71,7 +71,7 @@ else
 /* POSSIBLE BONUS APPEARANCE */
 var _bonusProbability = random_range(0,1);
 var xBonusPositionSelected = irandom_range(0,ds_list_size(xPositionsList)-1);
-if(_bonusProbability <= bonusProbability){
+if(_bonusProbability <= bonusProbability and !instance_exists(oBonus) and !instance_exists(oBonusBox)){
 	show_debug_message("[BONUS CREATION]");
 	instance_create_depth(xPositionsList[| xBonusPositionSelected], -1*sprite_get_height(sBonusBase), -999, oBonus);
 }
