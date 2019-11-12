@@ -56,7 +56,8 @@
         "c555321d-943f-469d-b574-c9da5047320b",
         "63e084c3-5dc8-4573-acec-e2b91308725f",
         "af18a3b9-1b84-4bb5-878e-51e25deb0a4d",
-        "7f3f740c-3e5e-4679-b52a-f13646368774"
+        "7f3f740c-3e5e-4679-b52a-f13646368774",
+        "c6dc07fb-932b-4aaa-95c5-35cb5e2f1caa"
     ],
     "IsDnD": false,
     "layers": [
@@ -100,7 +101,8 @@
             "inheritSubLayers": false,
             "inheritVisibility": false,
             "instances": [
-{"name": "inst_246FBCAD","id": "104665af-4ffd-4583-bbc6-88c408e8234f","colour": { "Value": 4294967295 },"creationCodeFile": "","creationCodeType": "","ignore": false,"imageIndex": 0,"imageSpeed": 1,"inheritCode": false,"inheritItemSettings": false,"IsDnD": false,"m_originalParentID": "00000000-0000-0000-0000-000000000000","m_serialiseFrozen": false,"modelName": "GMRInstance","name_with_no_file_rename": "inst_246FBCAD","objId": "db79c11b-9791-42fa-8ae4-b388ebe60bda","properties": null,"rotation": 0,"scaleX": 1,"scaleY": 1,"mvc": "1.1","x": 192,"y": 416}
+{"name": "inst_246FBCAD","id": "104665af-4ffd-4583-bbc6-88c408e8234f","colour": { "Value": 4294967295 },"creationCodeFile": "","creationCodeType": "","ignore": false,"imageIndex": 0,"imageSpeed": 1,"inheritCode": false,"inheritItemSettings": false,"IsDnD": false,"m_originalParentID": "00000000-0000-0000-0000-000000000000","m_serialiseFrozen": false,"modelName": "GMRInstance","name_with_no_file_rename": "inst_246FBCAD","objId": "db79c11b-9791-42fa-8ae4-b388ebe60bda","properties": null,"rotation": 0,"scaleX": 1,"scaleY": 1,"mvc": "1.1","x": 192,"y": 416},
+{"name": "inst_74A1A525","id": "c6dc07fb-932b-4aaa-95c5-35cb5e2f1caa","colour": { "Value": 4294967295 },"creationCodeFile": "","creationCodeType": "","ignore": false,"imageIndex": 0,"imageSpeed": 1,"inheritCode": false,"inheritItemSettings": false,"IsDnD": false,"m_originalParentID": "00000000-0000-0000-0000-000000000000","m_serialiseFrozen": false,"modelName": "GMRInstance","name_with_no_file_rename": "inst_74A1A525","objId": "afc5e7b9-f3e1-4bad-9cca-58798c3880cb","properties": null,"rotation": 0,"scaleX": 1,"scaleY": 1,"mvc": "1.1","x": 960,"y": 416}
             ],
             "layers": [
 

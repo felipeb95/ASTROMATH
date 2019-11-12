@@ -18,7 +18,7 @@ if(menu_control){
 		menu_comitted = menu_cursor;
 		ScreenShake(4,30);
 		menu_control = false;
-		audio_sound_gain(snCoin, 0.5, 0);
+		audio_sound_gain(snCoin, 0.2, 0);
 		audio_play_sound(snCoin,10,false);
 	}
 	

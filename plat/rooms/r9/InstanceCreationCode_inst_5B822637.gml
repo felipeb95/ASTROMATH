@@ -1,1 +1,1 @@
-target = rTen;
+target = r10;

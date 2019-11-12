@@ -3,7 +3,7 @@ global.haskey = 0;
 instance_destroy(oFondo);
 //Sobreescribir
 if(file_exists(SAVEFILE)) file_delete(SAVEFILE);
-
+audio_play_sound(snMusic,10,true);
 //Crear nuevo save
 var file;
 file = file_text_open_write(SAVEFILE);

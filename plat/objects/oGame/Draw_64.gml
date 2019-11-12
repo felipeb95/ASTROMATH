@@ -1,4 +1,4 @@
-if(room!=rMenu and instance_exists(oPlayer) /*and global.kills>0*/){
+if(room!=rMenu /*and global.kills>0*/){
 	killtextscale = max(killtextscale * 0.95,1);
 	puntajetextscale = max(puntajetextscale * 0.95,1);
 	vidatextscale = max(vidatextscale * 0.95,1);

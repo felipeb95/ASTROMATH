@@ -4,3 +4,5 @@ else{
 }
 if(num<0) num = irandom_range(0,global.r+20);
 if(num==global.r and numAlternativa!=global.respuestaCorrecta) num++;
+
+

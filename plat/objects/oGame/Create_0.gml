@@ -1,7 +1,7 @@
 #macro RES_W 1280
 #macro RES_H 720
 
-global.vidas = 3;
+//global.vidas = 3;
 puntajetextscale = 0;
 vidatextscale = 0;
 global.haskey = 0;
@@ -20,8 +20,8 @@ global.operacion = "x";
 global.respondida = false;
 global.mostrarEjercicio = true;
 global.buena = true;
-global.a = irandom_range(2,9);	
-global.b = irandom_range(2,9);	
+global.a = irandom_range(global.minA,global.maxB);	
+global.b = irandom_range(global.minA,global.maxB);	
 global.r = global.a * global.b;
 global.respuesta = 0;
 global.origen = "Random";
@@ -30,11 +30,11 @@ global.etapa = 1;
 global.numEjercicios = 1;
 
 //BONUS
-global.escudo = 0.2;
-global.poder = 0.4;
-global.puntos = 0.6;
-global.multiplicador = 0.8;
-global.slowMo = 1.0;
+global.escudo = global.pEscudo;
+global.poder = global.pEscudo + global.pPoder;
+global.puntos = global.pEscudo + global.pPoder + global.pPuntos;
+global.multiplicador = global.pEscudo + global.pPoder + global.pPuntos + global.pMultiplicador;
+global.slowMo = global.pEscudo + global.pPoder + global.pPuntos + global.pMultiplicador + global.pSlowmo;
 global.bonusActivo = 0;
 global.valorMultiplicador = 1;
 
