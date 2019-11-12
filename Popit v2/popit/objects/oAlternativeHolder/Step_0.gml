@@ -1,10 +1,26 @@
 y += ySpeed;
-image_angle += rotation;
+//image_angle += rotation;
+
+if(scale){
+	//show_debug_message("[HOLDER "+string(numberOnHolder)+"] Scaling up");
+	image_yscale += yScaleRate;
+	if(image_yscale >= yScaleMax)
+		scale = !scale;
+}
+else{
+	//show_debug_message("[HOLDER] "+string(numberOnHolder)+" Scaling down");
+	image_yscale -= yScaleRate;
+	if(image_yscale <= yScaleMin)
+		scale = !scale;
+}
+	
+
 
 if(y >= room_height-sprite_get_height(sCannon)-sprite_get_height(sAlternativeHolder)/2)
 	instance_destroy(self);
 	
 if(!instance_exists(oAlternativeHolder) and !oLogicSpawner.alternativeGotHit){ // Checks if all holders have passed trough the screen and if the player couldn't hit any of them (omision).
+	oPlayerProperties.playersScore -= 10;
 	audio_play_sound(sndOmision,10,false);
 	show_debug_message("[All Holders Deleted]");
 	show_debug_message("[DT CORRECTION IN OMITION CASE]");
@@ -50,5 +66,9 @@ if(!instance_exists(oAlternativeHolder) and !oLogicSpawner.alternativeGotHit){ /
 		oLogicSpawner.primeAlternativesCreation = true; // Time to create prime alternatives.
 		show_debug_message("[REMEMBER] You must choose one correct prime number to continue");		
 	}
+	
+	oPlayerProperties.playersHp -= 1;
+	oPlayerProperties.playersHp = clamp(oPlayerProperties.playersHp, 0, 3);
+	
 }
 

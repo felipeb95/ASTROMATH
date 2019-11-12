@@ -20,7 +20,7 @@ for(i = 0; i < numberOfDivisionAlternatives; i++){
 				oLogicSpawner.actualSubDivisionApplies = 1;
 			}
 			else{
-				numberOnHolder = "no aplica";
+				numberOnHolder = "no\naplica";
 				applies = 0;
 				oLogicSpawner.actualSubDivisionApplies = 0;
 			}

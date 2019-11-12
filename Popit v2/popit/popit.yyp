@@ -39,6 +39,22 @@
             }
         },
         {
+            "Key": "15cef340-0a13-4215-bc85-c79aec3f00ea",
+            "Value": {
+                "id": "d0a9fc6c-f8e0-40f2-ba45-0975305f0a41",
+                "resourcePath": "objects\\oSoundEffects\\oSoundEffects.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "16fcd998-84aa-4234-8146-6ef312a0b6ad",
+            "Value": {
+                "id": "da5e8346-8c0a-433f-ab94-a7071b7783a9",
+                "resourcePath": "sounds\\sndShoot\\sndShoot.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "228841b4-3bfe-4a3a-bd9b-0c2900c7f102",
             "Value": {
                 "id": "7164ecd4-8e8d-4338-9eb2-d162e26d00f9",
@@ -111,6 +127,14 @@
             }
         },
         {
+            "Key": "3e4f6ec4-f4e8-4bfe-84a9-d75bf6761be4",
+            "Value": {
+                "id": "f88c5c9f-fe5b-4d1e-8e77-543d8300d0bc",
+                "resourcePath": "fonts\\fTableMessages\\fTableMessages.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "4484db5c-28a4-4f39-8580-696a8d7fe394",
             "Value": {
                 "id": "ef9f810d-e3fc-4168-8ebd-6b04629dbb3f",
@@ -135,6 +159,14 @@
             }
         },
         {
+            "Key": "513a0720-bdb2-4cdd-9942-3a0ba51f4dfc",
+            "Value": {
+                "id": "f8d7850c-083f-4691-8783-94d18c21c5c2",
+                "resourcePath": "sprites\\sBubblePop\\sBubblePop.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "5c804845-4d8a-41c5-9839-cbc76818ab4f",
             "Value": {
                 "id": "ec6a664b-15e5-49c6-bfe7-320446fd2f55",
@@ -156,6 +188,14 @@
                 "id": "6c410f54-75d3-4f65-a7a0-04caf4f9e787",
                 "resourcePath": "sprites\\sAlternativeHolder\\sAlternativeHolder.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "61396e76-3c34-434f-964b-d0262b8cd742",
+            "Value": {
+                "id": "48ba6499-4add-4ca3-91ab-d0c273a6b5bb",
+                "resourcePath": "objects\\oBubblePop\\oBubblePop.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -207,6 +247,14 @@
             }
         },
         {
+            "Key": "7ce10467-2256-420e-8b2c-c77a2947a0cd",
+            "Value": {
+                "id": "6c679cda-b31c-4e48-b6b2-725ad08eddf6",
+                "resourcePath": "fonts\\fPlayerScore\\fPlayerScore.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "7f9c3dc3-7134-47f8-8624-cbbeac498cc7",
             "Value": {
                 "id": "ce0d4ddc-a100-4d0f-b241-b8b8fd5db57d",
@@ -247,19 +295,19 @@
             }
         },
         {
-            "Key": "8cf05e36-8791-4dc7-81fe-62ae4738b6aa",
-            "Value": {
-                "id": "7d5e5e97-cf3c-4b98-add2-54b893a9fb6f",
-                "resourcePath": "fonts\\fTableMessage\\fTableMessage.yy",
-                "resourceType": "GMFont"
-            }
-        },
-        {
             "Key": "8d00b5de-4a0b-4e11-a15e-ec915e792d0c",
             "Value": {
                 "id": "a0ee58d9-c5b4-4f6d-8296-32be02ff278e",
                 "resourcePath": "views\\8d00b5de-4a0b-4e11-a15e-ec915e792d0c.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "8d20adb2-421a-4591-9280-f01d911b2de5",
+            "Value": {
+                "id": "465f8b3a-d344-48e1-aa74-8f848bdfadf9",
+                "resourcePath": "scripts\\draw_text_outlined\\draw_text_outlined.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -276,6 +324,14 @@
                 "id": "d0cbd4ea-a8a5-4d4a-a03f-13d166f98df8",
                 "resourcePath": "options\\tvos\\options_tvos.yy",
                 "resourceType": "GMtvOSOptions"
+            }
+        },
+        {
+            "Key": "95bb1787-00ef-4c14-95a0-c7da1bfdf52c",
+            "Value": {
+                "id": "a6ced009-8151-4181-8fe5-899d6b1fdb18",
+                "resourcePath": "scripts\\feedbackCreation\\feedbackCreation.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -324,6 +380,22 @@
                 "id": "cf369462-e445-49db-adee-e95d087155f2",
                 "resourcePath": "objects\\oCannon\\oCannon.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "b97efb94-1a21-4912-9acf-3ed11801154d",
+            "Value": {
+                "id": "a740dff9-35e5-498b-abff-21f7b86c23c7",
+                "resourcePath": "objects\\oFeedback\\oFeedback.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "be25c7c4-38e5-4ba3-b36a-adf422939960",
+            "Value": {
+                "id": "d76f91d5-5b08-41ee-ac92-ea63a72bad51",
+                "resourcePath": "fonts\\fFeedbackResult\\fFeedbackResult.yy",
+                "resourceType": "GMFont"
             }
         },
         {
@@ -383,6 +455,14 @@
             }
         },
         {
+            "Key": "cf7773b9-07de-497a-9df4-446ff562d51e",
+            "Value": {
+                "id": "671b4330-b5a0-4b83-9eef-54c0d4afe8cc",
+                "resourcePath": "objects\\oPlayerProperties\\oPlayerProperties.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "d01b5424-ad41-4c11-897d-591ec3e5173c",
             "Value": {
                 "id": "99a52f8f-05f5-4e7f-bde0-bdbc189c2723",
@@ -399,6 +479,30 @@
             }
         },
         {
+            "Key": "d5d564f7-f427-4f05-9521-2470c10b3efd",
+            "Value": {
+                "id": "a2568067-8cae-48a4-a22d-7f720afa993a",
+                "resourcePath": "fonts\\fTableMCM\\fTableMCM.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
+            "Key": "e0dbb616-9c21-4466-986b-5b140ce0e16b",
+            "Value": {
+                "id": "9a8c8410-7e4f-4101-a076-04ee3559f05d",
+                "resourcePath": "sprites\\sHealthPoints\\sHealthPoints.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "e1fe07f5-9c3e-4e15-9be0-74dde3066f14",
+            "Value": {
+                "id": "7129b7a5-0e46-4cc4-8ef8-9990d03dd19c",
+                "resourcePath": "fonts\\fFeedback\\fFeedback.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "e42bf5cc-3f46-4d67-a6d0-a4885a11ac3f",
             "Value": {
                 "id": "49e0bcfc-3b92-4adf-ab8e-731c3f25df4a",
@@ -412,6 +516,22 @@
                 "id": "8fb6d880-5131-424b-bc3b-51abd7729fb9",
                 "resourcePath": "objects\\oLogicSpawner\\oLogicSpawner.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "f119763a-445a-4c24-9995-ac2c187c2e5e",
+            "Value": {
+                "id": "a9fab8e1-e24e-49f3-8490-56143d978df7",
+                "resourcePath": "fonts\\fTableOpMessages\\fTableOpMessages.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
+            "Key": "f19521e7-390e-4e27-b01e-bc9c588ca9a1",
+            "Value": {
+                "id": "0c2b2d4f-cdf1-4b17-8448-b4e81aea9704",
+                "resourcePath": "fonts\\fHolderNumber\\fHolderNumber.yy",
+                "resourceType": "GMFont"
             }
         },
         {
@@ -447,6 +567,22 @@
             }
         },
         {
+            "Key": "fbb88819-cea8-42af-bf8d-7e68111e4511",
+            "Value": {
+                "id": "3aa39468-fde4-41db-bf6c-ee4561d2ff61",
+                "resourcePath": "sounds\\sndBubblePop\\sndBubblePop.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "fe39675b-0804-4116-aab4-ecd5956f7236",
+            "Value": {
+                "id": "62551b79-921f-4bfb-bfbd-f13a1315c61c",
+                "resourcePath": "fonts\\fHolderNumberDoesntApply\\fHolderNumberDoesntApply.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "ff2fc2ef-6097-46d8-8a87-e0dcf5fee467",
             "Value": {
                 "id": "23d3cc6c-0ad7-4483-8c25-ba4968ed890f",
@@ -462,7 +598,9 @@
         "82d47764-a302-4563-a770-d82bdee299f3",
         "c1853df1-f535-435f-8efb-3e08b8a83b42",
         "f5540fb8-102b-405f-934c-a0a06b94c5fa",
-        "fb706df9-6549-42e2-a105-fe2839e5ab17"
+        "fb706df9-6549-42e2-a105-fe2839e5ab17",
+        "8d20adb2-421a-4591-9280-f01d911b2de5",
+        "95bb1787-00ef-4c14-95a0-c7da1bfdf52c"
     ],
     "tutorial": ""
 }

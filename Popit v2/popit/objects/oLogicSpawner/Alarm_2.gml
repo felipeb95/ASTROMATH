@@ -1,7 +1,7 @@
 randomize();
 
-var multipleOne = oTable.tableDivisors[| 0];
-var multipleTwo = oTable.tableDivisors[| 1];
+var multipleOne = oTable._tableDivisors[| 0];
+var multipleTwo = oTable._tableDivisors[| 1];
 show_debug_message("[MT] Multiplicación entre "+string(multipleOne)+" y "+string(multipleTwo));
 
 var randomRightAnswerSelected = irandom_range(0,numberOfDivisionAlternatives-1); // In which instance the right answer will be is selected randomly.
