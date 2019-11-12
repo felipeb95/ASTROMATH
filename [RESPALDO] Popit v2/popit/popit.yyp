@@ -263,6 +263,14 @@
             }
         },
         {
+            "Key": "6546ca0e-9919-42b1-a699-319bd21720c4",
+            "Value": {
+                "id": "12cf4a4f-ddca-4bcc-941a-1638e2eed5f3",
+                "resourcePath": "objects\\oHudBar\\oHudBar.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "69f7b6a4-762b-4f60-b099-9d934afe95e7",
             "Value": {
                 "id": "652c7982-2b6d-43c2-a1e5-5a9bced87a81",
@@ -420,6 +428,14 @@
                 "id": "e45470df-1ff6-4d25-9b43-fff898711815",
                 "resourcePath": "objects\\oGuideGrid\\oGuideGrid.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "9fed0d06-a1c2-427e-98db-74b28e03e1da",
+            "Value": {
+                "id": "6b09de29-238c-44c0-84b7-17badd3f46b2",
+                "resourcePath": "sprites\\sHudBar\\sHudBar.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

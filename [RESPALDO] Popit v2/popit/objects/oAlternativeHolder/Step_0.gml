@@ -17,7 +17,7 @@ else{
 if(highlight)
 	show_debug_message("Highlighted!");
 
-if(y >= room_height-sprite_get_height(sCannon)-sprite_get_height(sAlternativeHolder)/2)
+if(y >= room_height-sprite_get_height(sCannon)-sprite_get_height(sAlternativeHolder)/2 - 45 )
 	instance_destroy(self);
 	
 if(!instance_exists(oAlternativeHolder) and !oLogicSpawner.alternativeGotHit){ // Checks if all holders have passed trough the screen and if the player couldn't hit any of them (omision).
