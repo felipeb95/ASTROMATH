@@ -38,8 +38,8 @@ if(menu_control){
 
 if(menu_x > gui_width+150 and menu_comitted != -1){
 	switch(menu_comitted){
-		case 2: /*default:*/ SlideTransition(TRANS_MODE.NEXT); break;
-		case 1:
+		case 1: /*default:*/ SlideTransition(TRANS_MODE.NEXT); break;
+		/*case 1:
 		{
 			if(!file_exists(SAVEFILE)) {
 				SlideTransition(TRANS_MODE.NEXT);
@@ -53,7 +53,7 @@ if(menu_x > gui_width+150 and menu_comitted != -1){
 				SlideTransition(TRANS_MODE.GOTO,target);
 			}
 		}
-		break;
+		break;*/
 		case 0: game_end(); break;
 	}
 }
