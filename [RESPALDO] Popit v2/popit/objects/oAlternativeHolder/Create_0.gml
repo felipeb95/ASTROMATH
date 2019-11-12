@@ -1,6 +1,6 @@
 /* VARIABLES */
 randomize();
-ySpeed = random_range(0.2,0.3);
+ySpeed = random_range(1.5,2);
 
 /*VARIABLES FOR EFFECTS */
 rotation = random_range(0.5,0.8);
@@ -11,10 +11,12 @@ yScaleRate = 0.005;
 
 /* FLAGS */
 scale = true;
+highlight = false;
+blinks = 0;
 
 /* Random selection of sprite */
-image_index = irandom_range(0,sprite_get_number(sAlternativeHolder)-1);
-show_debug_message("My index is: "+string(image_index));
+image_index = irandom_range(0,sprite_get_number(sAlternativeHolder)-1); 
+//show_debug_message("My index is: "+string(image_index));
 
 numberOnHolder = undefined;
 isCorrect = false;

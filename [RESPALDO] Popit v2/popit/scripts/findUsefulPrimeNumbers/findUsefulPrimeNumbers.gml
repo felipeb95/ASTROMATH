@@ -36,5 +36,5 @@ for(i = 0; i < ds_list_size(primeNumbersList); i++){
 alternativesStr += " ]";
 wrongAlternativesStr += " ]";
 
-show_debug_message("[SCRIPT] Useful Prime Numbers "+alternativesStr);
-show_debug_message("[SCRIPT] Not Useful Prime Numbers "+wrongAlternativesStr);
+//show_debug_message("[SCRIPT] Useful Prime Numbers "+alternativesStr);
+//show_debug_message("[SCRIPT] Not Useful Prime Numbers "+wrongAlternativesStr);

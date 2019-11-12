@@ -24,4 +24,4 @@ for(i = 0; i < ds_list_size(oLogicSpawner.xPositionsList); i++){
 	xPositionsString += string(oLogicSpawner.xPositionsList[| i])+" ";
 }
 xPositionsString += " ]";
-show_debug_message("[Script] "+xPositionsString);
+//show_debug_message("[Script] "+xPositionsString);

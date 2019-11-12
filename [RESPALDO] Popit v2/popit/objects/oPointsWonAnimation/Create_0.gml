@@ -1,7 +1,7 @@
 isCorrect = false;
 multiplier = 1;
-text = "+"+string(10*multiplier);
 alphaRate = 0.02;
+multiplierValue = undefined;
 ySpeed = 1;
 
 alpha = 1;

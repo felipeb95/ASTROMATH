@@ -3,6 +3,7 @@ var _soundDelaySteps = soundDelaySteps;
 var correct = undefined;
 var pointsMsgX = undefined;
 var pointsMsgY = undefined;
+var currentMultiplier = undefined;
 with(other){ // Only specifif instance collisioned.
 	numberHit = numberOnHolder;
 	pointsMsgX = id.x;
@@ -19,7 +20,9 @@ audio_play_sound(sndBubblePop, 10, false); // Bubble pop sound once.
 
 if(oLogicSpawner.primeType){
 	if(oLogicSpawner.numberOne mod numberHit == 0 or oLogicSpawner.numberTwo mod numberHit == 0){ // Number on hit can entirely divide at least one of the exersise's numbers.
-		oPlayerProperties.playersScore += 10;
+		oPlayerProperties.playersScore += 10*oPlayerProperties.multiplierValue;
+		currentMultiplier = oPlayerProperties.multiplierValue;
+		oPlayerProperties.multiplierValue = 1;
 		oSoundEffects.alarm[0] = _soundDelaySteps;//audio_play_sound(sndCorrect,10,false);
 		show_debug_message("[PT Correct] "+string(numberHit)+" can entirely divide one of the numbers");
 		ds_list_add(oTable.tableDivisors, numberHit);
@@ -48,7 +51,9 @@ if(oLogicSpawner.primeType){
 if(oLogicSpawner.divisionType){
 	with(other){
 		if(isCorrect){
-			oPlayerProperties.playersScore += 10;
+			oPlayerProperties.playersScore += 10*oPlayerProperties.multiplierValue;
+			currentMultiplier = oPlayerProperties.multiplierValue;
+			oPlayerProperties.multiplierValue = 1;
 			oSoundEffects.alarm[0] = _soundDelaySteps;//audio_play_sound(sndCorrect,10,false);
 			show_debug_message("[DT Correct]");
 			
@@ -141,7 +146,9 @@ if(oLogicSpawner.divisionType){
 if(oLogicSpawner.multiplyingType){
 	with(other){
 		if(isCorrect){
-			oPlayerProperties.playersScore += 10;
+			oPlayerProperties.playersScore += 10*oPlayerProperties.multiplierValue;
+			currentMultiplier = oPlayerProperties.multiplierValue;
+			oPlayerProperties.multiplierValue = 1;
 			oSoundEffects.alarm[0] = _soundDelaySteps;//audio_play_sound(sndCorrect,7,false);
 			feedbackCreation(true, "multiplying", oTable._tableDivisors[| 0], oTable._tableDivisors[| 1], -1, false);
 			tableDivisorsReorder(oTable._tableDivisors); // Table reorder.
@@ -150,6 +157,8 @@ if(oLogicSpawner.multiplyingType){
 				oTable.alarm[0] = room_speed*1;
 			}*/
 			correct = true;
+			oPlayerProperties.playersHp += 1;
+			oPlayerProperties.playersHp = clamp(oPlayerProperties.playersHp, 0, 3);
 		}
 		else{
 			oPlayerProperties.playersScore -= 10;
@@ -161,6 +170,8 @@ if(oLogicSpawner.multiplyingType){
 			/*if(ds_list_size(oTable._tableDivisors) == 1){ // Only one result. Round finished.
 				oTable.alarm[0] = room_speed*1;
 			}*/
+			oPlayerProperties.playersHp -= 1;
+			oPlayerProperties.playersHp = clamp(oPlayerProperties.playersHp, 0, 3);
 			correct = false;
 		}
 	}
@@ -170,7 +181,9 @@ if(oLogicSpawner.multiplyingType){
 
 var pointsMsg = instance_create_depth(pointsMsgX, pointsMsgY, -1001, oPointsWonAnimation);
 with(pointsMsg){
-	isCorrect = correct ? true : false;	
+	isCorrect = correct ? true : false;
+	if(correct)
+		multiplierValue = currentMultiplier;
 }
 
 with(oAlternativeHolder) // Looping through all instances of oAlternativeHolder

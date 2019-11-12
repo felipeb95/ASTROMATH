@@ -15,12 +15,15 @@ var alternativesCreated = 0;
 for(i = 0; i < alternativesListSize; i++){
 	var xPositionSelected = irandom_range(0,ds_list_size(xPositionsList)-1);
 	var alternativeSelected = irandom_range(0,ds_list_size(_alternativesList)-1);
-	show_debug_message("[X POS SEL] "+string(xPositionSelected));
+	show_debug_message("[PT] [X POS SEL] "+string(xPositionSelected));
 	//var alternativeHolderInst = instance_create_depth(xPositionsList[| xPositionSelected], -1*sprite_get_height(sAlternativeHolder), -1000, oAlternativeHolder);
 	var alternativeHolderInst = instance_create_depth(xPositionsList[| xPositionSelected], -1*sprite_get_height(sAlternativeHolder), -1000, oAlternativeHolder);
-	show_debug_message("CREATED!");
-	with(alternativeHolderInst)
-		numberOnHolder = _alternativesList[| alternativeSelected];	
+	show_debug_message("[PT] CREATED!");
+	with(alternativeHolderInst){
+		numberOnHolder = _alternativesList[| alternativeSelected];
+		if(oLogicSpawner.numberOneHeader mod numberOnHolder == 0 or oLogicSpawner.numberTwoHeader mod numberOnHolder == 0)
+			isCorrect = true;
+	}
 	
 	alternativesCreated++;
 	ds_list_delete(xPositionsList,xPositionSelected);
@@ -35,7 +38,7 @@ for(i = 0; i < wrongAlternativesListSize; i++){
 	xPositionSelected = irandom_range(0, ds_list_size(xPositionsList)-1);
 	alternativeSelected = irandom_range(0,ds_list_size(_wrongAlternativesList)-1);
 	var alternativeHolderInst = instance_create_depth(xPositionsList[| xPositionSelected], -1*sprite_get_height(sAlternativeHolder), -1000, oAlternativeHolder);
-	show_debug_message("CREATED!");
+	//show_debug_message("[PT]  CREATED!");
 	with(alternativeHolderInst)
 		numberOnHolder = _wrongAlternativesList[| alternativeSelected];
 	alternativesCreated++;
@@ -49,14 +52,14 @@ var alternativesNeeded = numberOfPrimeAlternatives - alternativesListSize - wron
 var biggestNumber = max(numberOneHeader,numberTwoHeader);
 if(alternativesNeeded > 0){	// Need to create more.
 	randomNumbersList = numbersAboveBiggest(biggestNumber + 1 , biggestNumber + 6);
-	show_debug_message("[MORE ALTERNATIVES NEEDED] Quantity needed: "+string(alternativesNeeded));
+	show_debug_message("[PT] [MORE ALTERNATIVES NEEDED] Quantity needed: "+string(alternativesNeeded));
 	for(i = 0; i < alternativesNeeded; i++){
 		if(alternativesCreated == numberOfPrimeAlternatives)
 			break;
 		xPositionSelected = irandom_range(0, ds_list_size(xPositionsList)-1);
 		alternativeSelected = irandom_range(0,ds_list_size(randomNumbersList)-1);
 		var alternativeHolderInst = instance_create_depth(xPositionsList[| xPositionSelected], -1*sprite_get_height(sAlternativeHolder), -1000, oAlternativeHolder);
-		show_debug_message("CREATED!");
+		//show_debug_message("[PT] CREATED!");
 		with(alternativeHolderInst)
 			numberOnHolder = randomNumbersList[| alternativeSelected];
 		alternativesCreated++;
@@ -72,7 +75,7 @@ else
 var _bonusProbability = random_range(0,1);
 var xBonusPositionSelected = irandom_range(0,ds_list_size(xPositionsList)-1);
 if(_bonusProbability <= bonusProbability and !instance_exists(oBonus) and !instance_exists(oBonusBox)){
-	show_debug_message("[BONUS CREATION]");
+	//show_debug_message("[BONUS CREATION]");
 	instance_create_depth(xPositionsList[| xBonusPositionSelected], -1*sprite_get_height(sBonusBase), -999, oBonus);
 }
 

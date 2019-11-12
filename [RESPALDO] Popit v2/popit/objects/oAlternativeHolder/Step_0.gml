@@ -14,7 +14,8 @@ else{
 		scale = !scale;
 }
 	
-
+if(highlight)
+	show_debug_message("Highlighted!");
 
 if(y >= room_height-sprite_get_height(sCannon)-sprite_get_height(sAlternativeHolder)/2)
 	instance_destroy(self);

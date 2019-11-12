@@ -56,7 +56,7 @@ if(multiplyAlternativesCreation){
 	}
 		
 	if(ds_list_size(oTable._tableDivisors) > 1)
-		alarm[2] = 1; //  One tenth of a second delay after trigger.	
+		alarm[2] = timeForNextCreation; //  One tenth of a second delay after trigger.	
 	else
 		show_debug_message("[MT STOPS]");
 	alternativeGotHit = false;
