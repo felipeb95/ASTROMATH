@@ -12,6 +12,6 @@ else {
     
 	show_debug_message("[DATA SENT] "+data_send);
 	
-    post = http_post_string("async.php", data_send);
+    post = http_post_string("http://platmath.informaticapucv.cl/async.php", data_send);
 	SlideTransition(TRANS_MODE.RESTART);
 }
