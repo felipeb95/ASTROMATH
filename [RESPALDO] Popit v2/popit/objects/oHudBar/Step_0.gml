@@ -1,0 +1,1 @@
+correctAnswerSubImg = oPlayerProperties.correctAnswerOn ? 1 : 0;

@@ -21,10 +21,6 @@ var bonusNumber = argument0;
 switch(bonusNumber){
 	case 0:
 		oPlayerProperties.correctAnswerOn = true;
-		with(oAlternativeHolder){
-			if(isCorrect)
-				alarm[0] = room_speed*0.1;
-		}
 		break;
 	case 1:
 		oPlayerProperties.playersScore += 100;

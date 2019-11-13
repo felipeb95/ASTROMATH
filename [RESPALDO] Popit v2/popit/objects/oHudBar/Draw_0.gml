@@ -2,3 +2,6 @@ draw_sprite(sHealthPoints, oPlayerProperties.playersHp, hpXOffset , room_height 
 draw_set_halign(fa_right);
 draw_set_font(fPlayerScore);
 draw_text(room_width - scoreXOffset, room_height - sprite_height/2, string(oPlayerProperties.playersScore)+" puntos");
+
+draw_sprite(sCorrectAnswerBonus, correctAnswerSubImg, room_width/3, room_height - sprite_height/2); 
+

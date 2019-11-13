@@ -463,6 +463,14 @@
             }
         },
         {
+            "Key": "aa2517e6-9b30-498b-9608-10ee0227a182",
+            "Value": {
+                "id": "bcbeb39b-6125-4c6d-ba6e-7634411ff5a8",
+                "resourcePath": "sprites\\sCorrectAnswerBonus\\sCorrectAnswerBonus.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "b1f71d35-29f8-4355-862b-11e1de07ad43",
             "Value": {
                 "id": "cf369462-e445-49db-adee-e95d087155f2",
