@@ -279,6 +279,14 @@
             }
         },
         {
+            "Key": "7313be2e-6bad-4e89-8af3-e8b436dd046e",
+            "Value": {
+                "id": "f1660486-080a-4bb7-a7a1-26469515cbaf",
+                "resourcePath": "objects\\oBonusTakenEffect\\oBonusTakenEffect.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "7449815b-665c-4412-9a81-6d2ac66c1fe6",
             "Value": {
                 "id": "eceb6b5f-5642-49ce-83bc-55b67917d2c6",

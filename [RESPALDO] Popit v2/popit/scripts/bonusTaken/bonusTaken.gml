@@ -21,20 +21,22 @@ var bonusNumber = argument0;
 switch(bonusNumber){
 	case 0:
 		oPlayerProperties.correctAnswerOn = true;
-		break;
+		oHudBar.correctFlashEffect = true;
+	break;
 	case 1:
 		oPlayerProperties.playersScore += 100;
-		break;
+	break;
 	case 2:
 		oPlayerProperties.multiplierValue = 2;
-		break;
+	break;
 	case 3:
 		oPlayerProperties.multiplierValue = 3;
-		break;
+	break;
 	case 4: 
 		oPlayerProperties.multiplierValue = 4;
-		break;
+	break;
 	case 5:
 		oPlayerProperties.multiplierValue = 5;
+	break;
 }
 

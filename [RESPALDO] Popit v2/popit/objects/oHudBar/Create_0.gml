@@ -6,3 +6,5 @@ scoreXOffset = 15;
 
 correctAnswerSubImg = 0;
 fiftyFiftySubImg = 0;
+
+correctFlashEffect = false;

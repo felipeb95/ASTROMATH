@@ -7,12 +7,12 @@ maxDegree = 25;
 minDegree = -25;
 ySpeed = 1.5;
 
-bonus1P = 30//10;
-bonus2P = 14//15;
-bonus3P = 14//25;
-bonus4P = 14//25;
-bonus5P = 14//15;
-bonus6P = 14//10;
+bonus1P = 10;
+bonus2P = 15;
+bonus3P = 25;
+bonus4P = 25;
+bonus5P = 15;
+bonus6P = 10;
 
 bonusP = irandom_range(0,99);
 if(bonusP >= 0 and bonusP < bonus1P +1)
