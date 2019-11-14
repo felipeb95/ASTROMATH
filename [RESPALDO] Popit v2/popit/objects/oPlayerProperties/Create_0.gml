@@ -14,3 +14,4 @@ y = hpYOffset;
 multiplierValue = 1;
 multiplierOn = false;
 correctAnswerOn = false;
+fiftyFiftyOn = false;

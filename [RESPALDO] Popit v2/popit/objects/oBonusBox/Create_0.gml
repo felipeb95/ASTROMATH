@@ -14,5 +14,6 @@ ySpeed = undefined;
 	> subimage 4 : Gives x3 points on next correct answer.
 	> subimage 5 : Gives x4 points on next correct answer.
 	> subimage 6 : Gives x5 points on next correct answer.
+	> subimage 7 : Deletes half of the alternatives.
 
 */

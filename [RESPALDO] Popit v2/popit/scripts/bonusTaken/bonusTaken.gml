@@ -38,5 +38,9 @@ switch(bonusNumber){
 	case 5:
 		oPlayerProperties.multiplierValue = 5;
 	break;
+	case 6:
+		oPlayerProperties.fiftyFiftyOn = true;
+		oHudBar.fiftyFiftyFlashEffectOn = true;
+	break;
 }
 

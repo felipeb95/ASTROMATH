@@ -7,12 +7,13 @@ maxDegree = 25;
 minDegree = -25;
 ySpeed = 1.5;
 
-bonus1P = 10;
-bonus2P = 15;
-bonus3P = 25;
-bonus4P = 25;
-bonus5P = 15;
-bonus6P = 10;
+bonus1P = 40;
+bonus2P = 4;
+bonus3P = 4;
+bonus4P = 4;
+bonus5P = 4;
+bonus6P = 4;
+bonus7P = 40;
 
 bonusP = irandom_range(0,99);
 if(bonusP >= 0 and bonusP < bonus1P +1)
@@ -27,6 +28,8 @@ if(bonusP >= bonus1P + bonus2P + bonus3P + bonus4P +1 and bonusP < bonus1P + bon
 	bonusSubImg = 4;
 if(bonusP >= bonus1P + bonus2P + bonus3P + bonus4P + bonus5P +1 and bonusP < bonus1P + bonus2P + bonus3P + bonus4P + bonus5P + bonus6P +1)
 	bonusSubImg = 5;
+if(bonusP >= bonus1P + bonus2P + bonus3P + bonus4P + bonus5P + bonus6P +1 and bonusP < bonus1P + bonus2P + bonus3P + bonus4P + bonus5P + bonus6P + bonus7P +1)
+	bonusSubImg = 6;
 
 //show_debug_message("[BONUS PROBABILITY] Generated P = "+string(bonusP)+" corresponding to "+string(bonusSubImg));
 

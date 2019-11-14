@@ -8,3 +8,4 @@ correctAnswerSubImg = 0;
 fiftyFiftySubImg = 0;
 
 correctFlashEffect = false;
+fiftyFiftyFlashEffectOn = false;
