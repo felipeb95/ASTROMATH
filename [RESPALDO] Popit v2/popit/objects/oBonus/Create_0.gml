@@ -7,10 +7,10 @@ maxDegree = 25;
 minDegree = -25;
 ySpeed = 1.5;
 
-bonus1P = global.bonusShowCorrect;
-bonus2P = global.bonusPlus100;
-bonus3P = global.bonusMultiplier;
-bonus4P = global.bonusFiftyFifty;
+bonus1P = global.bonusShowCorrect*100;
+bonus2P = global.bonusPlus100*100;
+bonus3P = global.bonusMultiplier*100;
+bonus4P = global.bonusFiftyFifty*100;
 /*
 bonus5P = 4;
 bonus6P = 4;

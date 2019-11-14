@@ -5,3 +5,5 @@ loadingMsg = "CARGANDO...";
 loadingTypewriterOut = "";
 i = 1;
 alarm[0] =	1;
+
+canStart = false;

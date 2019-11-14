@@ -1,4 +1,4 @@
-parametersLoaded = false;
+parametersLoaded = undefined;
 parametersStr = " ";
 
 /* GAME'S LOGIC GLOBALS */

@@ -1,2 +1,2 @@
-if(oLoading.parametersLoaded)
+if(canStart)
 	room_goto(rPlayRoom);
