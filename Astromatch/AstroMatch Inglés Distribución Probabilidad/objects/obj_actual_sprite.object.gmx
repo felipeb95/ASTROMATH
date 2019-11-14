@@ -27,8 +27,12 @@
             <kind>1</kind>
             <string>depth = 1000;
 alarm[0] = room_speed*1;
-/* Lo siguiente corresponde a la versión más nueva con Text To Speech
-//alarm[0] = room_speed*1;
+scale = 0.4;
+if(sprite_get_height(global.imagen_actual) &gt; 128)
+    scale = 52 / sprite_get_height(global.imagen_actual);
+else
+    scale = 0.4;
+/* Lo siguiente corresponde a la versión más nueva con Text To Speech */
 /*
 str_imagen = "Aparece: "+string(global.imagen_actual);
 str_sonido = "Suena: "+string(global.sonido_actual);
@@ -36,6 +40,8 @@ show_debug_message(str_imagen);
 show_debug_message(str_sonido);
 audio_play_sound(global.sonido_actual, 10, false);
 */
+
+
 
 </string>
           </argument>
@@ -86,7 +92,7 @@ audio_play_sound(sw_index, 10, false);
           <argument>
             <kind>1</kind>
             <string>//draw_sprite(global.imagen_actual,0,room_width/2, 20);
-draw_sprite_ext(global.imagen_actual,0,room_width/2, 25,0.4,0.4,0,-1,1);
+draw_sprite_ext(global.imagen_actual,0,room_width/2, 25,scale,scale,0,-1,1);
 
 </string>
           </argument>
