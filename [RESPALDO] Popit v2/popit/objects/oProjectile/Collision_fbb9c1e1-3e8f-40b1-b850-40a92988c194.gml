@@ -209,7 +209,7 @@ if(gotCorrect)
 else
 	oPlayerProperties.wrongAnswers++;
 
-saveToMap(firstA, firstB, a, b, type, state, subexercise, exercise);
+saveToMap(firstA, firstB, a, b, type, state, subexercise, exercise, numberHit);
 
 oLogicSpawner.subexercise++;
 with(oAlternativeHolder) // Looping through all instances of oAlternativeHolder

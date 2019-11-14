@@ -93,7 +93,7 @@ if(!instance_exists(oAlternativeHolder) and !oLogicSpawner.alternativeGotHit){ /
 	oPlayerProperties.playersHp = clamp(oPlayerProperties.playersHp, 0, 3);
 	oPlayerProperties.wrongAnswers++;
 	oLogicSpawner.subexercise++;
-	saveToMap(firstA, firstB, a, b, type, state, subexercise, exercise);
+	saveToMap(firstA, firstB, a, b, type, state, subexercise, exercise, -1);
 	
 }
 
