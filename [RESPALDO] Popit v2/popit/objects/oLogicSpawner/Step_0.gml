@@ -15,6 +15,7 @@ if(primeAlternativesCreation){
 		findUsefulPrimeNumbers(numberOne, numberTwo, primeNumbersFound, alternativesList, wrongAlternativesList); // All prime numbers that work for the number pair.
 		show_debug_message("[Empty partials list]");
 		show_debug_message("[NUMBERS ON INIT] "+string(numberOne) +" and "+string(numberTwo));
+		exercise++;
 	}
 	else{
 		if(!ds_list_empty(oTable.numberOnePartials)){ // Should only check the list if it's not empty to take numbers.

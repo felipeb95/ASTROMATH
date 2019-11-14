@@ -1,3 +1,4 @@
+draw_self();
 draw_sprite(sHealthPoints, oPlayerProperties.playersHp, hpXOffset , room_height - sprite_height/2);
 draw_set_halign(fa_right);
 draw_set_font(fPlayerScore);

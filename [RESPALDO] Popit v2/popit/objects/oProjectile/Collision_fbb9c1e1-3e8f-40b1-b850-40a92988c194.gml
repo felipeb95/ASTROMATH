@@ -4,6 +4,16 @@ var correct = undefined;
 var pointsMsgX = undefined;
 var pointsMsgY = undefined;
 var currentMultiplier = undefined;
+var type = undefined;
+var gotCorrect = false;
+var state = undefined;
+var firstA = oLogicSpawner.numberOneHeader;
+var firstB = oLogicSpawner.numberTwoHeader;
+var a = oLogicSpawner.numberOne;
+var b = oLogicSpawner.numberTwo;
+var exercise = oLogicSpawner.exercise;
+var subexercise = oLogicSpawner.subexercise;
+
 with(other){ // Only specifif instance collisioned.
 	numberHit = numberOnHolder;
 	pointsMsgX = id.x;
@@ -19,6 +29,7 @@ audio_play_sound(sndBubblePop, 10, false); // Bubble pop sound once.
 
 
 if(oLogicSpawner.primeType){
+	type = "prime";
 	if(oLogicSpawner.numberOne mod numberHit == 0 or oLogicSpawner.numberTwo mod numberHit == 0){ // Number on hit can entirely divide at least one of the exersise's numbers.
 		oPlayerProperties.playersScore += 10*oPlayerProperties.multiplierValue;
 		currentMultiplier = oPlayerProperties.multiplierValue;
@@ -34,6 +45,7 @@ if(oLogicSpawner.primeType){
 		oPlayerProperties.playersHp += 1;
 		oPlayerProperties.playersHp = clamp(oPlayerProperties.playersHp, 0, 3);
 		correct = true;
+		gotCorrect = true;
 	}
 	else{
 		oPlayerProperties.playersScore -= 10;
@@ -46,9 +58,11 @@ if(oLogicSpawner.primeType){
 		oPlayerProperties.playersHp = clamp(oPlayerProperties.playersHp, 0, 3);
 		correct = false;
 	}
+	
 }
 
 if(oLogicSpawner.divisionType){
+	type = "division";
 	with(other){
 		if(isCorrect){
 			oPlayerProperties.playersScore += 10*oPlayerProperties.multiplierValue;
@@ -93,6 +107,7 @@ if(oLogicSpawner.divisionType){
 			oPlayerProperties.playersHp += 1;
 			oPlayerProperties.playersHp = clamp(oPlayerProperties.playersHp, 0, 3);
 			correct = true;
+			gotCorrect = true;
 		}
 		else{ // Correction if wrong holder is hit.
 			oPlayerProperties.playersScore -= 10;
@@ -144,6 +159,7 @@ if(oLogicSpawner.divisionType){
 }
 
 if(oLogicSpawner.multiplyingType){
+	type = "times";
 	with(other){
 		if(isCorrect){
 			oPlayerProperties.playersScore += 10*oPlayerProperties.multiplierValue;
@@ -157,6 +173,7 @@ if(oLogicSpawner.multiplyingType){
 				oTable.alarm[0] = room_speed*1;
 			}*/
 			correct = true;
+			gotCorrect = true;
 			oPlayerProperties.playersHp += 1;
 			oPlayerProperties.playersHp = clamp(oPlayerProperties.playersHp, 0, 3);
 		}
@@ -186,5 +203,14 @@ with(pointsMsg){
 		multiplierValue = currentMultiplier;
 }
 
+state = gotCorrect ? "correct" : "wrong";
+if(gotCorrect)
+	oPlayerProperties.correctAnswers++;
+else
+	oPlayerProperties.wrongAnswers++;
+
+saveToMap(firstA, firstB, a, b, type, state, subexercise, exercise);
+
+oLogicSpawner.subexercise++;
 with(oAlternativeHolder) // Looping through all instances of oAlternativeHolder
 	instance_destroy(self); // This will delete the instance of oAlternativeHolder

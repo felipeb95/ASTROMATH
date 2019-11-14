@@ -24,6 +24,8 @@ numberOfPrimeAlternatives = 5;
 multipleOne = undefined;
 multipleTwo = undefined;
 timeForNextCreation = room_speed*0.2; // ith part of a second.
+subexercise = 1;
+exercise = 0;
 
 /* GLOBALS (or parameters loaded by http as example */
 
