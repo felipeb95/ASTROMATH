@@ -17,8 +17,6 @@ actualSubDivisionApplies = -1;
 exersiseJustCreated = true; // This only changes to true when multiplying phase is done, so a new pair of numbers can be selected.
 alternativeGotHit = false; // This checks wether the player omitted or couldn't hit any alternative.
 maxNumberForHolder = 50;
-minNumber = 2;
-maxNumber = 18;
 numberOfTimesAlternatives = 5;
 numberOfPrimeAlternatives = 5;
 multipleOne = undefined;
@@ -28,8 +26,9 @@ subexercise = 1;
 exercise = 0;
 
 /* GLOBALS (or parameters loaded by http as example */
-
-bonusProbability = 1;
+minNumber = global.minNumber;
+maxNumber = global.maxNumber;
+bonusProbability = global.bonusProbability;
 
 /* FLAGS */
 subDivisionAnswered = false;

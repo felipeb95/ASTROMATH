@@ -1,1 +1,2 @@
-room_goto(rPlayRoom);
+if(oLoading.parametersLoaded)
+	room_goto(rPlayRoom);

@@ -11,6 +11,7 @@
 	> subimage 3 : Gives x3 points on next correct answer.
 	> subimage 4 : Gives x4 points on next correct answer.
 	> subimage 5 : Gives x5 points on next correct answer.
+	> subimage 6 : Deletes half of the alternatives.
 	
 */
 

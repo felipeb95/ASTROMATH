@@ -1,6 +1,6 @@
 /* VARIABLES */
 randomize();
-ySpeed = random_range(1.5,2);
+ySpeed = random_range(global.minSpeed,global.maxSpeed);
 
 /*VARIABLES FOR EFFECTS */
 rotation = random_range(0.5,0.8);

@@ -583,6 +583,14 @@
             }
         },
         {
+            "Key": "cde35f88-05ee-4603-817a-88d0abdd8e83",
+            "Value": {
+                "id": "0b807ea3-b435-403a-bef6-825b13c28851",
+                "resourcePath": "objects\\oLoading\\oLoading.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "ce7304ec-bd48-474d-ade6-a8afdc11d307",
             "Value": {
                 "id": "ef272eec-e439-4fc5-8c08-6e5d6afb30c3",
