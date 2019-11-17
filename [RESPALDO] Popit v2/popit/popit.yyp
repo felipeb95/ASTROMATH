@@ -511,6 +511,14 @@
             }
         },
         {
+            "Key": "b30d0600-5843-43fb-b1af-53eef56c8d3b",
+            "Value": {
+                "id": "0d4d688a-1193-446a-bbac-e5e6e51add45",
+                "resourcePath": "objects\\oScale\\oScale.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "b4fe0c46-4fe0-468d-98cd-e0878de00c6d",
             "Value": {
                 "id": "4d76f616-b9c7-4be5-bba9-8c5eeb284bd2",
