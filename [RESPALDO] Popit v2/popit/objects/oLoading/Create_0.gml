@@ -15,6 +15,6 @@ global.bonusShowCorrect = undefined;
 /* OTHER GLOBALS */
 global.debugMode = undefined;
 
-var url = "http://localhost/popit/curl_con.php";
-//var url = "http://popit.informaticapucv.cl/curl_con.php";
+
+var url = "https://popit.informaticapucv.cl/curl_exp.php";
 http_get(url);
