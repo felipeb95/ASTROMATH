@@ -1,6 +1,7 @@
 
 if(oPlayerProperties.playersHp == 0){
 	global.playersScore = oPlayerProperties.playersScore;
+	sendToPHP(oDataSaver.gameMap);
 	room_goto(rEndRoom);
 }
 else

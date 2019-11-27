@@ -7,12 +7,15 @@ maxDegree = 25;
 minDegree = -25;
 ySpeed = 1.5;
 
-bonus1P = 30//10;
-bonus2P = 14//15;
-bonus3P = 14//25;
-bonus4P = 14//25;
-bonus5P = 14//15;
-bonus6P = 14//10;
+bonus1P = global.bonusShowCorrect*100;
+bonus2P = global.bonusPlus100*100;
+bonus3P = global.bonusMultiplier*100;
+bonus4P = global.bonusFiftyFifty*100;
+/*
+bonus5P = 4;
+bonus6P = 4;
+bonus7P = 40;
+*/
 
 bonusP = irandom_range(0,99);
 if(bonusP >= 0 and bonusP < bonus1P +1)
@@ -20,13 +23,17 @@ if(bonusP >= 0 and bonusP < bonus1P +1)
 if(bonusP >= bonus1P +1 and bonusP < bonus1P + bonus2P +1)
 	bonusSubImg = 1;
 if(bonusP >= bonus1P + bonus2P +1 and bonusP < bonus1P + bonus2P + bonus3P +1)
-	bonusSubImg = 2;
-if(bonusP >= bonus1P + bonus2P + bonus3P +1 and bonusP  <bonus1P + bonus2P + bonus3P + bonus4P +1)
-	bonusSubImg = 3;
+	bonusSubImg = choose(2,3,4,5);
+if(bonusP >= bonus1P + bonus2P + bonus3P +1 and bonusP  < bonus1P + bonus2P + bonus3P + bonus4P +1)
+	bonusSubImg = 6;
+/*
 if(bonusP >= bonus1P + bonus2P + bonus3P + bonus4P +1 and bonusP < bonus1P + bonus2P + bonus3P + bonus4P + bonus5P +1)
 	bonusSubImg = 4;
 if(bonusP >= bonus1P + bonus2P + bonus3P + bonus4P + bonus5P +1 and bonusP < bonus1P + bonus2P + bonus3P + bonus4P + bonus5P + bonus6P +1)
 	bonusSubImg = 5;
+if(bonusP >= bonus1P + bonus2P + bonus3P + bonus4P + bonus5P + bonus6P +1 and bonusP < bonus1P + bonus2P + bonus3P + bonus4P + bonus5P + bonus6P + bonus7P +1)
+	bonusSubImg = 6;
+*/
 
 //show_debug_message("[BONUS PROBABILITY] Generated P = "+string(bonusP)+" corresponding to "+string(bonusSubImg));
 

@@ -1,1 +1,2 @@
-room_goto(rPlayRoom);
+if(canStart)
+	room_goto(rPlayRoom);

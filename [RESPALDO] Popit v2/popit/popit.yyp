@@ -71,6 +71,14 @@
             }
         },
         {
+            "Key": "1f41fc83-1cac-4c55-9652-8b4c521bd9e0",
+            "Value": {
+                "id": "65b59095-ba80-4162-9f38-5d4a2a398106",
+                "resourcePath": "objects\\oDataSaver\\oDataSaver.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "228841b4-3bfe-4a3a-bd9b-0c2900c7f102",
             "Value": {
                 "id": "7164ecd4-8e8d-4338-9eb2-d162e26d00f9",
@@ -108,6 +116,14 @@
                 "id": "e582c338-cf17-489f-a222-f3fbf3f76cab",
                 "resourcePath": "sprites\\sHighlightedHolder\\sHighlightedHolder.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "2b0e6c36-2331-4359-a48f-8b9ac852d83a",
+            "Value": {
+                "id": "167d1474-dd56-4999-8a5a-09a35505be80",
+                "resourcePath": "scripts\\sendToPHP\\sendToPHP.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -279,6 +295,14 @@
             }
         },
         {
+            "Key": "7313be2e-6bad-4e89-8af3-e8b436dd046e",
+            "Value": {
+                "id": "f1660486-080a-4bb7-a7a1-26469515cbaf",
+                "resourcePath": "objects\\oBonusTakenEffect\\oBonusTakenEffect.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "7449815b-665c-4412-9a81-6d2ac66c1fe6",
             "Value": {
                 "id": "eceb6b5f-5642-49ce-83bc-55b67917d2c6",
@@ -399,6 +423,14 @@
             }
         },
         {
+            "Key": "949e817e-c28e-4bdd-a4fc-6813184d09e6",
+            "Value": {
+                "id": "2df7c2e9-0ffd-4cb7-954c-4f0dcae2faae",
+                "resourcePath": "scripts\\allObjectsOnScreen\\allObjectsOnScreen.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "95556994-02dd-4a0e-be50-4c139696ac42",
             "Value": {
                 "id": "0db538fa-1771-4a6e-b822-ae54b680e406",
@@ -463,10 +495,26 @@
             }
         },
         {
+            "Key": "aa2517e6-9b30-498b-9608-10ee0227a182",
+            "Value": {
+                "id": "bcbeb39b-6125-4c6d-ba6e-7634411ff5a8",
+                "resourcePath": "sprites\\sCorrectAnswerBonus\\sCorrectAnswerBonus.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "b1f71d35-29f8-4355-862b-11e1de07ad43",
             "Value": {
                 "id": "cf369462-e445-49db-adee-e95d087155f2",
                 "resourcePath": "objects\\oCannon\\oCannon.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "b30d0600-5843-43fb-b1af-53eef56c8d3b",
+            "Value": {
+                "id": "0d4d688a-1193-446a-bbac-e5e6e51add45",
+                "resourcePath": "objects\\oScale\\oScale.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -511,6 +559,14 @@
             }
         },
         {
+            "Key": "c892c8d9-9b3b-4b06-8507-1be77b80f293",
+            "Value": {
+                "id": "d16dbe1f-1152-42a2-82b0-fe9c316af255",
+                "resourcePath": "scripts\\saveToMap\\saveToMap.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "cc3cac73-4f88-4584-b06e-a300deb8ca67",
             "Value": {
                 "id": "0bc4b907-ab7a-40b5-a83a-3b0ecac25978",
@@ -532,6 +588,14 @@
                 "id": "742b0902-bcfc-45b8-9a21-c7aecc7e52a4",
                 "resourcePath": "views\\cd982145-1314-4471-ba21-b3b8b528fc48.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "cde35f88-05ee-4603-817a-88d0abdd8e83",
+            "Value": {
+                "id": "0b807ea3-b435-403a-bef6-825b13c28851",
+                "resourcePath": "objects\\oLoading\\oLoading.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -687,6 +751,14 @@
             }
         },
         {
+            "Key": "f66c716d-cd55-4b81-a842-b1c8518cc9db",
+            "Value": {
+                "id": "484f0b3c-c4f7-4aae-8ca8-839f673e512e",
+                "resourcePath": "sprites\\sFiftyFiftyBonus\\sFiftyFiftyBonus.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "fb706df9-6549-42e2-a105-fe2839e5ab17",
             "Value": {
                 "id": "8d48c970-4108-4fea-bf6b-6d36535db24e",
@@ -730,7 +802,10 @@
         "fb706df9-6549-42e2-a105-fe2839e5ab17",
         "8d20adb2-421a-4591-9280-f01d911b2de5",
         "95bb1787-00ef-4c14-95a0-c7da1bfdf52c",
-        "27a44efb-2beb-4add-b2f4-e0528d5af416"
+        "27a44efb-2beb-4add-b2f4-e0528d5af416",
+        "949e817e-c28e-4bdd-a4fc-6813184d09e6",
+        "c892c8d9-9b3b-4b06-8507-1be77b80f293",
+        "2b0e6c36-2331-4359-a48f-8b9ac852d83a"
     ],
     "tutorial": ""
 }

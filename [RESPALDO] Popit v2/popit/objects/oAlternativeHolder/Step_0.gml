@@ -13,13 +13,20 @@ else{
 	if(image_yscale <= yScaleMin)
 		scale = !scale;
 }
-	
-if(highlight)
-	show_debug_message("Highlighted!");
 
 if(y >= room_height-sprite_get_height(sCannon)-sprite_get_height(sAlternativeHolder)/2 - 45 )
 	instance_destroy(self);
-	
+
+var type = undefined;
+var state = "omission";
+var firstA = oLogicSpawner.numberOneHeader;
+var firstB = oLogicSpawner.numberTwoHeader;
+var a = oLogicSpawner.numberOne;
+var b = oLogicSpawner.numberTwo;
+var exercise = oLogicSpawner.exercise;
+var subexercise = oLogicSpawner.subexercise;
+
+
 if(!instance_exists(oAlternativeHolder) and !oLogicSpawner.alternativeGotHit){ // Checks if all holders have passed trough the screen and if the player couldn't hit any of them (omision).
 	oPlayerProperties.playersScore -= 10;
 	oPlayerProperties.playersScore = clamp(oPlayerProperties.playersScore, 0, 99999);
@@ -28,6 +35,7 @@ if(!instance_exists(oAlternativeHolder) and !oLogicSpawner.alternativeGotHit){ /
 	show_debug_message("[DT CORRECTION IN OMITION CASE]");
 	
 	if(oLogicSpawner.divisionType){ // Check which type of exersise was omitted.
+		type = "division";
 		if(oLogicSpawner.actualSubDivisionApplies == 0){ // Check if the division doesn't appliy (can't entirely divide)
 			if(oLogicSpawner.divisionCounter == 1){
 				ds_list_add(oTable.numberOnePartials, oLogicSpawner.subDivisionNumber); // Same number is written down in table as a partial
@@ -65,6 +73,7 @@ if(!instance_exists(oAlternativeHolder) and !oLogicSpawner.alternativeGotHit){ /
 		}*/
 	}
 	else if(oLogicSpawner.multiplyingType){
+			type = "times";
 			audio_play_sound(sndOmision,10,false);
 			feedbackCreation(false, "multiplying", oTable._tableDivisors[| 0], oTable._tableDivisors[| 1], -1, false);
 			tableDivisorsReorder(oTable.tableDivisors); // Table reoder.
@@ -74,13 +83,17 @@ if(!instance_exists(oAlternativeHolder) and !oLogicSpawner.alternativeGotHit){ /
 			}*/
 	}
 	else{ // A prime type exersise has been omitted.
+		type = "prime";
 		//oLogicSpawner.primeAlternativesCreation = true; // Time to create prime alternatives.
 		feedbackCreation(false,"prime", oLogicSpawner.numberOne, oLogicSpawner.numberTwo, -1, false);
-		show_debug_message("[REMEMBER] You must choose one correct prime number to continue");		
+		show_debug_message("[REMEMBER] You must choose one correct prime number to continue");
 	}
 	
 	oPlayerProperties.playersHp -= 1;
 	oPlayerProperties.playersHp = clamp(oPlayerProperties.playersHp, 0, 3);
+	oPlayerProperties.wrongAnswers++;
+	oLogicSpawner.subexercise++;
+	saveToMap(firstA, firstB, a, b, type, state, subexercise, exercise, -1);
 	
 }
 

@@ -11,6 +11,7 @@
 	> subimage 3 : Gives x3 points on next correct answer.
 	> subimage 4 : Gives x4 points on next correct answer.
 	> subimage 5 : Gives x5 points on next correct answer.
+	> subimage 6 : Deletes half of the alternatives.
 	
 */
 
@@ -21,24 +22,26 @@ var bonusNumber = argument0;
 switch(bonusNumber){
 	case 0:
 		oPlayerProperties.correctAnswerOn = true;
-		with(oAlternativeHolder){
-			if(isCorrect)
-				alarm[0] = room_speed*0.1;
-		}
-		break;
+		oHudBar.correctFlashEffect = true;
+	break;
 	case 1:
 		oPlayerProperties.playersScore += 100;
-		break;
+	break;
 	case 2:
 		oPlayerProperties.multiplierValue = 2;
-		break;
+	break;
 	case 3:
 		oPlayerProperties.multiplierValue = 3;
-		break;
+	break;
 	case 4: 
 		oPlayerProperties.multiplierValue = 4;
-		break;
+	break;
 	case 5:
 		oPlayerProperties.multiplierValue = 5;
+	break;
+	case 6:
+		oPlayerProperties.fiftyFiftyOn = true;
+		oHudBar.fiftyFiftyFlashEffectOn = true;
+	break;
 }
 
