@@ -311,7 +311,7 @@
             "inheritSubLayers": false,
             "inheritVisibility": false,
             "instances": [
-{"name": "inst_315C8FA9","id": "6dadbe3e-6fc8-484d-9401-2cdb67ac4762","colour": { "Value": 4294967295 },"creationCodeFile": "","creationCodeType": "","ignore": false,"imageIndex": 0,"imageSpeed": 1,"inheritCode": false,"inheritItemSettings": false,"IsDnD": false,"m_originalParentID": "00000000-0000-0000-0000-000000000000","m_serialiseFrozen": false,"modelName": "GMRInstance","name_with_no_file_rename": "inst_315C8FA9","objId": "485382ca-a6b7-4f4b-8002-d330de07fd8f","properties": null,"rotation": 0,"scaleX": 1,"scaleY": 1,"mvc": "1.1","x": 160,"y": 544}
+{"name": "inst_315C8FA9","id": "6dadbe3e-6fc8-484d-9401-2cdb67ac4762","colour": { "Value": 4294967295 },"creationCodeFile": "","creationCodeType": "","ignore": false,"imageIndex": 0,"imageSpeed": 1,"inheritCode": false,"inheritItemSettings": false,"IsDnD": false,"m_originalParentID": "00000000-0000-0000-0000-000000000000","m_serialiseFrozen": false,"modelName": "GMRInstance","name_with_no_file_rename": "inst_315C8FA9","objId": "485382ca-a6b7-4f4b-8002-d330de07fd8f","properties": [{"id": "a19455c0-c4d9-408a-a627-a8accd027d26","modelName": "GMOverriddenProperty","objectId": "485382ca-a6b7-4f4b-8002-d330de07fd8f","propertyId": "fc7e65e9-8bf1-4093-a47c-582dddf57700","mvc": "1.0","value": "Evita chocar con los enemigos."}],"rotation": 0,"scaleX": 1,"scaleY": 1,"mvc": "1.1","x": 160,"y": 544}
             ],
             "layers": [
 

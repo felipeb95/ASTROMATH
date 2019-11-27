@@ -3,7 +3,7 @@ if(room!=rMenu /*and global.kills>0*/){
 	puntajetextscale = max(puntajetextscale * 0.95,1);
 	vidatextscale = max(vidatextscale * 0.95,1);
 	DrawSetText(c_black,fMenu,fa_right,fa_top);
-	draw_text_transformed(108,12,string(global.vidas) + " VIDAS", vidatextscale,vidatextscale,0);
+	if(!instance_exists(oPDead)) draw_text_transformed(108,12,string(global.vidas) + " VIDAS", vidatextscale,vidatextscale,0);
 	draw_text_transformed(RES_W-8,12,string(global.kills) + " MUERTES", killtextscale,killtextscale,0);
 	draw_text_transformed(RES_W-8,52,string(global.puntaje) + " PUNTOS", puntajetextscale,puntajetextscale,0);
 	draw_text(RES_W-8,92,string(global.buenas) + " BUENAS");
