@@ -4,7 +4,7 @@ var gameMap = argument0;
 var data_send = undefined;
 var mapToString = json_encode(gameMap);
 
-data_send = "puntaje="+string(oPlayerProperties.puntaje)+
+data_send = "puntaje="+string(oPlayerProperties.playersScore)+
     "&correctas="+string(oPlayerProperties.correctAnswers)+
     "&incorrectas="+string(oPlayerProperties.wrongAnswers)+
     "&ejercicios="+string(oLogicSpawner.exercise)+
