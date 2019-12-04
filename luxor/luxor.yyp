@@ -199,6 +199,14 @@
             }
         },
         {
+            "Key": "a00287b0-158f-4c76-8c95-e5c3679c597a",
+            "Value": {
+                "id": "a29b640a-5183-4f61-adbc-a1259a5e7ee3",
+                "resourcePath": "fonts\\ballfont\\ballfont.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "a128950b-5063-4876-b4a6-b99dbd2ea6d1",
             "Value": {
                 "id": "5b0d298a-072a-41a7-9b38-5c94045ae9f7",
