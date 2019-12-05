@@ -112,22 +112,10 @@ else
     
 
 if(global.debug){
-    if(global.iStringOperacionesB&gt;0){
-        valor = 70;
-        for(i = global.iStringOperacionesB-1;i&gt;=0;i--){
-            draw_text(40, valor, string(global.stringOperacionesB[i]));
-            valor+=20;
-        } 
-    }
-    if(global.iStringOperacionesM&gt;0){
-        valor = 70;
-        for(i = global.iStringOperacionesM-1;i&gt;=0;i--){
-            draw_text(130, valor, string(global.stringOperacionesM[i]));
-            valor+=20;
-        } 
-    }
-    draw_text(40, 50, "B:");
-    draw_text(130, 50, "M:");
+    draw_set_colour(c_white);
+    draw_text(90, 100, "Habilidad: "+string(global.habilidad));
+    draw_text(90, 150, "Dificultad: "+string(global.dificultad));
+    draw_text(90, 200, "Rango: "+string(global.rango));
     draw_set_halign(fa_right);
     if(global.time_to_cross == 0){
         //draw_text(room_width/2,room_height-50,"Cronómetro de respuesta correcta: "+string(global.segundos)+" (pausado)");

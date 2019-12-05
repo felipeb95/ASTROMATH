@@ -351,6 +351,8 @@ if(global.modo==0) {
         randomNum = irandom_range(0,contador) //indice random para escoger el ejercicio
         global.a = setA[randomNum];
         global.b = setB[randomNum];
+        global.dificultad = dificultad;
+        global.rango = rango;
         //FIN IRT
         
         
@@ -827,6 +829,8 @@ if(global.ccont &gt;= meteoros){ //contador de meteoritos destruidos o q salen d
                 randomNum = irandom_range(0,contador) //indice random para escoger el ejercicio
                 global.a = setA[randomNum];
                 global.b = setB[randomNum];
+                global.dificultad = dificultad;
+                global.rango = rango;
                 //FIN IRT
                 global.r = global.a*global.b;
                 global.tablaM[global.a,global.b]=1;
