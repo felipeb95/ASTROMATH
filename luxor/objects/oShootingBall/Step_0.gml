@@ -1,8 +1,8 @@
 if(travel)
-	y = y-5;
+	y = y-15;
 else{
 	x = oBallShooter.x;
-	y = initialY;
+	y = initialY+sprite_height/2;
 }
 
 if(y <= 0)

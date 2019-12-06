@@ -8,7 +8,7 @@ results = ds_list_create();
 
 var i =0;
 var sep = 0.01;
-testId = undefined;
+//testId = undefined;
 
 for(i=0;i<9;i++){
 	var thisBall = instance_create_depth(0,0,-100,oBall)
@@ -20,6 +20,7 @@ for(i=0;i<9;i++){
 			type = "number";
 			ds_list_add(oBallCreator.numbers, value);
 			ds_list_add(oBallCreator.numbersId, thisBall);
+			sprite_index = -1;
 		}
 		else{
 			type = choose("x","+");
@@ -28,8 +29,8 @@ for(i=0;i<9;i++){
 			ds_list_add(oBallCreator.operationsId, thisBall);
 		}
 	}
-	if(i==3)
-		testId = thisBall;
+	//if(i==3)
+		//testId = thisBall;
 	ds_list_add(list,thisBall);
 }
 
@@ -65,7 +66,7 @@ for(i = 0; i < ds_list_size(operations);i++){
 	show_debug_message(strR);
 }
 
-var shootingBall = instance_create_depth(oBallShooter.x,oBallShooter.y-sprite_get_height(sShootingBall)/2,-1000,oShootingBall);
+var shootingBall = instance_create_depth(oBallShooter.x,oBallShooter.y-sprite_get_height(sShootingBall)/2,-1002,oShootingBall);
 with(shootingBall){
 	var randomPick = irandom_range(0,ds_list_size(oBallCreator.results)-1);
 	value = oBallCreator.results[| randomPick];

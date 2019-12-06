@@ -1,5 +1,5 @@
-randomize();
-/* pelota devuelve id, pelota sólo puede ser tipo operacion (!=number) */
+/*randomize();
+// pelota devuelve id, pelota sólo puede ser tipo operacion (!=number)
 listIndex = ds_list_find_index(list, testId); //Buscar id en lista completa.
 opsIdIndex = ds_list_find_index(operationsId, testId); //Buscar id en lista operaciones.
 
@@ -83,3 +83,4 @@ for(i = 0; i < ds_list_size(operations);i++){
 	show_debug_message(strR);
 	
 }
+*/

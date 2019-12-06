@@ -103,6 +103,14 @@
             }
         },
         {
+            "Key": "3116ccb1-8e14-4337-a9c1-ea511ec4deff",
+            "Value": {
+                "id": "34379889-47e4-4b92-9ecb-9fa14d87943d",
+                "resourcePath": "scripts\\collision_line_point\\collision_line_point.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "32047dcb-ebdf-4cb5-836f-75aeab5b2f46",
             "Value": {
                 "id": "4ccc5362-80ed-4b1c-a9ce-8d0bc1cd0238",
@@ -296,7 +304,7 @@
         }
     ],
     "script_order": [
-        
+        "3116ccb1-8e14-4337-a9c1-ea511ec4deff"
     ],
     "tutorial": ""
 }
