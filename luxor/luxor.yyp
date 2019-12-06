@@ -71,6 +71,30 @@
             }
         },
         {
+            "Key": "1c477b32-13b8-4b19-b3db-e6314042c8d1",
+            "Value": {
+                "id": "12c5b488-3bd6-494e-82e5-ff104e1b9f55",
+                "resourcePath": "sprites\\sBallShooter\\sBallShooter.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "1c7e4e4a-9476-4226-9b06-5065788647cf",
+            "Value": {
+                "id": "0ca7851e-8ccf-492e-ae62-3377422f13f3",
+                "resourcePath": "sprites\\sShootingBall\\sShootingBall.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "1cd89895-6001-4ae9-b5eb-52f9c7e3f758",
+            "Value": {
+                "id": "63f9e596-912c-49b5-98cf-84e89b51dc27",
+                "resourcePath": "objects\\oBallShooter\\oBallShooter.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "2ee32e0b-4642-46b7-8606-e0c9248cead2",
             "Value": {
                 "id": "da595cd9-c577-48c2-99ab-41ab2657e981",
@@ -84,6 +108,14 @@
                 "id": "4ccc5362-80ed-4b1c-a9ce-8d0bc1cd0238",
                 "resourcePath": "views\\32047dcb-ebdf-4cb5-836f-75aeab5b2f46.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "45fa383b-94d4-4cfc-ac63-1863986f0e67",
+            "Value": {
+                "id": "d41f7751-25fe-4223-85ec-f498ee5ae844",
+                "resourcePath": "objects\\oShootingBall\\oShootingBall.yy",
+                "resourceType": "GMObject"
             }
         },
         {
