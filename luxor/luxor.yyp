@@ -50,7 +50,7 @@
             "Key": "0c0a4ae2-c91b-4b4b-9dd9-e544b7fe56cc",
             "Value": {
                 "id": "64f3fab3-c64d-4d82-ad81-ec6108bc4b2d",
-                "resourcePath": "rooms\\room0\\room0.yy",
+                "resourcePath": "rooms\\playRoom\\playRoom.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -95,6 +95,14 @@
             }
         },
         {
+            "Key": "205463f5-a5db-4ed3-9f3f-aed2f7153cbd",
+            "Value": {
+                "id": "481c85e2-690f-40c9-88d9-62609f575276",
+                "resourcePath": "rooms\\welcomeRoom\\welcomeRoom.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "2ee32e0b-4642-46b7-8606-e0c9248cead2",
             "Value": {
                 "id": "da595cd9-c577-48c2-99ab-41ab2657e981",
@@ -132,6 +140,14 @@
                 "id": "aded9dfa-aa52-48bd-b055-bc70ddce2119",
                 "resourcePath": "objects\\oBall\\oBall.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "5084a7c8-162a-49b0-bad4-90e0b912aa53",
+            "Value": {
+                "id": "904605ea-9b34-4dcf-809e-ba129f0b32d7",
+                "resourcePath": "sprites\\sWelcomeRoomBg\\sWelcomeRoomBg.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -284,6 +300,14 @@
                 "id": "b8917cdf-b85f-4b85-8f39-22677159302f",
                 "resourcePath": "options\\android\\options_android.yy",
                 "resourceType": "GMAndroidOptions"
+            }
+        },
+        {
+            "Key": "efb80a53-47a5-4bb6-925a-5d7935d87ca5",
+            "Value": {
+                "id": "4cd0a79f-c7c7-4811-813a-591545e23528",
+                "resourcePath": "objects\\oRoomAccess\\oRoomAccess.yy",
+                "resourceType": "GMObject"
             }
         },
         {

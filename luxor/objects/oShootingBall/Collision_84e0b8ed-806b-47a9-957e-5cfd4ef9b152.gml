@@ -38,6 +38,7 @@ if(opResult == value){
 			instance_destroy(self);	
 		}
 		instance_destroy(self);
+		room_goto(welcomeRoom);
 	}
 	else{
 		var pos = testId.path_position; //Guardar posicion de la pelota
