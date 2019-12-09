@@ -320,6 +320,14 @@ if(ds_map_exists(map,"zigzag_start")){
     global.zigzag_start = zigzag_start;
 }
 
+
+var list = ds_map_find_value(map, "jsonUser");
+var theJsonMap = json_decode(list);
+var theList = ds_map_find_value(theJsonMap, "1");
+var theEntry = ds_list_find_value(theList, "3");
+
+show_debug_message(theEntry);
+
 go_to_next = true;
 global.loaded = 1;
 </string>
