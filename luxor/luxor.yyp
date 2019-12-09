@@ -50,7 +50,7 @@
             "Key": "0c0a4ae2-c91b-4b4b-9dd9-e544b7fe56cc",
             "Value": {
                 "id": "64f3fab3-c64d-4d82-ad81-ec6108bc4b2d",
-                "resourcePath": "rooms\\room0\\room0.yy",
+                "resourcePath": "rooms\\playRoom\\playRoom.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -71,11 +71,51 @@
             }
         },
         {
+            "Key": "1c477b32-13b8-4b19-b3db-e6314042c8d1",
+            "Value": {
+                "id": "12c5b488-3bd6-494e-82e5-ff104e1b9f55",
+                "resourcePath": "sprites\\sBallShooter\\sBallShooter.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "1c7e4e4a-9476-4226-9b06-5065788647cf",
+            "Value": {
+                "id": "0ca7851e-8ccf-492e-ae62-3377422f13f3",
+                "resourcePath": "sprites\\sShootingBall\\sShootingBall.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "1cd89895-6001-4ae9-b5eb-52f9c7e3f758",
+            "Value": {
+                "id": "63f9e596-912c-49b5-98cf-84e89b51dc27",
+                "resourcePath": "objects\\oBallShooter\\oBallShooter.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "205463f5-a5db-4ed3-9f3f-aed2f7153cbd",
+            "Value": {
+                "id": "481c85e2-690f-40c9-88d9-62609f575276",
+                "resourcePath": "rooms\\welcomeRoom\\welcomeRoom.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "2ee32e0b-4642-46b7-8606-e0c9248cead2",
             "Value": {
                 "id": "da595cd9-c577-48c2-99ab-41ab2657e981",
                 "resourcePath": "views\\2ee32e0b-4642-46b7-8606-e0c9248cead2.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "3116ccb1-8e14-4337-a9c1-ea511ec4deff",
+            "Value": {
+                "id": "34379889-47e4-4b92-9ecb-9fa14d87943d",
+                "resourcePath": "scripts\\collision_line_point\\collision_line_point.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -87,11 +127,27 @@
             }
         },
         {
+            "Key": "45fa383b-94d4-4cfc-ac63-1863986f0e67",
+            "Value": {
+                "id": "d41f7751-25fe-4223-85ec-f498ee5ae844",
+                "resourcePath": "objects\\oShootingBall\\oShootingBall.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "501c837d-0683-4fb9-85ab-d163a94f6651",
             "Value": {
                 "id": "aded9dfa-aa52-48bd-b055-bc70ddce2119",
                 "resourcePath": "objects\\oBall\\oBall.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "5084a7c8-162a-49b0-bad4-90e0b912aa53",
+            "Value": {
+                "id": "904605ea-9b34-4dcf-809e-ba129f0b32d7",
+                "resourcePath": "sprites\\sWelcomeRoomBg\\sWelcomeRoomBg.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -247,6 +303,14 @@
             }
         },
         {
+            "Key": "efb80a53-47a5-4bb6-925a-5d7935d87ca5",
+            "Value": {
+                "id": "4cd0a79f-c7c7-4811-813a-591545e23528",
+                "resourcePath": "objects\\oRoomAccess\\oRoomAccess.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "fe29a491-382e-4ca9-bd31-f5bea1088853",
             "Value": {
                 "id": "3c2c9316-8062-464f-a28e-c4688714a188",
@@ -264,7 +328,7 @@
         }
     ],
     "script_order": [
-        
+        "3116ccb1-8e14-4337-a9c1-ea511ec4deff"
     ],
     "tutorial": ""
 }

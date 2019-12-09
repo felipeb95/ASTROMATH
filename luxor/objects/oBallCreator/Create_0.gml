@@ -1,10 +1,14 @@
 randomize();
 list = ds_list_create();
+numbers = ds_list_create();
+numbersId = ds_list_create();
+operations = ds_list_create();
+operationsId = ds_list_create();
+results = ds_list_create();
 
 var i =0;
 var sep = 0.01;
-testId = undefined;
-var number = 1;
+//testId = undefined;
 
 for(i=0;i<9;i++){
 	var thisBall = instance_create_depth(0,0,-100,oBall)
@@ -12,13 +16,58 @@ for(i=0;i<9;i++){
 		path_position = 0 + i*sep;
 		image_index = (i mod 2 == 0) ? 0 : 1;
 		if(i mod 2 == 0){
-			symbol = string(number);
-			number++;
+			value = irandom_range(1,10);
+			type = "number";
+			ds_list_add(oBallCreator.numbers, value);
+			ds_list_add(oBallCreator.numbersId, thisBall);
+			sprite_index = -1;
 		}
-		else
-			symbol = "x";
+		else{
+			type = choose("x","+");
+			value = type;
+			ds_list_add(oBallCreator.operations, type);
+			ds_list_add(oBallCreator.operationsId, thisBall);
+		}
 	}
-	if(i==3)
-		testId = thisBall;
+	//if(i==3)
+		//testId = thisBall;
 	ds_list_add(list,thisBall);
+}
+
+show_debug_message("### Numeros ###");
+for(i = 0; i < ds_list_size(numbers); i++){
+	show_debug_message(string(numbers[| i]));	
+}
+
+show_debug_message("### Results ###");
+for(i = 0; i < ds_list_size(operations);i++){
+	var numOne = numbers[| i];
+	var numTwo = numbers[| i+1];
+	var result = undefined;
+	var strR = undefined;
+	switch(operations[| i]){
+		case "x":
+			result = numOne * numTwo;
+		break;
+		case "/":
+			result = numOne / numTwo;
+		break;
+		case "+":
+			result = numOne + numTwo;
+		break;
+		case "-":
+			result = numOne - numTwo;
+		break;
+		default: break;
+	}
+	
+	ds_list_add(results,result);
+	strR = string(numOne)+operations[| i]+string(numTwo)+" = "+string(result);
+	show_debug_message(strR);
+}
+
+var shootingBall = instance_create_depth(oBallShooter.x,oBallShooter.y-sprite_get_height(sShootingBall)/2,-1002,oShootingBall);
+with(shootingBall){
+	var randomPick = irandom_range(0,ds_list_size(oBallCreator.results)-1);
+	value = oBallCreator.results[| randomPick];
 }
