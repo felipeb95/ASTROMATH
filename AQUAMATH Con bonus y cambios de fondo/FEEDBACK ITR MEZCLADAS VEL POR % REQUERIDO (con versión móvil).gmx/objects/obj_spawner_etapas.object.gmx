@@ -44,9 +44,9 @@ global.cantidadEj = 0;
 for(i=global.minA;i&lt;=global.maxB;i++){
     for(j=global.minA;j&lt;=global.maxB;j++){
         global.tablaM[i,j]=0;
-        global.cantidad[i,j] = 30 //cantidad de usuarios almacenados por ejercicio
-        global.suma[i,j] = irandom_range(10,30) //sumatoria respuestas por ejercicio
-        global.usuario[i,j] = choose(-1,0,1)  //respuestas usuario por ejercicio, rellena con -1 cuando nunca ha respondido, -2 si no puede aparecer
+        //global.cantidad[i,j] = 30 //cantidad de usuarios almacenados por ejercicio
+        //global.suma[i,j] = irandom_range(10,30) //sumatoria respuestas por ejercicio
+        //global.usuario[i,j] = choose(-1,0,1)  //respuestas usuario por ejercicio, rellena con -1 cuando nunca ha respondido, -2 si no puede aparecer
     }
 }
 global.peso = 0.2;
