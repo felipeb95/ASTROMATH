@@ -9,3 +9,7 @@ gunkickx = 0;
 //gunkicky = 0;
 
 view = 1;
+
+global.moveLeft = false;
+global.moveRight = false;
+global.jump = false;
