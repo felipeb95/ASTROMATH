@@ -3,4 +3,4 @@ y = room_height - 30;
 
 colorOne = $faff00;
 colorTwo = $fa00ff;
-depth = -1001;
+depth = -1250;

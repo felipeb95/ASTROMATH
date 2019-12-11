@@ -32,6 +32,7 @@ switch(ballType){
 
 if(opResult == value){
 	show_debug_message("### RIGHT TRY! ###");
+	oPlayerInfo.playerScore += 10;
 	if(ds_list_size(oBallCreator.list) == 3){
 		show_debug_message("### GAME FINISHED ###");
 		with(oBall){
@@ -125,6 +126,8 @@ if(opResult == value){
 }
 else{
 	show_debug_message("### WRONG TRY ###");
+	oPlayerInfo.playerScore -= 10;
+	oPlayerInfo.playerScore = clamp(oPlayerInfo.playerScore,0,99999);
 	travel = false;
 	x = oBallShooter.x;
 	y = initialY+sprite_height/2;	

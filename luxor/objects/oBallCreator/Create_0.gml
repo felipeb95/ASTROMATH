@@ -66,7 +66,7 @@ for(i = 0; i < ds_list_size(operations);i++){
 	show_debug_message(strR);
 }
 
-var shootingBall = instance_create_depth(oBallShooter.x,oBallShooter.y-sprite_get_height(sShootingBall)/2,-1002,oShootingBall);
+var shootingBall = instance_create_depth(oBallShooter.x,oBallShooter.y,-1251,oShootingBall);
 with(shootingBall){
 	var randomPick = irandom_range(0,ds_list_size(oBallCreator.results)-1);
 	value = oBallCreator.results[| randomPick];

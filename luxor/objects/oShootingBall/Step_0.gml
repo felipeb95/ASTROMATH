@@ -1,5 +1,5 @@
 if(travel)
-	y = y-15;
+	y = y-ballSpeed;
 else{
 	x = oBallShooter.x;
 	y = initialY+sprite_height/2;
