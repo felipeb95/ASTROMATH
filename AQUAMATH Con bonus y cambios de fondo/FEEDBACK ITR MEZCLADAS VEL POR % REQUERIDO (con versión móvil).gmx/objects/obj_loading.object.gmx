@@ -320,6 +320,66 @@ if(ds_map_exists(map,"zigzag_start")){
     global.zigzag_start = zigzag_start;
 }
 
+if(ds_map_exists(map, "userirt")){
+    var a = menorMultiplo;
+    var b = menorMultiplo;
+    var user = map[? "userirt"];
+    show_debug_message("userirt funciona");
+    show_debug_message(ds_list_size(user));
+    for(i = 0; i &lt; ds_list_size(user); i++){
+        show_debug_message(user[| i]);
+        array = explode(",", user[| i]);
+        for(j = 0; j&lt;array_length_1d(array);j++){
+            global.usuario[a,b] = real(array[j]);
+            b++;
+            if(b&gt;mayorMultiplo) b = menorMultiplo;
+        }
+        a++;
+        if(a&gt;mayorMultiplo) a = menorMultiplo;
+        
+    }
+}
+
+if(ds_map_exists(map, "sumairt")){
+    var a = menorMultiplo;
+    var b = menorMultiplo;
+    var suma = map[? "sumairt"];
+    show_debug_message("sumairt funciona");
+    show_debug_message(ds_list_size(suma));
+    for(i = 0; i &lt; ds_list_size(suma); i++){
+        show_debug_message(suma[| i]);
+        array = explode(",", suma[| i]);
+        for(j = 0; j&lt;array_length_1d(array);j++){
+            global.suma[a,b] = real(array[j]);
+            b++;
+            if(b&gt;mayorMultiplo) b = menorMultiplo;
+        }
+        a++;
+        if(a&gt;mayorMultiplo) a = menorMultiplo;
+        
+    }
+}
+
+if(ds_map_exists(map, "cantidadirt")){
+    var a = menorMultiplo;
+    var b = menorMultiplo;
+    var cantidad = map[? "cantidadirt"];
+    show_debug_message("cantidadirt funciona");
+    show_debug_message(ds_list_size(cantidad));
+    for(i = 0; i &lt; ds_list_size(cantidad); i++){
+        show_debug_message(cantidad[| i]);
+        array = explode(",", cantidad[| i]);
+        for(j = 0; j&lt;array_length_1d(array);j++){
+            global.cantidad[a,b] = real(array[j]);
+            b++;
+            if(b&gt;mayorMultiplo) b = menorMultiplo;
+        }
+        a++;
+        if(a&gt;mayorMultiplo) a = menorMultiplo;
+        
+    }
+}
+
 go_to_next = true;
 global.loaded = 1;
 </string>

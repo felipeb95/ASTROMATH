@@ -1,8 +1,8 @@
 if(hascontrol){
 	//Teclas
-	key_left = keyboard_check(vk_left) or keyboard_check(ord("A"));
-	key_right = keyboard_check(vk_right) or keyboard_check(ord("D"));
-	key_jump = keyboard_check_pressed(vk_up) or keyboard_check(ord("W"));
+	key_left = keyboard_check(vk_left) or keyboard_check(ord("A")) or global.moveLeft;
+	key_right = keyboard_check(vk_right) or keyboard_check(ord("D")) or global.moveRight;
+	key_jump = keyboard_check_pressed(vk_up) or keyboard_check(ord("W")) or global.jump;
 
 }
 else{
