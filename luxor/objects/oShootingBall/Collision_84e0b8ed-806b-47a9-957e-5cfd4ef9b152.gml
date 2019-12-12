@@ -72,7 +72,7 @@ if(opResult == value){
 		show_debug_message("list size: "+string(ds_list_size(oBallCreator.list)));
 		firstBall = oBallCreator.list[| 1];
 		var firstPos = firstBall.path_position;
-		var sep = 0.002;
+		var sep = 0.008;
 		var i = 0;
 
 

@@ -10,6 +10,7 @@ slowP = 0.35; // subi 1
 reverseP = 0.30; // subi 2
 
 prob = random_range(0,1);//random_range(0,1);
+show_debug_message("BONUS PROB: "+string(prob));
 
 if(prob >= 0 and prob < freezeP)
 	image_index = 0;
