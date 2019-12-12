@@ -72,7 +72,7 @@ if(opResult == value){
 		show_debug_message("list size: "+string(ds_list_size(oBallCreator.list)));
 		firstBall = oBallCreator.list[| 1];
 		var firstPos = firstBall.path_position;
-		var sep = 0.01;
+		var sep = 0.002;
 		var i = 0;
 
 
@@ -117,7 +117,7 @@ if(opResult == value){
 	
 		}
 		instance_destroy(self);
-		var shootingBall = instance_create_depth(oBallShooter.x,oBallShooter.y-sprite_get_height(sShootingBall)/2,-1002,oShootingBall);
+		var shootingBall = instance_create_depth(oBallShooter.x,oBallShooter.y-sprite_get_height(sShootingBall)/2,-1251,oShootingBall);
 		with(shootingBall){
 		var randomPick = irandom_range(0,ds_list_size(oBallCreator.results)-1);
 		value = oBallCreator.results[| randomPick];

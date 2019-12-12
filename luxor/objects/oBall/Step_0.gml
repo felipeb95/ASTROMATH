@@ -6,3 +6,12 @@ if(path_position == 1){
 		room_goto(welcomeRoom);
 	}
 }
+
+if(!oEndPipe.ballReached and oPlayerInfo.freezeBonus)
+	path_speed = 0;
+
+if(!oEndPipe.ballReached and oPlayerInfo.slowBonus)
+	path_speed = slowSpeed;
+	
+if(!oEndPipe.ballReached and oPlayerInfo.reverseBonus)
+	path_speed = reverseSpeed;

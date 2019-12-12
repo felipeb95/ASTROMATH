@@ -7,13 +7,13 @@ operationsId = ds_list_create();
 results = ds_list_create();
 
 var i =0;
-var sep = 0.01;
+var sep = 0.008;
 //testId = undefined;
-
-for(i=0;i<9;i++){
+var numberOfBalls = 15// multiploe de 3
+for(i=0;i<numberOfBalls;i++){
 	var thisBall = instance_create_depth(0,0,-100,oBall)
 	with(thisBall){
-		path_position = 0 + i*sep;
+		path_position = 0.002 + i*sep;
 		image_index = (i mod 2 == 0) ? 0 : 1;
 		if(i mod 2 == 0){
 			value = irandom_range(1,10);
