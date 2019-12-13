@@ -6,3 +6,4 @@ slowSpeed = 0.3;
 reverseSpeed = -0.5;
 value = undefined;
 type = undefined; 
+canBeShot = true;
