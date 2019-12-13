@@ -11,6 +11,11 @@ switch(image_index){
 		oPlayerInfo.reverseBonus = true;
 	break;
 	
+	case 3:
+		oShootingBall.image_index = 1;
+		oShootingBall.isABonus = true;
+	break;
+	
 	default:
 	break;
 	

@@ -30,6 +30,9 @@ switch(ballType){
 		default: break;
 }
 
+if(isABonus)
+	value = opResult;
+
 if(opResult == value){
 	show_debug_message("### RIGHT TRY! ###");
 	oPlayerInfo.playerScore += 10;
