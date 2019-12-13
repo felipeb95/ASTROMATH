@@ -30,16 +30,18 @@ with(thisFeedback){
 	switch(operationType){
 		case "prime":
 			if(primeChosen != -1)
-				messageDrawn = "Ni "+string(numberOne)+" ni "+string(numberTwo)+" son divisibles por "+string(primeChosen);
+				messageDrawn = "Ni "+string(numberOne)+" ni "+string(numberTwo)+" son divisibles en "+string(primeChosen);
 			else
 				messageDrawn = "¡Debes elegir un número primo!";
 			break;
 		
 		case "division":
-			if(doesntApply)
-				messageDrawn = string(numberOne)+" no es enteramente dividido por "+string(numberTwo);
+			if(doesntApply){
+				messageDrawn = string(numberOne)+" no es enteramente dividido en "+string(numberTwo)+"\nNo aplica";
+				distanceFromBigMessage += 20;
+			}
 			else
-				messageDrawn = string(numberOne)+" dividido "+string(numberTwo)+" es "+string(numberOne/numberTwo);
+				messageDrawn = string(numberOne)+" dividido en "+string(numberTwo)+" es "+string(numberOne/numberTwo);
 			break;
 			
 		case "multiplying":

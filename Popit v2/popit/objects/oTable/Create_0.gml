@@ -8,10 +8,11 @@ strNotMarked = "";
 highlightedRow = -1; // 0 starts the lists.
 
 /* COLORS */
-markedColor = $15ede5;
+markedColor = $15ede5; // yellow
+tableMarkedColor = $b5c946; // light blue
 notMarkedColor = c_white;
 fontColor = c_white;
-current = $b5c946;
+current = $15ede5; // yellow
 
 /* POSITIONS & SIZES */
 xCenterOffset = 50; // This is to avoid putting the table to close to the play area.
@@ -24,7 +25,7 @@ xForNumberTwo = xCenterOfTable + horizontalLineLarge/1.5;
 tableLineWidth = 3;
 headersOffset = 15;
 ySpaceBetweenElements = 40;
-yForExersise = room_height-room_height/6;
+yForExersise = room_height-room_height/6 - 45;
 yForList = room_height*0.6;
 listX = undefined;
 

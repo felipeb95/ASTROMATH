@@ -13,7 +13,11 @@ switch(image_index){
 	
 	case 3:
 		oShootingBall.image_index = 1;
-		oShootingBall.isABonus = true;
+		oShootingBall.multiBonus = true;
+	break;
+	case 4:
+		oShootingBall.image_index = 2;
+		oShootingBall.exploBonus = true;
 	break;
 	
 	default:

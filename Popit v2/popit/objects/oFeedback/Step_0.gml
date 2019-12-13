@@ -20,7 +20,7 @@ if(scaleUp){
 } else if(alphaDown){
 	alpha -= alphaRate;
 	if(alpha <= 0){
-		alarm[1] = room_speed*0.5;
+		alarm[1] = room_speed*0.1;
 		alphaDown = false;
 	}
 }

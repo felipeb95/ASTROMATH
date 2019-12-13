@@ -22,5 +22,13 @@ for(i = 0; i < numberOfTimesAlternatives; i++){
 	ds_list_delete(xPositionsList,xPositionSelected);
 }
 
+/* POSSIBLE BONUS APPEARANCE */
+var _bonusProbability = random_range(0,1);
+var xBonusPositionSelected = irandom_range(0,ds_list_size(xPositionsList)-1);
+if(_bonusProbability <= bonusProbability and !instance_exists(oBonus) and !instance_exists(oBonusBox)){
+	//show_debug_message("[BONUS CREATION]");
+	instance_create_depth(xPositionsList[| xBonusPositionSelected], -1*sprite_get_height(sBonusBase), -999, oBonus);
+}
+
 ds_list_clear(xPositionsList); // List cleared for next creation of alternatives.
 xPositionsReFill(xPositionsList, xLeftLimit, xRightLimit, alternativeHolderWidth, xDistance); // List filled.

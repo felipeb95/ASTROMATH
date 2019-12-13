@@ -7,6 +7,7 @@ ds_list_clear(numberOnePartials);
 ds_list_clear(numberTwoPartials);
 ds_list_clear(oLogicSpawner.primeNumbersFound);
 ds_list_clear(oLogicSpawner.alternativesList);
+ds_list_clear(oLogicSpawner.wrongAlternativesList);
 oLogicSpawner.multiplierJustCreated = true;
 oLogicSpawner.multiplyAlternativesCreation = false;
 oLogicSpawner.primeAlternativesCreation = true;
