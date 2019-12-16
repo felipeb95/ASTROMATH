@@ -1,0 +1,1 @@
+totalImages = image_number;
