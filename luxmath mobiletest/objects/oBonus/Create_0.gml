@@ -1,15 +1,15 @@
 randomize();
 backgroundTimer = irandom_range(50,200);
 reverse = true;
-fallSpeed = 7;
+fallSpeed = 4;
 colorRate = 4;
 depth = -1299;
 
-freezeP = 0.1; // subi 0
-slowP = 0.05; // subi 1
-reverseP = 0.05; // subi 2
-multiballP = 0.40; // subi 3
-exploballP = 0.40;
+freezeP = 0.20; // subi 0
+slowP = 0.20; // subi 1
+reverseP = 0.20; // subi 2
+multiballP = 0.20; // subi 3
+exploballP = 0.20; // subi 4
 
 prob = random_range(0,1);//random_range(0,1);
 show_debug_message("BONUS PROB: "+string(prob));

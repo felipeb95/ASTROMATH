@@ -1,7 +1,7 @@
-x = oBallShooter.x;
-y = oBallShooter.y;
+x = oNumberBox.x;
+y = oNumberBox.y;
 
-if(oShootingBall.exploBonus)
-	sprite_index = sFireEffect;
-if(oShootingBall.multiBonus)
-	sprite_index = sSparkEffect;
+/*if(oFingerCatch.exploBonus)
+	sprite_index = sFireEffect;*/
+if(oFingerCatch.multiBonus)
+	sprite_index = sSparkFx;

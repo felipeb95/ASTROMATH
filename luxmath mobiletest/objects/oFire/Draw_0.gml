@@ -1,7 +1,7 @@
-if(object_exists(oShootingBall))
-	if(oShootingBall.exploBonus)
-		draw_self();
+/*if(object_exists(oShootingBall))
+	if(oFingerCatch.exploBonus)
+		draw_self();*/
 	
 if(object_exists(oShootingBall))
-	if(oShootingBall.multiBonus)
+	if(oFingerCatch.multiBonus)
 		draw_self();

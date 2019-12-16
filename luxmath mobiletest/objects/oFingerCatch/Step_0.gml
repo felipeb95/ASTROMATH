@@ -1,10 +1,49 @@
 randomize();
 if(device_mouse_check_button_released(0,mb_left)){
-	show_debug_message("CLICK DONE");
+	// ################################ MOUSE CATCH FOR BONUS ################################
+	var bonusInst = instance_position(mouse_x, mouse_y, oBonus)
+	if(bonusInst != noone){
+		show_debug_message("BONUS TAKEN");
+		with(bonusInst){
+			switch(image_index){	
+				case 0:
+					oPlayerInfo.freezeBonus = true;
+				break;
+	
+				case 1:
+					oPlayerInfo.slowBonus = true;
+				break;
+	
+				case 2:
+					oPlayerInfo.reverseBonus = true;
+				break;
+	
+				case 3:
+					oFingerCatch.image_index = 1;
+					oFingerCatch.multiBonus = true;
+				break;
+				case 4:
+					oFingerCatch.image_index = 2;
+					oFingerCatch.exploBonus = true;
+				break;
+	
+				default:
+				break;
+	
+			}
+			oPlayerInfo.alarm[1] = room_speed*4;
+			instance_destroy(self);
+		}
+	}
+	else
+		show_debug_message("NO BONUS TAKEN");
+	
+	// ############################## MOUSE CATCH FOR ANSWERING ##############################
 	var ballInst = instance_position(mouse_x, mouse_y, oBall);
-	with(ballInst){
+	if(ballInst != noone){
+		show_debug_message("CLICK ON BALL");
+		with(ballInst){
 		show_debug_message("Number on ball: "+string(ballInst.value));
-		show_debug_message("### COLLISION ###");
 		var testId = ballInst;
 		var ballType = ballInst.type;
 		var opResult = undefined;
@@ -36,14 +75,9 @@ if(device_mouse_check_button_released(0,mb_left)){
 				break;
 				default: break;
 		}
-	
-		/*
-		if(multiBonus)
-			value = opResult;
-		*/
 
 		if(ballInst.canBeShot){
-			if(opResult == oBallCreator.resultValue){
+			if(opResult == oBallCreator.resultValue || oFingerCatch.multiBonus){
 				show_debug_message("### RIGHT TRY! ###");
 				/*
 				// MULTI EXPLOSION
@@ -57,7 +91,7 @@ if(device_mouse_check_button_released(0,mb_left)){
 					instance_create_depth(ballInst.x, ballInst.y,-2000,oExplode);
 				}
 				*/
-				instance_create_depth(ballInst.x, ballInst.y,-2000,oExplode);
+				instance_create_depth(ballInst.x, ballInst.y,-2000,oBigExplode);
 				
 				oPlayerInfo.playerScore += 10;
 				if(ds_list_size(oBallCreator.list) == 3){
@@ -170,16 +204,11 @@ if(device_mouse_check_button_released(0,mb_left)){
 						show_debug_message(strR);
 	
 					}
-					/*
-					instance_destroy(self);
-					var shootingBall = instance_create_depth(oBallShooter.x,oBallShooter.y-sprite_get_height(sShootingBall)/2,-1252,oShootingBall);
-					with(shootingBall){
-					var randomPick = irandom_range(0,ds_list_size(oBallCreator.results)-1);
-					value = oBallCreator.results[| randomPick];				
-					}
-					*/
+
 					var randomPick = irandom_range(0,ds_list_size(oBallCreator.results)-1);
 					oBallCreator.resultValue = oBallCreator.results[| randomPick];
+					oFingerCatch.multiBonus = false;
+					oFingerCatch.exploBonus = false;
 				}
 			}
 			else{
@@ -195,4 +224,8 @@ if(device_mouse_check_button_released(0,mb_left)){
 			show_debug_message("Pass trough, cant answer");	
 		}
 			}
+	}
+	else
+		show_debug_message("CLICK NOT ON BALL");
+		
 }

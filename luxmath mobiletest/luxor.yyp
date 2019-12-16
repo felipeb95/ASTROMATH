@@ -207,6 +207,14 @@
             }
         },
         {
+            "Key": "56e15693-7197-431a-8db3-4f1407ce4510",
+            "Value": {
+                "id": "d1692b6b-c557-42f5-86aa-3ea9b307fa79",
+                "resourcePath": "sprites\\sSparkFx\\sSparkFx.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "574a5f1e-8c65-4823-8e89-e6add15631fd",
             "Value": {
                 "id": "da61a147-f123-4e47-a43e-537cef7d87b3",
