@@ -1,3 +1,6 @@
+
+
+
 randomize();
 if(global.respondida){
 	with(oRespuesta) instance_destroy();

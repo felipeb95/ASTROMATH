@@ -1,5 +1,3 @@
-#macro RES_W 1280
-#macro RES_H 720
 
 //global.vidas = 3;
 puntajetextscale = 0;

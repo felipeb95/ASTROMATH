@@ -5,9 +5,9 @@ if(mode!=TRANS_MODE.OFF){
 	
 	if(mode==TRANS_MODE.GOTO and percent > 1){
 		DrawSetText(c_black,fMenu,fa_right,fa_top);
-		draw_text(RES_W/2,RES_H/2,string(global.vidas) + " VIDAS");
+		draw_text(global.width/2,global.height/2,string(global.vidas) + " VIDAS");
 		draw_set_colour(c_white);
-		draw_text((RES_W/2)-2,(RES_H/2)-2,string(global.vidas) + " VIDAS");
+		draw_text((global.width/2)-2,(global.height/2)-2,string(global.vidas) + " VIDAS");
 	}
 	
 }

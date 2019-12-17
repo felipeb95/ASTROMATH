@@ -1,3 +1,1 @@
-/// @description Inserte aquí la descripción
-// Puede escribir su código en este editor
-global.moveLeft = false;
+keyboard_key_release(vk_left)

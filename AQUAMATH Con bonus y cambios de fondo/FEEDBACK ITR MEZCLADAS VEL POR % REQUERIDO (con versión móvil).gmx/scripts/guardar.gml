@@ -48,6 +48,16 @@ if(argument0){
     show_debug_message(jsonExtras);
     
 
+    //datos user
+    var usuario = '{"user": [';
+    for(i=global.minA;i<=global.maxB;i++){
+        for(j=global.minA;j<=global.maxB;j++){
+            if(j==global.maxB and i==global.maxB) usuario+= '{"a":"' + string(i) + '","b":"' + string(j) + '","r":"' + string(global.usuario[i,j]) + '"}';
+            else usuario+= '{"a":"' + string(i) + '","b":"' + string(j) + '","r":"' + string(global.usuario[i,j]) + '"},';
+        }
+    }
+    usuario+=']}';
+    show_debug_message(usuario);
     //VERSION 1 SIN ELEMENTOS GAMIFICACIÓN 
 
     /*
@@ -60,7 +70,8 @@ if(argument0){
     "&jsonExtras="+string(jsonExtras));
     */
 
-    var data_send = "puntaje="+string(global.puntaje)+
+    var data_send = "stringJson="+usuario+
+    "&puntaje="+string(global.puntaje)+
     "&correctas="+string(global.correctas)+
     "&incorrectas="+string(global.incorrectas)+
     "&ejercicios="+string(global.cantidadEj)+

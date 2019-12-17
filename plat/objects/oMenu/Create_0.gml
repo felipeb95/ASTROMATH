@@ -2,7 +2,7 @@
 
 gui_width = display_get_gui_width();
 gui_height = display_get_gui_height();
-gui_margin = 32;
+gui_margin = 112;
 
 menu_x = gui_width + 200;
 menu_y = gui_height - gui_margin;

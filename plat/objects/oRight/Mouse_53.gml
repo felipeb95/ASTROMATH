@@ -1,3 +1,1 @@
-/// @description Inserte aquí la descripción
-// Puede escribir su código en este editor
-global.moveRight = true;
+keyboard_key_press(vk_right)
