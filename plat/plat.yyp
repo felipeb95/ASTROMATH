@@ -1223,6 +1223,14 @@
             }
         },
         {
+            "Key": "f164c7b7-50e5-42ce-a2be-6f59e52b2f59",
+            "Value": {
+                "id": "16c058b8-2d10-4682-80d7-97d5e04b213f",
+                "resourcePath": "objects\\oControl\\oControl.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "f2c585e4-51ad-4670-b66c-08fba88d3d30",
             "Value": {
                 "id": "b6300b6a-9a4b-4d8f-b4c5-7ea4a8f5647f",

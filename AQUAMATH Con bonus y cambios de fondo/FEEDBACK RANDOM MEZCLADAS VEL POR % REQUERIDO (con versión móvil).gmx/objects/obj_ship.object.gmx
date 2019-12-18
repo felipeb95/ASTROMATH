@@ -47,6 +47,14 @@ total_powerup_subimg = sprite_get_number(spr_powerup);
 bonus_multiplier = false;
 enemy_slowed = false;
 enemy_speed_factor = 0.4;
+
+moves[0] = 89;
+moves[1] = 164;
+moves[2] = 238;
+moves[3] = 312;
+moves[4] = 386;
+
+y = moves[2];
 </string>
           </argument>
         </arguments>
