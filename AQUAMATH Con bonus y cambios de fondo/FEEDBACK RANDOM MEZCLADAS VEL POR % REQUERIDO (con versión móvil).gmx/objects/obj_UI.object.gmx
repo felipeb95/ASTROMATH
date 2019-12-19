@@ -25,20 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>joystick_x = 70;
-joystick_y = 320;
-
-joystick_mx = 0;
-joystick_my = 0;
-
-joystick_active = false;
-right_finger = 0;
+            <string>outline = false;
+mov = 2;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="6" enumb="53">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -55,92 +49,55 @@ right_finger = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*for( i = 0;i &lt; 4; i++)
-{
-        if(device_mouse_check_button(i,mb_any))
-        {
-            if(point_in_rectangle(device_mouse_x(i),device_mouse_y(i),0,0,room_width/2,room_height))
-            {
-            var mx = device_mouse_x(i); 
-            var my = device_mouse_y(i);
-                
-            if(!joystick_active)
-            {
-                if(mx &lt;= room_width/2 &amp;&amp; y &gt;= room_height/2){
-                    joystick_x = mx;
-                    joystick_y = my;
-                }
-                    joystick_active = true;
-                } else {
-                    var joystick_angle = point_direction(joystick_x,joystick_y,mx,my);
-                    var distance = point_distance(joystick_x,joystick_y,mx,my);
-                    
-                    joystick_mx = dcos(joystick_angle) * min(50,distance);
-                    joystick_my = -dsin(joystick_angle) * min(50,distance);
-                }
-            }
-        } 
-        else {
-            joystick_active = false;
-            joystick_mx = 0;
-            joystick_my = 0;
-        }
-        
-    if(device_mouse_check_button_released(i,mb_any))
-    {
-        if(point_in_rectangle(device_mouse_x(i),device_mouse_y(i),room_width/2,0,room_width,room_height)){
-            instance_create(obj_ship.x,obj_ship.y,obj_bullet);
-        }
-    }
+            <string>click_x = mouse_x;
+click_y = mouse_y;
 
-}
-obj_ship.x += (joystick_mx / 50) * obj_ship.spd;
-obj_ship.y += (joystick_my / 50) * obj_ship.spd;
-*/
+point = "("+string(click_x)+","+string(click_y)+")";
+str_click_point = "Click en "+point;
+show_debug_message(str_click_point);
 
-if(device_mouse_check_button(0,mb_left))
-{
-    if(point_in_rectangle(device_mouse_x(0),device_mouse_y(0),0,0,room_width/2,room_height))
-    {
-    right_finger = 1;
-    var mx = device_mouse_x(0); 
-    var my = device_mouse_y(0);
-                
-    if(!joystick_active)
-    {
-        if(mx &lt;= room_width/2 &amp;&amp; y &gt;= room_height/2){
-            joystick_x = mx;
-            joystick_y = my;
-            joystick_active = true;
-        }
-    } else {
-        var joystick_angle = point_direction(joystick_x,joystick_y,mx,my);
-        var distance = point_distance(joystick_x,joystick_y,mx,my);
-                    
-        joystick_mx = dcos(joystick_angle) * min(50,distance);
-        joystick_my = -dsin(joystick_angle) * min(50,distance);
-    }
-    
-    }
-} 
-else {
-    joystick_active = false;
-    joystick_mx = 0;
-    joystick_my = 0;
-    right_finger = 0;
-}
-
-if(device_mouse_check_button_released(right_finger,mb_any))
-{
-    if(point_in_rectangle(device_mouse_x(right_finger),device_mouse_y(right_finger),room_width/2,40,room_width,room_height)){
+if(global.tipo_os_equipo == 2){
+    if(point_in_rectangle(mouse_x,mouse_y,room_width/2,0,room_width,room_height)){
         instance_create(obj_ship.x,obj_ship.y,obj_bullet);
     }
+    // MOVE TO CLICK AREA
+    
+    if(point_in_rectangle(mouse_x,mouse_y,0, 52, room_width/2, 126)){
+        obj_ship.y = obj_ship.moves[0];
+    }
+    
+    if(point_in_rectangle(mouse_x,mouse_y,0, 127, room_width/2, 201)){
+        obj_ship.y = obj_ship.moves[1];
+    }
+    
+    if(point_in_rectangle(mouse_x,mouse_y,0, 202, room_width/2, 275)){
+        obj_ship.y = obj_ship.moves[2];
+    }
+    
+    if(point_in_rectangle(mouse_x,mouse_y,0, 276, room_width/2, 349)){
+        obj_ship.y = obj_ship.moves[3];
+    }
+    
+    if(point_in_rectangle(mouse_x,mouse_y,0, 350, room_width/2, room_height)){
+        obj_ship.y = obj_ship.moves[4];
+    }
+    
+    
+    /*
+    // CLICK IN DIRECTION
+    if(point_in_rectangle(mouse_x,mouse_y,0, 0, room_width/2, room_height/2)){
+        mov--;
+        mov = clamp(mov,0,4);
+        obj_ship.y = obj_ship.moves[mov];
+    }
+    
+    if(point_in_rectangle(mouse_x,mouse_y, 0, room_height/2, room_width/2, room_height)){
+        mov++;
+        mov = clamp(mov,0,4);
+        obj_ship.y = obj_ship.moves[mov];
+    }
+    */
 }
-
-
-
-obj_ship.x += (joystick_mx / 50) * obj_ship.spd;
-obj_ship.y += (joystick_my / 50) * obj_ship.spd;
 </string>
           </argument>
         </arguments>
@@ -163,9 +120,19 @@ obj_ship.y += (joystick_my / 50) * obj_ship.spd;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite(spr_joystick,0,joystick_x,joystick_y);
-draw_sprite(spr_joystick,1,joystick_x + joystick_mx,joystick_y+joystick_my);
-//draw_rectangle(room_width/2,40,room_width,room_height,1); // guía para área disparo.
+            <string>
+/*
+// MOVE TO CLICK AREA
+draw_rectangle_colour(0, 52, room_width/2, 126,c_blue,c_blue,c_blue,c_blue,outline);
+draw_rectangle_colour(0, 127, room_width/2, 201,c_red,c_red,c_red,c_red,outline);
+draw_rectangle_colour(0, 202, room_width/2, 275, c_yellow, c_yellow,c_yellow,c_yellow,outline);
+draw_rectangle_colour(0, 276, room_width/2, 349, c_green, c_green, c_green, c_green, outline);
+draw_rectangle_colour(0, 350, room_width/2, room_height, c_purple,c_purple,c_purple,c_purple,outline);
+
+// CLICK IN DIRECTION
+draw_rectangle_colour(0, 0, room_width/2, room_height,c_red,c_red,c_red,c_red,outline);
+draw_rectangle_colour(0, room_height/2, room_width/2, room_height,c_blue,c_blue,c_blue,c_blue,outline);
+*/
 </string>
           </argument>
         </arguments>

@@ -11,9 +11,9 @@ if(oLogicSpawner.primeType){
 	draw_set_halign(fa_center);
 	draw_set_font(fTableMessages);
 	draw_set_color(c_black);
-	draw_text(xCenterOfTable + xCenterOffset +2, yForExersise+2, "Elige un número primo que\n pueda dividir al menos uno\n de los números coloreados\nde la tabla");
+	draw_text(xCenterOfTable + xCenterOffset +2, yForExersise-45+2, "Elige un número primo que\n pueda dividir al menos uno\n de los números coloreados\nde la tabla");
 	draw_set_color(c_white);
-	draw_text(xCenterOfTable + xCenterOffset, yForExersise, "Elige un número primo que\n pueda dividir al menos uno\n de los números coloreados\nde la tabla");
+	draw_text(xCenterOfTable + xCenterOffset, yForExersise-45, "Elige un número primo que\n pueda dividir al menos uno\n de los números coloreados\nde la tabla");
 }
 
 if(oLogicSpawner.divisionType){

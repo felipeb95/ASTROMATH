@@ -320,6 +320,16 @@ if(ds_map_exists(map,"zigzag_start")){
     global.zigzag_start = zigzag_start;
 }
 
+if(ds_map_exists(map, "carril")){
+    var carril = real(map[? "carril"]);
+    show_debug_message("caril funciona");
+    show_debug_message(carril);
+    if(carril == 0)
+        global.carril = false;
+    else
+        global.carril = true;
+}
+
 if(ds_map_exists(map, "userirt")){
     var a = menorMultiplo;
     var b = menorMultiplo;

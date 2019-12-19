@@ -1,0 +1,11 @@
+barHeight = sprite_get_height(sHudBar);
+depth = -10000;
+mouseX = undefined;
+mouseY = undefined;
+x = 0;
+y = room_height-barHeight;
+right_finger = 0;
+finger[0] = -1        //Primer dedo
+finger[1] = -1        //Segundo dedo
+canShoot = false;
+alarm[0] = 10;

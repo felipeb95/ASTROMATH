@@ -19,8 +19,8 @@
 
 switch (os_type)
 {
-   case os_windows: global.tipo_os_equipo = 1; break;
-   case os_android: global.tipo_os_equipo = 2; break;
+   case os_windows: global.tipo_os_equipo = 1; break; // es 1
+   case os_android: global.tipo_os_equipo = 2; break; // es 2
    case os_linux: global.tipo_os_equipo = 1; break;
    case os_macosx: global.tipo_os_equipo = 1; break;
    case os_ios: global.tipo_os_equipo = 2; break;

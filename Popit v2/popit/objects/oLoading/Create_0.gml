@@ -17,4 +17,5 @@ global.debugMode = undefined;
 
 
 var url = "https://popit.informaticapucv.cl/curl_exp.php";
+//var url = "http://192.168.0.12/popit/curl_con.php";
 http_get(url);
