@@ -13,8 +13,14 @@ if(room!=rMenu /*and global.kills>0*/){
 		draw_text((global.width/2)+50,12,"RESUELVE " + string(global.a) + " " + global.operacion + " " + string(global.b));
 	}
 	else {
-		if(global.buena) draw_text((global.width/2)+300,global.height/2,"CORRECTO, AVANZA A LA SIGUIENTE ETAPA");
-		else draw_text((global.width/2)+400,global.height/2,"INCORRECTO, LA RESPUESTA ERA "+string(global.r)+", AVANZA A LA SIGUIENTE ETAPA");
+		if(global.feedback==2){
+			if(global.buena) draw_text((global.width/2)+300,global.height/2,"CORRECTO, AVANZA A LA SIGUIENTE ETAPA");
+			else draw_text((global.width/2)+400,global.height/2,"INCORRECTO, LA RESPUESTA ERA "+string(global.r)+", AVANZA A LA SIGUIENTE ETAPA");
+		}
+		if(global.feedback==1){
+			if(global.buena) draw_text((global.width/2)+300,global.height/2,"CORRECTO, AVANZA A LA SIGUIENTE ETAPA");
+			else draw_text((global.width/2)+400,global.height/2,"INCORRECTO, AVANZA A LA SIGUIENTE ETAPA");
+		}
 	}
 	
 	draw_set_colour(c_white);
@@ -28,8 +34,13 @@ if(room!=rMenu /*and global.kills>0*/){
 		draw_text((global.width/2)+48,10,"RESUELVE " + string(global.a) + " " + global.operacion + " " + string(global.b));
 	}
 	else {
-		
-		if(global.buena) draw_text((global.width/2)+298,(global.height/2)-2,"CORRECTO, AVANZA A LA SIGUIENTE ETAPA");
-		else draw_text((global.width/2)+398,(global.height/2)-2,"INCORRECTO, LA RESPUESTA ERA "+string(global.r)+", AVANZA A LA SIGUIENTE ETAPA");
+		if(global.feedback==2){
+			if(global.buena) draw_text((global.width/2)+298,(global.height/2)-2,"CORRECTO, AVANZA A LA SIGUIENTE ETAPA");
+			else draw_text((global.width/2)+398,(global.height/2)-2,"INCORRECTO, LA RESPUESTA ERA "+string(global.r)+", AVANZA A LA SIGUIENTE ETAPA");
+		}
+		if(global.feedback==1){
+			if(global.buena) draw_text((global.width/2)+298,(global.height/2)-2,"CORRECTO, AVANZA A LA SIGUIENTE ETAPA");
+			else draw_text((global.width/2)+398,(global.height/2)-2,"INCORRECTO, AVANZA A LA SIGUIENTE ETAPA");
+		}
 	}
 }

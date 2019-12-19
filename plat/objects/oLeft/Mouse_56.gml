@@ -1,1 +1,0 @@
-keyboard_key_release(vk_left)

@@ -78,12 +78,66 @@ if(ds_map_exists(map, "pSlowmo")){
      show_debug_message("pSlowmo funciona");
      show_debug_message(pSlowmo);
      global.pSlowmo = real(pSlowmo);
-}if(ds_map_exists(map, "vidas")){
+}
+if(ds_map_exists(map, "vidas")){
     var vidas = map[? "vidas"];
      show_debug_message("vidas funciona");
      show_debug_message(vidas);
      global.vidas = real(vidas);
 }
-
+if(ds_map_exists(map, "feedback")){
+    var feedback = map[? "feedback"];
+     show_debug_message("feedback funciona");
+     show_debug_message(feedback);
+     global.feedback = real(feedback);
+}
+if(ds_map_exists(map, "tInicial")){
+    var tInicial = map[? "tInicial"];
+     show_debug_message("tInicial funciona");
+     show_debug_message(tInicial);
+     global.tInicial = real(tInicial);
+}
+if(ds_map_exists(map, "tAumento")){
+    var tAumento = map[? "tAumento"];
+     show_debug_message("tAumento funciona");
+     show_debug_message(tAumento);
+     global.tAumento = real(tAumento);
+}
+if(ds_map_exists(map, "porcT")){
+    var porcT = map[? "porcT"];
+     show_debug_message("porcT funciona");
+     show_debug_message(porcT);
+     global.porcT = real(porcT);
+}
+if(ds_map_exists(map, "grupo")){
+    var grupo = map[? "grupo"];
+     show_debug_message("grupo funciona");
+     show_debug_message(grupo);
+     global.grupo = real(grupo);
+}
+if(ds_map_exists(map, "tiempo")){
+    var tiempo = map[? "tiempo"];
+     show_debug_message("tiempo funciona");
+     show_debug_message(tiempo);
+     global.tiempo = real(tiempo);
+}
+if(ds_map_exists(map, "tMin")){
+    var tMin = map[? "tMin"];
+     show_debug_message("tMin funciona");
+     show_debug_message(tMin);
+     global.tMin = real(tMin);
+}
+if(ds_map_exists(map, "tMax")){
+    var tMax = map[? "tMax"];
+     show_debug_message("tMax funciona");
+     show_debug_message(tMax);
+     global.tMax = real(tMax);
+}
+if(ds_map_exists(map, "timeMuerte")){
+    var timeMuerte = map[? "timeMuerte"];
+     show_debug_message("timeMuerte funciona");
+     show_debug_message(timeMuerte);
+     global.timeMuerte = real(timeMuerte);
+}
 
 go_to_next = true;

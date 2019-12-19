@@ -10,6 +10,4 @@ gunkickx = 0;
 
 view = 1;
 
-global.moveLeft = false;
-global.moveRight = false;
-global.jump = false;
+global.pause = false;

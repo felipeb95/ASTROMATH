@@ -12,8 +12,7 @@ if(place_meeting(x+hsp,y,oWall)){
 	}
 	hsp = -hsp;
 }
-
-x = x + hsp;
+if(global.pause==false) x = x + hsp;
 
 //Colision vertical
 if(place_meeting(x,y+vsp,oWall)){

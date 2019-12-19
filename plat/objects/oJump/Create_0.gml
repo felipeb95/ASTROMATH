@@ -1,4 +1,4 @@
-/*switch (os_type)
+switch (os_type)
    {
    case os_windows: instance_destroy();
    }
