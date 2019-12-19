@@ -32,3 +32,26 @@ listX = undefined;
 /* FLAGS */
 multiplyMessage = false;
 mcmMessage = false;
+
+/* UI MODE FOR OS TYPE */
+
+switch (os_type)
+{
+   case os_windows:
+	global.Config = 0; 
+	break;
+   case os_android:
+	global.Config = 1; 
+	instance_create_depth(0,0,-10000,oMobileUI); 
+	break;
+   case os_linux: 
+	global.Config = 2; 
+	break;
+   case os_macosx: 
+	global.Config = 3; 
+	break;
+   case os_ios:
+	global.Config = 4; 
+	instance_create_depth(0,0,-10000,oMobileUI); 
+	break;
+}
