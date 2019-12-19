@@ -50,5 +50,6 @@ xDistance = 25; // 25px minimun margin to fit 7 100x100 sprites without collapsi
 xPositionsReFill(xPositionsList, xLeftLimit, xRightLimit, alternativeHolderWidth, xDistance);
 
 /* UI CREATION BY OS TYPE */
-
-
+show_debug_message("OS TYPE: "+string(global.Config));
+if(global.Config == 1 || global.Config == 4)
+	instance_create_depth(0,0,-10000,oMobileUI);

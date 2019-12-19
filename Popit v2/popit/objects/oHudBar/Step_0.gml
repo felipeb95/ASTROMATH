@@ -11,3 +11,10 @@ if(fiftyFiftyFlashEffectOn){
 	fiftyFiftyFlashEffectOn = false;
 }
 
+if(device_mouse_check_button_released(0,mb_left)){
+	if(point_in_rectangle(device_mouse_x(0),device_mouse_y(0),room_width/3/2 - offset, room_height-sprite_height, room_width/3/2 + offset, room_height)){
+		
+	}
+
+
+}
