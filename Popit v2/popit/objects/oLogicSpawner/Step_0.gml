@@ -5,10 +5,83 @@ if(primeAlternativesCreation){
 	if(ds_list_empty(oTable.numberOnePartials) and exersiseJustCreated){ // This means that the exersise is new. A pair of numbers needs to be selected.
 		randomize();
 		audio_play_sound(sndNewRound,10,false);
-		numberOne = irandom_range(minNumber,maxNumber); // Number chosen randomly;
+		if(global.grupo==0){
+			global.origen = "Random";
+			numberOne = irandom_range(minNumber,maxNumber); // Number chosen randomly;
+			numberTwo = numbersElection(numberOne, minNumber, maxNumber); // Number chosen from script.
+		}
+		if(global.grupo==1){
+			var indice = random_range(0,1);
+			var memBuenasA = undefined;
+			var memMalasA = undefined;
+			var memNuevasA = undefined;
+			var memBuenasB = undefined;
+			var memMalasB = undefined;
+			var memNuevasB = undefined;
+			var iB = 0;
+			var iM = 0;
+			var iN = 0;
+			for(var i=minNumber;i<=maxNumber;i++){
+				for(var j=minNumber;j<=maxNumber;j++){
+					if(global.memoria[i,j] == 2){
+						memBuenasA[iB] = i;
+						memBuenasB[iB] = j;
+						iB++;
+					}
+					if(global.memoria[i,j] == 1){
+						memMalasA[iM] = i;
+						memMalasB[iM] = j;
+						iM++;
+					}
+					if(global.memoria[i,j] == 0){
+						memNuevasA[iN] = i;
+						memNuevasB[iN] = j;
+						iN++;
+					}
+				}
+			}
+			show_debug_message(indice);
+			if(indice<global.porcBuenas){ //BUENAS
+				if(iB>2){
+					global.origen = "Buenas";
+					var sel = irandom_range(0,iB-1);
+					numberOne = memBuenasA[sel];
+					numberTwo = memBuenasB[sel];
+				}
+				else indice = global.porcBuenas;
+			}
+			if(indice>(1-global.porcMalas)){ //MALAS
+				if(iM>2){
+					global.origen = "Malas";
+					var sel = irandom_range(0,iM-1);
+					numberOne = memMalasA[sel];
+					numberTwo = memMalasB[sel];
+				}
+				else indice = global.porcBuenas;
+			
+			}
+			if(indice>=global.porcBuenas and indice<=(1-global.porcMalas)){ //NUEVAS
+				if(iN>0){
+					global.origen = "Nuevas";
+					var sel = irandom_range(0,iN-1);
+					numberOne = memNuevasA[sel];
+					numberTwo = memNuevasB[sel];
+				}
+				else{
+					numberOne = irandom_range(minNumber,maxNumber);	
+					numberTwo = numbersElection(numberOne, minNumber, maxNumber);
+				}
+			}
+		}
+		show_debug_message(global.origen);
+		
+		
+		
+		//NUMBER 1
 		actualNumberOne = numberOne;
 		numberOneHeader = numberOne;
-		numberTwo = numbersElection(numberOne, minNumber, maxNumber); // Number chosen from script.
+		
+		//NUMBER 2
 		actualNumberTwo = numberTwo;
 		numberTwoHeader = numberTwo;
 		findPrimeNumbers(numberOne, numberTwo, primeNumbersFound);  // All prime numbers below the biggest of the number pair.

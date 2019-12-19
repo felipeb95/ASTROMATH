@@ -26,7 +26,38 @@ if(ds_exists(map,ds_type_map)){
 		parametersLoaded = false; 
 		show_debug_message("Problem in maxN");
 	}
-
+	if(ds_map_exists(map, "porcBuenas")){
+	    global.porcBuenas = real(map[? "porcBuenas"]);
+		parametersStr += "porcBuenas : "+string(global.porcBuenas)+" ";
+	}
+	else{
+		parametersLoaded = false; 
+		show_debug_message("Problem in porcBuenas");
+	}
+	if(ds_map_exists(map, "porcMalas")){
+	    global.porcMalas = real(map[? "porcMalas"]);
+		parametersStr += "porcMalas : "+string(global.porcMalas)+" ";
+	}
+	else{
+		parametersLoaded = false; 
+		show_debug_message("Problem in porcMalas");
+	}
+	if(ds_map_exists(map, "grupo")){
+	    global.grupo = real(map[? "grupo"]);
+		parametersStr += "grupo : "+string(global.grupo)+" ";
+	}
+	else{
+		parametersLoaded = false; 
+		show_debug_message("Problem in grupo");
+	}
+	if(ds_map_exists(map, "rangoBuena")){
+	    global.rangoBuena = real(map[? "rangoBuena"]);
+		parametersStr += "rangoBuena : "+string(global.rangoBuena)+" ";
+	}
+	else{
+		parametersLoaded = false; 
+		show_debug_message("Problem in rangoBuena");
+	}
 	if(ds_map_exists(map, "minSpeed")){
 	    global.minSpeed = real(map[? "minSpeed"]);
 		parametersStr += "minSpeed : "+string(global.minSpeed)+" ";
@@ -97,7 +128,6 @@ if(ds_exists(map,ds_type_map)){
 		parametersLoaded = false; 
 		show_debug_message("Problem in debug");
 	}
-
 	
 	parametersLoaded = is_undefined(parametersLoaded) ? true : false;
 	
