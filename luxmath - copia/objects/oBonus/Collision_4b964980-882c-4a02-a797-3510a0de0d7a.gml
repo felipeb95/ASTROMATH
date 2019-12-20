@@ -25,4 +25,5 @@ switch(image_index){
 	
 }
 oPlayerInfo.alarm[1] = room_speed*4;
+show_debug_message("col with ballshooter alarm set");
 instance_destroy(self);

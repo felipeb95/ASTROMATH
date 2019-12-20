@@ -5,21 +5,27 @@ fallSpeed = 7;
 colorRate = 4;
 depth = -1299;
 
-freezeP = 0.1; // subi 0
-slowP = 0.05; // subi 1
-reverseP = 0.05; // subi 2
-multiballP = 0.40; // subi 3
-exploballP = 0.40;
+freezeP = 0.3; // subi 0
+slowP = 0.3; // subi 1
+reverseP = 0.3; // subi 2
+multiballP = 0.05; // subi 3
+exploballP = 0.05;
 
 prob = random_range(0,1);//random_range(0,1);
 show_debug_message("BONUS PROB: "+string(prob));
 
-if(prob >= 0 and prob < freezeP)
+if(prob >= 0 and prob < freezeP){
+	oPlayerInfo.onBonus = true;
 	image_index = 0;
-if(prob >= freezeP and prob < freezeP + slowP)
+}
+if(prob >= freezeP and prob < freezeP + slowP){
+	oPlayerInfo.onBonus = true;
 	image_index = 1;
-if(prob >= freezeP + slowP and prob < freezeP + slowP + reverseP)
+}
+if(prob >= freezeP + slowP and prob < freezeP + slowP + reverseP){
+	oPlayerInfo.onBonus = true;
 	image_index = 2;
+}
 if(prob >= freezeP + slowP + reverseP and prob < freezeP + slowP + reverseP + multiballP)
 	image_index = 3;
 if(prob >= freezeP + slowP + reverseP + multiballP and prob < freezeP + slowP + reverseP + multiballP + exploballP)

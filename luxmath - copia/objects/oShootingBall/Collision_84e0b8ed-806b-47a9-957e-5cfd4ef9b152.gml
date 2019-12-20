@@ -5,6 +5,8 @@ var ballType = other.type;
 var opResult = undefined;
 var exploLeftArr = undefined;
 var exploRightArr = undefined;
+var feedbackMsg = undefined;
+var correctAns = false;
 
 /* pelota devuelve id, pelota sólo puede ser tipo operacion (!=number) */
 listIndex = ds_list_find_index(oBallCreator.list, testId); //Buscar id en lista completa.
@@ -19,14 +21,18 @@ show_debug_message("Numbers at side are "+str);
 switch(ballType){
 		case "x":
 			opResult = leftNumber * rightNumber;
+			feedbackMsg = "El resultado de "+string(leftNumber)+" x "+string(rightNumber)+" es "+string(opResult);
 		break;
 		case "/":
 			opResult = leftNumber / rightNumber;
+			feedbackMsg = "El resultado de "+string(leftNumber)+" / "+string(rightNumber)+" es "+string(opResult);
 		break;
 		case "+":
 			opResult = leftNumber + rightNumber;
+			feedbackMsg = "El resultado de "+string(leftNumber)+" + "+string(rightNumber)+" es "+string(opResult);
 		break;
 		case "-":
+			feedbackMsg = "El resultado de "+string(leftNumber)+" - "+string(rightNumber)+" es "+string(opResult);
 			opResult = leftNumber - rightNumber;
 		break;
 		default: break;
@@ -38,7 +44,7 @@ if(multiBonus)
 if(other.canBeShot){
 	if(opResult == value){
 		show_debug_message("### RIGHT TRY! ###");
-		
+		correctAns = true;
 		oPlayerInfo.playerScore += 10;
 		if(ds_list_size(oBallCreator.list) == 3){
 			show_debug_message("### GAME FINISHED ###");
@@ -46,7 +52,7 @@ if(other.canBeShot){
 				instance_destroy(self);	
 			}
 			instance_destroy(self);
-			room_goto(welcomeRoom);
+			room_goto(endRoom);
 		}
 		else{
 			var pos = testId.path_position; //Guardar posicion de la pelota
@@ -179,7 +185,14 @@ if(other.canBeShot){
 		x = oBallShooter.x;
 		y = initialY+sprite_height/2;	
 	}
+	feed = instance_create_depth(room_width/2,room_height/2, -10000,oFeedback);
+	with(feed){
+		if(correctAns)
+			text = "CORRECTO \n "+feedbackMsg;
+		else
+			text = "RECUERDA \n "+feedbackMsg;
+	}
 }
 else{
-	show_debug_message("Pass trough, cant answer");	
+	show_debug_message("Pass trough, couldnt answer");	
 }

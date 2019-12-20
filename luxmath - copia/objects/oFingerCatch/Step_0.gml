@@ -31,7 +31,11 @@ if(device_mouse_check_button_pressed(0,mb_left)){
 				break;
 	
 			}
+			
+			
+			show_debug_message("alarm set from fingercatch step");
 			oPlayerInfo.alarm[1] = room_speed*4;
+			
 			instance_destroy(self);
 		}
 	}
@@ -49,6 +53,8 @@ if(device_mouse_check_button_pressed(0,mb_left)){
 		var opResult = undefined;
 		var exploLeftArr = undefined;
 		var exploRightArr = undefined;
+		var feedbackMsg = undefined;
+		var correctAns = false;
 
 		/* pelota devuelve id, pelota sólo puede ser tipo operacion (!=number) */
 		listIndex = ds_list_find_index(oBallCreatorMobile.list, testId); //Buscar id en lista completa.
@@ -63,14 +69,18 @@ if(device_mouse_check_button_pressed(0,mb_left)){
 		switch(ballType){
 				case "x":
 					opResult = leftNumber * rightNumber;
+					feedbackMsg = "El resultado de "+string(leftNumber)+" x "+string(rightNumber)+" es "+string(opResult);
 				break;
 				case "/":
 					opResult = leftNumber / rightNumber;
+					feedbackMsg = "El resultado de "+string(leftNumber)+" / "+string(rightNumber)+" es "+string(opResult);
 				break;
 				case "+":
 					opResult = leftNumber + rightNumber;
+					feedbackMsg = "El resultado de "+string(leftNumber)+" + "+string(rightNumber)+" es "+string(opResult);
 				break;
 				case "-":
+					feedbackMsg = "El resultado de "+string(leftNumber)+" - "+string(rightNumber)+" es "+string(opResult);
 					opResult = leftNumber - rightNumber;
 				break;
 				default: break;
@@ -79,6 +89,7 @@ if(device_mouse_check_button_pressed(0,mb_left)){
 		if(ballInst.canBeShot){
 			if(opResult == oBallCreatorMobile.resultValue || oFingerCatch.multiBonus){
 				show_debug_message("### RIGHT TRY! ###");
+				correctAns = true;
 				/*
 				// MULTI EXPLOSION
 				if(multiBonus){
@@ -224,6 +235,14 @@ if(device_mouse_check_button_pressed(0,mb_left)){
 			show_debug_message("Pass trough, cant answer");	
 		}
 			}
+			
+		feed = instance_create_depth(room_width/2,room_height/2, -10000,oFeedback);
+		with(feed){
+			if(correctAns)
+				text = "CORRECTO \n "+feedbackMsg;
+			else
+				text = "RECUERDA \n "+feedbackMsg;
+		}
 	}
 	else
 		show_debug_message("CLICK NOT ON BALL");

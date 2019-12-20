@@ -8,7 +8,7 @@ switch (os_type){
 }
 */
 
-global.Config = 2;
+global.Config = 1;
 
 var lay_id = layer_get_id("Background");
 var back_id = layer_background_get_id(lay_id);
