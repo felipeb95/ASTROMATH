@@ -1,0 +1,2 @@
+multiBonus = false;
+exploBonus = false;

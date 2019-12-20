@@ -1,0 +1,1 @@
+global.Config = 2;

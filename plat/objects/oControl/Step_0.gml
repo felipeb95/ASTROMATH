@@ -1,29 +1,19 @@
 var i = undefined;
-for(i=0;i<4;i++){
-	if(device_mouse_check_button_pressed(i, mb_left)){
-		instCatch = instance_place(device_mouse_x(i),device_mouse_y(i),oLeft);
-		if(instCatch!=noone)
-			show_debug_message("IS LEFT");
+//for(i=0;i<2;i++){
+	if(device_mouse_check_button(0, mb_left)){
+		rightFinger = 1;
+		if(point_in_rectangle(device_mouse_x(0),device_mouse_y(0),30,540,220,670)){
+			show_debug_message("left");
+		}
+		
+		if(point_in_rectangle(device_mouse_x(0),device_mouse_y(0),221,540,415,670)){
+			show_debug_message("right");
+		}
 	}
-}
+	else
+		rightFinger = 0;
+//}
 
-if(leftCheck){
-	show_debug_message("LEFT");
-	leftCheck = false;
-}
 
-if(rightCheck){
-	show_debug_message("RIGHT");
-	rightCheck = false;
-}
 
-if(jumpCheck){
-	show_debug_message("JUMP");
-	jumpCheck = false;
-}
-
-if(shootCheck){
-	show_debug_message("SHOOT");
-	shootCheck = false;
-}
 
