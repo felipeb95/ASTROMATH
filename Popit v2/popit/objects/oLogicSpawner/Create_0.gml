@@ -30,6 +30,16 @@ minNumber = global.minNumber;
 maxNumber = global.maxNumber;
 bonusProbability = global.bonusProbability;
 
+if(global.grupo==1){
+	global.memoria = undefined;
+	for(var i=minNumber;i<=maxNumber;i++){
+		for(var j=minNumber;j<=maxNumber;j++){
+			global.memoria[i,j]=0;
+		}
+	}
+}
+
+
 /* FLAGS */
 subDivisionAnswered = false;
 primeAnswered = false;
