@@ -5,6 +5,10 @@ walksp = 5;
 hascontrol = true;
 canjump = 0;
 
+global.movimiento = 0;
+global.salto = false;
+
+
 gunkickx = 0;
 //gunkicky = 0;
 
