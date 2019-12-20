@@ -503,6 +503,14 @@
             }
         },
         {
+            "Key": "dfba1f70-0ab4-49a0-a529-697d32996989",
+            "Value": {
+                "id": "9958b2fc-8464-4f59-8ca0-d86b04f044e7",
+                "resourcePath": "rooms\\endRoom\\endRoom.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "e03734f9-027c-460f-bbf5-d67531607597",
             "Value": {
                 "id": "091e7a2f-f360-480b-8fde-62776983f2c3",
