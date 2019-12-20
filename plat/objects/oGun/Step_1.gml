@@ -6,7 +6,7 @@ if(oPlayer.view<0) image_angle = 180;
 if(oPlayer.view>0) image_angle = 0;
 firingdelay = firingdelay - 1;
 recoil = max(0,recoil-1);
-if((keyboard_check(vk_space)) and firingdelay<0){
+if((keyboard_check(vk_space) or global.disparo) and firingdelay<0){
 	recoil = 4;
 	firingdelay = 5;
 	ScreenShake(2,10);
