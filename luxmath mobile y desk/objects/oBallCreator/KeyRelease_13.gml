@@ -1,3 +1,4 @@
+room_restart();
 /*randomize();
 // pelota devuelve id, pelota sólo puede ser tipo operacion (!=number)
 listIndex = ds_list_find_index(list, testId); //Buscar id en lista completa.

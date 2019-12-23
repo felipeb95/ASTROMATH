@@ -9,8 +9,8 @@ results = ds_list_create();
 var i =0;
 ballsep = 0.015;
 //testId = undefined;
-var numberOfBalls = 15// multiploe de 3
-for(i=0;i<numberOfBalls;i++){
+
+for(i=0;i<global.balls;i++){
 	var thisBall = instance_create_depth(0,0,-100,oBall)
 	with(thisBall){
 		path_position = 0.002 + i*oBallCreatorMobile.ballsep;

@@ -1,38 +1,38 @@
 {
-    "id": "5488ee6d-a289-4d90-8e05-5eb93795ffaa",
+    "id": "cde35f88-05ee-4603-817a-88d0abdd8e83",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "oPlayerInfoMobile",
+    "name": "oLoading",
     "eventList": [
         {
-            "id": "1ecff200-3884-43e0-b748-176db73d7c50",
+            "id": "8d32a504-04da-426d-9284-36a78d5179aa",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 62,
+            "eventtype": 7,
+            "m_owner": "cde35f88-05ee-4603-817a-88d0abdd8e83"
+        },
+        {
+            "id": "7c8fdc05-c927-4e32-ac5b-dc5c6d0f0ca9",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
-            "m_owner": "5488ee6d-a289-4d90-8e05-5eb93795ffaa"
+            "m_owner": "cde35f88-05ee-4603-817a-88d0abdd8e83"
         },
         {
-            "id": "c4a81640-3bea-4f09-ae6c-d82e3d49e740",
+            "id": "d6fae4f7-d9c4-4f5f-b34d-f2d453401cea",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
-            "eventtype": 2,
-            "m_owner": "5488ee6d-a289-4d90-8e05-5eb93795ffaa"
-        },
-        {
-            "id": "67004fe8-5cde-4413-b7b9-cfa65573f054",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 1,
-            "eventtype": 2,
-            "m_owner": "5488ee6d-a289-4d90-8e05-5eb93795ffaa"
+            "eventtype": 3,
+            "m_owner": "cde35f88-05ee-4603-817a-88d0abdd8e83"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",

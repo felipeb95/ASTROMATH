@@ -1,6 +1,6 @@
 
 {
-    "name": "playRoom",
+    "name": "playRoom1",
     "id": "0c0a4ae2-c91b-4b4b-9dd9-e544b7fe56cc",
     "creationCodeFile": "RoomCreationCode.gml",
     "inheritCode": false,
@@ -20,8 +20,8 @@
             "id": "153fbdf8-5679-49f9-8a24-a0eb7de6710e",
             "colour": { "Value": 4278190335 },
             "depth": 0,
-            "grid_x": 5,
-            "grid_y": 5,
+            "grid_x": 15,
+            "grid_y": 15,
             "hierarchyFrozen": false,
             "hierarchyVisible": true,
             "inheritLayerDepth": false,

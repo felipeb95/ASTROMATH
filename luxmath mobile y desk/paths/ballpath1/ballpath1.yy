@@ -211,8 +211,24 @@
             "id": "0722efe1-8821-4a52-bb67-1692c26f44b3",
             "modelName": "GMPathPoint",
             "mvc": "1.0",
-            "x": 1330,
-            "y": 520,
+            "x": 990,
+            "y": 525,
+            "speed": 100
+        },
+        {
+            "id": "9c299802-4cb9-4624-9e43-a083a06ce606",
+            "modelName": "GMPathPoint",
+            "mvc": "1.0",
+            "x": 1020,
+            "y": 525,
+            "speed": 100
+        },
+        {
+            "id": "11fdce3a-715f-49b7-b07e-b3e6d8129657",
+            "modelName": "GMPathPoint",
+            "mvc": "1.0",
+            "x": 1050,
+            "y": 525,
             "speed": 100
         }
     ],

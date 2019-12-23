@@ -1,5 +1,4 @@
 playerScore = 0;
-global.playerScore = 0;
 freezeBonus = false;
 reverseBonus = false;
 slowBonus = false;

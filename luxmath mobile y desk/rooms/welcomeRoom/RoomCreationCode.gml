@@ -14,3 +14,18 @@ if global.Config == 2
 }
 else
 	layer_background_sprite(back_id, sWelcomeRoomBg);
+
+
+global.totalLevels = 0;
+for(i = 0; i <= room_last; i++)
+	global.totalLevels++;
+	
+global.totalLevels -= 3; // Welcome, Transition and End Room are excluded.
+
+show_debug_message("THERE ARE "+string(global.totalLevels)+" levels");
+
+
+global.playerScore = 0;
+global.playerState = 0; // -1 : player lost | 0 : player is playing or already completed game | 1 : player won
+global.level = 1;
+global.balls = 15;

@@ -52,7 +52,16 @@ if(other.canBeShot){
 				instance_destroy(self);	
 			}
 			instance_destroy(self);
-			room_goto(endRoom);
+
+			if(global.level == global.totalLevels){
+				global.playerState = 0;
+				room_goto(endRoom);
+			}
+			else{
+				global.playerState = 1;
+				global.level++;
+				room_goto(transitionRoom);
+			}
 		}
 		else{
 			var pos = testId.path_position; //Guardar posicion de la pelota

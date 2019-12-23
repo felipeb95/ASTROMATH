@@ -1,4 +1,4 @@
-canClick = false;;
+canClick = false;
 
 if(room_get_name(room) == "endRoom"){
 	var lay_id = layer_get_id("Background");

@@ -44,7 +44,7 @@ if(device_mouse_check_button_pressed(0,mb_left)){
 	
 	// ############################## MOUSE CATCH FOR ANSWERING ##############################
 	var ballInst = instance_position(mouse_x, mouse_y, oBall);
-	if(ballInst != noone){
+	if(ballInst != noone and !instance_exists(oFeedback)){
 		show_debug_message("CLICK ON BALL");
 		with(ballInst){
 		show_debug_message("Number on ball: "+string(ballInst.value));
@@ -111,7 +111,16 @@ if(device_mouse_check_button_pressed(0,mb_left)){
 						instance_destroy(self);	
 					}
 					instance_destroy(self);
-					room_goto(endRoom);
+					
+					if(global.level == global.totalLevels){
+						global.playerState = 0;
+						room_goto(endRoom);
+					}
+					else{
+						global.playerState = 1;
+						global.level++;
+						room_goto(transitionRoom);
+					}
 				}
 				else{
 					var pos = testId.path_position; //Guardar posicion de la pelota

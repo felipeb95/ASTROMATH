@@ -15,5 +15,6 @@ if(!other.ballReached){
 
 if(!instance_exists(oBall)){
 	show_debug_message("### GAME OVER ###");
-	room_goto(welcomeRoom);
+	global.playerState = -1;
+	room_goto(transitionRoom);
 }
