@@ -112,6 +112,8 @@ if(device_mouse_check_button_pressed(0,mb_left)){
 					}
 					instance_destroy(self);
 					
+					difficultyAdapter();
+					
 					if(global.level == global.totalLevels){
 						global.playerState = 0;
 						room_goto(endRoom);

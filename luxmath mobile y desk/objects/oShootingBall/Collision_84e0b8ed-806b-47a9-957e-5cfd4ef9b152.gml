@@ -53,6 +53,8 @@ if(other.canBeShot){
 			}
 			instance_destroy(self);
 
+			difficultyAdapter();
+
 			if(global.level == global.totalLevels){
 				global.playerState = 0;
 				room_goto(endRoom);
@@ -188,6 +190,7 @@ if(other.canBeShot){
 	}
 	else{
 		show_debug_message("### WRONG TRY ###");
+		global.errorCounter++;
 		oPlayerInfo.playerScore -= 10;
 		oPlayerInfo.playerScore = clamp(oPlayerInfo.playerScore,0,99999);
 		travel = false;

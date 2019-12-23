@@ -14,3 +14,7 @@ if(y >= room_height){
 	instance_destroy(self);
 	oPlayerInfo.onBonus = false;	
 }
+
+if(instance_exists(oFeedback)){
+	instance_destroy(self);	
+}

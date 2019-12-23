@@ -519,6 +519,14 @@
             }
         },
         {
+            "Key": "b6b51352-8d64-49ff-8370-b4459a88741e",
+            "Value": {
+                "id": "40343804-8ab9-403d-84a0-5abb7855c475",
+                "resourcePath": "fonts\\transitionFont\\transitionFont.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "b9911be1-a8d1-4fa6-98c7-d1c02972784a",
             "Value": {
                 "id": "2ee814f8-b289-4fd4-9e20-32df003b10fa",
@@ -572,6 +580,14 @@
                 "id": "50815c78-f176-4090-9b2f-5a09fe5e403b",
                 "resourcePath": "sprites\\sTopBar\\sTopBar.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "d6f19357-ec30-418e-a39b-d2893a2d3df2",
+            "Value": {
+                "id": "e233befa-26a5-4fb7-8786-7cc7be2267bb",
+                "resourcePath": "scripts\\difficultyAdapter\\difficultyAdapter.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -712,7 +728,8 @@
         }
     ],
     "script_order": [
-        "3116ccb1-8e14-4337-a9c1-ea511ec4deff"
+        "3116ccb1-8e14-4337-a9c1-ea511ec4deff",
+        "d6f19357-ec30-418e-a39b-d2893a2d3df2"
     ],
     "tutorial": ""
 }

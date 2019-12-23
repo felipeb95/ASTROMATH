@@ -5,7 +5,7 @@ if(room_get_name(room) == "endRoom"){
 }
 
 if(global.playerState == -1){ // Just Lost
-	draw_set_font(scorefont);
+	draw_set_font(transitionFont);
 	draw_set_halign(fa_center);
 	if(global.Config == 1)
 		draw_text(room_width/2, room_height/2, "PERDISTE EL ESCENARIO"+
@@ -18,7 +18,7 @@ if(global.playerState == -1){ // Just Lost
 }
 
 if(global.playerState == 1){ // Just Won
-	draw_set_font(scorefont);
+	draw_set_font(transitionFont);
 	draw_set_halign(fa_center);
 	if(global.Config == 1)
 		draw_text(room_width/2, room_height/2, "GANASTE EL ESCENARIO"+

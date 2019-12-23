@@ -24,8 +24,15 @@ global.totalLevels -= 3; // Welcome, Transition and End Room are excluded.
 
 show_debug_message("THERE ARE "+string(global.totalLevels)+" levels");
 
-
+global.errorCap = 2;
+global.errorCounter = 0;
 global.playerScore = 0;
 global.playerState = 0; // -1 : player lost | 0 : player is playing or already completed game | 1 : player won
 global.level = 1;
-global.balls = 15;
+global.balls = 9;
+global.minBalls = 6;
+global.maxBalls = 18;
+global.minSpeed = 0.2;
+global.maxSpeed = 3;
+global.ballAceleration = 0.3;
+global.currentSpeed = 1;

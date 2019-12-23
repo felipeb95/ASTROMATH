@@ -75,6 +75,15 @@ if(ds_exists(map,ds_type_map)){
 		parametersLoaded = false; 
 		show_debug_message("Problem in maxS");
 	}
+	
+	if(ds_map_exists(map, "ballAceleration")){
+	    global.ballAceleration = real(map[? "ballAceleration"]);
+		parametersStr += "ballAceleration : "+string(global.ballAceleration)+" ";
+	}
+	else{
+		parametersLoaded = false; 
+		show_debug_message("Problem in maxS");
+	}
 
 	if(ds_map_exists(map, "minBalls")){
 	    global.minBalls = real(map[? "minBalls"]);
