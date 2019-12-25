@@ -183,6 +183,14 @@
             }
         },
         {
+            "Key": "3d0dc7f7-1bc6-4226-96d1-e7bf8ddae30a",
+            "Value": {
+                "id": "78e471c7-3f96-47dc-8da4-cefc8d4b523c",
+                "resourcePath": "scripts\\findFactorizationNumber\\findFactorizationNumber.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "3e4f6ec4-f4e8-4bfe-84a9-d75bf6761be4",
             "Value": {
                 "id": "f88c5c9f-fe5b-4d1e-8e77-543d8300d0bc",
@@ -853,7 +861,8 @@
         "27a44efb-2beb-4add-b2f4-e0528d5af416",
         "949e817e-c28e-4bdd-a4fc-6813184d09e6",
         "c892c8d9-9b3b-4b06-8507-1be77b80f293",
-        "2b0e6c36-2331-4359-a48f-8b9ac852d83a"
+        "2b0e6c36-2331-4359-a48f-8b9ac852d83a",
+        "3d0dc7f7-1bc6-4226-96d1-e7bf8ddae30a"
     ],
     "tutorial": ""
 }

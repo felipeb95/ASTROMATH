@@ -9,6 +9,7 @@ if(primeAlternativesCreation){
 			global.origen = "Random";
 			numberOne = irandom_range(minNumber,maxNumber); // Number chosen randomly;
 			numberTwo = numbersElection(numberOne, minNumber, maxNumber); // Number chosen from script.
+			
 		}
 		if(global.grupo==1){
 			var indice = random_range(0,1);
@@ -89,6 +90,8 @@ if(primeAlternativesCreation){
 		show_debug_message("[Empty partials list]");
 		show_debug_message("[NUMBERS ON INIT] "+string(numberOne) +" and "+string(numberTwo));
 		exercise++;
+		findFactorizationNumber(numberOne, alternativesList);
+		findFactorizationNumber(numberTwo, alternativesList);
 	}
 	else{
 		if(!ds_list_empty(oTable.numberOnePartials)){ // Should only check the list if it's not empty to take numbers.

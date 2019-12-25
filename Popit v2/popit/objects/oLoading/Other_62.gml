@@ -129,6 +129,10 @@ if(ds_exists(map,ds_type_map)){
 		show_debug_message("Problem in debug");
 	}
 	
+	if(ds_map_exists(map, "rangoBuena")){
+	    global.rangoBuena = real(map[? "rangoBuena"]);
+	}
+	
 	parametersLoaded = is_undefined(parametersLoaded) ? true : false;
 	
 	if(parametersLoaded)
