@@ -112,10 +112,10 @@ if(oLogicSpawner.divisionType){
 			gotCorrect = true;
 		}
 		else{ // Correction if wrong holder is hit.
-			if(oLogicSpawner.divisionCounter == 1)
+			/*if(oLogicSpawner.divisionCounter == 1)
 				global.nOneWrongCounter++;
 			if(oLogicSpawner.divisionCounter == 2)
-				global.nTwoWrongCounter++;
+				global.nTwoWrongCounter++;*/
 
 			oPlayerProperties.playersScore -= 10;
 			oPlayerProperties.playersScore = clamp(oPlayerProperties.playersScore, 0, 99999);

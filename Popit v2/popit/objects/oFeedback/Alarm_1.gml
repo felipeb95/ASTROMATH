@@ -41,10 +41,12 @@ else
 			show_debug_message("[ MT Feedback Flag Change]");
 			if(ds_list_size(oTable._tableDivisors) == 1){ // Only one result. Round finished.
 				
-				if(global.nOneWrongCounter >= global.nOneWrongCap or global.nTwoWrongCounter >= global.nTwoWrongCap)
-					global.memoria[oLogicSpawner.numberOneHeader][oLogicSpawner.numberTwoHeader] = 1;
-				else
-					global.memoria[oLogicSpawner.numberOneHeader][oLogicSpawner.numberTwoHeader] = 2;
+				if(global.grupo == 1){
+					if(global.nOneWrongCounter >= global.nOneWrongCap or global.nTwoWrongCounter >= global.nTwoWrongCap)
+						global.memoria[oLogicSpawner.numberOneHeader][oLogicSpawner.numberTwoHeader] = 1;
+					else
+						global.memoria[oLogicSpawner.numberOneHeader][oLogicSpawner.numberTwoHeader] = 2;
+				}
 					
 				oTable.alarm[0] = room_speed*0.1;
 			}

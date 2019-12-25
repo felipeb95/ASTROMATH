@@ -40,12 +40,12 @@ if(!instance_exists(oAlternativeHolder) and !oLogicSpawner.alternativeGotHit){ /
 			if(oLogicSpawner.divisionCounter == 1){
 				ds_list_add(oTable.numberOnePartials, oLogicSpawner.subDivisionNumber); // Same number is written down in table as a partial
 				feedbackCreation(false,"division",oLogicSpawner.numberOne, oLogicSpawner.numberHit, -1, true);
-				global.nOneWrongCounter++;
+				//global.nOneWrongCounter++;
 			}
 			if(oLogicSpawner.divisionCounter == 2){
 				ds_list_add(oTable.numberTwoPartials, oLogicSpawner.subDivisionNumber); // Same number is written down in table as a partial
 				feedbackCreation(false,"division",oLogicSpawner.numberTwo, oLogicSpawner.numberHit, -1, true);
-				global.nTwoWrongCounter++;
+				//global.nTwoWrongCounter++;
 			}
 		}
 		else{
