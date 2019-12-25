@@ -12,8 +12,9 @@ else
 				oLogicSpawner.divisionAlternativesCreation = true;
 				oLogicSpawner.subDivisionAnswered = true;	
 			}
-			else
+			else{
 				oLogicSpawner.primeAlternativesCreation = true; // Time to create prime alternatives.
+			}
 		break;
 		
 		case "division":
@@ -39,6 +40,12 @@ else
 		case "multiplying":
 			show_debug_message("[ MT Feedback Flag Change]");
 			if(ds_list_size(oTable._tableDivisors) == 1){ // Only one result. Round finished.
+				
+				if(global.nOneWrongCounter >= global.nOneWrongCap or global.nTwoWrongCounter >= global.nTwoWrongCap)
+					global.memoria[oLogicSpawner.numberOneHeader][oLogicSpawner.numberTwoHeader] = 1;
+				else
+					global.memoria[oLogicSpawner.numberOneHeader][oLogicSpawner.numberTwoHeader] = 2;
+					
 				oTable.alarm[0] = room_speed*0.1;
 			}
 			oLogicSpawner.multiplyAlternativesCreation = true;

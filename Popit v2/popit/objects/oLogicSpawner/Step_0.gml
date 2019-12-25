@@ -90,8 +90,10 @@ if(primeAlternativesCreation){
 		show_debug_message("[Empty partials list]");
 		show_debug_message("[NUMBERS ON INIT] "+string(numberOne) +" and "+string(numberTwo));
 		exercise++;
-		findFactorizationNumber(numberOne, alternativesList);
-		findFactorizationNumber(numberTwo, alternativesList);
+		global.nOneWrongCounter = 0;
+		global.nTwoWrongCounter = 0;
+		global.nOneWrongCap = round(findFactorizationNumber(numberOne, alternativesList) * global.rangoBuena);
+		global.nTwoWrongCap = round(findFactorizationNumber(numberTwo, alternativesList) * global.rangoBuena);
 	}
 	else{
 		if(!ds_list_empty(oTable.numberOnePartials)){ // Should only check the list if it's not empty to take numbers.
@@ -122,7 +124,6 @@ if(divisionAlternativesCreation){
 }
 
 if(multiplyAlternativesCreation){
-	show_debug_message("[Phase 2 under construction]");
 	show_debug_message("[MULTIPLYING TYPE]");
 	divisionType = false;
 	multiplyingType = true;
@@ -138,5 +139,4 @@ if(multiplyAlternativesCreation){
 		show_debug_message("[MT STOPS]");
 	alternativeGotHit = false;
 	multiplyAlternativesCreation = false;
-	show_debug_message("[MT last instruction]");
 }

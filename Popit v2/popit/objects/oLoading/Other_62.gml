@@ -123,6 +123,7 @@ if(ds_exists(map,ds_type_map)){
 
 	if(ds_map_exists(map, "debugMode")){
 	    global.debugMode = real(map[? "debugMode"]) == 1 ? true : false;
+		parametersStr += "debugMode : "+string(global.debugMode)+" ";
 	}
 	else{
 		parametersLoaded = false; 
@@ -131,6 +132,11 @@ if(ds_exists(map,ds_type_map)){
 	
 	if(ds_map_exists(map, "rangoBuena")){
 	    global.rangoBuena = real(map[? "rangoBuena"]);
+		parametersStr += "rangoBuena : "+string(global.rangoBuena)+" ";
+	}
+	else{
+		parametersLoaded = false; 
+		show_debug_message("Problem in rangoBuena");
 	}
 	
 	parametersLoaded = is_undefined(parametersLoaded) ? true : false;

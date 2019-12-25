@@ -40,10 +40,12 @@ if(!instance_exists(oAlternativeHolder) and !oLogicSpawner.alternativeGotHit){ /
 			if(oLogicSpawner.divisionCounter == 1){
 				ds_list_add(oTable.numberOnePartials, oLogicSpawner.subDivisionNumber); // Same number is written down in table as a partial
 				feedbackCreation(false,"division",oLogicSpawner.numberOne, oLogicSpawner.numberHit, -1, true);
+				global.nOneWrongCounter++;
 			}
 			if(oLogicSpawner.divisionCounter == 2){
 				ds_list_add(oTable.numberTwoPartials, oLogicSpawner.subDivisionNumber); // Same number is written down in table as a partial
 				feedbackCreation(false,"division",oLogicSpawner.numberTwo, oLogicSpawner.numberHit, -1, true);
+				global.nTwoWrongCounter++;
 			}
 		}
 		else{
@@ -87,6 +89,8 @@ if(!instance_exists(oAlternativeHolder) and !oLogicSpawner.alternativeGotHit){ /
 		//oLogicSpawner.primeAlternativesCreation = true; // Time to create prime alternatives.
 		feedbackCreation(false,"prime", oLogicSpawner.numberOne, oLogicSpawner.numberTwo, -1, false);
 		show_debug_message("[REMEMBER] You must choose one correct prime number to continue");
+		global.nOneWrongCounter++;
+		global.nTwoWrongCounter++;
 	}
 	
 	oPlayerProperties.playersHp -= 1;

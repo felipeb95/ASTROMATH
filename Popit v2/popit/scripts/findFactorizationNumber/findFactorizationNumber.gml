@@ -28,3 +28,5 @@ while(number != 1){
 }
 
 show_debug_message(" # # # # # # TOTAL DIVISIONS "+string(divideCounter));
+
+return divideCounter;

@@ -40,8 +40,10 @@ if(global.grupo==1){
 }
 
 rangoBuena = 0.5; // Debería ser global.rangoBuena.
-global.wrongCounter = 0;
-global.wrongCap = undefined;
+global.nOneWrongCounter = 0;
+global.nTwoWrongCounter = 0;
+global.nOneWrongCap = undefined;
+global.nTwoWrongCap = undefined;
 
 /* FLAGS */
 subDivisionAnswered = false;
