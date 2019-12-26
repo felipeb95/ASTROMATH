@@ -112,6 +112,7 @@ for(i=0;i<global.balls;i++){
 					historyA[sizeH]=global.a;
 					historyB[sizeH]=global.b;
 					sizeH++;
+					show_debug_message(global.origen);
 					
 					
 					
