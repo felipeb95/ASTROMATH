@@ -175,6 +175,13 @@ if(ds_exists(map,ds_type_map)){
 }
 else
 	show_debug_message("No map found");
-
+	
+if(global.grupo==1){
+	for(var i=global.menorMultiplo;i<=global.mayorMultiplo;i++){
+		for(var j=global.menorMultiplo;j<=global.mayorMultiplo;j++){
+			global.memoria[i,j] = 0;
+		}
+	}
+}
 
 

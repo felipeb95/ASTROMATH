@@ -1,3 +1,5 @@
+
+
 switch (os_type){
    case os_windows: global.Config = 1; break;
    case os_android: global.Config = 2; break;
