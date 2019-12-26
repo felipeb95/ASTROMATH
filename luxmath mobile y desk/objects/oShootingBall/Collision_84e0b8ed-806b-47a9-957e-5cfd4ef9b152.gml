@@ -43,6 +43,7 @@ if(multiBonus)
 
 if(other.canBeShot){
 	if(opResult == value){
+		global.memoria[leftNumber,rightNumber]=2;
 		show_debug_message("### RIGHT TRY! ###");
 		correctAns = true;
 		oPlayerInfo.playerScore += 10;
@@ -189,6 +190,7 @@ if(other.canBeShot){
 		}
 	}
 	else{
+		global.memoria[leftNumber,rightNumber]=1;
 		show_debug_message("### WRONG TRY ###");
 		global.errorCounter++;
 		oPlayerInfo.playerScore -= 10;
