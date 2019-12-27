@@ -2,7 +2,7 @@
 {
     "name": "rLoading",
     "id": "8492aac5-1b43-438f-98ca-4875e43daec6",
-    "creationCodeFile": "",
+    "creationCodeFile": "RoomCreationCode.gml",
     "inheritCode": false,
     "inheritCreationOrder": false,
     "inheritLayers": false,

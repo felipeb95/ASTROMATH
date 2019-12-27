@@ -21,6 +21,7 @@ if((keyboard_check(vk_space) or global.disparo) and firingdelay<0){
 		gunkickx = lengthdir_x(1.5,other.image_angle-180);
 		//gunkicky = lengthdir_x(1,other.image_angle-180);
 	}
+	global.disparo = false;
 }
 
 x = x + lengthdir_x(recoil,image_angle);

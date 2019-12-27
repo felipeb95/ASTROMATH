@@ -13,9 +13,8 @@ else{
 
 //Movimiento
 var move = key_right - key_left;
-
 hsp = (move * walksp) + global.movimiento; //+ gunkickx;
-view = sign(move);
+view = global.Config == 1 ? sign(global.movimiento) : sign(move);
 gunkickx = 0;
 vsp = (vsp + grv); //+ gunkicky;
 //gunkicky = 0;
@@ -24,6 +23,7 @@ canjump-=1;
 if((canjump>0 and key_jump) or (canjump>0 and global.salto)){
 	vsp = -13;
 	canjump = 0;
+	//global.salto = false;
 }
 
 

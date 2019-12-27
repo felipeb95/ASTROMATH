@@ -1,4 +1,3 @@
-
-//virtual_key_add(x, y, sprite_width, sprite_height, vk_left);
-
-depth = -5000;
+if(global.Config == 0){
+	instance_destroy(self);
+}
