@@ -1,10 +1,11 @@
-if((keyboard_check_pressed(vk_down) or keyboard_check_pressed(vk_space)) and global.haskey==1){	
+if((keyboard_check_pressed(vk_down) or keyboard_check_pressed(vk_space) or global.cofre) and global.haskey==1){	
 	global.respondida = true;
 	global.mostrarEjercicio = false;
+	global.cofre=false;
 	with(other){
 		global.respuesta = num;
 		if(num==global.r) {
-			global.porcRespuesta = (global.tInicial-oTimer.timer)/global.tInicial;
+			if(global.tiempo!=0)global.porcRespuesta = (global.tInicial-oTimer.timer)/global.tInicial;
 			audio_play_sound(snCorrect,5,false);
 			if(global.grupo==1){
 				global.memoria[global.a,global.b] = 2;

@@ -39,6 +39,14 @@
             }
         },
         {
+            "Key": "02405971-63c7-4af4-a8b7-6f8fae9ba6dc",
+            "Value": {
+                "id": "6267f54d-0d5a-4c18-8bbd-5a842ba6f1bf",
+                "resourcePath": "objects\\oCofre\\oCofre.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "053aa32f-883a-4be4-8d41-d2061e3ec46e",
             "Value": {
                 "id": "d1d5ea74-6281-4989-bb7d-0ff64265c1d2",
@@ -460,6 +468,14 @@
                 "id": "08025e2e-a393-46f3-8ceb-db135cd7186a",
                 "resourcePath": "fonts\\fMenu\\fMenu.yy",
                 "resourceType": "GMFont"
+            }
+        },
+        {
+            "Key": "612daa76-13c3-4645-a3d2-494a5c3fc4b0",
+            "Value": {
+                "id": "9505130c-be75-42e8-87fb-c7e0c5ae740e",
+                "resourcePath": "sprites\\sCofre\\sCofre.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

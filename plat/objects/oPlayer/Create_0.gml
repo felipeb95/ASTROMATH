@@ -7,6 +7,7 @@ canjump = 0;
 
 global.movimiento = 0;
 global.salto = false;
+global.cofre = false
 
 
 gunkickx = 0;

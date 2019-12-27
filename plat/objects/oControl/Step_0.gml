@@ -42,6 +42,10 @@ for(i=0;i<2;i++){
 			show_debug_message("jump");
 			rightFinger = 1;
 		}
+		if(point_in_circle(device_mouse_x(i),device_mouse_y(i),oCofre.x, oCofre.y,32)){
+			show_debug_message("cofre");
+			rightFinger = 2;
+		}
     }
    
     if(device_mouse_check_button_released(i,mb_any)){
@@ -75,6 +79,10 @@ if(rightFinger = 1){
 	rightFinger = 0;
 }
 
+if(rightFinger = 2){
+	global.cofre = true;
+	rightFinger = 0;
+}
 
 if(leftFinger == -1 and !stopped){
 	global.movimiento -= 5;
