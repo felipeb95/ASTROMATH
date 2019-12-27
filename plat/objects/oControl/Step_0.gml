@@ -63,6 +63,10 @@ for(i=0;i<2;i++){
 			show_debug_message("jump");
 			justJumped = true;
 		}
+		if(point_in_circle(device_mouse_x(i),device_mouse_y(i),oCofre.x, oCofre.y,32)){
+			show_debug_message("cofre");
+			justCofre = true;
+		}
 		
     }
 	
@@ -103,6 +107,10 @@ if(stopped){
 if(justJumped)
 	global.salto = false;
 
+if(justCofre)
+	global.cofre = false;
+
 stopped = false;
 justJumped = false;
+justCofre = false;
 global.movimiento = clamp(global.movimiento,-5,5);
