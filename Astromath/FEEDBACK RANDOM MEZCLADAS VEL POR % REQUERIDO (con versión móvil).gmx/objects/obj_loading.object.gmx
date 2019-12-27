@@ -103,6 +103,12 @@ if(ds_map_exists(map, "menorMultiplo")){
      show_debug_message(menorMultiplo);
      global.minA = real(menorMultiplo);
 }
+if(ds_map_exists(map, "carril")){
+    var carril = map[? "carril"];
+     show_debug_message("carril funciona");
+     show_debug_message(carril);
+     global.carril = real(carril);
+}
 
 if(ds_map_exists(map, "mayorMultiplo")){
     var mayorMultiplo = map[? "mayorMultiplo"];

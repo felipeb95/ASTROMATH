@@ -87,6 +87,7 @@ if(device_mouse_check_button_pressed(0,mb_left)){
 		}
 
 		if(ballInst.canBeShot){
+			global.memoria[leftNumber,rightNumber]=2;
 			if(opResult == oBallCreatorMobile.resultValue || oFingerCatch.multiBonus){
 				show_debug_message("### RIGHT TRY! ###");
 				correctAns = true;
@@ -234,6 +235,7 @@ if(device_mouse_check_button_pressed(0,mb_left)){
 				}
 			}
 			else{
+				global.memoria[leftNumber,rightNumber]=1;
 				show_debug_message("### WRONG TRY ###");
 				oPlayerInfo.playerScore -= 10;
 				oPlayerInfo.playerScore = clamp(oPlayerInfo.playerScore,0,99999);

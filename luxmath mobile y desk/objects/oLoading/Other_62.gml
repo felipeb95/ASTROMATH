@@ -9,22 +9,22 @@ if(map = -1){
 if(ds_exists(map,ds_type_map)){
     show_debug_message("It's a map");
 	
-	if(ds_map_exists(map, "minNumber")){
-	    global.minNumber = real(map[? "minNumber"]);
-		parametersStr += "minNumber : "+string(global.minNumber)+" ";
+	if(ds_map_exists(map, "menorMultiplo")){
+	    global.menorMultiplo = real(map[? "menorMultiplo"]);
+		parametersStr += "menorMultiplo : "+string(global.menorMultiplo)+" ";
 	}
 	else{
 		parametersLoaded = false; 
-		show_debug_message("Problem in minN");
+		show_debug_message("Problem in menorMultiplo");
 	}
 
-	if(ds_map_exists(map, "maxNumber")){
-	    global.maxNumber = real(map[? "maxNumber"]);
-		parametersStr += "maxNumber : "+string(global.maxNumber)+" ";
+	if(ds_map_exists(map, "mayorMultiplo")){
+	    global.mayorMultiplo = real(map[? "mayorMultiplo"]);
+		parametersStr += "mayorMultiplo : "+string(global.mayorMultiplo)+" ";
 	}
 	else{
 		parametersLoaded = false; 
-		show_debug_message("Problem in maxN");
+		show_debug_message("Problem in mayorMultiplo");
 	}
 	if(ds_map_exists(map, "porcBuenas")){
 	    global.porcBuenas = real(map[? "porcBuenas"]);
@@ -175,6 +175,13 @@ if(ds_exists(map,ds_type_map)){
 }
 else
 	show_debug_message("No map found");
-
+	
+if(global.grupo==1){
+	for(var i=global.menorMultiplo;i<=global.mayorMultiplo;i++){
+		for(var j=global.menorMultiplo;j<=global.mayorMultiplo;j++){
+			global.memoria[i,j] = 0;
+		}
+	}
+}
 
 

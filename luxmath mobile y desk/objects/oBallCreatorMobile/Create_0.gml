@@ -16,14 +16,136 @@ for(i=0;i<global.balls;i++){
 		path_position = 0.002 + i*oBallCreatorMobile.ballsep;
 		image_index = (i mod 2 == 0) ? 0 : 1;
 		if(i mod 2 == 0){
-			value = irandom_range(1,10);
+			if(global.grupo==1){
+				if(!siguientePar){ //A
+					var indice = random_range(0,1);
+					var memBuenasA = undefined;
+					var memMalasA = undefined;
+					var memNuevasA = undefined;
+					var memBuenasB = undefined;
+					var memMalasB = undefined;
+					var memNuevasB = undefined;
+					var iB = 0;
+					var iM = 0;
+					var iN = 0;
+					for(var i=global.menorMultiplo;i<=global.mayorMultiplo;i++){
+						for(var j=global.menorMultiplo;j<=global.mayorMultiplo;j++){
+							var aux = false;
+							if(sizeH>0){
+								for(var k=0;k<sizeH;k++){
+									if(historyA[k]==i and historyB[k]==j) aux=true;
+								}
+								if(!aux){
+									if(global.memoria[i,j] == 2){
+										memBuenasA[iB] = i;
+										memBuenasB[iB] = j;
+										iB++;
+									}
+									if(global.memoria[i,j] == 1){
+										memMalasA[iM] = i;
+										memMalasB[iM] = j;
+										iM++;
+									}
+									if(global.memoria[i,j] == 0){
+										memNuevasA[iN] = i;
+										memNuevasB[iN] = j;
+										iN++;
+									}
+								}
+							}
+							else{
+								if(global.memoria[i,j] == 2){
+									memBuenasA[iB] = i;
+									memBuenasB[iB] = j;
+									iB++;
+								}
+								if(global.memoria[i,j] == 1){
+									memMalasA[iM] = i;
+									memMalasB[iM] = j;
+									iM++;
+								}
+								if(global.memoria[i,j] == 0){
+									memNuevasA[iN] = i;
+									memNuevasB[iN] = j;
+									iN++;
+								}
+								
+							}
+						}
+					}
+					show_debug_message(indice);
+					if(indice<global.porcBuenas){ //BUENAS
+						if(iB>2){
+							global.origen = "Buenas";
+							var sel = irandom_range(0,iB-1);
+							global.a = memBuenasA[sel];
+							global.b = memBuenasB[sel];
+							
+						}
+						else indice = global.porcBuenas;
+					}
+					if(indice>(1-global.porcMalas)){ //MALAS
+						if(iM>2){
+							global.origen = "Malas";
+							var sel = irandom_range(0,iM-1);
+							global.a = memMalasA[sel];
+							global.b = memMalasB[sel];
+						}
+						else indice = global.porcBuenas;
+			
+					}
+					if(indice>=global.porcBuenas and indice<=(1-global.porcMalas)){ //NUEVAS
+						if(iN>0){
+							global.origen = "Nuevas";
+							var sel = irandom_range(0,iN-1);
+							global.a = memNuevasA[sel];
+							global.b = memNuevasB[sel];
+						}
+						else{
+							global.a = irandom_range(global.menorMultiplo,global.mayorMultiplo);	
+							global.b = irandom_range(global.menorMultiplo,global.mayorMultiplo);
+						}
+					}
+					historyA[sizeH]=global.a;
+					historyB[sizeH]=global.b;
+					sizeH++;
+					show_debug_message(global.origen);
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					value = global.a;
+					siguientePar=true;
+				}
+				else{ //B
+					value = global.b;
+					siguientePar=false;
+				}
+				
+			}
+			else{
+				global.origen = "Random";
+				if(!siguientePar){ //A
+					value = irandom_range(global.menorMultiplo,global.mayorMultiplo);
+					siguientePar=true;
+				}
+				else{ //B
+					value = irandom_range(global.menorMultiplo,global.mayorMultiplo);
+					siguientePar=false;
+				}
+			}
 			type = "number";
-			ds_list_add(oBallCreatorMobile.numbers, value);
-			ds_list_add(oBallCreatorMobile.numbersId, thisBall);
+			ds_list_add(oBallCreator.numbers, value);
+			ds_list_add(oBallCreator.numbersId, thisBall);
 			sprite_index = -1;
 		}
 		else{
-			type = choose("x","+");
+			type = "x";//choose("x","+");
 			value = type;
 			ds_list_add(oBallCreatorMobile.operations, type);
 			ds_list_add(oBallCreatorMobile.operationsId, thisBall);

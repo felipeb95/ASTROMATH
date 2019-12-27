@@ -39,7 +39,7 @@ if(global.grupo==1){
 	}
 }
 
-rangoBuena = 0.5; // Debería ser global.rangoBuena.
+rangoBuena = global.rangoBuena;//0.5; // Debería ser global.rangoBuena.
 global.nOneWrongCounter = 0;
 global.nTwoWrongCounter = 0;
 global.nOneWrongCap = undefined;

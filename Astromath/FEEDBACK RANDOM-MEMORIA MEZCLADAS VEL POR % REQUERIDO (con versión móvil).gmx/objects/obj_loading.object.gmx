@@ -111,6 +111,12 @@ if(ds_map_exists(map, "mayorMultiplo")){
      show_debug_message(mayorMultiplo);
      global.maxB = real(mayorMultiplo);
 }
+if(ds_map_exists(map, "carril")){
+    var carril = map[? "carril"];
+     show_debug_message("carril funciona");
+     show_debug_message(carril);
+     global.carril = real(carril);
+}
 
 if(ds_map_exists(map, "rondas")){
     var rondas = map[? "rondas"];
