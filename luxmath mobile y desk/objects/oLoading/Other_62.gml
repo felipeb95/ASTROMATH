@@ -76,8 +76,8 @@ if(ds_exists(map,ds_type_map)){
 		show_debug_message("Problem in maxS");
 	}
 	
-	if(ds_map_exists(map, "ballAceleration")){
-	    global.ballAceleration = real(map[? "ballAceleration"]);
+	if(ds_map_exists(map, "acel")){
+	    global.ballAceleration = real(map[? "acel	"]);
 		parametersStr += "ballAceleration : "+string(global.ballAceleration)+" ";
 	}
 	else{
@@ -156,13 +156,31 @@ if(ds_exists(map,ds_type_map)){
 		show_debug_message("Problem in debug");
 	}
 	
-	if(ds_map_exists(map, "nToDifficultyChange")){
-	    global.nToDifficultyChange = real(map[? "nToDifficultyChange"]);
-		parametersStr += "nToDifficultyChange : "+string(global.nToDifficultyChange)+" ";
+	if(ds_map_exists(map, "cErrores")){
+	    global.wrongCap = real(map[? "cErrores"]);
+		parametersStr += "wrongCap : "+string(global.wrongCap)+" ";
 	}
 	else{
 		parametersLoaded = false; 
-		show_debug_message("Problem in nToDifficultyChange");
+		show_debug_message("Problem in wrongCap");
+	}
+	
+	if(ds_map_exists(map, "cPelotas")){
+	    global.balls = real(map[? "cPelotas"]);
+		parametersStr += "wrongCap : "+string(global.balls)+" ";
+	}
+	else{
+		parametersLoaded = false; 
+		show_debug_message("Problem in cPelotas");
+	}
+	
+	if(ds_map_exists(map, "vInicial")){
+	    global.currentSpeed = real(map[? "vInicial"]);
+		parametersStr += "wrongCap : "+string(global.currentSpeed)+" ";
+	}
+	else{
+		parametersLoaded = false; 
+		show_debug_message("Problem in vInicial");
 	}
 	
 	parametersLoaded = is_undefined(parametersLoaded) ? true : false;
