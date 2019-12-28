@@ -1,4 +1,3 @@
-global.grupo = 0;
 global.playerScore = 0;
 
 switch (os_type){

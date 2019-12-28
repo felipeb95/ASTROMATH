@@ -1,0 +1,30 @@
+
+	Shapiro-Wilk normality test
+
+data:  x
+W = 0.98908, p-value = 0.5911
+
+
+	Shapiro-Wilk normality test
+
+data:  x
+W = 0.98908, p-value = 0.5911
+
+
+	Shapiro-Wilk normality test
+
+data:  x
+W = 0.98908, p-value = 0.5911
+
+
+	Shapiro-Wilk normality test
+
+data:  x
+W = 0.98908, p-value = 0.5911
+
+
+	Shapiro-Wilk normality test
+
+data:  x
+W = 0.98908, p-value = 0.5911
+
