@@ -17,12 +17,12 @@ switch (os_type)
 		global.Config = 1; 
 	break;
 	case os_linux: 
-		global.Config = 2; 
+		global.Config = 0; 
 	break;
 	case os_macosx:
-		global.Config = 3; 
+		global.Config = 0; 
 	break;
 	case os_ios: // MOBILE 
-		global.Config = 4; 
+		global.Config = 1; 
 	break;
 }
