@@ -105,7 +105,7 @@ if(device_mouse_check_button_pressed(0,mb_left)){
 				*/
 				instance_create_depth(ballInst.x, ballInst.y,-2000,oBigExplode);
 				
-				oPlayerInfo.playerScore += 10;
+				global.playerScore += 10;
 				if(ds_list_size(oBallCreatorMobile.list) == 3){
 					show_debug_message("### GAME FINISHED ###");
 					with(oBall){
@@ -237,8 +237,8 @@ if(device_mouse_check_button_pressed(0,mb_left)){
 			else{
 				global.memoria[leftNumber,rightNumber]=1;
 				show_debug_message("### WRONG TRY ###");
-				oPlayerInfo.playerScore -= 10;
-				oPlayerInfo.playerScore = clamp(oPlayerInfo.playerScore,0,99999);
+				global.playerScore -= 10;
+				global.playerScore = clamp(global.playerScore,0,99999);
 				//travel = false;
 				//x = oBallShooter.x;
 				//y = initialY+sprite_height/2;	

@@ -1,4 +1,5 @@
-
+global.grupo = 0;
+global.playerScore = 0;
 
 switch (os_type){
    case os_windows: global.Config = 1; break;

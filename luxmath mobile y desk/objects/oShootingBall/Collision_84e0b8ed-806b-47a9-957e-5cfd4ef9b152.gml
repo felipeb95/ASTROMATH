@@ -46,7 +46,7 @@ if(other.canBeShot){
 		global.memoria[leftNumber,rightNumber]=2;
 		show_debug_message("### RIGHT TRY! ###");
 		correctAns = true;
-		oPlayerInfo.playerScore += 10;
+		global.playerScore += 10;
 		if(ds_list_size(oBallCreator.list) == 3){
 			show_debug_message("### GAME FINISHED ###");
 			with(oBall){
@@ -193,8 +193,8 @@ if(other.canBeShot){
 		global.memoria[leftNumber,rightNumber]=1;
 		show_debug_message("### WRONG TRY ###");
 		global.errorCounter++;
-		oPlayerInfo.playerScore -= 10;
-		oPlayerInfo.playerScore = clamp(oPlayerInfo.playerScore,0,99999);
+		global.playerScore -= 10;
+		global.playerScore = clamp(global.playerScore,0,99999);
 		travel = false;
 		x = oBallShooter.x;
 		y = initialY+sprite_height/2;	

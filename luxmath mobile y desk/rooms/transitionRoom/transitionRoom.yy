@@ -2,7 +2,7 @@
 {
     "name": "transitionRoom",
     "id": "3ef6cb5d-1134-4437-b6a7-66bf403e9fd1",
-    "creationCodeFile": "",
+    "creationCodeFile": "RoomCreationCode.gml",
     "inheritCode": false,
     "inheritCreationOrder": false,
     "inheritLayers": false,

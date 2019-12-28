@@ -50,16 +50,16 @@ if(ds_exists(map,ds_type_map)){
 		parametersLoaded = false; 
 		show_debug_message("Problem in grupo");
 	}
-	if(ds_map_exists(map, "rangoBuena")){
-	    global.rangoBuena = real(map[? "rangoBuena"]);
+	if(ds_map_exists(map, "vRango")){
+	    global.rangoBuena = real(map[? "vRango"]);
 		parametersStr += "rangoBuena : "+string(global.rangoBuena)+" ";
 	}
 	else{
 		parametersLoaded = false; 
 		show_debug_message("Problem in rangoBuena");
 	}
-	if(ds_map_exists(map, "minSpeed")){
-	    global.minSpeed = real(map[? "minSpeed"]);
+	if(ds_map_exists(map, "vMin")){
+	    global.minSpeed = real(map[? "vMin"]);
 		parametersStr += "minSpeed : "+string(global.minSpeed)+" ";
 	}
 	else{
@@ -67,8 +67,8 @@ if(ds_exists(map,ds_type_map)){
 		show_debug_message("Problem in minS");
 	}
 
-	if(ds_map_exists(map, "maxSpeed")){
-	    global.maxSpeed = real(map[? "maxSpeed"]);
+	if(ds_map_exists(map, "vMax")){
+	    global.maxSpeed = real(map[? "vMax"]);
 		parametersStr += "maxSpeed : "+string(global.maxSpeed)+" ";
 	}
 	else{
@@ -81,12 +81,12 @@ if(ds_exists(map,ds_type_map)){
 		parametersStr += "ballAceleration : "+string(global.ballAceleration)+" ";
 	}
 	else{
-		parametersLoaded = false; 
+		//parametersLoaded = false; 
 		show_debug_message("Problem in maxS");
 	}
 
-	if(ds_map_exists(map, "minBalls")){
-	    global.minBalls = real(map[? "minBalls"]);
+	if(ds_map_exists(map, "cMin")){
+	    global.minBalls = real(map[? "cMin"]);
 		parametersStr += "minBalls : "+string(global.minBalls)+" ";
 	}
 	else{
@@ -94,8 +94,8 @@ if(ds_exists(map,ds_type_map)){
 		show_debug_message("Problem in minBalls");
 	}
 
-	if(ds_map_exists(map, "maxBalls")){
-	    global.maxBalls = real(map[? "maxBalls"]);
+	if(ds_map_exists(map, "cMax")){
+	    global.maxBalls = real(map[? "cMax"]);
 		parametersStr += "maxBalls : "+string(global.maxBalls)+" ";
 	}
 	else{
@@ -103,8 +103,8 @@ if(ds_exists(map,ds_type_map)){
 		show_debug_message("Problem in maxBalls");
 	}
 
-	if(ds_map_exists(map, "bonusProbability")){
-	    global.bonusProbability = real(map[? "bonusProbability"]);
+	if(ds_map_exists(map, "bonusprob")){
+	    global.bonusProbability = real(map[? "bonusprob"]);
 		parametersStr += "bonusProbability : "+string(global.bonusProbability)+" ";
 	}
 	else{
@@ -112,8 +112,8 @@ if(ds_exists(map,ds_type_map)){
 		show_debug_message("Problem in bProb");
 	}
 
-	if(ds_map_exists(map, "bonusFreeze")){
-	    global.bonusFreeze = real(map[? "bonusFreeze"]);
+	if(ds_map_exists(map, "freeze")){
+	    global.bonusFreeze = real(map[? "freeze"]);
 		parametersStr += "bonusFreeze : "+string(global.bonusFreeze)+" ";
 	}
 	else{
@@ -121,8 +121,8 @@ if(ds_exists(map,ds_type_map)){
 		show_debug_message("Problem in bonusFreeze");
 	}
 
-	if(ds_map_exists(map, "bonusSlow")){
-	    global.bonusSlow = real(map[? "bonusSlow"]);
+	if(ds_map_exists(map, "slowmo")){
+	    global.bonusSlow = real(map[? "slowmo"]);
 		parametersStr += "bonusSlow : "+string(global.bonusSlow)+" ";
 	}
 	else{
@@ -130,8 +130,8 @@ if(ds_exists(map,ds_type_map)){
 		show_debug_message("Problem in bonusSlow");
 	}
 
-	if(ds_map_exists(map, "bonusReverse")){
-	    global.bonusReverse = real(map[? "bonusReverse"]);
+	if(ds_map_exists(map, "reversa")){
+	    global.bonusReverse = real(map[? "reversa"]);
 		parametersStr += "bonusReverse : "+string(global.bonusReverse)+" ";
 	}
 	else{
@@ -139,8 +139,8 @@ if(ds_exists(map,ds_type_map)){
 		show_debug_message("Problem in bonusReverse");
 	}
 
-	if(ds_map_exists(map, "bonusMultiBall")){
-	    global.bonusMultiBall = real(map[? "bonusMultiBall"]);
+	if(ds_map_exists(map, "correcta")){
+	    global.bonusMultiBall = real(map[? "correcta"]);
 		parametersStr += "bonusMultiBall : "+string(global.bonusMultiBall)+" ";
 	}
 	else{
@@ -148,8 +148,8 @@ if(ds_exists(map,ds_type_map)){
 		show_debug_message("Problem in bonusMultiBall");
 	}
 
-	if(ds_map_exists(map, "debugMode")){
-	    global.debugMode = real(map[? "debugMode"]) == 1 ? true : false;
+	if(ds_map_exists(map, "debug")){
+	    global.debugMode = real(map[? "debug"]) == 1 ? true : false;
 	}
 	else{
 		parametersLoaded = false; 
