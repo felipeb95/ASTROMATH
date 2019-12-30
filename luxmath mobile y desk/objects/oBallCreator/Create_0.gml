@@ -35,9 +35,9 @@ for(var p=0;p<global.balls;p++){
 					for(var i=global.menorMultiplo;i<=global.mayorMultiplo;i++){
 						for(var j=global.menorMultiplo;j<=global.mayorMultiplo;j++){
 							var aux = false;
-							if(oBallCreator.sizeH>0){
-								for(var k=0;k<oBallCreator.sizeH;k++){
-									if(oBallCreator.historyA[k]==i and oBallCreator.historyB[k]==j) aux=true;
+							if(sizeH>0){
+								for(var k=0;k<sizeH;k++){
+									if(historyA[k]==i and historyB[k]==j) aux=true;
 								}
 								if(!aux){
 									if(global.memoria[i,j] == 2){
@@ -110,9 +110,9 @@ for(var p=0;p<global.balls;p++){
 							global.b = irandom_range(global.menorMultiplo,global.mayorMultiplo);
 						}
 					}
-					oBallCreator.historyA[oBallCreator.sizeH]=global.a;
-					oBallCreator.historyB[oBallCreator.sizeH]=global.b;
-					oBallCreator.sizeH++;
+					historyA[sizeH]=global.a;
+					historyB[sizeH]=global.b;
+					sizeH++;
 					show_debug_message(global.origen);
 					
 					
