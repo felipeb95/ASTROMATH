@@ -34,9 +34,9 @@ for(i=0;i<global.balls;i++){
 					for(var i=global.menorMultiplo;i<=global.mayorMultiplo;i++){
 						for(var j=global.menorMultiplo;j<=global.mayorMultiplo;j++){
 							var aux = false;
-							if(sizeH>0){
-								for(var k=0;k<sizeH;k++){
-									if(historyA[k]==i and historyB[k]==j) aux=true;
+							if(oBallCreator.sizeH>0){
+								for(var k=0;k<oBallCreator.sizeH;k++){
+									if(oBallCreator.historyA[k]==i and oBallCreator.historyB[k]==j) aux=true;
 								}
 								if(!aux){
 									if(global.memoria[i,j] == 2){
@@ -109,18 +109,10 @@ for(i=0;i<global.balls;i++){
 							global.b = irandom_range(global.menorMultiplo,global.mayorMultiplo);
 						}
 					}
-					historyA[sizeH]=global.a;
-					historyB[sizeH]=global.b;
-					sizeH++;
+					oBallCreator.historyA[oBallCreator.sizeH]=global.a;
+					oBallCreator.historyB[oBallCreator.sizeH]=global.b;
+					oBallCreator.sizeH++;
 					show_debug_message(global.origen);
-					
-					
-					
-					
-					
-					
-					
-					
 					
 					value = global.a;
 					siguientePar=true;
@@ -154,8 +146,6 @@ for(i=0;i<global.balls;i++){
 			ds_list_add(oBallCreator.operationsId, thisBall);
 		}
 	}
-	//if(i==3)
-		//testId = thisBall;
 	ds_list_add(list,thisBall);
 }
 

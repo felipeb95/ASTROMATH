@@ -77,12 +77,12 @@ if(ds_exists(map,ds_type_map)){
 	}
 	
 	if(ds_map_exists(map, "acel")){
-	    global.ballAceleration = real(map[? "acel	"]);
+	    global.ballAceleration = real(map[? "acel"]);
 		parametersStr += "ballAceleration : "+string(global.ballAceleration)+" ";
 	}
 	else{
-		//parametersLoaded = false; 
-		show_debug_message("Problem in maxS");
+		parametersLoaded = false; 
+		show_debug_message("Problem in acel");
 	}
 
 	if(ds_map_exists(map, "cMin")){

@@ -5,10 +5,18 @@ if(room_get_name(room) == "endRoom"){
 }
 
 if(room_get_name(room) == "welcomeRoom"){
-	draw_set_font(scorefont);
+	draw_set_font(transitionFont);
 	draw_set_halign(fa_center);
-	if(!oRoomAccess.canStart)
-		draw_text(room_width/2, room_height-20, "CARGANDO");
+	if(!oRoomAccess.canStart){
+		draw_set_colour(c_yellow);
+		draw_text(room_width/2, room_height-50, "CARGANDO");
+		draw_set_colour(c_white);
+	}
+	else{
+		draw_set_colour(c_yellow);
+		draw_text(room_width/2, room_height-50, "LISTO, YA PUEDES JUGAR");
+		draw_set_colour(c_white);
+	}
 }
 
 if(global.playerState == -1){ // Just Lost
