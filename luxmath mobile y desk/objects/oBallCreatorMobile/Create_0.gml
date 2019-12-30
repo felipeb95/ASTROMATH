@@ -9,13 +9,15 @@ results = ds_list_create();
 var i =0;
 ballsep = 0.015;
 //testId = undefined;
-
-for(i=0;i<global.balls;i++){
+var historyA = undefined;
+var sizeH = 0; 
+var historyB = undefined;
+for(var p=0;p<global.balls;p++){
 	var thisBall = instance_create_depth(0,0,-100,oBall)
 	with(thisBall){
-		path_position = 0.002 + i*oBallCreatorMobile.ballsep;
-		image_index = (i mod 2 == 0) ? 0 : 1;
-		if(i mod 2 == 0){
+		path_position = 0.002 + p*oBallCreatorMobile.ballsep;
+		image_index = (p mod 2 == 0) ? 0 : 1;
+		if(p mod 2 == 0){
 			if(global.grupo==1){
 				if(!siguientePar){ //A
 					var indice = random_range(0,1);
