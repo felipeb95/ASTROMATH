@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['user']) || $_SESSION['grupo']!=1) {
+if (!isset($_SESSION['user']) || $_SESSION['grupo']!=0) {
   header("Location: ../index.php");
   exit();
 }
@@ -91,7 +91,7 @@ if (!isset($_SESSION['user']) || $_SESSION['grupo']!=1) {
             });
         </script>
         <!-- Run the game code -->
-        <script type="text/javascript" src="html5game/FeedbackRandMemMezcla.js?FDKZB=1960600751&si=fu"></script>
+        <script type="text/javascript" src="html5game/aqua2.js?BMHAC=2122088071"></script>
         <script>window.onload = GameMaker_Init;</script>
     </body>
 </html>
