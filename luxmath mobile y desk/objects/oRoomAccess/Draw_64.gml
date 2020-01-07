@@ -1,7 +1,7 @@
 if(room_get_name(room) == "endRoom"){
 	draw_set_font(scorefont);
 	draw_set_halign(fa_center);
-	draw_text(browser_width/2, browser_height/2, "OBTUVISTE "+string(global.playerScore)+" PUNTOS");
+	draw_text(room_width/2, room_height/2, "OBTUVISTE "+string(global.playerScore)+" PUNTOS");
 }
 
 if(room_get_name(room) == "welcomeRoom"){
@@ -20,9 +20,10 @@ if(room_get_name(room) == "welcomeRoom"){
 }
 
 if(global.playerState == -1){ // Just Lost
+	canStart = true;
 	draw_set_font(transitionFont);
 	draw_set_halign(fa_center);
-	if(global.Config == 0)
+	if(global.Config == 1)
 		draw_text(browser_width/2, browser_height/2, "PERDISTE EL ESCENARIO"+
 		"\nLLEVAS "+string(global.playerScore)+" PUNTOS ACUMULADOS"+
 		"\nPULSA <ENTER> PARA REINTENTAR ESTE ESCENARIO");
@@ -33,9 +34,10 @@ if(global.playerState == -1){ // Just Lost
 }
 
 if(global.playerState == 1){ // Just Won
+	canStart = true;
 	draw_set_font(transitionFont);
 	draw_set_halign(fa_center);
-	if(global.Config == 0)
+	if(global.Config == 1)
 		draw_text(browser_width/2, browser_height/2, "GANASTE EL ESCENARIO"+
 		"\nLLEVAS "+string(global.playerScore)+" PUNTOS ACUMULADOS"+
 		"\nPULSA <ENTER> PARA SEGUIR JUGANDO");
