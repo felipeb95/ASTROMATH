@@ -1,4 +1,4 @@
-if(global.Config != 2 and canStart){
+if(global.Config == 1 and canStart){
 	if(global.level <= global.totalLevels){
 		var roomStr = "playRoom"+string(global.level);
 		var asset = asset_get_index(roomStr);

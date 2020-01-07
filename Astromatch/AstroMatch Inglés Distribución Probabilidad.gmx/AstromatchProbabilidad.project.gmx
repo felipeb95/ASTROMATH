@@ -255,6 +255,7 @@
     <sound>sound\sw_watch</sound>
     <sound>sound\sw_wings</sound>
     <sound>sound\sw_zebra</sound>
+    <sound>sound\sw_mirror</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_ship</sprite>
