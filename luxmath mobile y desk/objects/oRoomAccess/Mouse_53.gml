@@ -4,8 +4,12 @@ if(global.Config == 2 and canStart){
 		var asset = asset_get_index(roomStr);
 		room_goto(asset);
 	}
-	else
-		room_goto(welcomeRoom);
 	
 	global.playerState = 0;
+}
+
+if(room_get_name(room) == "endRoom"){
+	global.level = 1;
+	room_goto(welcomeRoom);
+	show_debug_message("click");
 }

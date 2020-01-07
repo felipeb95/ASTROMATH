@@ -117,6 +117,7 @@ if(device_mouse_check_button_pressed(0,mb_left)){
 					
 					if(global.level == global.totalLevels){
 						global.playerState = 0;
+						show_debug_message("GAME COMPLETED");
 						room_goto(endRoom);
 					}
 					else{

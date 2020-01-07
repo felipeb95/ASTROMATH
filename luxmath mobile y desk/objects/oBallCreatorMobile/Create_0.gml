@@ -143,8 +143,8 @@ for(var p=0;p<global.balls;p++){
 				}
 			}
 			type = "number";
-			ds_list_add(oBallCreator.numbers, value);
-			ds_list_add(oBallCreator.numbersId, thisBall);
+			ds_list_add(oBallCreatorMobile.numbers, value);
+			ds_list_add(oBallCreatorMobile.numbersId, thisBall);
 			sprite_index = -1;
 		}
 		else{
