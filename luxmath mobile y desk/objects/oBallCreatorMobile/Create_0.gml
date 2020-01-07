@@ -9,6 +9,7 @@ results = ds_list_create();
 var i =0;
 ballsep = 0.015;
 //testId = undefined;
+var siguientePar = false;
 var historyA = undefined;
 var sizeH = 0; 
 var historyB = undefined;

@@ -14,7 +14,6 @@ var historyA = undefined;
 var sizeH = 0; 
 var historyB = undefined;
 for(var p=0;p<global.balls;p++){
-	
 	var thisBall = instance_create_depth(0,0,-100,oBall)
 	with(thisBall){
 		path_position = 0.002 + p*oBallCreator.ballsep;
