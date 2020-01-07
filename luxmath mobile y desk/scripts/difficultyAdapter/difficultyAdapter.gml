@@ -1,6 +1,6 @@
 /// difficultyAdapter()
 
-if(global.errorCounter >= global.errorCap){
+if(global.errorCounter >= global.wrongCap){
 	if(global.balls != global.minBalls){
 		show_debug_message("[DIFFICULTY CHANGE] 3 balls less");
 		global.balls -= 2;

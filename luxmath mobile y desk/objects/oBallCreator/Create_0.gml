@@ -133,11 +133,11 @@ for(var p=0;p<global.balls;p++){
 			else{
 				global.origen = "Random";
 				if(!siguientePar){ //A
-					value = irandom_range(1,10);
+					value = irandom_range(global.menorMultiplo,global.mayorMultiplo);
 					siguientePar=true;
 				}
 				else{ //B
-					value = irandom_range(1,10);
+					value = irandom_range(global.menorMultiplo,global.mayorMultiplo);
 					siguientePar=false;
 				}
 			}
