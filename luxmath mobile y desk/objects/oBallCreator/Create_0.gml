@@ -157,13 +157,13 @@ for(var p=0;p<global.balls;p++){
 	ds_list_add(list,thisBall);
 }
 
-show_debug_message("### Numeros ###");
-for(i = 0; i < ds_list_size(numbers); i++){
-	show_debug_message(string(numbers[| i]));	
-}
+// show_debug_message("### Numeros ###");
+// for(i = 0; i < ds_list_size(numbers); i++){
+// 	show_debug_message(string(numbers[| i]));	
+// }
 
 show_debug_message("### Results ###");
-for(i = 0; i < ds_list_size(operations);i++){
+	for(i = 0; i < ds_list_size(operations);i++){
 	var numOne = numbers[| i];
 	var numTwo = numbers[| i+1];
 	show_debug_message("#########"+string(numOne));
